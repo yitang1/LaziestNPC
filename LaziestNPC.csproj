@@ -7,10 +7,10 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Localization\en-US\Mods.LaziestNPC.NPCs.hjson" />
+	</ItemGroup>
 
 	<!-- References -->
-	<ItemGroup>
-		
-	</ItemGroup>
 
 </Project>

@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|d:\\system\\hp\\documents\\my games\\terraria\\tmodloader\\modsources\\laziestnpc\\content\\npcs\\townnpcs\\bossnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|solutionrelative:content\\npcs\\townnpcs\\bossnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|d:\\system\\hp\\documents\\my games\\terraria\\tmodloader\\modsources\\laziestnpc\\localization\\zh-hans\\mods.laziestnpc.npcs.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|solutionrelative:localization\\zh-hans\\mods.laziestnpc.npcs.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|d:\\system\\hp\\documents\\my games\\terraria\\tmodloader\\modsources\\laziestnpc\\localization\\en-us\\mods.laziestnpc.npcs.hjson||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|solutionrelative:localization\\en-us\\mods.laziestnpc.npcs.hjson||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|d:\\system\\hp\\documents\\my games\\terraria\\tmodloader\\modsources\\laziestnpc\\build.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{1EFE5E43-87C0-4DE4-96AF-6E8C481C7160}|LaziestNPC.csproj|solutionrelative:build.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "build.txt",
+              "DocumentMoniker": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\build.txt",
+              "RelativeDocumentMoniker": "build.txt",
+              "ToolTip": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\build.txt",
+              "RelativeToolTip": "build.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-08-25T20:05:05.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mods.LaziestNPC.NPCs.hjson",
+              "DocumentMoniker": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Localization\\en-US\\Mods.LaziestNPC.NPCs.hjson",
+              "RelativeDocumentMoniker": "Localization\\en-US\\Mods.LaziestNPC.NPCs.hjson",
+              "ToolTip": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Localization\\en-US\\Mods.LaziestNPC.NPCs.hjson",
+              "RelativeToolTip": "Localization\\en-US\\Mods.LaziestNPC.NPCs.hjson",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-08-25T18:35:48.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mods.LaziestNPC.NPCs.hjson",
+              "DocumentMoniker": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Localization\\zh-Hans\\Mods.LaziestNPC.NPCs.hjson",
+              "RelativeDocumentMoniker": "Localization\\zh-Hans\\Mods.LaziestNPC.NPCs.hjson",
+              "ToolTip": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Localization\\zh-Hans\\Mods.LaziestNPC.NPCs.hjson",
+              "RelativeToolTip": "Localization\\zh-Hans\\Mods.LaziestNPC.NPCs.hjson",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-08-25T14:21:47.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BossNPC.cs",
+              "DocumentMoniker": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Content\\NPCs\\TownNPCs\\BossNPC.cs",
+              "RelativeDocumentMoniker": "Content\\NPCs\\TownNPCs\\BossNPC.cs",
+              "ToolTip": "D:\\System\\hp\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\LaziestNPC\\Content\\NPCs\\TownNPCs\\BossNPC.cs",
+              "RelativeToolTip": "Content\\NPCs\\TownNPCs\\BossNPC.cs",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAcwFQAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-24T16:47:45.067Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

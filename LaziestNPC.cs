@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace LaziestNPC
 {
-	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
 	public class LaziestNPC : Mod
 	{
-
-	}
+        // “创建物品、加载默认属性、设置商店价格”打包成一个方法
+        public static Item CustomPrice(int type, int price)
+        {
+            var item = new Item();
+            item.SetDefaults(type);
+            item.shopCustomPrice = price;
+            return item;
+        }
+    }
 }

@@ -1,0 +1,20 @@
+//Town NPCs
+BossNPC: {
+	DisplayName: Boss Item NPC
+	Name.BossNPC: Piggy
+	Chat.Normal1: *Piggy's Voice*
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: Boss Treasure Bags
+	button2: Sum Shop
+}

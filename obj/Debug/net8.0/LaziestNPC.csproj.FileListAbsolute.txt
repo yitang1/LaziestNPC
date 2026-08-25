@@ -1,0 +1,13 @@
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.csproj.AssemblyReference.cache
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.GeneratedMSBuildEditorConfig.editorconfig
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.AssemblyInfoInputs.cache
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.AssemblyInfo.cs
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.csproj.CoreCompileInputs.cache
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.sourcelink.json
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\bin\Debug\net8.0\LaziestNPC.deps.json
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\bin\Debug\net8.0\LaziestNPC.dll
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\bin\Debug\net8.0\LaziestNPC.pdb
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.dll
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\refint\LaziestNPC.dll
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\LaziestNPC.pdb
+D:\System\hp\Documents\My Games\Terraria\tModLoader\ModSources\LaziestNPC\obj\Debug\net8.0\ref\LaziestNPC.dll

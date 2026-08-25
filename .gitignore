@@ -1,1 +1,8 @@
-	.git/, .vs/, bin/, obj/, Properties/, .editorconfig, *.csproj, *.sln
+.git/
+.vs/
+bin/
+obj/
+Properties/
+.editorconfig
+*.csproj
+ *.sln

@@ -1,7 +1,7 @@
 displayName = 最懒惰的NPC
 author = yitang
 version = 0.0.0.1
-modReferences = 
+modReferences = ShopExtender
 weakReferences =
 homepage = 
 buildIgnore = .git\*, .vs\*, bin\*, obj\*, Properties\*, .editorconfig, *.csproj, *.sln

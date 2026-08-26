@@ -2,9 +2,7 @@
 BossNPC: {
 	DisplayName: Boss物品商人
 	Name.BossNPC: 猪猪
-	Chat: {
-		Normal1: *猪猪的声音*
-	}
+	Chat.Normal1: *猪猪的声音*
 
 	TownNPCMood: {
 		// Content: 我很满足。

@@ -20,8 +20,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 5;
-            NPCID.Sets.ExtraFramesCount[Type] = 0;
-            NPCID.Sets.AttackFrameCount[Type] = 0; 
+            //NPCID.Sets.ExtraFramesCount[Type] = 0;
+            //NPCID.Sets.AttackFrameCount[Type] = 0; 
             NPCID.Sets.DangerDetectRange[Type] = 220; 
 
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
@@ -52,6 +52,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
+            AIType = NPCID.Squirrel;
             //AnimationType = NPCID.Guide;
             // ↑这条【暂时】要删掉，因为这个【临时贴图】实际上不是NPC而是一个中立生物的
         }
@@ -82,7 +83,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override string GetChat()
         {
             WeightedRandom<string> dialogue = new WeightedRandom<string>();
-            dialogue.Add(this.GetLocalizedValue("chat.Normal1"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
             return dialogue;
         }
 
@@ -143,7 +144,48 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         
         }
 
-        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+        public override void FindFrame(int frameHeight)
+        {
+            if (NPC.velocity.Y == 0f)
+            {
+                if (!NPC.IsABestiaryIconDummy)
+                {
+                    if (NPC.direction == 1)
+                    {
+                        NPC.spriteDirection = -1;
+                    }
+                    if (NPC.direction == -1)
+                    {
+                        NPC.spriteDirection = 1;
+                    }
+
+                    if (NPC.velocity.X == 0f)
+                    {
+                        NPC.frame.Y = 0;
+                        NPC.frameCounter = 0.0;
+                        return;
+                    }
+                }
+                NPC.frameCounter += NPC.IsABestiaryIconDummy ? 0.6f : Math.Abs(NPC.velocity.X) * 0.25f;
+                NPC.frameCounter += 1.0;
+                if (NPC.frameCounter > 12.0)
+                {
+                    NPC.frame.Y = NPC.frame.Y + frameHeight;
+                    NPC.frameCounter = 0.0;
+                }
+                if (NPC.frame.Y / frameHeight >= Main.npcFrameCount[NPC.type] - 1)
+                {
+                    NPC.frame.Y = frameHeight;
+                }
+            }
+            else
+            {
+                NPC.frameCounter = 0.0;
+                NPC.frame.Y = frameHeight * 2;
+            }
+        }
+
+        /*public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             damage = 70;
             knockback = 3f;
@@ -180,6 +222,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
         {
             multiplier = 12f;
-        }
+        }*/
     }
 }

@@ -28,7 +28,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 SpriteDirection = 1,
                 Direction = -1,
-                Velocity = 2f
+                Velocity = 0.1f
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
             /*NPC.Happiness
@@ -43,8 +43,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             NPC.townNPC = true;
             NPC.friendly = true;
-            NPC.width = 26;
-            NPC.height = 26;
+            NPC.width = 20;
+            NPC.height = 20;
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.damage = 10;
             NPC.defense = 15;
@@ -109,7 +109,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             var treasureBags = new NPCShop(Type, "TreasureBags");
             var sumShop = new NPCShop(Type, "SumShop");
-            //好多，光是原版和灾厄Fargo两个模组，以及三者的Boss召唤物，我就看麻了，又要单独抽时间写了
+            //好多，光是原版和灾厄Fargo两个模组，以及三者的Boss召唤物，我就看麻了，又要单独抽时间整理了...
             #region 原版Boss宝藏袋
             treasureBags.Add(CustomPrice(ItemID.KingSlimeBossBag, buyPrice(0, 5, 0, 0)), Condition.DownedKingSlime)
                 .Add(CustomPrice(ItemID.EyeOfCthulhuBossBag, buyPrice(0, 10, 0, 0)), Condition.DownedEyeOfCthulhu)
@@ -121,7 +121,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .Add(CustomPrice(ItemID.WallOfFleshBossBag, buyPrice(0, 35, 0, 0)), Condition.Hardmode);
 
             #endregion
-
+            
             #region 召唤物品
 
             #region 事件召唤物品
@@ -141,9 +141,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #endregion
-        
+
+            treasureBags.Register();
+            sumShop.Register();
         }
 
+        //正式添加新贴图后要删掉
         public override void FindFrame(int frameHeight)
         {
             if (NPC.velocity.Y == 0f)

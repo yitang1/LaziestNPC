@@ -1,0 +1,15 @@
+Mods: {
+	LaziestNPC: {
+		Items: {
+			BossNPC: {
+				DisplayName: Boss N P C
+				Tooltip: ""
+			}
+
+			PotionNPC: {
+				DisplayName: Potion N P C
+				Tooltip: ""
+			}
+		}
+	}
+}

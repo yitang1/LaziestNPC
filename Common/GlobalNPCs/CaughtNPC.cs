@@ -69,10 +69,9 @@ namespace LaziestNPC.Common.GlobalNPCs
         {
             CaughtTownies = new Dictionary<int, int>();
 
-            // 在这里添加你的 NPC
+            //添加NPC
             Add("BossNPC", ModContent.NPCType<BossNPC>());
             Add("PotionNPC", ModContent.NPCType<PotionNPC>());
-            // 新增 NPC 加一行 Add("名称", ModContent.NPCType<类名>());
         }
 
         public static void Add(string internalName, int id)

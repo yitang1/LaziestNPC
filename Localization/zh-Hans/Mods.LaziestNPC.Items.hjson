@@ -1,0 +1,15 @@
+Mods: {
+	LaziestNPC: {
+		Items: {
+			BossNPC: {
+				DisplayName: Boss物品商人
+				Tooltip: ""
+			}
+
+			PotionNPC: {
+				DisplayName: 药水商人
+				Tooltip: ""
+			}
+		}
+	}
+}

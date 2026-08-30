@@ -13,7 +13,7 @@ namespace LaziestNPC
 	{
         public override void Load()
         {
-            CaughtNPCItem.RegisterItems();
+            CaughtNPC.RegisterItems();
             Terraria.ModLoader.Logging.IgnoreExceptionSource("System.Net");
         }
 

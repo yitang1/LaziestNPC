@@ -2,9 +2,10 @@
 ## Mod：Laziest NPC
  
 此为Steam上[**tModLoader**](https://store.steampowered.com/app/1281930/tModLoader/)的一个模组（Mod）。
-> 原本是个人的自用Mod。  
-> 模组创建初衷是做一个比其他NPC类模组，  
-> 售卖物品的解锁时期更合理、准确的Mod。
+> 原本是个人自用的Mod。  
+> 创建初衷是:   
+> NPC售卖物品的解锁时期更合理、更准确；  
+> 支持并适配更多创意工坊的其他Mod。  
 
 > 目前暂未制作完成。  
 

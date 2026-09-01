@@ -5,12 +5,12 @@ using Terraria.DataStructures;
 using System.Collections.Generic;
 using LaziestNPC.Content.NPCs.TownNPCs;
 
-namespace LaziestNPC.Common.GlobalNPCs
+namespace LaziestNPC.Globals.GlobalNPCs
 {
     public class CaughtNPC : ModItem
     {
         public override bool IsLoadingEnabled(Mod mod) => TheNpcId != NPCID.None;
-        
+
         internal static Dictionary<int, int> CaughtTownNpcs = new();
 
         private string _name;

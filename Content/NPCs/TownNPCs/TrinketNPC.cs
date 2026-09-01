@@ -78,6 +78,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             WeightedRandom<string> dialogue = new WeightedRandom<string>();
             dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal2"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal3"));
             return dialogue;
         }
 

@@ -10,12 +10,12 @@ using Terraria.Utilities;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class PotionNPC : ModNPC
+    public class TrinketNPC : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 27;
-            NPCID.Sets.ExtraFramesCount[Type] = 20;
+            Main.npcFrameCount[Type] = 28;
+            NPCID.Sets.ExtraFramesCount[Type] = 11;
             NPCID.Sets.AttackFrameCount[Type] = 0;
             NPCID.Sets.DangerDetectRange[Type] = 220;
 
@@ -46,7 +46,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.TownBunny;
+            AnimationType = NPCID.TownDog;
             //AnimationType = NPCID.Guide;
         }
 
@@ -56,20 +56,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.PotionNPC")
+                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.TrinketNPC")
             });
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 4;
+            //击败哥布林军队后
+            return NPC.downedGoblins;
         }
 
         public override List<string> SetNPCNameList()
         {
             return new List<string>()
             {
-                this.GetLocalizedValue("Name.PotionNPC")
+                this.GetLocalizedValue("Name.TrinketNPC")
             };
         }
 
@@ -82,29 +83,29 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button2");
+            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.TrinketNPC.button1");
+            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.TrinketNPC.button2");
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = "VanillaPotions";
+                shopName = "Accessories";
             }
             else
             {
-                shopName = "ModPotions";
+                shopName = "ArenaShop";
             }
         }
 
         public override void AddShops()
         {
-            var vPotions = new NPCShop(Type, "VanillaPotions");
-            var mPotions = new NPCShop(Type, "ModPotions");
+            var acc = new NPCShop(Type, "Accessories");
+            var arena = new NPCShop(Type, "ArenaShop");
 
-            vPotions.Register();
-            mPotions.Register();
+            acc.Register();
+            arena.Register();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
@@ -10,12 +11,12 @@ using Terraria.Utilities;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class PotionNPC : ModNPC
+    public class MaterialNPC : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 27;
-            NPCID.Sets.ExtraFramesCount[Type] = 20;
+            Main.npcFrameCount[Type] = 28;
+            NPCID.Sets.ExtraFramesCount[Type] = 18;
             NPCID.Sets.AttackFrameCount[Type] = 0;
             NPCID.Sets.DangerDetectRange[Type] = 220;
 
@@ -46,7 +47,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.TownBunny;
+            AnimationType = NPCID.TownCat;
             //AnimationType = NPCID.Guide;
         }
 
@@ -56,20 +57,20 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.PotionNPC")
+                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.MaterialNPC")
             });
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 4;
+            return numTownNPCs > 3;
         }
 
         public override List<string> SetNPCNameList()
         {
             return new List<string>()
             {
-                this.GetLocalizedValue("Name.PotionNPC")
+                this.GetLocalizedValue("Name.MaterialNPC")
             };
         }
 
@@ -82,29 +83,29 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button2");
+            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.MaterialNPC.button1");
+            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.MaterialNPC.button2");
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = "VanillaPotions";
+                shopName = "VanillaMaterials";
             }
             else
             {
-                shopName = "ModPotions";
+                shopName = "ModMaterials";
             }
         }
 
         public override void AddShops()
         {
-            var vPotions = new NPCShop(Type, "VanillaPotions");
-            var mPotions = new NPCShop(Type, "ModPotions");
+            var vMat = new NPCShop(Type, "VanillaMaterials");
+            var modMat = new NPCShop(Type, "ModMaterials");
 
-            vPotions.Register();
-            mPotions.Register();
+            vMat.Register();
+            modMat.Register();
         }
     }
 }

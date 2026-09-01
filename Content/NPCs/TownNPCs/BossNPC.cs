@@ -107,11 +107,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void AddShops()
         {
-            var treasureBags = new NPCShop(Type, "TreasureBags");
+            var tBags = new NPCShop(Type, "TreasureBags");
             var sumShop = new NPCShop(Type, "SumShop");
             //好多，光是原版和灾厄Fargo两个模组，以及三者的Boss召唤物，我就看麻了，又要单独抽时间整理了...
             #region 原版Boss宝藏袋
-            treasureBags.Add(CustomPrice(ItemID.KingSlimeBossBag, buyPrice(0, 5, 0, 0)), Condition.DownedKingSlime)
+            tBags.Add(CustomPrice(ItemID.KingSlimeBossBag, buyPrice(0, 5, 0, 0)), Condition.DownedKingSlime)
                 .Add(CustomPrice(ItemID.EyeOfCthulhuBossBag, buyPrice(0, 10, 0, 0)), Condition.DownedEyeOfCthulhu)
                 //.Add(CustomPrice(ItemID.BrainOfCthulhuBossBag, buyPrice(0, 15, 0, 0)), ModConditions.DownedBrainofCthulhu)
                 //.Add(CustomPrice(ItemID.EaterOfWorldsBossBag, buyPrice(0, 15, 0, 0)), ModConditions.DownedEaterofWorlds)
@@ -142,7 +142,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            treasureBags.Register();
+            tBags.Register();
             sumShop.Register();
         }
 

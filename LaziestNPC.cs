@@ -14,7 +14,16 @@ namespace LaziestNPC
         public override void Load()
         {
             CaughtNPC.RegisterItems();
-            Terraria.ModLoader.Logging.IgnoreExceptionSource("System.Net");
+
+            string[] ignoredSources = new string[]
+            {
+                "System.Net.Security",
+                "System.Net.Http",
+            };
+            foreach (string source in ignoredSources)
+            {
+                Terraria.ModLoader.Logging.IgnoreExceptionSource(source);
+            }
         }
 
         // “创建物品、加载默认属性、设置商店价格”打包成一个方法

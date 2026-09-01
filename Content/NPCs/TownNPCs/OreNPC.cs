@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
@@ -10,12 +11,12 @@ using Terraria.Utilities;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class PotionNPC : ModNPC
+    public class OreNPC : ModNPC
     {
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 27;
-            NPCID.Sets.ExtraFramesCount[Type] = 20;
+            Main.npcFrameCount[Type] = 28;
+            NPCID.Sets.ExtraFramesCount[Type] = 18;
             NPCID.Sets.AttackFrameCount[Type] = 0;
             NPCID.Sets.DangerDetectRange[Type] = 220;
 
@@ -46,7 +47,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.TownBunny;
+            AnimationType = NPCID.TownCat;
             //AnimationType = NPCID.Guide;
         }
 
@@ -56,20 +57,33 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.PotionNPC")
+                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.OreNPC")
             });
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 4;
+            for (int k = 0; k < Main.maxPlayers; k++)
+            {
+                Player player = Main.player[k];
+                if (!player.active)
+                {
+                    continue;
+                }
+                //玩家的背包中存在【铁矿】或【铅矿】时，NPC生成
+                if (player.inventory.Any(item => item.type == ItemID.IronOre || item.type == ItemID.LeadOre))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override List<string> SetNPCNameList()
         {
             return new List<string>()
             {
-                this.GetLocalizedValue("Name.PotionNPC")
+                this.GetLocalizedValue("Name.OreNPC")
             };
         }
 
@@ -82,29 +96,29 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button2");
+            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.OreNPC.button1");
+            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.OreNPC.button2");
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = "VanillaPotions";
+                shopName = "Ores";
             }
             else
             {
-                shopName = "ModPotions";
+                shopName = "Chests";
             }
         }
 
         public override void AddShops()
         {
-            var vPotions = new NPCShop(Type, "VanillaPotions");
-            var mPotions = new NPCShop(Type, "ModPotions");
+            var ores = new NPCShop(Type, "Ores");
+            var chests = new NPCShop(Type, "Chests");
 
-            vPotions.Register();
-            mPotions.Register();
+            ores.Register();
+            chests.Register();
         }
     }
 }

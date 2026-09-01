@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.ID;
@@ -10,7 +11,7 @@ using Terraria.Utilities;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class PotionNPC : ModNPC
+    public class NatureNPC : ModNPC
     {
         public override void SetStaticDefaults()
         {
@@ -56,20 +57,33 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.PotionNPC")
+                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.NatureNPC")
             });
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 4;
+            for (int k = 0; k < Main.maxPlayers; k++)
+            {
+                Player player = Main.player[k];
+                if (!player.active)
+                {
+                    continue;
+                }
+                //任何在线的玩家的背包中存在【鲈鱼】物品时，NPC生成
+                if (player.inventory.Any(item => item.type == ItemID.Bass))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public override List<string> SetNPCNameList()
         {
             return new List<string>()
             {
-                this.GetLocalizedValue("Name.PotionNPC")
+                this.GetLocalizedValue("Name.NatureNPC")
             };
         }
 
@@ -82,29 +96,29 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.PotionNPC.button2");
+            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.NatureNPC.button1");
+            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.NatureNPC.button2");
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = "VanillaPotions";
+                shopName = "PlantsCritters";
             }
             else
             {
-                shopName = "ModPotions";
+                shopName = "Fishery";
             }
         }
 
         public override void AddShops()
         {
-            var vPotions = new NPCShop(Type, "VanillaPotions");
-            var mPotions = new NPCShop(Type, "ModPotions");
+            var ps = new NPCShop(Type, "PlantsCritters");
+            var fishery = new NPCShop(Type, "Fishery");
 
-            vPotions.Register();
-            mPotions.Register();
+            ps.Register();
+            fishery.Register();
         }
     }
 }

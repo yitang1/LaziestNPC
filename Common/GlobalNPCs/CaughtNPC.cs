@@ -9,6 +9,8 @@ namespace LaziestNPC.Common.GlobalNPCs
 {
     public class CaughtNPC : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod) => TheNpcId != NPCID.None;
+        
         internal static Dictionary<int, int> CaughtTownNpcs = new();
 
         private string _name;
@@ -34,10 +36,10 @@ namespace LaziestNPC.Common.GlobalNPCs
             TheNpcId = theNpcId;
         }
 
-        public override bool IsLoadingEnabled(Mod mod) => TheNpcId != NPCID.None;
-
         protected override bool CloneNewInstances => true;
 
+        /*因为物品有_name和TheNpcId这样的“专属标签”，
+        所以在拆分堆叠时，必须用Clone方法复制一份完整的标签*/
         public override ModItem Clone(Item item)
         {
             CaughtNPC clone = base.Clone(item) as CaughtNPC;
@@ -48,6 +50,7 @@ namespace LaziestNPC.Common.GlobalNPCs
 
         public override bool IsCloneable => true;
 
+        //静态字典的内容，在游戏退出或重载时要主动清理掉
         public override void Unload()
         {
             CaughtTownNpcs.Clear();
@@ -57,12 +60,15 @@ namespace LaziestNPC.Common.GlobalNPCs
 
         public override void SetStaticDefaults()
         {
+            //为该物品类型注册一个动画
             Main.RegisterItemAnimation(Type, new DrawAnimationVertical(6, Main.npcFrameCount[TheNpcId]));
+            //告诉游戏该物品在背包中也应显示动画
             ItemID.Sets.AnimatesAsSoul[Type] = true;
         }
 
         public override void SetDefaults()
         {
+            //tmod内置方法，自动设置该物品为“捕捉生物”类型，有那些可堆叠、可消耗的属性
             Item.DefaultToCapturedCritter(TheNpcId);
             Item.rare = ItemRarityID.Blue;
         }
@@ -70,6 +76,7 @@ namespace LaziestNPC.Common.GlobalNPCs
         public static void Add(string theNpcName, int id)
         {
             CaughtNPC item = new(theNpcName, id);
+            //为游戏中添加一个具有自己的Name和ID的新物品
             ModContent.GetInstance<LaziestNPC>().AddContent(item);
             CaughtTownNpcs.Add(id, item.Type);
         }
@@ -81,16 +88,28 @@ namespace LaziestNPC.Common.GlobalNPCs
             //添加NPC
             Add("BossNPC", ModContent.NPCType<BossNPC>());
             Add("PotionNPC", ModContent.NPCType<PotionNPC>());
+            Add("BuildNPC", ModContent.NPCType<BuildNPC>());
+            Add("NatureNPC", ModContent.NPCType<NatureNPC>());
+            Add("OreNPC", ModContent.NPCType<OreNPC>());
+            Add("MaterialNPC", ModContent.NPCType<MaterialNPC>());
+            Add("TrinketNPC", ModContent.NPCType<TrinketNPC>());
         }
     }
 
     public class CatchGlobalNPC : GlobalNPC
     {
+        /*public override bool IsLoadingEnabled(Mod mod)
+        {
+            return ModContent.GetInstance<LaziestNPCConfig>().EnableCatching && TheNpcId != NPCID.None;
+        }*/
+
         public override void SetDefaults(NPC npc)
         {
             if (CaughtNPC.CaughtTownNpcs.ContainsKey(npc.type))
             {
+                //捕捉NPC后获得对应的物品，字典里的ID和捕捉的物品ID对应
                 npc.catchItem = CaughtNPC.CaughtTownNpcs[npc.type];
+                //全局生效，NPC在被释放时强制保持友善状态
                 Main.npcCatchable[npc.type] = true;
             }
         }

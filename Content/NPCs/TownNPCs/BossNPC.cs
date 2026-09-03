@@ -10,7 +10,11 @@ using Terraria.Utilities;
 using Terraria.Localization;
 using static Terraria.Item;
 using Terraria.GameContent;
+using static Terraria.ModLoader.ModContent;
 using static LaziestNPC.LaziestNPC;
+using LaziestNPC.Globals.GlobalItems;
+using LaziestNPC.Common.ModBossess;
+using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -20,15 +24,15 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 5;
-            NPCID.Sets.ExtraFramesCount[Type] = 0;
-            NPCID.Sets.AttackFrameCount[Type] = 0; 
+            //NPCID.Sets.ExtraFramesCount[Type] = 0;
+            //NPCID.Sets.AttackFrameCount[Type] = 0; 
             NPCID.Sets.DangerDetectRange[Type] = 220; 
 
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
             {
                 SpriteDirection = 1,
                 Direction = -1,
-                Velocity = 2f
+                Velocity = 0.1f
             };
             NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
             /*NPC.Happiness
@@ -43,8 +47,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             NPC.townNPC = true;
             NPC.friendly = true;
-            NPC.width = 26;
-            NPC.height = 26;
+            NPC.width = 20;
+            NPC.height = 20;
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.damage = 10;
             NPC.defense = 15;
@@ -52,6 +56,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
+            AIType = NPCID.Squirrel;
             //AnimationType = NPCID.Guide;
             // ↑这条【暂时】要删掉，因为这个【临时贴图】实际上不是NPC而是一个中立生物的
         }
@@ -82,7 +87,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override string GetChat()
         {
             WeightedRandom<string> dialogue = new WeightedRandom<string>();
-            dialogue.Add(this.GetLocalizedValue("chat.Normal1"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal2"));
+            dialogue.Add(this.GetLocalizedValue("Chat.Normal3"));
             return dialogue;
         }
 
@@ -106,44 +113,104 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void AddShops()
         {
-            var treasureBags = new NPCShop(Type, "TreasureBags");
+            var tBags = new NPCShop(Type, "TreasureBags");
             var sumShop = new NPCShop(Type, "SumShop");
-            //好多，光是原版和灾厄Fargo两个模组，以及三者的Boss召唤物，我就看麻了，又要单独抽时间写了
-            #region 原版Boss宝藏袋
-            treasureBags.Add(CustomPrice(ItemID.KingSlimeBossBag, buyPrice(0, 5, 0, 0)), Condition.DownedKingSlime)
-                .Add(CustomPrice(ItemID.EyeOfCthulhuBossBag, buyPrice(0, 10, 0, 0)), Condition.DownedEyeOfCthulhu)
-                //.Add(CustomPrice(ItemID.BrainOfCthulhuBossBag, buyPrice(0, 15, 0, 0)), ModConditions.DownedBrainofCthulhu)
-                //.Add(CustomPrice(ItemID.EaterOfWorldsBossBag, buyPrice(0, 15, 0, 0)), ModConditions.DownedEaterofWorlds)
-                .Add(CustomPrice(ItemID.QueenBeeBossBag, buyPrice(0, 20, 0, 0)), Condition.DownedQueenBee)
-                .Add(CustomPrice(ItemID.SkeletronBossBag, buyPrice(0, 25, 0, 0)), Condition.DownedSkeletron)
-                .Add(CustomPrice(ItemID.DeerclopsBossBag, buyPrice(0, 30, 0, 0)), Condition.DownedDeerclops)
-                .Add(CustomPrice(ItemID.WallOfFleshBossBag, buyPrice(0, 35, 0, 0)), Condition.Hardmode);
 
+            #region 原版Boss宝藏袋
+            //肉前
+            tBags.AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
+                .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEyeOfCthulhu)
+                .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
+                .AddItem(ItemID.EaterOfWorldsBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
+                .AddItem(ItemID.QueenBeeBossBag, (0, 25, 0, 0), Condition.DownedQueenBee)
+                .AddItem(ItemID.SkeletronBossBag, (0, 30, 0, 0), Condition.DownedSkeletron)
+                .AddItem(ItemID.DeerclopsBossBag, (0, 35, 0, 0), Condition.DownedDeerclops)
+                .AddItem(ItemID.WallOfFleshBossBag, (0, 40, 0, 0), Condition.Hardmode)
+            //肉后
+                .AddItem(ItemID.QueenSlimeBossBag, (0, 50, 0, 0), Condition.DownedQueenSlime)
+                .AddItem(ItemID.DestroyerBossBag, (0, 55, 0, 0), Condition.DownedDestroyer)
+                .AddItem(ItemID.TwinsBossBag, (0, 55, 0, 0), Condition.DownedTwins)
+                .AddItem(ItemID.SkeletronPrimeBossBag, (0, 55, 0, 0), Condition.DownedSkeletronPrime)
+                .AddItem(ItemID.PlanteraBossBag, (0, 60, 0, 0), Condition.DownedPlantera)
+                .AddItem(ItemID.FairyQueenBossBag, (0, 65, 0, 0), Condition.DownedEmpressOfLight)
+                .AddItem(ItemID.GolemBossBag, (0, 70, 0, 0), Condition.DownedGolem)
+                .AddItem(ItemID.FishronBossBag, (0, 75, 0, 0), Condition.DownedDukeFishron)
+                .AddItem(ItemID.BossBagBetsy, (0, 80, 0, 0), Condition.DownedOldOnesArmyT3)
+                .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord)
+            #endregion
+
+            #region 模组Boss宝藏袋
+            .AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertScourge)
+            .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon);
             #endregion
 
             #region 召唤物品
 
             #region 事件召唤物品
             sumShop
-                //.Add(CustomPrice(ItemType<RainMagic>(), buyPrice(0, 1, 0, 0)))
-                .Add(CustomPrice(ItemID.BloodMoonStarter, buyPrice(0, 2, 0, 0)))
-                .Add(CustomPrice(ItemID.GoblinBattleStandard, buyPrice(0, 2, 0, 0)))
-                //.Add(CustomPrice(ItemType<CausticTear>(), buyPrice(0, 1, 50, 0)), Condition.DownedEyeOfCthulhu)
-                //.Add(CustomPrice(ItemType<TorrentialTear>(), buyPrice(0, 1, 70, 0)), Condition.DownedSkeletron)
-                .Add(CustomPrice(ItemID.PirateMap, buyPrice(0, 3, 0, 0)), Condition.Hardmode)
-                .Add(CustomPrice(ItemID.SnowGlobe, buyPrice(0, 3, 0, 0)), Condition.Hardmode)
-                .Add(CustomPrice(ItemID.SolarTablet, buyPrice(0, 3, 50, 0)), Condition.DownedMechBossAny)
-                .Add(CustomPrice(ItemID.PumpkinMoonMedallion, buyPrice(0, 4, 0, 0)), Condition.DownedPlantera)
-                //.Add(CustomPrice(ItemType<MartianDistressRemote>(), buyPrice(0, 4, 0, 0)), Condition.DownedGolem)
-                .Add(CustomPrice(ItemID.NaughtyPresent, buyPrice(0, 4, 0, 0)), Condition.DownedPlantera);
+                //.AddItem(ItemType<RainMagic>(), (0, 1, 0, 0))
+                .AddItem(ItemID.BloodMoonStarter, (0, 2, 0, 0))
+                .AddItem(ItemID.GoblinBattleStandard, (0, 2, 0, 0))
+                //.AddItem(ItemType<CausticTear>(), (0, 1, 50, 0), Condition.DownedEyeOfCthulhu)
+                //.AddItem(ItemType<TorrentialTear>(), (0, 1, 70, 0), Condition.DownedSkeletron)
+                .AddItem(ItemID.PirateMap, (0, 3, 0, 0), Condition.Hardmode)
+                .AddItem(ItemID.SnowGlobe, (0, 3, 0, 0), Condition.Hardmode)
+                .AddItem(ItemID.SolarTablet, (0, 3, 50, 0), Condition.DownedMechBossAny)
+                .AddItem(ItemID.PumpkinMoonMedallion, (0, 4, 0, 0), Condition.DownedPlantera)
+                //.AddItem(ItemType<MartianDistressRemote>(), (0, 4, 0, 0), Condition.DownedGolem)
+                .AddItem(ItemID.NaughtyPresent, (0, 4, 0, 0), Condition.DownedPlantera);
 
             #endregion
 
             #endregion
-        
+
+            tBags.Register();
+            sumShop.Register();
         }
 
-        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+        //正式添加新贴图后要删掉
+        public override void FindFrame(int frameHeight)
+        {
+            if (NPC.velocity.Y == 0f)
+            {
+                if (!NPC.IsABestiaryIconDummy)
+                {
+                    if (NPC.direction == 1)
+                    {
+                        NPC.spriteDirection = -1;
+                    }
+                    if (NPC.direction == -1)
+                    {
+                        NPC.spriteDirection = 1;
+                    }
+
+                    if (NPC.velocity.X == 0f)
+                    {
+                        NPC.frame.Y = 0;
+                        NPC.frameCounter = 0.0;
+                        return;
+                    }
+                }
+                NPC.frameCounter += NPC.IsABestiaryIconDummy ? 0.6f : Math.Abs(NPC.velocity.X) * 0.25f;
+                NPC.frameCounter += 1.0;
+                if (NPC.frameCounter > 12.0)
+                {
+                    NPC.frame.Y = NPC.frame.Y + frameHeight;
+                    NPC.frameCounter = 0.0;
+                }
+                if (NPC.frame.Y / frameHeight >= Main.npcFrameCount[NPC.type] - 1)
+                {
+                    NPC.frame.Y = frameHeight;
+                }
+            }
+            else
+            {
+                NPC.frameCounter = 0.0;
+                NPC.frame.Y = frameHeight * 2;
+            }
+        }
+
+        /*public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
             damage = 70;
             knockback = 3f;
@@ -180,6 +247,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
         {
             multiplier = 12f;
-        }
+        }*/
     }
 }

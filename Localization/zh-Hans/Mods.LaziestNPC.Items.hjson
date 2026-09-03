@@ -1,0 +1,34 @@
+BossNPC: {
+	DisplayName: Boss物品商人
+	Tooltip: *猪猪的声音*
+}
+
+PotionNPC: {
+	DisplayName: 药水商人
+	Tooltip: *兔兔的声音*
+}
+
+BuildNPC: {
+	// DisplayName: Build N P C
+	// Tooltip: ""
+}
+
+NatureNPC: {
+	// DisplayName: Nature N P C
+	// Tooltip: ""
+}
+
+OreNPC: {
+	// DisplayName: Ore N P C
+	// Tooltip: ""
+}
+
+MaterialNPC: {
+	// DisplayName: Material N P C
+	// Tooltip: ""
+}
+
+TrinketNPC: {
+	// DisplayName: Trinket N P C
+	// Tooltip: ""
+}

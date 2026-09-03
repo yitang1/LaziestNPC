@@ -2,21 +2,158 @@
 BossNPC: {
 	DisplayName: Boss物品商人
 	Name.BossNPC: 猪猪
-	Chat: {
-		Normal1: *猪猪的声音*
-	}
+
+	Chat.Normal1: *猪猪的声音*
+	Chat.Normal2: 哼哼~
+	Chat.Normal3: 呼噜~
 
 	TownNPCMood: {
-		// Content: 我很满足。
-		// NoHome: 我讨厌没有家。
-		// FarFromHome: 我离家太远了。
-		// LoveSpace: 我非常喜欢有这么大的空间。
-		// DislikeCrowded: 我不喜欢这么拥挤。
-		// HateCrowded: 我讨厌这么拥挤。
-		// LikeNPC_Princess: 我喜欢 {NPCName}。
-		// Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
 	button1: Boss宝藏袋
 	button2: 召唤物品
+}
+
+PotionNPC: {
+	DisplayName: 药水商人
+	Name.PotionNPC: 安哥拉兔兔
+
+	Chat.Normal1: *兔兔的声音*
+	Chat.Normal2: *小兔子的声音*
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 原版药水
+	button2: 模组药水
+}
+
+BuildNPC: {
+	DisplayName: 建筑商人
+	Name.BuildNPC: 拉布拉多犬
+
+	Chat.Normal1: 汪汪！
+	Chat.Normal2: 汪！
+	Chat.Normal3: 汪汪汪！
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 天然物块
+	button2: 建筑物块
+}
+
+MaterialNPC: {
+	DisplayName: 材料商人
+	Name.MaterialNPC: 暹罗猫
+
+	Chat.Normal1: 喵喵~
+	Chat.Normal2: 咕噜...
+	Chat.Normal3: 喵嗷！
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 原版材料
+	button2: 模组材料
+}
+
+NatureNPC: {
+	DisplayName: 自然商人
+	Name.NatureNPC: 小白兔
+
+	Chat.Normal1: *兔兔的声音*
+	Chat.Normal2: *小兔子的声音*
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 动植物
+	button2: 渔获物品
+}
+
+OreNPC: {
+	DisplayName: 矿物商人
+	Name.OreNPC: 橘虎斑猫
+
+	Chat.Normal1: 喵喵~
+	Chat.Normal2: 咕噜...
+	Chat.Normal3: 喵嗷！
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 各种矿物
+	button2: 各种宝箱
+}
+
+TrinketNPC: {
+	DisplayName: 配饰商人
+	Name.TrinketNPC: 柯基
+
+	Chat.Normal1: 汪汪！
+	Chat.Normal2: 汪！
+	Chat.Normal3: 汪汪汪！
+
+	TownNPCMood: {
+		Content: 我很满足。
+		NoHome: 我讨厌没有家。
+		FarFromHome: 我离家太远了。
+		LoveSpace: 我非常喜欢有这么大的空间。
+		DislikeCrowded: 我不喜欢这么拥挤。
+		HateCrowded: 我讨厌这么拥挤。
+		LikeNPC_Princess: 我喜欢 {NPCName}。
+		Princess_LovesNPC: 我喜欢 {NPCName}。
+	}
+
+	button1: 饰品商店
+	button2: 功能性家具
 }

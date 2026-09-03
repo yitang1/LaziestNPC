@@ -14,19 +14,19 @@ namespace LaziestNPC.Common.ModConditions
     public static class AllModBossLists
     {
         //所有Boss元数据条目，格式：(唯一键, 模组名, Boss类名)
-        private static readonly (string Key, string ModName, string BossName)[] BossLists = new (string, string, string)[]
+        private static readonly (string Key, string ModName, string[] BossNames)[] BossLists = new (string, string, string[])[]
         {
             #region 灾厄
-            ("CalamityMod/DesertScourge", "CalamityMod", "DesertScourge"),
-            ("CalamityMod/Crabulon", "CalamityMod", "Crabulon"),
+            ("CalamityMod/DesertScourge", "CalamityMod", new string[] {"DesertScourgeHead", "DesertScourgeBody", "DesertScourgeTail"}),
+            ("CalamityMod/Crabulon", "CalamityMod", new string[] {"Crabulon" }),
             #endregion
 
             #region Fargo魂石
-            ("FargowiltasSouls/DeviBoss", "FargowiltasSouls", "DeviBoss"),
+            ("FargowiltasSouls/DeviBoss", "FargowiltasSouls", new string[] {"DeviBoss" }),
             #endregion
 
             #region 瑟银
-            ("ThoriumMod/TheGrandThunderBird", "ThoriumMod", "TheGrandThunderBird"),
+            ("ThoriumMod/TheGrandThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird" }),
             #endregion
 
 
@@ -42,7 +42,7 @@ namespace LaziestNPC.Common.ModConditions
             //遍历每个元组，调用ModBosses.Register完成注册。
             foreach (var list in BossLists)
             {
-                ModBosses.Register(list.Key, list.ModName, list.BossName);
+                ModBosses.Register(list.Key, list.ModName, list.BossNames);
             }
         }
     }

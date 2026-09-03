@@ -18,10 +18,14 @@ namespace LaziestNPC.Common.ModBossess
         /// 封装单个Boss的完整信息
         /// </summary>
         private class BossInfo
-        {
-            public Mod Mod; //模组实例(可能为null，表示模组未加载)
+        {   
+            //模组实例(可能为null，表示模组未加载)
+            public Mod Mod; 
             public string ModName;
-            public string BossName;
+            /*Boss类名是数组，因为存在特殊情况，比如蠕虫类Boss
+            甚至还有的Boss同样存在多个部位共用整体血量的情况
+            击败任意一个关节Boss都会死亡，因此也都算做击败Boss*/
+            public string[] BossNames;  
             public bool Downed;
         }
 
@@ -33,10 +37,21 @@ namespace LaziestNPC.Common.ModBossess
         /// <summary>
         /// 注册方法，添加一个Boss。
         /// </summary>
+        /// <param name="bossKey">唯一标识，例如"CalamityMod/Crabulon"</param>
+        /// <param name="modName">模组内部名称，例如"CalamityMod"</param>
+        /// <param name="bossName">Boss类名，例如"Crabulon"</param>
+        public static void Register(string bossKey, string modName, string bossName)
+        {
+            Register(bossKey, modName, new string[] { bossName });
+        }
+
+        /// <summary>
+        /// 注册添加一个Boss，支持多部位(例如蠕虫类头身尾)。
+        /// </summary>
         /// <param name="bossKey">唯一标识，例如"CalamityMod/DesertScourge"</param>
         /// <param name="modName">模组内部名称，例如"CalamityMod"</param>
-        /// <param name="BossName">Boss类名，例如"DesertScourge"</param>
-        public static void Register(string bossKey, string modName, string bossName)
+        /// <param name="bossNames">Boss所有部位类名数组，例如 "DesertScourgeHead","DesertScourgeBody"</param>
+        public static void Register(string bossKey, string modName, string[] bossNames)
         {
             //防止重复注册同一个Boss
             if (AllBossInfos.ContainsKey(bossKey))
@@ -50,7 +65,7 @@ namespace LaziestNPC.Common.ModBossess
             {
                 Mod = mod,
                 ModName = modName,
-                BossName = bossName,
+                BossNames = bossNames,
                 Downed = false
             };
         }
@@ -79,13 +94,18 @@ namespace LaziestNPC.Common.ModBossess
             {
                 BossInfo info = kvp.Value;
 
-                //如果模组未加载，跳过
+                //如果玩家对适配的某个模组未加载，跳过
                 if (info.Mod == null)
                     continue;
 
-                if (info.Mod.TryFind(info.BossName, out ModNPC modNpc) && npc.type == modNpc.Type)
+                //遍历Boss的所有部位类名
+                foreach (string bossName in info.BossNames)
                 {
-                    info.Downed = true;
+                    if (info.Mod.TryFind(bossName, out ModNPC modNpc) && npc.type == modNpc.Type)
+                    {
+                        info.Downed = true;
+                        break; //匹配任意一个部位即标记击败，就特喵的跳出循环
+                    }
                 }
             }
         }

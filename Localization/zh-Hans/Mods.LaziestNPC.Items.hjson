@@ -9,26 +9,26 @@ PotionNPC: {
 }
 
 BuildNPC: {
-	// DisplayName: Build N P C
-	// Tooltip: ""
-}
-
-NatureNPC: {
-	// DisplayName: Nature N P C
-	// Tooltip: ""
-}
-
-OreNPC: {
-	// DisplayName: Ore N P C
-	// Tooltip: ""
+	DisplayName: 建筑商人
+	Tooltip: 汪汪！
 }
 
 MaterialNPC: {
-	// DisplayName: Material N P C
-	// Tooltip: ""
+	DisplayName: 材料商人
+	Tooltip: 喵喵~
+}
+
+NatureNPC: {
+	DisplayName: 自然商人
+	Tooltip: *小兔子的声音*
+}
+
+OreNPC: {
+	DisplayName: 矿物商人
+	Tooltip: 咕噜...
 }
 
 TrinketNPC: {
-	// DisplayName: Trinket N P C
-	// Tooltip: ""
+	DisplayName: 配饰商人
+	Tooltip: 汪！
 }

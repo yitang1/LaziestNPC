@@ -3,9 +3,11 @@ BossNPC: {
 	DisplayName: Boss物品商人
 	Name.BossNPC: 猪猪
 
-	Chat.Normal1: *猪猪的声音*
-	Chat.Normal2: 哼哼~
-	Chat.Normal3: 呼噜~
+	Chat: {
+		Normal1: *猪猪的声音*
+		Normal2: 哼哼~
+		Normal3: 呼噜~
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -26,8 +28,10 @@ PotionNPC: {
 	DisplayName: 药水商人
 	Name.PotionNPC: 安哥拉兔兔
 
-	Chat.Normal1: *兔兔的声音*
-	Chat.Normal2: *小兔子的声音*
+	Chat: {
+		Normal1: *兔兔的声音*
+		Normal2: *小兔子的声音*
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -48,9 +52,11 @@ BuildNPC: {
 	DisplayName: 建筑商人
 	Name.BuildNPC: 拉布拉多犬
 
-	Chat.Normal1: 汪汪！
-	Chat.Normal2: 汪！
-	Chat.Normal3: 汪汪汪！
+	Chat: {
+		Normal1: 汪汪！
+		Normal2: 汪！
+		Normal3: 汪汪汪！
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -71,9 +77,11 @@ MaterialNPC: {
 	DisplayName: 材料商人
 	Name.MaterialNPC: 暹罗猫
 
-	Chat.Normal1: 喵喵~
-	Chat.Normal2: 咕噜...
-	Chat.Normal3: 喵嗷！
+	Chat: {
+		Normal1: 喵喵~
+		Normal2: 咕噜...
+		Normal3: 喵嗷！
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -94,8 +102,10 @@ NatureNPC: {
 	DisplayName: 自然商人
 	Name.NatureNPC: 小白兔
 
-	Chat.Normal1: *兔兔的声音*
-	Chat.Normal2: *小兔子的声音*
+	Chat: {
+		Normal1: *兔兔的声音*
+		Normal2: *小兔子的声音*
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -116,9 +126,11 @@ OreNPC: {
 	DisplayName: 矿物商人
 	Name.OreNPC: 橘虎斑猫
 
-	Chat.Normal1: 喵喵~
-	Chat.Normal2: 咕噜...
-	Chat.Normal3: 喵嗷！
+	Chat: {
+		Normal1: 喵喵~
+		Normal2: 咕噜...
+		Normal3: 喵嗷！
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。
@@ -139,9 +151,11 @@ TrinketNPC: {
 	DisplayName: 配饰商人
 	Name.TrinketNPC: 柯基
 
-	Chat.Normal1: 汪汪！
-	Chat.Normal2: 汪！
-	Chat.Normal3: 汪汪汪！
+	Chat: {
+		Normal1: 汪汪！
+		Normal2: 汪！
+		Normal3: 汪汪汪！
+	}
 
 	TownNPCMood: {
 		Content: 我很满足。

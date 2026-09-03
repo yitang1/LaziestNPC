@@ -1,1 +1,3 @@
-Modify this file with a description of your mod.
+此Mod拥有以下内容：
+[i:3459]添加了一些新的城镇NPC(意在以一个NPC替代其他模组的多个NPC，并根据相应条件售卖各种各样的物品)
+

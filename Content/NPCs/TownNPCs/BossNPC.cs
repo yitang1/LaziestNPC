@@ -13,6 +13,8 @@ using Terraria.GameContent;
 using static Terraria.ModLoader.ModContent;
 using static LaziestNPC.LaziestNPC;
 using LaziestNPC.Globals.GlobalItems;
+using LaziestNPC.Common.ModBossess;
+using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -136,8 +138,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.BossBagBetsy, (0, 80, 0, 0), Condition.DownedOldOnesArmyT3)
                 .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord)
             #endregion
+
             #region 模组Boss宝藏袋
-            .AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0));
+            .AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertScourge)
+            .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon);
             #endregion
 
             #region 召唤物品

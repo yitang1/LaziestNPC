@@ -20,8 +20,12 @@ BossNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: Boss宝藏袋
-	button2: 召唤物品
+	ShopName: {
+		PreHardMode: 困难模式前
+		HardMode: 困难模式
+		PostMoonLord: 月亮领主后
+		CycleShop: 切换商店
+	}
 }
 
 PotionNPC: {

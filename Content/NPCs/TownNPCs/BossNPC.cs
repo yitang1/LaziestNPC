@@ -21,6 +21,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
     [AutoloadHead]
     public class BossNPC : ModNPC
     {
+        private static int ShopNum = 1;  //1=肉前, 2=肉后, 3=月后
+
+        private const string ShopPreHM = "PreHardMode";
+        private const string ShopHM = "HardMode";
+        private const string ShopPostML = "PostMoonLord";
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 5;
@@ -95,39 +101,65 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.button2");
+            switch (ShopNum)
+            {
+                case 1:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.PreHardMode");
+                    break;
+                case 2:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.HardMode");
+                    break;
+                default:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.PostMoonLord");
+                    break;
+            }
+            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.CycleShop");
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = "TreasureBags";
+                switch (ShopNum)
+                {
+                    case 1:
+                        shopName = ShopPreHM;
+                        break;
+                    case 2:
+                        shopName = ShopHM;
+                        break;
+                    default:
+                        shopName = ShopPostML;
+                        break;
+                }
             }
             else
             {
-                shopName = "SumShop";
+                ShopNum++;
+                if (ShopNum > 3)
+                    ShopNum = 1;
             }
         }
 
         public override void AddShops()
         {
-            var tBags = new NPCShop(Type, "TreasureBags");
-            var sumShop = new NPCShop(Type, "SumShop");
+            var PreHMBags = new NPCShop(Type, ShopPreHM);
+            var HardMBags = new NPCShop(Type, ShopHM);
+            var PostMLBags = new NPCShop(Type, ShopPostML);
+            //var sumShop = new NPCShop(Type, "SumShop");
 
             #region 原版Boss宝藏袋
             //肉前
-            tBags.AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
+            PreHMBags.AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
                 .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEyeOfCthulhu)
                 .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
                 .AddItem(ItemID.EaterOfWorldsBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
                 .AddItem(ItemID.QueenBeeBossBag, (0, 25, 0, 0), Condition.DownedQueenBee)
                 .AddItem(ItemID.SkeletronBossBag, (0, 30, 0, 0), Condition.DownedSkeletron)
                 .AddItem(ItemID.DeerclopsBossBag, (0, 35, 0, 0), Condition.DownedDeerclops)
-                .AddItem(ItemID.WallOfFleshBossBag, (0, 40, 0, 0), Condition.Hardmode)
+                .AddItem(ItemID.WallOfFleshBossBag, (0, 40, 0, 0), Condition.Hardmode);
             //肉后
-                .AddItem(ItemID.QueenSlimeBossBag, (0, 50, 0, 0), Condition.DownedQueenSlime)
+            HardMBags.AddItem(ItemID.QueenSlimeBossBag, (0, 50, 0, 0), Condition.DownedQueenSlime)
                 .AddItem(ItemID.DestroyerBossBag, (0, 55, 0, 0), Condition.DownedDestroyer)
                 .AddItem(ItemID.TwinsBossBag, (0, 55, 0, 0), Condition.DownedTwins)
                 .AddItem(ItemID.SkeletronPrimeBossBag, (0, 55, 0, 0), Condition.DownedSkeletronPrime)
@@ -136,17 +168,18 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.GolemBossBag, (0, 70, 0, 0), Condition.DownedGolem)
                 .AddItem(ItemID.FishronBossBag, (0, 75, 0, 0), Condition.DownedDukeFishron)
                 .AddItem(ItemID.BossBagBetsy, (0, 80, 0, 0), Condition.DownedOldOnesArmyT3)
-                .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord)
+                .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord);
             #endregion
 
             #region 模组Boss宝藏袋
-            .AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertScourge)
+            //肉前
+            PreHMBags.AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertScourge)
             .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon);
             #endregion
 
             #region 召唤物品
 
-            #region 事件召唤物品
+            /*#region 事件召唤物品
             sumShop
                 //.AddItem(ItemType<RainMagic>(), (0, 1, 0, 0))
                 .AddItem(ItemID.BloodMoonStarter, (0, 2, 0, 0))
@@ -160,15 +193,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 //.AddItem(ItemType<MartianDistressRemote>(), (0, 4, 0, 0), Condition.DownedGolem)
                 .AddItem(ItemID.NaughtyPresent, (0, 4, 0, 0), Condition.DownedPlantera);
 
-            #endregion
+            #endregion*/
 
             #endregion
 
-            tBags.Register();
-            sumShop.Register();
+            PreHMBags.Register();
+            HardMBags.Register();
+            PostMLBags.Register();
+            //sumShop.Register();
         }
 
-        //正式添加新贴图后要删掉
+        //正式添加新贴图后要删掉这个方法
         public override void FindFrame(int frameHeight)
         {
             if (NPC.velocity.Y == 0f)

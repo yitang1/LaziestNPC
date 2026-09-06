@@ -26,7 +26,7 @@ namespace LaziestNPC.Common.ModConditions
             #endregion
 
             #region 瑟银
-            ("ThoriumMod/TheGrandThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird" }),
+            ("ThoriumMod/TheGrandThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird" })
             #endregion
 
 

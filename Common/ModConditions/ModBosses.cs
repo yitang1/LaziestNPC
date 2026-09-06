@@ -22,7 +22,7 @@ namespace LaziestNPC.Common.ModBossess
             //模组实例(可能为null，表示模组未加载)
             public Mod Mod; 
             public string ModName;
-            /*Boss类名是数组，因为存在特殊情况，比如蠕虫类Boss
+            /*↓Boss类名是数组，因为存在特殊情况，比如蠕虫类Boss
             甚至还有的Boss同样存在多个部位共用整体血量的情况
             击败任意一个关节Boss都会死亡，因此也都算做击败Boss*/
             public string[] BossNames;  
@@ -71,19 +71,6 @@ namespace LaziestNPC.Common.ModBossess
         }
 
         /// <summary>
-        /// 获取一个Boss的击败状态：Condition。<br/>
-        /// 如果Boss未注册或模组未加载，返回恒为false的条件。
-        /// </summary>
-        public static Condition GetCondition(string bossKey)
-        {
-            if (AllBossInfos.TryGetValue(bossKey, out BossInfo info))
-            {
-                return new Condition($"ModBosses.{bossKey}", () => info.Downed);
-            }
-            return new Condition($"ModBosses.{bossKey}_Missing", () => false);
-        }
-
-        /// <summary>
         /// 在GlobalNPC.OnKill中调用，<br/>
         /// 检测击杀的NPC是否匹配已注册的Boss。
         /// </summary>
@@ -108,6 +95,19 @@ namespace LaziestNPC.Common.ModBossess
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// 获取一个Boss的击败状态：Condition。<br/>
+        /// 如果Boss未注册或模组未加载，返回恒为false的条件。
+        /// </summary>
+        public static Condition GetCondition(string bossKey)
+        {
+            if (AllBossInfos.TryGetValue(bossKey, out BossInfo info))
+            {
+                return new Condition($"ModBosses.{bossKey}", () => info.Downed);
+            }
+            return new Condition($"ModBosses.{bossKey}_Missing", () => false);
         }
 
         /// <summary>

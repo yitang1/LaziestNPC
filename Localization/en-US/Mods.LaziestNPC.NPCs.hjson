@@ -21,10 +21,13 @@ BossNPC: {
 	}
 
 	ShopName: {
-		PreHardMode: 困难模式前
-		HardMode: 困难模式
-		PostMoonLord: 月亮领主后
+		VanillaAll: 原版全部
+		ModBags: 模组宝藏袋
+		ModSums: 模组召唤物
 		CycleShop: 切换商店
+		Default: 商店
+		Title: 选择分类
+		Close: 关闭
 	}
 }
 

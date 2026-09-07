@@ -32,3 +32,12 @@ TrinketNPC: {
 	DisplayName: 配饰商人
 	Tooltip: 汪！
 }
+
+RainMagic: {
+	DisplayName: 晴雨之伞
+	Tooltip:
+		'''
+		启用或禁用下雨
+		不消耗
+		'''
+}

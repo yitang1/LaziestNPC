@@ -21,13 +21,10 @@ BossNPC: {
 	}
 
 	ShopName: {
-		VanillaAll: 原版全部
+		VanillaAll: 原版商店
 		ModBags: 模组宝藏袋
 		ModSums: 模组召唤物
 		CycleShop: 切换商店
-		Default: 商店
-		Title: 选择分类
-		Close: 关闭
 	}
 }
 

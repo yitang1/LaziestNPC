@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,28 +9,24 @@ using Terraria.Localization;
 using static Terraria.Item;
 using Terraria.GameContent;
 using static Terraria.ModLoader.ModContent;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using static LaziestNPC.LaziestNPC;
 using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
+using LaziestNPC.Content.Items.SummonItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
-using LaziestNPC.Common.UI;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
     public class BossNPC : ModNPC
     {
-        private string GetShopDisplayNameKey()
-        {
-            string current = ShopManager.GetTargetShop(nameof(BossNPC));
-            return current switch
-            {
-                "VanillaAll" => "Mods.LaziestNPC.NPCs.BossNPC.ShopName.VanillaAll",
-                "ModBags" => "Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModBags",
-                "ModSums" => "Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModSums",
-                _ => "Mods.LaziestNPC.NPCs.BossNPC.ShopName.Default"
-            };
-        }
+        private static int ShopNum = 1;
+
+        private const string VanillaAll = "VanillaAll";
+        private const string ModBags = "ModBags";
+        private const string ModSums = "ModSums";
 
         public override void SetStaticDefaults()
         {
@@ -54,18 +48,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 				.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Dislike)
 				.SetNPCAffection(NPCID.Cyborg, AffectionLevel.Love)
 				.SetNPCAffection(NPCID.Steampunker, AffectionLevel.Like);*/
-            
-            //注册自己的商店分类列表
-            var categories = new List<ShopCategory>
-            {
-                new ShopCategory { DisplayKey = "Mods.LaziestNPC.NPCs.BossNPC.ShopName.VanillaAll", ShopName = "VanillaAll" },
-                new ShopCategory { DisplayKey = "Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModBags", ShopName = "ModBags" },
-                new ShopCategory { DisplayKey = "Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModSums", ShopName = "ModSums" }
-            };
-            ShopManager.RegisterCategories(nameof(BossNPC), categories);
-
-            //设置默认商店(初次进入游戏时，未进行任何商店选择)
-            ShopManager.SetTargetShop(nameof(BossNPC), "VanillaAll");
         }
 
         public override void SetDefaults()
@@ -119,8 +101,20 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         }
 
         public override void SetChatButtons(ref string button, ref string button2)
-        {            
-            button = Language.GetTextValue(GetShopDisplayNameKey());
+        {
+            switch (ShopNum)
+            {
+                case 1:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.VanillaAll");
+                    break;
+                case 2:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModBags");
+                    break;
+                default:
+                    button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.ModSums");
+                    break;
+            }
+
             button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.BossNPC.ShopName.CycleShop");
         }
 
@@ -128,20 +122,34 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             if (firstButton)
             {
-                shopName = ShopManager.GetTargetShop(nameof(BossNPC));
+                switch (ShopNum)
+                {
+                    case 1:
+                        shopName = VanillaAll;
+                        break;
+                    case 2:
+                        shopName = ModBags;
+                        break;
+                    default:
+                        shopName = ModSums;
+                        break;
+                }
             }
             else
             {
-                ModContent.GetInstance<UIManagerSystem>().ShowUI(nameof(BossNPC));
-                shopName = null;
+                ShopNum++;
+                if (ShopNum > 3)
+                    ShopNum = 1;
             }
         }
 
         public override void AddShops()
         {
-            var vanShop = new NPCShop(Type, "VanillaAll");
-            var modBag = new NPCShop(Type, "ModBags");
-            var modSum = new NPCShop(Type, "ModSums");
+            var vanShop = new NPCShop(Type, VanillaAll);
+            var modBag = new NPCShop(Type, ModBags);
+            var modSum = new NPCShop(Type, ModSums);
+
+            #region 【原版商店】
 
             #region 原版Boss宝藏袋
             //肉前
@@ -166,31 +174,36 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord);
             #endregion
 
-            #region 模组Boss宝藏袋
+            #region 原版事件召唤物品
+            vanShop.AddItem(ItemType<RainMagic>(), (0, 1, 0, 0))
+                .AddItem(ItemID.BloodMoonStarter, (0, 2, 0, 0))
+                .AddItem(ItemID.GoblinBattleStandard, (0, 2, 0, 0))
+                .AddItem(ItemID.PirateMap, (0, 3, 0, 0), Condition.Hardmode)
+                .AddItem(ItemID.SnowGlobe, (0, 3, 0, 0), Condition.Hardmode)
+                .AddItem(ItemID.SolarTablet, (0, 3, 50, 0), Condition.DownedMechBossAny)
+                .AddItem(ItemID.PumpkinMoonMedallion, (0, 4, 0, 0), Condition.DownedPlantera)
+                .AddItem(ItemID.NaughtyPresent, (0, 4, 0, 0), Condition.DownedPlantera);
+            #endregion
+
+            #endregion
+
+            #region 【模组Boss宝藏袋】
             //肉前
             modBag.AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertScourge)
             .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon);
             #endregion
 
-            #region 召唤物品
+            #region 【模组召唤物品】
 
-            #region 事件召唤物品
-            modSum
-                //.AddItem(ItemType<RainMagic>(), (0, 1, 0, 0))
-                .AddItem(ItemID.BloodMoonStarter, (0, 2, 0, 0))
-                .AddItem(ItemID.GoblinBattleStandard, (0, 2, 0, 0))
-                //.AddItem(ItemType<CausticTear>(), (0, 1, 50, 0), Condition.DownedEyeOfCthulhu)
-                //.AddItem(ItemType<TorrentialTear>(), (0, 1, 70, 0), Condition.DownedSkeletron)
-                .AddItem(ItemID.PirateMap, (0, 3, 0, 0), Condition.Hardmode)
-                .AddItem(ItemID.SnowGlobe, (0, 3, 0, 0), Condition.Hardmode)
-                .AddItem(ItemID.SolarTablet, (0, 3, 50, 0), Condition.DownedMechBossAny)
-                .AddItem(ItemID.PumpkinMoonMedallion, (0, 4, 0, 0), Condition.DownedPlantera)
-                //.AddItem(ItemType<MartianDistressRemote>(), (0, 4, 0, 0), Condition.DownedGolem)
-                .AddItem(ItemID.NaughtyPresent, (0, 4, 0, 0), Condition.DownedPlantera);
+            #region 模组事件召唤物品
+            modSum.AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu)
+            //.AddModItem("CalamityMod/TorrentialTear", (0, 1, 70, 0), Condition.DownedSkeletron)
+            .AddModItem("CalamityMod/MartianDistressRemote", (0, 4, 0, 0), Condition.DownedGolem);
 
             #endregion
 
             #endregion
+
 
             vanShop.Register();
             modBag.Register();

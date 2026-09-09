@@ -175,7 +175,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 原版事件召唤物品
-            vanShop.AddItem(ItemType<RainMagic>(), (0, 1, 0, 0))
+            vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
                 .AddItem(ItemID.BloodMoonStarter, (0, 2, 0, 0))
                 .AddItem(ItemID.GoblinBattleStandard, (0, 2, 0, 0))
                 .AddItem(ItemID.PirateMap, (0, 3, 0, 0), Condition.Hardmode)

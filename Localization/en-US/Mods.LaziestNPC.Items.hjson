@@ -1,43 +1,50 @@
 BossNPC: {
 	DisplayName: Boss物品商人
-	Tooltip: *猪猪的声音*
+	Tooltip: “*猪猪的声音*”
 }
 
 PotionNPC: {
 	DisplayName: 药水商人
-	Tooltip: *兔兔的声音*
+	Tooltip: “*兔兔的声音*”
 }
 
 BuildNPC: {
 	DisplayName: 建筑商人
-	Tooltip: 汪汪！
+	Tooltip: “汪汪！”
 }
 
 MaterialNPC: {
 	DisplayName: 材料商人
-	Tooltip: 喵喵~
+	Tooltip: “喵喵~”
 }
 
 NatureNPC: {
 	DisplayName: 自然商人
-	Tooltip: *小兔子的声音*
+	Tooltip: “*小兔子的声音*”
 }
 
 OreNPC: {
 	DisplayName: 矿物商人
-	Tooltip: 咕噜...
+	Tooltip: “咕噜...”
 }
 
 TrinketNPC: {
 	DisplayName: 配饰商人
-	Tooltip: 汪！
+	Tooltip: “汪！”
 }
 
-RainMagic: {
-	DisplayName: 晴雨之伞
+TheReturner: {
+	DisplayName: 归乡者怀表
 	Tooltip:
 		'''
-		启用或禁用下雨
-		不消耗
+		右键开启面板，基础功能：
+		切换白天和黑夜
+		启用或禁用下雨或沙尘暴
+		终止游戏中的各种事件
+		[c/8ADDFF:内含模糊信息：“易阴阳”、“倒因果”...]
+		[c/FBFBE0:“此物疑似来自异界或更高维度，]
+		[c/FBFBE0:拥有翻云雨、唤日月之伟力，]
+		[c/FBFBE0:所以这东西…怎么会在这个地方？”]
+		[c/FF467B:【神惧之物】]
 		'''
 }

@@ -1,0 +1,21 @@
+Items: {
+	TheReturner: {
+		Title: 控制面板
+		Day: 早上
+		Noon: 中午
+		Night: 夜晚
+		Rain: 开始下雨
+		RainNo: 停止下雨
+		CancelEvents: 终止事件
+		Close: 关闭
+		SandstormOn: 沙尘暴已开始。
+		SandstormOff: 沙尘暴已停止。
+		RainOn: 开始下雨。
+		RainOff: 停止下雨。
+		DayOn: 时间已调整为早上。
+		NoonOn: 时间已调整为中午。
+		NightOn: 时间已调整为夜晚。
+		CancelEventsOn: 所有事件已终止，世界已恢复平静。
+		EventsNone: 当前没有需要终止的活跃事件。
+	}
+}

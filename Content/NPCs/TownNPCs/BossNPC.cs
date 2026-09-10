@@ -153,7 +153,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 原版Boss宝藏袋
             //肉前
-            vanShop.AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
+            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 50, 0))
+                .AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
                 .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEyeOfCthulhu)
                 .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
                 .AddItem(ItemID.EaterOfWorldsBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
@@ -175,8 +176,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 原版事件召唤物品
-            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 50, 0))
-                .AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
+            vanShop.AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
                 .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
                 .AddItem(ItemID.PirateMap, (0, 10, 0, 0), Condition.Hardmode) //海盗入侵
                 .AddItem(ItemID.SnowGlobe, (0, 10, 0, 0), Condition.Hardmode) //雪人军团
@@ -209,14 +209,16 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 【模组Boss宝藏袋】
+
+            #region 灾厄及其附属
             //肉前
             modBag.AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertBug) //荒漠灾虫
             .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon) //菌生蟹
             .AddModItem("CalamityMod/PerforatorBag", (0, 20, 0, 0), DownedPerforator) //血肉宿主
             .AddModItem("CalamityMod/HiveMindBag", (0, 20, 0, 0), DownedHiveMind) //腐巢意志
-            .AddModItem("CalamityMod/SlimeGodBag", (0, 35, 0, 0), DownedSlimeGod); //史莱姆之神
+            .AddModItem("CalamityMod/SlimeGodBag", (0, 35, 0, 0), DownedSlimeGod) //史莱姆之神
             //肉后
-            /*.AddModItem("CalamityMod/CryogenBag", (0, 50, 0, 0), DownedCryogen) //极地之灵
+            .AddModItem("CalamityMod/CryogenBag", (0, 50, 0, 0), DownedCryogen) //极地之灵
             .AddModItem("CalamityMod/AquaticScourgeBag", (0, 50, 0, 0), DownedAquaticBug) //渊海灾虫
             .AddModItem("CalamityMod/BrimstoneElementalBag", (0, 50, 0, 0), DownedBrimstone) //硫磺火元素
             .AddModItem("CalamityMod/AstrumAureusBag", (0, 55, 0, 0), DownedAstrum) //白金星舰
@@ -224,8 +226,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/LeviathanBag", (0, 65, 0, 0), DownedLeviathan) //阿娜希塔和利维坦
             .AddModItem("CalamityMod/PlaguebringerGoliathBag", (0, 75, 0, 0), DownedPlague) //瘟疫使者歌莉娅
             .AddModItem("CalamityMod/RavagerBag", (0, 75, 0, 0), DownedRavager) //毁灭魔像
-            .AddModItem("CalamityMod/AstrumDeusBag", (0, 90, 0, 0), DownedAstrum) //星神游龙
-            //——————————————————————————末世星史莱姆
+            .AddModItem("CalamityMod/AstrumDeusBag", (0, 90, 0, 0), DownedAstrumBug) //星神游龙
+
+            .AddModItem("CatalystMod/AstrageldonBag", (4, 0, 0, 0), DownedAstrageldon) //末世星史莱姆
             //月后
             .AddModItem("CalamityMod/DragonfollyBag", (1, 50, 0, 0), DownedDragonfolly) //痴愚金龙
             .AddModItem("CalamityMod/ProvidenceBag", (2, 0, 0, 0), DownedProvidence) //亵渎天神
@@ -237,16 +240,31 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/DevourerofGodsBag", (4, 0, 0, 0), DownedDOG) //神明吞噬者
             .AddModItem("CalamityMod/YharonBag", (5, 0, 0, 0), DownedYharon) //犽戎
             .AddModItem("CalamityMod/DraedonBag", (8, 0, 0, 0), DownedDraedon) //星流巨械
-            .AddModItem("CalamityMod/CalamitasCoffer", (10, 0, 0, 0), DownedSCalamitas); //终灾*/
+            .AddModItem("CalamityMod/CalamitasCoffer", (10, 0, 0, 0), DownedSCalamitas); //终灾
+
+            #endregion
+
+            #region Fargo魂石
+            modBag.AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertBug) //荒漠灾虫
+            .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon) //菌生蟹
+
+            .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon); //菌生蟹
+            #endregion
 
             #endregion
 
             #region 【模组召唤物品】
 
             #region 模组事件召唤物品
-            modSum.AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu)
-            //.AddModItem("CalamityMod/TorrentialTear", (0, 1, 70, 0), Condition.DownedSkeletron)
-            .AddModItem("CalamityMod/MartianDistressRemote", (0, 4, 0, 0), Condition.DownedGolem);
+
+            #region 灾厄及其附属
+            modSum.AddModItem("CalamityMod/TorrentialTear", (0, 1, 50, 0), Condition.DownedSkeletron) //雨
+            .AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu) //酸雨
+            .AddModItem("CalamityMod/AridArtifact", (0, 1, 50, 0), Condition.Hardmode) //沙尘暴
+            .AddModItem("CalamityMod/MartianDistressRemote", (0, 4, 0, 0), Condition.DownedGolem); //火星暴乱
+            
+            #endregion
+
 
             #endregion
 

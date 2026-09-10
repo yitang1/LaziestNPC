@@ -104,6 +104,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             var vPotions = new NPCShop(Type, "VanillaPotions");
             var mPotions = new NPCShop(Type, "ModPotions");
 
+            #region
+
+            #endregion
+
+
             vPotions.Register();
             mPotions.Register();
         }

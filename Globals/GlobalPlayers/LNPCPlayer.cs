@@ -52,7 +52,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
             if (!hasFavorited) return false;
 
             //判断可用次数
-            /*bool canRevive = true;
+            bool canRevive = true;
             if (!Main.hardMode && EnablePre)
             {
                 canRevive = true;
@@ -66,7 +66,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
             if (!canRevive) return false;
 
             //50%概率
-            if (Main.rand.NextFloat() >= 0.5f) return false;*/
+            if (Main.rand.NextFloat() >= 0.5f) return false;
 
             //执行复活
             Player.statLife += Player.statLifeMax2;

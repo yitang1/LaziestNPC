@@ -37,7 +37,6 @@ namespace LaziestNPC.Globals.GlobalItems
                 Item item = new Item(modItem.Type);
                 //设置自定义价格，转化后的铜币信息传入shopCustomPrice
                 item.shopCustomPrice = copperPrice;
-
                 //添加到商店，传入条件
                 shop.Add(item, conditions);
             }

@@ -13,20 +13,23 @@ namespace LaziestNPC.Common.ModConditions
     /// </summary>
     public static class AllModBossLists
     {
-        //所有Boss元数据条目，格式：(唯一键, 模组名, Boss类名)
+        //添加所有Boss类的信息，格式：(唯一键, 模组名, Boss类名)(Boss类名是判定玩家击杀的地方，有血条的东西)
         private static readonly (string Key, string ModName, string[] BossNames)[] BossLists = new (string, string, string[])[]
         {
             #region 灾厄
-            ("CalamityMod/DesertScourge", "CalamityMod", new string[] {"DesertScourgeHead", "DesertScourgeBody", "DesertScourgeTail"}),
-            ("CalamityMod/Crabulon", "CalamityMod", new string[] {"Crabulon" }),
+            ("DesertScourge", "CalamityMod", new string[] {"DesertScourgeHead", "DesertScourgeBody", "DesertScourgeTail"}), //荒漠灾虫
+            ("Crabulon", "CalamityMod", new string[] {"Crabulon" }), //菌生蟹
+            ("Perforator", "CalamityMod", new string[] {"PerforatorHive" }), //血肉宿主
+            ("HiveMind", "CalamityMod", new string[] {"HiveMind" }), //腐巢意志
+            ("SlimeGod", "CalamityMod", new string[] {"SlimeGodCore" }), //史莱姆之神
             #endregion
 
             #region Fargo魂石
-            ("FargowiltasSouls/DeviBoss", "FargowiltasSouls", new string[] {"DeviBoss" }),
+            ("DeviBoss", "FargowiltasSouls", new string[] {"DeviBoss" }),
             #endregion
 
             #region 瑟银
-            ("ThoriumMod/TheGrandThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird" })
+            ("ThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird" })
             #endregion
 
 

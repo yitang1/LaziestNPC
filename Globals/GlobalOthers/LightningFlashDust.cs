@@ -8,12 +8,11 @@ namespace LaziestNPC.Globals.GlobalOthers
 {
     public class LightningFlashDust : ModDust
     {
-        public override string Texture => null; // 使用原版纹理
+        public override string Texture => null;
 
         public override void OnSpawn(Dust dust)
         {
-            // 使用原版 Electric  Dust 的纹理
-            int desiredVanillaDustTexture = 229; // DustID.Electric
+            int desiredVanillaDustTexture = 229;
             int frameX = desiredVanillaDustTexture * 10 % 1000;
             int frameY = desiredVanillaDustTexture * 10 / 1000 * 30 + Main.rand.Next(3) * 10;
             dust.frame = new Rectangle(frameX, frameY, 8, 8);
@@ -27,11 +26,11 @@ namespace LaziestNPC.Globals.GlobalOthers
 
         public override bool Update(Dust dust)
         {
-            // 逐渐缩小并淡出
+            //逐渐缩小并淡出
             dust.scale *= 0.985f;
             dust.alpha += 1;
 
-            // 位置微飘（让闪电有“闪烁”感）
+            //位置微飘(让闪电有“闪烁”感)
             dust.position += new Vector2(
                 Main.rand.NextFloat(-1f, 1f),
                 Main.rand.NextFloat(-1f, 1f)
@@ -40,18 +39,18 @@ namespace LaziestNPC.Globals.GlobalOthers
             if (dust.scale < 0.1f || dust.alpha > 250)
                 dust.active = false;
 
-            return false; // 不执行原版更新逻辑
+            return false;
         }
 
         public override Color? GetAlpha(Dust dust, Color lightColor)
         {
-            // 白色带淡蓝，随 alpha 淡出
+            //白色带淡蓝，随alpha淡出
             return new Color(200, 220, 255, 255 - dust.alpha);
         }
 
         public static void SpawnBolt(Vector2 position)
         {
-            //落点爆炸：大量闪电 Dust 向四周扩散
+            //落点爆炸：大量闪电Dust向四周扩散
             for (int i = 0; i < 80; i++)
             {
                 Vector2 velocity = new Vector2(

@@ -14,6 +14,7 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedCrabulon => ModBosses.GetCondition("Crabulon"); //菌生蟹
         public static Condition DownedPerforator => ModBosses.GetCondition("Perforator"); //血肉宿主
         public static Condition DownedHiveMind => ModBosses.GetCondition("HiveMind"); //腐巢意志
+        public static Condition PerOrHive => ModBosses.GetCondition("PerOrHive"); //血肉宿主 或 腐巢意志
         public static Condition DownedSlimeGod => ModBosses.GetCondition("SlimeGod"); //史莱姆之神
 
         public static Condition DownedCryogen => ModBosses.GetCondition("Cryogen"); //极地之灵
@@ -25,7 +26,9 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedPlague => ModBosses.GetCondition("Plague"); //瘟疫使者歌莉娅
         public static Condition DownedRavager => ModBosses.GetCondition("Ravager"); //毁灭魔像
         public static Condition DownedAstrumBug => ModBosses.GetCondition("AstrumDeus"); //星神游龙
+
         public static Condition DownedDragonfolly => ModBosses.GetCondition("Dragonfolly"); //痴愚金龙
+        public static Condition DownedGuardians => ModBosses.GetCondition("Guardians"); //亵渎守卫
         public static Condition DownedProvidence => ModBosses.GetCondition("Providence"); //亵渎天神
         public static Condition DownedStormWeaver => ModBosses.GetCondition("StormWeaver"); //风暴编织者
         public static Condition DownedVoid => ModBosses.GetCondition("CeaselessVoid"); //无尽虚空

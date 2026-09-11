@@ -21,6 +21,7 @@ namespace LaziestNPC.Common.ModConditions
             ("Crabulon", "CalamityMod", new string[] {"Crabulon" }), //菌生蟹
             ("Perforator", "CalamityMod", new string[] {"PerforatorHive" }), //血肉宿主
             ("HiveMind", "CalamityMod", new string[] {"HiveMind" }), //腐巢意志
+            ("PerOrHive", "CalamityMod", new string[] { "PerforatorHive", "HiveMind" }), //血肉宿主 或 腐巢意志
             ("SlimeGod", "CalamityMod", new string[] {"SlimeGodCore" }), //史莱姆之神
             
             ("Cryogen", "CalamityMod", new string[] { "Cryogen" }), //极地之灵
@@ -32,7 +33,9 @@ namespace LaziestNPC.Common.ModConditions
             ("Plague", "CalamityMod", new string[] { "PlaguebringerGoliath" }), //瘟疫使者歌莉娅
             ("Ravager", "CalamityMod", new string[] { "RavagerBody" }), //毁灭魔像
             ("AstrumDeus", "CalamityMod", new string[] { "AstrumDeusHead", "AstrumDeusBody", "AstrumDeusTail" }), //星神游龙
+
             ("Dragonfolly", "CalamityMod", new string[] { "Dragonfolly" }), //痴愚金龙
+            ("Guardians", "CalamityMod", new string[] { "ProfanedGuardianCommander" }), //亵渎守卫
             ("Providence", "CalamityMod", new string[] { "Providence" }), //亵渎天神
             ("StormWeaver", "CalamityMod", new string[] { "StormWeaverHead", "StormWeaverBody", "StormWeaverTail" }), //风暴编织者
             ("CeaselessVoid", "CalamityMod", new string[] { "CeaselessVoid", "DarkEnergy" }), //无尽虚空

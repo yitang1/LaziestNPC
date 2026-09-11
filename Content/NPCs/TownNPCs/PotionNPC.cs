@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using LaziestNPC.Globals.GlobalItems;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -101,16 +102,87 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void AddShops()
         {
-            var vPotions = new NPCShop(Type, "VanillaPotions");
-            var mPotions = new NPCShop(Type, "ModPotions");
+            var vPotion = new NPCShop(Type, "VanillaPotions");
+            var mPotion = new NPCShop(Type, "ModPotions");
 
-            #region
+            #region 【原版药水】
+
+            #region 恢复类药水
+
+            #region 治疗药水
+            //肉前
+            vPotion.AddItem(ItemID.BottledWater, (0, 0, 0, 5)) //瓶装水 30
+                .AddItem(ItemID.LesserHealingPotion, (0, 0, 1, 0)) //弱效治疗药水 50
+                .AddItem(ItemID.StrangeBrew, (0, 0, 15, 0)) //诡药 70-120
+                .AddItem(ItemID.BottledHoney, (0, 0, 5, 0)) //瓶装蜂蜜 80
+                .AddItem(ItemID.Eggnog, (0, 0, 5, 0)) //蛋酒 80
+                .AddItem(ItemID.RestorationPotion, (0, 0, 15, 0)) //恢复药水 90
+                .AddItem(ItemID.HealingPotion, (0, 0, 5, 0)) //治疗药水 100
+                .AddItem(ItemID.Honeyfin, (0, 0, 20, 0)) //蜂蜜鱼 120
+            //肉后
+                .AddItem(ItemID.GreaterHealingPotion, (0, 0, 50, 0), Condition.Hardmode) //强效治疗药水 150
+                //.AddItem(ItemID.LifeFruitHealingPotion, (0, 1, 0, 0), Condition.Hardmode) //丛林果汁 180
+                .AddItem(ItemID.SuperHealingPotion, (0, 1, 25, 0), Condition.DownedCultist); //超级治疗药水 200
+
+            #endregion
+
+            #region 魔力药水
+            vPotion.AddItem(ItemID.LesserManaPotion, (0, 0, 0, 75)) //弱效魔力药水 50
+                .AddItem(ItemID.ManaPotion, (0, 0, 5, 0)) //魔力药水 100
+                .AddItem(ItemID.GreaterManaPotion, (0, 0, 50, 0), Condition.Hardmode) //强效魔力药水 200
+                .AddItem(ItemID.SuperManaPotion, (0, 0, 75, 0), Condition.Hardmode); //超级魔力药水 300
+                                                                                     //.AddItem(ItemID.SuperManaPotion, (0, 1, 25, 0), Condition.DownedPlantera); //超级魔力药水 400
+
+            #endregion
+
+            #endregion
+
+            #region 实用类药水
+            vPotion.AddItem(ItemID.NightOwlPotion, (0, 0, 50, 0)) //夜视药水
+                .AddItem(ItemID.ShinePotion, (0, 0, 50, 0)) //光芒药水
+                .AddItem(ItemID.SpelunkerPotion, (0, 0, 50, 0)) //洞穴探险药水
+                .AddItem(ItemID.TrapsightPotion, (0, 0, 50, 0)) //危险感知药水
+                .AddItem(ItemID.HunterPotion, (0, 0, 50, 0)) //狩猎药水
+                .AddItem(ItemID.ObsidianSkinPotion, (0, 0, 50, 0)) //黑曜石皮药水
+                .AddItem(ItemID.MiningPotion, (0, 0, 50, 0)) //挖矿药水
+                .AddItem(ItemID.BuilderPotion, (0, 0, 50, 0)) //建筑工药水
+                .AddItem(ItemID.GravitationPotion, (0, 0, 50, 0)) //重力药水
+                .AddItem(ItemID.FeatherfallPotion, (0, 0, 50, 0)) //羽落药水
+                .AddItem(ItemID.WaterWalkingPotion, (0, 0, 50, 0)) //水上漂药水
+                .AddItem(ItemID.GillsPotion, (0, 0, 50, 0)) //鱼鳃药水
+                .AddItem(ItemID.FlipperPotion, (0, 0, 50, 0)) //脚蹼药水
+                .AddItem(ItemID.FishingPotion, (0, 0, 50, 0)) //钓鱼药水
+                .AddItem(ItemID.SonarPotion, (0, 0, 50, 0)) //声纳药水
+                .AddItem(ItemID.CratePotion, (0, 0, 50, 0)) //宝匣药水
+                .AddItem(ItemID.LuckPotionLesser, (0, 0, 50, 0)) //弱效幸运药水
+                .AddItem(ItemID.LuckPotion, (0, 1, 0, 0)) //幸运药水
+                .AddItem(ItemID.LuckPotionGreater, (0, 2, 0, 0)) //强效幸运药水
+                .AddItem(ItemID.InvisibilityPotion, (0, 0, 50, 0)) //隐身药水
+                .AddItem(ItemID.GenderChangePotion, (0, 1, 0, 0)) //变性药水
+                .AddItem(ItemID.LovePotion, (0, 1, 0, 0), Condition.Hardmode) //爱情药水
+                .AddItem(ItemID.StinkPotion, (0, 0, 50, 0)) //臭味药水
+                .AddItem(ItemID.BiomeSightPotion, (0, 0, 50, 0)) //生物群系视觉药水
+                .AddItem(ItemID.RecallPotion, (0, 0, 50, 0)) //回忆药水
+                .AddItem(ItemID.PotionOfReturn, (0, 0, 80, 0)) //返回药水
+                .AddItem(ItemID.WormholePotion, (0, 0, 50, 0)) //虫洞药水
+                .AddItem(ItemID.TeleportationPotion, (0, 0, 50, 0)) //传送药水
+                .AddItem(ItemID.RedPotion, (0, 2, 0, 0)); //红药水
+
+            #endregion
+
+            #region 战斗类药水
+
+            #endregion
+
+            #endregion
+
+            #region 【模组药水】
 
             #endregion
 
 
-            vPotions.Register();
-            mPotions.Register();
+            vPotion.Register();
+            mPotion.Register();
         }
     }
 }

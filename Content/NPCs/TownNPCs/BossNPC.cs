@@ -153,36 +153,36 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 原版Boss宝藏袋
             //肉前
-            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 50, 0))
-                .AddItem(ItemID.KingSlimeBossBag, (0, 10, 0, 0), Condition.DownedKingSlime)
-                .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEyeOfCthulhu)
-                .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
-                .AddItem(ItemID.EaterOfWorldsBossBag, (0, 20, 0, 0), Condition.DownedEowOrBoc)
-                .AddItem(ItemID.QueenBeeBossBag, (0, 25, 0, 0), Condition.DownedQueenBee)
-                .AddItem(ItemID.SkeletronBossBag, (0, 30, 0, 0), Condition.DownedSkeletron)
-                .AddItem(ItemID.DeerclopsBossBag, (0, 35, 0, 0), Condition.DownedDeerclops)
-                .AddItem(ItemID.WallOfFleshBossBag, (0, 40, 0, 0), Condition.Hardmode);
+            vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
+                .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
+                .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
+                .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
+                .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //世界吞噬怪
+                .AddItem(ItemID.QueenBeeBossBag, (0, 20, 0, 0), Condition.DownedQueenBee) //蜂王
+                .AddItem(ItemID.SkeletronBossBag, (0, 25, 0, 0), Condition.DownedSkeletron) //骷髅王
+                .AddItem(ItemID.DeerclopsBossBag, (0, 30, 0, 0), Condition.DownedDeerclops) //独眼巨鹿
+                .AddItem(ItemID.WallOfFleshBossBag, (0, 35, 0, 0), Condition.Hardmode); //肉山
             //肉后
-            vanShop.AddItem(ItemID.QueenSlimeBossBag, (0, 50, 0, 0), Condition.DownedQueenSlime)
-                .AddItem(ItemID.DestroyerBossBag, (0, 55, 0, 0), Condition.DownedDestroyer)
-                .AddItem(ItemID.TwinsBossBag, (0, 55, 0, 0), Condition.DownedTwins)
-                .AddItem(ItemID.SkeletronPrimeBossBag, (0, 55, 0, 0), Condition.DownedSkeletronPrime)
-                .AddItem(ItemID.PlanteraBossBag, (0, 60, 0, 0), Condition.DownedPlantera)
-                .AddItem(ItemID.FairyQueenBossBag, (0, 65, 0, 0), Condition.DownedEmpressOfLight)
-                .AddItem(ItemID.GolemBossBag, (0, 70, 0, 0), Condition.DownedGolem)
-                .AddItem(ItemID.FishronBossBag, (0, 75, 0, 0), Condition.DownedDukeFishron)
-                .AddItem(ItemID.BossBagBetsy, (0, 80, 0, 0), Condition.DownedOldOnesArmyT3)
-                .AddItem(ItemID.MoonLordBossBag, (1, 0, 0, 0), Condition.DownedMoonLord);
+            vanShop.AddItem(ItemID.QueenSlimeBossBag, (0, 40, 0, 0), Condition.DownedQueenSlime) //史莱姆皇后
+                .AddItem(ItemID.DestroyerBossBag, (0, 45, 0, 0), Condition.DownedDestroyer) //毁灭者
+                .AddItem(ItemID.TwinsBossBag, (0, 45, 0, 0), Condition.DownedTwins) //双子魔眼
+                .AddItem(ItemID.SkeletronPrimeBossBag, (0, 45, 0, 0), Condition.DownedSkeletronPrime) //机械骷髅王
+                .AddItem(ItemID.PlanteraBossBag, (0, 50, 0, 0), Condition.DownedPlantera) //世纪之花
+                .AddItem(ItemID.FairyQueenBossBag, (0, 55, 0, 0), Condition.DownedEmpressOfLight) //光之女皇
+                .AddItem(ItemID.GolemBossBag, (0, 60, 0, 0), Condition.DownedGolem) //石巨人
+                .AddItem(ItemID.FishronBossBag, (0, 65, 0, 0), Condition.DownedDukeFishron) //猪鲨
+                .AddItem(ItemID.BossBagBetsy, (0, 65, 0, 0), Condition.DownedOldOnesArmyT3) //双足翼龙
+                .AddItem(ItemID.MoonLordBossBag, (0, 75, 0, 0), Condition.DownedMoonLord); //月总
             #endregion
 
             #region 原版事件召唤物品
             vanShop.AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
                 .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
-                .AddItem(ItemID.PirateMap, (0, 10, 0, 0), Condition.Hardmode) //海盗入侵
-                .AddItem(ItemID.SnowGlobe, (0, 10, 0, 0), Condition.Hardmode) //雪人军团
-                .AddItem(ItemID.SolarTablet, (0, 15, 0, 0), Condition.DownedMechBossAny) //日食
-                .AddItem(ItemID.PumpkinMoonMedallion, (0, 20, 0, 0), Condition.DownedPlantera) //南瓜月
-                .AddItem(ItemID.NaughtyPresent, (0, 20, 0, 0), Condition.DownedPlantera); //霜月
+                .AddItem(ItemID.PirateMap, (0, 5, 0, 0), Condition.Hardmode) //海盗入侵
+                .AddItem(ItemID.SnowGlobe, (0, 5, 0, 0), Condition.Hardmode) //雪人军团
+                .AddItem(ItemID.SolarTablet, (0, 10, 0, 0), Condition.DownedMechBossAny) //日食
+                .AddItem(ItemID.PumpkinMoonMedallion, (0, 15, 0, 0), Condition.DownedPlantera) //南瓜月
+                .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera); //霜月
             #endregion
 
             #region 原版Boss召唤物品
@@ -193,7 +193,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
                 .AddItem(ItemID.Abeemination, (0, 5, 0, 0)) //蜂王
                 .AddItem(ItemID.DeerThing, (0, 5, 0, 0)) //独眼巨鹿
-                .AddItem(ItemID.GuideVoodooDoll, (0, 10, 0, 0)) //血肉之墙
+                .AddItem(ItemID.GuideVoodooDoll, (0, 8, 0, 0)) //血肉之墙
             //肉后
                 .AddItem(ItemID.QueenSlimeCrystal, (0, 10, 0, 0), Condition.Hardmode) //史莱姆皇后
                 .AddItem(ItemID.MechanicalWorm, (0, 15, 0, 0), Condition.Hardmode) //毁灭者
@@ -210,37 +210,40 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 【模组Boss宝藏袋】
 
-            #region 灾厄及其附属
+            #region 灾厄
             //肉前
-            modBag.AddModItem("CalamityMod/DesertScourgeBag", (0, 10, 0, 0), DownedDesertBug) //荒漠灾虫
-            .AddModItem("CalamityMod/CrabulonBag", (0, 15, 0, 0), DownedCrabulon) //菌生蟹
-            .AddModItem("CalamityMod/PerforatorBag", (0, 20, 0, 0), DownedPerforator) //血肉宿主
-            .AddModItem("CalamityMod/HiveMindBag", (0, 20, 0, 0), DownedHiveMind) //腐巢意志
+            modBag.AddModItem("CalamityMod/DesertScourgeBag", (0, 5, 0, 0), DownedDesertBug) //荒漠灾虫
+            .AddModItem("CalamityMod/CrabulonBag", (0, 5, 0, 0), DownedCrabulon) //菌生蟹
+            .AddModItem("CalamityMod/PerforatorBag", (0, 10, 0, 0), DownedPerforator) //血肉宿主
+            .AddModItem("CalamityMod/HiveMindBag", (0, 10, 0, 0), DownedHiveMind) //腐巢意志
             .AddModItem("CalamityMod/SlimeGodBag", (0, 35, 0, 0), DownedSlimeGod) //史莱姆之神
             //肉后
-            .AddModItem("CalamityMod/CryogenBag", (0, 50, 0, 0), DownedCryogen) //极地之灵
-            .AddModItem("CalamityMod/AquaticScourgeBag", (0, 50, 0, 0), DownedAquaticBug) //渊海灾虫
-            .AddModItem("CalamityMod/BrimstoneElementalBag", (0, 50, 0, 0), DownedBrimstone) //硫磺火元素
+            .AddModItem("CalamityMod/CryogenBag", (0, 40, 0, 0), DownedCryogen) //极地之灵
+            .AddModItem("CalamityMod/AquaticScourgeBag", (0, 40, 0, 0), DownedAquaticBug) //渊海灾虫
+            .AddModItem("CalamityMod/BrimstoneElementalBag", (0, 40, 0, 0), DownedBrimstone) //硫磺火元素
+            .AddModItem("CalamityMod/CalamitasCloneBag", (0, 50, 0, 0), DownedCalamitas) //灾厄之影
+            .AddModItem("CalamityMod/LeviathanBag", (0, 55, 0, 0), DownedLeviathan) //阿娜希塔和利维坦
             .AddModItem("CalamityMod/AstrumAureusBag", (0, 55, 0, 0), DownedAstrum) //白金星舰
-            .AddModItem("CalamityMod/CalamitasCloneBag", (0, 65, 0, 0), DownedCalamitas) //灾厄之影
-            .AddModItem("CalamityMod/LeviathanBag", (0, 65, 0, 0), DownedLeviathan) //阿娜希塔和利维坦
-            .AddModItem("CalamityMod/PlaguebringerGoliathBag", (0, 75, 0, 0), DownedPlague) //瘟疫使者歌莉娅
-            .AddModItem("CalamityMod/RavagerBag", (0, 75, 0, 0), DownedRavager) //毁灭魔像
-            .AddModItem("CalamityMod/AstrumDeusBag", (0, 90, 0, 0), DownedAstrumBug) //星神游龙
-
-            .AddModItem("CatalystMod/AstrageldonBag", (4, 0, 0, 0), DownedAstrageldon) //末世星史莱姆
+            .AddModItem("CalamityMod/PlaguebringerGoliathBag", (0, 65, 0, 0), DownedPlague) //瘟疫使者歌莉娅
+            .AddModItem("CalamityMod/RavagerBag", (0, 65, 0, 0), DownedRavager) //毁灭魔像
+            .AddModItem("CalamityMod/AstrumDeusBag", (0, 70, 0, 0), DownedAstrumBug) //星神游龙
             //月后
-            .AddModItem("CalamityMod/DragonfollyBag", (1, 50, 0, 0), DownedDragonfolly) //痴愚金龙
-            .AddModItem("CalamityMod/ProvidenceBag", (2, 0, 0, 0), DownedProvidence) //亵渎天神
-            .AddModItem("CalamityMod/StormWeaverBag", (2, 50, 0, 0), DownedStormWeaver) //风暴编织者
-            .AddModItem("CalamityMod/CeaselessVoidBag", (2, 50, 0, 0), DownedVoid) //无尽虚空
-            .AddModItem("CalamityMod/SignusBag", (2, 50, 0, 0), DownedSignus) //西格纳斯
-            .AddModItem("CalamityMod/PolterghastBag", (3, 0, 0, 0), DownedPolterghast) //噬魂幽花
-            .AddModItem("CalamityMod/OldDukeBag", (3, 50, 0, 0), DownedOldDuke) //硫海遗爵
-            .AddModItem("CalamityMod/DevourerofGodsBag", (4, 0, 0, 0), DownedDOG) //神明吞噬者
-            .AddModItem("CalamityMod/YharonBag", (5, 0, 0, 0), DownedYharon) //犽戎
-            .AddModItem("CalamityMod/DraedonBag", (8, 0, 0, 0), DownedDraedon) //星流巨械
-            .AddModItem("CalamityMod/CalamitasCoffer", (10, 0, 0, 0), DownedSCalamitas); //终灾
+            .AddModItem("CalamityMod/DragonfollyBag", (0, 75, 0, 0), DownedDragonfolly) //痴愚金龙
+            .AddModItem("CalamityMod/ProvidenceBag", (0, 80, 0, 0), DownedProvidence) //亵渎天神
+            .AddModItem("CalamityMod/StormWeaverBag", (0, 85, 0, 0), DownedStormWeaver) //风暴编织者
+            .AddModItem("CalamityMod/CeaselessVoidBag", (0, 85, 0, 0), DownedVoid) //无尽虚空
+            .AddModItem("CalamityMod/SignusBag", (0, 85, 0, 0), DownedSignus) //西格纳斯
+            .AddModItem("CalamityMod/PolterghastBag", (0, 90, 0, 0), DownedPolterghast) //噬魂幽花
+            .AddModItem("CalamityMod/OldDukeBag", (0, 95, 0, 0), DownedOldDuke) //硫海遗爵
+            .AddModItem("CalamityMod/DevourerofGodsBag", (1, 0, 0, 0), DownedDOG) //神明吞噬者
+            .AddModItem("CalamityMod/YharonBag", (2, 0, 0, 0), DownedYharon) //犽戎
+            .AddModItem("CalamityMod/DraedonBag", (3, 0, 0, 0), DownedDraedon) //星流巨械
+            .AddModItem("CalamityMod/CalamitasCoffer", (5, 0, 0, 0), DownedSCalamitas); //终灾
+
+            #endregion
+
+            #region 灾劫
+            modBag.AddModItem("CatalystMod/AstrageldonBag", (1, 0, 0, 0), DownedAstrageldon); //末世星史莱姆
 
             #endregion
 
@@ -257,14 +260,54 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 模组事件召唤物品
 
-            #region 灾厄及其附属
+            #region 灾厄
             modSum.AddModItem("CalamityMod/TorrentialTear", (0, 1, 50, 0), Condition.DownedSkeletron) //雨
             .AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu) //酸雨
-            .AddModItem("CalamityMod/AridArtifact", (0, 1, 50, 0), Condition.Hardmode) //沙尘暴
-            .AddModItem("CalamityMod/MartianDistressRemote", (0, 4, 0, 0), Condition.DownedGolem); //火星暴乱
-            
+            .AddModItem("CalamityMod/AridArtifact", (0, 5, 0, 0), Condition.Hardmode) //沙尘暴
+            .AddModItem("CalamityMod/MartianDistressRemote", (0, 20, 0, 0), Condition.DownedGolem); //火星暴乱
+
             #endregion
 
+            #region
+            #endregion
+
+            #endregion
+
+            #region 模组Boss召唤物品
+
+            #region 灾厄
+            //肉前
+            modSum.AddModItem("CalamityMod/DesertMedallion", (0, 1, 0, 0)) //荒漠灾虫
+            .AddModItem("CalamityMod/DecapoditaSprout", (0, 1, 0, 0)) //菌生蟹
+            .AddModItem("CalamityMod/BloodyWormFood", (0, 5, 0, 0), PerOrHive) //血肉宿主
+            .AddModItem("CalamityMod/Teratoma", (0, 5, 0, 0), PerOrHive) //腐巢意志
+            .AddModItem("CalamityMod/OverloadedSludge", (0, 8, 0, 0)) //史莱姆之神
+            //肉后
+            .AddModItem("CalamityMod/CryoKey", (0, 10, 0, 0), Condition.Hardmode) //极地之灵
+            .AddModItem("CalamityMod/Seafood", (0, 10, 0, 0), Condition.Hardmode) //渊海灾虫
+            .AddModItem("CalamityMod/CharredIdol", (0, 10, 0, 0), Condition.Hardmode) //硫磺火元素
+            .AddModItem("CalamityMod/EyeofDesolation", (0, 15, 0, 0), Condition.Hardmode) //灾厄之影
+            .AddModItem("CalamityMod/AstralChunk", (0, 15, 0, 0), Condition.Hardmode) //白金星舰
+            .AddModItem("CalamityMod/Abombination", (0, 20, 0, 0), Condition.DownedGolem) //瘟疫使者歌莉娅
+            .AddModItem("CalamityMod/DeathWhistle", (0, 20, 0, 0), Condition.DownedGolem) //毁灭魔像
+            .AddModItem("CalamityMod/TitanHeart", (0, 25, 0, 0), Condition.Hardmode) //星神游龙
+            //月后
+            .AddModItem("CalamityMod/ExoticPheromones", (0, 30, 0, 0), Condition.DownedCultist) //痴愚金龙
+            .AddModItem("CalamityMod/ProfanedShard", (0, 30, 0, 0), Condition.DownedMoonLord) //亵渎守卫
+            .AddModItem("CalamityMod/ProfanedCore", (0, 35, 0, 0), DownedGuardians) //亵渎天神
+            .AddModItem("CalamityMod/MarkofProvidence", (0, 40, 0, 0), DownedProvidence) //风暴编织者/无尽虚空/西格纳斯
+            .AddModItem("CalamityMod/NecroplasmicBeacon", (0, 45, 0, 0), Condition.DownedMoonLord) //噬魂幽花
+            .AddModItem("CalamityMod/BloodwormItem", (0, 50, 0, 0), Condition.DownedMoonLord) //硫海遗爵
+            .AddModItem("CalamityMod/CosmicWorm", (0, 55, 0, 0), Condition.DownedMoonLord) //神明吞噬者
+            .AddModItem("CalamityMod/YharonEgg", (0, 60, 0, 0), DownedDragonfolly) //犽戎
+            .AddModItem("CalamityMod/CeremonialUrn", (0, 65, 0, 0), DownedSCalamitas); //终灾
+
+            #endregion
+
+            #region 灾劫
+            modSum.AddModItem("CatalystMod/AstralCommunicator", (0, 55, 0, 0), Condition.Hardmode); //末世星史莱姆
+            
+            #endregion
 
             #endregion
 

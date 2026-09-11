@@ -1,4 +1,4 @@
-displayName = 最懒惰的NPC
+displayName = Laziest NPC
 author = yitang
 version = 0.0.1
 modReferences = ShopExtender

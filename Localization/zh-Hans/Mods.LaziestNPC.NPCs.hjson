@@ -21,7 +21,7 @@ BossNPC: {
 	}
 
 	ShopName: {
-		VanillaAll: 原版商店
+		VanillaAll: 原版相关内容
 		ModBags: 模组宝藏袋
 		ModSums: 模组召唤物
 		CycleShop: 切换商店

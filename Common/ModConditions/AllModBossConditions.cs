@@ -48,6 +48,14 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region Fargo魂石 Fargo's Souls Mod
+        public static Condition DownedTrojanSquirrel => ModBosses.GetCondition("TrojanSquirrel"); //特洛伊松鼠
+        public static Condition DownedCursedCoffin => ModBosses.GetCondition("CursedCoffin"); //咒缚灵棺
+        public static Condition DownedDevi => ModBosses.GetCondition("DeviBoss"); //戴薇安
+        public static Condition DownedBanishedBaron => ModBosses.GetCondition("BanishedBaron"); //放逐遗爵
+        public static Condition DownedLifelight => ModBosses.GetCondition("Lifelight"); //飘渺游光
+        public static Condition DownedCosmosChampion => ModBosses.GetCondition("CosmosChampion"); //宇宙英灵
+        public static Condition DownedAbom => ModBosses.GetCondition("AbomBoss"); //憎恶
+        public static Condition DownedMutant => ModBosses.GetCondition("MutantBoss"); //突变体
 
         #endregion
 

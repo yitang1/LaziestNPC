@@ -33,6 +33,72 @@ TrinketNPC: {
 	Tooltip: “汪！”
 }
 
+MysticRedJelly: {
+	DisplayName: 神奇红色果冻
+	Tooltip:
+		'''
+		召唤暴躁史莱姆
+		不消耗
+		[c/FBFBE0:“史莱姆王国的果冻博物馆里，]
+		[c/FBFBE0:有一顶红色礼帽，标签上写着：]
+		[c/FBFBE0:‘最后一位自愿变成史莱姆的果冻。’]
+		[c/FBFBE0:哼叽！”]
+		'''
+}
+
+MysticYellowJelly: {
+	DisplayName: 神奇黄色果冻
+	Tooltip:
+		'''
+		召唤神秘青蛙
+		不消耗
+		[c/FBFBE0:“有一天，蛙蛙王国出现了一个]
+		[c/FBFBE0:自称为叛徒的蛙。]
+		[c/FBFBE0:随后，故事便开始了......”]
+		'''
+}
+
+GentleSkull: {
+	DisplayName: 绅士遗骨
+	Tooltip:
+		'''
+		在夜晚使用
+		召唤骷髅王
+		不消耗
+		[c/FBFBE0:“骷髅宴会守则之三：]
+		[c/FBFBE0:任何时候都要保持体面，”]
+		[c/FBFBE0:哪怕是死后——尤其是死后！”]
+		'''
+}
+
+NoRootFlower: {
+	DisplayName: 无根之花
+	Tooltip:
+		'''
+		在丛林中使用
+		召唤世纪之花
+		不消耗
+		[c/FBFBE0:“它的根须早已被时间斩断，]
+		[c/FBFBE0:但它的呼唤仍能穿透泥层，]
+		[c/FBFBE0:唤醒那位拒绝凋零的丛林女王。”]
+		'''
+}
+
+ForbiddenPaper: {
+	DisplayName: 禁忌羊皮纸
+	Tooltip:
+		'''
+		召唤拜月教邪教徒
+		不消耗
+		[c/88E6FF:直视图案时，会感受到一股滔天的恨意。]
+		[c/FBFBE0:“克鲁苏先生是我见过最友好、最值得尊敬的神灵！]
+		[c/FBFBE0:祂给予我们甘甜的生命之源，]
+		[c/FBFBE0:赐予我们沉睡的恐惧之力，]
+		[c/FBFBE0:甚至还点燃我们温暖的灵魂之火！]
+		[c/FBFBE0:要是谁被祂注视了......哇——就等着享福吧~”]
+		'''
+}
+
 TheReturner: {
 	DisplayName: 归乡者项链
 	Tooltip:

@@ -3,9 +3,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.UI.Chat;
 using Terraria.ModLoader;
+using Terraria.GameContent;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
 using LaziestNPC.Common.Helpers;
 using LaziestNPC.Common.UI;
 
@@ -23,8 +23,8 @@ namespace LaziestNPC.Content.Items.SummonItems
             Item.width = 42;
             Item.height = 52;
             Item.rare = ItemRarityID.Red;
-            Item.useAnimation = 30;
-            Item.useTime = 30;
+            Item.useAnimation = 45;
+            Item.useTime = 45;
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.UseSound = SoundID.Item4;
             Item.maxStack = 1;
@@ -50,16 +50,6 @@ namespace LaziestNPC.Content.Items.SummonItems
                 return false;
             }
         }
-
-        /*public override void AddRecipes()
-        {
-            CreateRecipe()
-                .AddIngredient(ItemID.BlizzardinaBottle)
-                .AddIngredient(ItemID.Cloud, 30)
-                .AddIngredient(ItemID.RainCloud, 15)
-                .AddTile(TileID.WorkBenches)
-                .Register();
-        }*/
 
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
         {

@@ -192,7 +192,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.BloodySpine, (0, 5, 0, 0)) //克苏鲁之脑
                 .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
                 .AddItem(ItemID.Abeemination, (0, 5, 0, 0)) //蜂王
-                .AddModItem("Fargowiltas/SuspiciousSkull", (0, 5, 0, 0)) //骷髅王
+                .AddItem(ModContent.ItemType<GentleSkull>(), (0, 5, 0, 0)) //骷髅王
                 .AddItem(ItemID.DeerThing, (0, 5, 0, 0)) //独眼巨鹿
                 .AddItem(ItemID.GuideVoodooDoll, (0, 8, 0, 0)) //血肉之墙
             //肉后
@@ -204,7 +204,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //光之女皇
                 .AddItem(ItemID.LihzahrdPowerCell, (0, 30, 0, 0), Condition.DownedPlantera) //石巨人
                 .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //猪龙鱼公爵
-                .AddModItem("Fargowiltas/CultistSummon", (0, 35, 0, 0)) //拜月教邪教徒
+                .AddItem(ModContent.ItemType<ForbiddenPaper>(), (0, 35, 0, 0), Condition.DownedGolem) //拜月教邪教徒
                 .AddItem(ItemID.CelestialSigil, (0, 40, 0, 0), Condition.DownedCultist); //月亮领主
 
             #endregion
@@ -429,7 +429,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         //正式添加新贴图后删掉
         public override void PostAI()
         {
-            float maxSpeed = 0.9f;
+            float maxSpeed = 0.7f;
             if (Math.Abs(NPC.velocity.X) > maxSpeed)
             {
                 NPC.velocity.X = Math.Sign(NPC.velocity.X) * maxSpeed;

@@ -67,16 +67,27 @@ namespace LaziestNPC.Common.ModConditions
             #endregion
 
             #region 瑟银 Thorium Mod
-            ("ThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird"}),
+            ("GrandThunderBird", "ThoriumMod", new string[] { "TheGrandThunderBird"}), //惊雷王鹰
+            ("QueenJellyfish", "ThoriumMod", new string[] { "QueenJellyfish"}), //水母皇后
+            ("Viscount", "ThoriumMod", new string[] { "Viscount"}), //蝙蝠子爵
+            ("GraniteEnergyStorm", "ThoriumMod", new string[] { "GraniteEnergyStorm"}), //花岗岩流能风暴
+            ("BuriedChampion", "ThoriumMod", new string[] { "BuriedChampion"}), //英灵遗骸
+            ("StarScouter", "ThoriumMod", new string[] { "StarScouter"}), //星际监察者
+            ("BoreanStrider", "ThoriumMod", new string[] { "BoreanStrider", "BoreanStriderPopped"}), //极地遁蛛
+            ("FallenBeholder", "ThoriumMod", new string[] { "FallenBeholder", "FallenBeholder2"}), //堕落注视者
+            ("Lich", "ThoriumMod", new string[] { "Lich", "LichHeadless"}), //巫妖
+            ("ForgottenOne", "ThoriumMod", new string[] { "ForgottenOne", "ForgottenOneCracked", "ForgottenOneReleased"}), //遗忘之主
+            ("ThePrimordials", "ThoriumMod", new string[] { "DreamEater", "SlagFury", "Omnicide", "Aquaius"}), //始生灾灵
+
             #endregion
 
-            #region 旅人归途 Homeward Journey
+            /*#region 旅人归途 Homeward Journey
             ("Thunderird", "ContinentOfJourney", new string[] {"TheGranThunderBird"}),
             #endregion
 
             #region 救赎 Mod of Redemption
             ("Thunderird", "Redemption", new string[] {"TheGranThunderBird"})
-            #endregion
+            #endregion*/
 
 
 

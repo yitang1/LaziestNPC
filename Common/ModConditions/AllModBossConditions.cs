@@ -60,6 +60,18 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region 瑟银 Thorium Mod
+        public static Condition DownedGrandThunderBird => ModBosses.GetCondition("GrandThunderBird"); //惊雷王鹰
+        public static Condition DownedQueenJellyfish => ModBosses.GetCondition("QueenJellyfish"); //水母皇后
+        public static Condition DownedViscount => ModBosses.GetCondition("Viscount"); //蝙蝠子爵
+        public static Condition DownedGraniteEnergyStorm => ModBosses.GetCondition("GraniteEnergyStorm"); //花岗岩流能风暴
+        public static Condition DownedBuriedChampion => ModBosses.GetCondition("BuriedChampion"); //英灵遗骸
+        public static Condition DownedStarScouter => ModBosses.GetCondition("StarScouter"); //星际监察者
+
+        public static Condition DownedBoreanStrider => ModBosses.GetCondition("BoreanStrider"); //极地遁蛛
+        public static Condition DownedFallenBeholder => ModBosses.GetCondition("FallenBeholder"); //堕落注视者
+        public static Condition DownedLich => ModBosses.GetCondition("Lich"); //巫妖
+        public static Condition DownedForgottenOne => ModBosses.GetCondition("ForgottenOne"); //遗忘之主
+        public static Condition DownedThePrimordials => ModBosses.GetCondition("ThePrimordials"); //始生灾灵
 
         #endregion
 

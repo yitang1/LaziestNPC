@@ -154,58 +154,58 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 原版Boss宝藏袋
             //肉前
             vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
-                .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
-                .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
-                .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
-                .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //世界吞噬怪
-                .AddItem(ItemID.QueenBeeBossBag, (0, 20, 0, 0), Condition.DownedQueenBee) //蜂王
-                .AddItem(ItemID.SkeletronBossBag, (0, 25, 0, 0), Condition.DownedSkeletron) //骷髅王
-                .AddItem(ItemID.DeerclopsBossBag, (0, 30, 0, 0), Condition.DownedDeerclops) //独眼巨鹿
-                .AddItem(ItemID.WallOfFleshBossBag, (0, 35, 0, 0), Condition.Hardmode); //肉山
+            .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
+            .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
+            .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
+            .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //世界吞噬怪
+            .AddItem(ItemID.QueenBeeBossBag, (0, 20, 0, 0), Condition.DownedQueenBee) //蜂王
+            .AddItem(ItemID.SkeletronBossBag, (0, 25, 0, 0), Condition.DownedSkeletron) //骷髅王
+            .AddItem(ItemID.DeerclopsBossBag, (0, 30, 0, 0), Condition.DownedDeerclops) //独眼巨鹿
+            .AddItem(ItemID.WallOfFleshBossBag, (0, 35, 0, 0), Condition.Hardmode); //肉山
             //肉后
             vanShop.AddItem(ItemID.QueenSlimeBossBag, (0, 40, 0, 0), Condition.DownedQueenSlime) //史莱姆皇后
-                .AddItem(ItemID.DestroyerBossBag, (0, 45, 0, 0), Condition.DownedDestroyer) //毁灭者
-                .AddItem(ItemID.TwinsBossBag, (0, 45, 0, 0), Condition.DownedTwins) //双子魔眼
-                .AddItem(ItemID.SkeletronPrimeBossBag, (0, 45, 0, 0), Condition.DownedSkeletronPrime) //机械骷髅王
-                .AddItem(ItemID.PlanteraBossBag, (0, 50, 0, 0), Condition.DownedPlantera) //世纪之花
-                .AddItem(ItemID.FairyQueenBossBag, (0, 55, 0, 0), Condition.DownedEmpressOfLight) //光之女皇
-                .AddItem(ItemID.GolemBossBag, (0, 60, 0, 0), Condition.DownedGolem) //石巨人
-                .AddItem(ItemID.FishronBossBag, (0, 65, 0, 0), Condition.DownedDukeFishron) //猪鲨
-                .AddItem(ItemID.BossBagBetsy, (0, 65, 0, 0), Condition.DownedOldOnesArmyT3) //双足翼龙
-                .AddItem(ItemID.MoonLordBossBag, (0, 75, 0, 0), Condition.DownedMoonLord); //月总
+            .AddItem(ItemID.DestroyerBossBag, (0, 45, 0, 0), Condition.DownedDestroyer) //毁灭者
+            .AddItem(ItemID.TwinsBossBag, (0, 45, 0, 0), Condition.DownedTwins) //双子魔眼
+            .AddItem(ItemID.SkeletronPrimeBossBag, (0, 45, 0, 0), Condition.DownedSkeletronPrime) //机械骷髅王
+            .AddItem(ItemID.PlanteraBossBag, (0, 50, 0, 0), Condition.DownedPlantera) //世纪之花
+            .AddItem(ItemID.FairyQueenBossBag, (0, 55, 0, 0), Condition.DownedEmpressOfLight) //光之女皇
+            .AddItem(ItemID.GolemBossBag, (0, 60, 0, 0), Condition.DownedGolem) //石巨人
+            .AddItem(ItemID.FishronBossBag, (0, 65, 0, 0), Condition.DownedDukeFishron) //猪鲨
+            .AddItem(ItemID.BossBagBetsy, (0, 65, 0, 0), Condition.DownedOldOnesArmyT3) //双足翼龙
+            .AddItem(ItemID.MoonLordBossBag, (0, 75, 0, 0), Condition.DownedMoonLord); //月总
             #endregion
 
             #region 原版事件召唤物品
             vanShop.AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
-                .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
-                .AddItem(ItemID.PirateMap, (0, 5, 0, 0), Condition.Hardmode) //海盗入侵
-                .AddItem(ItemID.SnowGlobe, (0, 5, 0, 0), Condition.Hardmode) //雪人军团
-                .AddItem(ItemID.SolarTablet, (0, 10, 0, 0), Condition.DownedMechBossAny) //日食
-                .AddItem(ItemID.PumpkinMoonMedallion, (0, 15, 0, 0), Condition.DownedPlantera) //南瓜月
-                .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera); //霜月
+            .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
+            .AddItem(ItemID.PirateMap, (0, 5, 0, 0), Condition.Hardmode) //海盗入侵
+            .AddItem(ItemID.SnowGlobe, (0, 5, 0, 0), Condition.Hardmode) //雪人军团
+            .AddItem(ItemID.SolarTablet, (0, 10, 0, 0), Condition.DownedMechBossAny) //日食
+            .AddItem(ItemID.PumpkinMoonMedallion, (0, 15, 0, 0), Condition.DownedPlantera) //南瓜月
+            .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera); //霜月
             #endregion
 
             #region 原版Boss召唤物品
             //肉前
             vanShop.AddItem(ItemID.SlimeCrown, (0, 1, 0, 0)) //史莱姆王
-                .AddItem(ItemID.SuspiciousLookingEye, (0, 1, 0, 0)) //克苏鲁之眼
-                .AddItem(ItemID.BloodySpine, (0, 5, 0, 0)) //克苏鲁之脑
-                .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
-                .AddItem(ItemID.Abeemination, (0, 5, 0, 0)) //蜂王
-                .AddItem(ModContent.ItemType<GentleSkull>(), (0, 5, 0, 0)) //骷髅王
-                .AddItem(ItemID.DeerThing, (0, 5, 0, 0)) //独眼巨鹿
-                .AddItem(ItemID.GuideVoodooDoll, (0, 8, 0, 0)) //血肉之墙
+            .AddItem(ItemID.SuspiciousLookingEye, (0, 1, 0, 0)) //克苏鲁之眼
+            .AddItem(ItemID.BloodySpine, (0, 5, 0, 0)) //克苏鲁之脑
+            .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
+            .AddItem(ItemID.Abeemination, (0, 5, 0, 0)) //蜂王
+            .AddItem(ModContent.ItemType<GentleSkull>(), (0, 5, 0, 0)) //骷髅王
+            .AddItem(ItemID.DeerThing, (0, 5, 0, 0)) //独眼巨鹿
+            .AddItem(ItemID.GuideVoodooDoll, (0, 8, 0, 0)) //血肉之墙
             //肉后
-                .AddItem(ItemID.QueenSlimeCrystal, (0, 10, 0, 0), Condition.Hardmode) //史莱姆皇后
-                .AddItem(ItemID.MechanicalWorm, (0, 15, 0, 0), Condition.Hardmode) //毁灭者
-                .AddItem(ItemID.MechanicalEye, (0, 15, 0, 0), Condition.Hardmode) //双子魔眼
-                .AddItem(ItemID.MechanicalSkull, (0, 15, 0, 0), Condition.Hardmode) //机械骷髅王
-                .AddItem(ModContent.ItemType<NoRootFlower>(), (0, 20, 0, 0), Condition.DownedMechBossAll) //世纪之花
-                .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //光之女皇
-                .AddItem(ItemID.LihzahrdPowerCell, (0, 30, 0, 0), Condition.DownedPlantera) //石巨人
-                .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //猪龙鱼公爵
-                .AddItem(ModContent.ItemType<ForbiddenPaper>(), (0, 35, 0, 0), Condition.DownedGolem) //拜月教邪教徒
-                .AddItem(ItemID.CelestialSigil, (0, 40, 0, 0), Condition.DownedCultist); //月亮领主
+            .AddItem(ItemID.QueenSlimeCrystal, (0, 10, 0, 0), Condition.Hardmode) //史莱姆皇后
+            .AddItem(ItemID.MechanicalWorm, (0, 15, 0, 0), Condition.Hardmode) //毁灭者
+            .AddItem(ItemID.MechanicalEye, (0, 15, 0, 0), Condition.Hardmode) //双子魔眼
+            .AddItem(ItemID.MechanicalSkull, (0, 15, 0, 0), Condition.Hardmode) //机械骷髅王
+            .AddItem(ModContent.ItemType<NoRootFlower>(), (0, 20, 0, 0), Condition.DownedMechBossAll) //世纪之花
+            .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //光之女皇
+            .AddItem(ItemID.LihzahrdPowerCell, (0, 30, 0, 0), Condition.DownedPlantera) //石巨人
+            .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //猪龙鱼公爵
+            .AddItem(ModContent.ItemType<ForbiddenPaper>(), (0, 35, 0, 0), Condition.DownedGolem) //拜月教邪教徒
+            .AddItem(ItemID.CelestialSigil, (0, 40, 0, 0), Condition.DownedCultist); //月亮领主
 
             #endregion
 
@@ -304,6 +304,28 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region 瑟银 Thorium Mod
+            //肉前
+            modBag.AddModItem("ThoriumMod/TheGrandThunderBirdTreasureBag", (0, 5, 0, 0), DownedGrandThunderBird) //惊雷王鹰
+            .AddModItem("ThoriumMod/QueenJellyfishTreasureBag", (0, 15, 0, 0), DownedQueenJellyfish) //水母皇后
+            .AddModItem("ThoriumMod/ViscountTreasureBag", (0, 20, 0, 0), DownedViscount) //蝙蝠子爵
+            .AddModItem("ThoriumMod/GraniteEnergyStormTreasureBag", (0, 25, 0, 0), DownedGraniteEnergyStorm) //花岗岩流能风暴
+            .AddModItem("ThoriumMod/BuriedChampionTreasureBag", (0, 25, 0, 0), DownedBuriedChampion) //英灵遗骸
+            .AddModItem("ThoriumMod/StarScouterTreasureBag", (0, 30, 0, 0), DownedStarScouter) //星际监察者
+            //肉后
+            .AddModItem("ThoriumMod/BoreanStriderTreasureBag", (0, 40, 0, 0), DownedBoreanStrider) //极地遁蛛
+            .AddModItem("ThoriumMod/FallenBeholderTreasureBag", (0, 40, 0, 0), DownedFallenBeholder) //堕落注视者
+            .AddModItem("ThoriumMod/LichTreasureBag", (0, 45, 0, 0), DownedLich) //巫妖
+            .AddModItem("ThoriumMod/ForgottenOneTreasureBag", (0, 65, 0, 0), DownedForgottenOne) //遗忘之主
+            .AddModItem("ThoriumMod/ThePrimordialsTreasureBag", (0, 80, 0, 0), DownedThePrimordials) //始生灾灵
+            //迷你
+            .AddModItem("ThoriumMod/DarkMageTreasureBag", (0, 15, 0, 0), Condition.DownedOldOnesArmyT1) //黑暗魔法师
+            .AddModItem("ThoriumMod/FlyingDutchmanTreasureBag", (0, 40, 0, 0), Condition.DownedPirates) //荷兰飞盗船
+            .AddModItem("ThoriumMod/OgreTreasureBag", (0, 45, 0, 0), Condition.DownedOldOnesArmyT2) //食人魔
+            .AddModItem("ThoriumMod/MartianSaucerTreasureBag", (0, 65, 0, 0), Condition.DownedMartians); //火星飞碟
+
+            #endregion
+
             #endregion
 
             #region 【模组召唤物品】
@@ -371,6 +393,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("FargowiltasSouls/SigilOfChampions", (0, 50, 0, 0), Condition.DownedMoonLord) //宇宙英灵
             .AddModItem("FargowiltasSouls/AbomsCurse", (0, 66, 0, 0), Condition.DownedMoonLord) //憎恶
             .AddModItem("FargowiltasSouls/MutantsCurse", (1, 0, 0, 0), DownedAbom); //突变体
+
+            #endregion
+
+            #region 瑟银 Thorium Mod
+            //肉前
+            modSum.AddModItem("ThoriumMod/GrandFlareGun", (0, 1, 0, 0)) //惊雷王鹰
+            .AddModItem("ThoriumMod/JellyfishResonator", (0, 1, 0, 0)) //水母皇后
+            .AddModItem("ThoriumMod/GraniteEnergyCore", (0, 5, 0, 0), Condition.DownedSkeletron) //花岗岩流能风暴
+            .AddModItem("ThoriumMod/AncientBlade", (0, 5, 0, 0), Condition.DownedSkeletron) //英灵遗骸
+            .AddModItem("ThoriumMod/StarCaller", (0, 7, 0, 0), Condition.DownedEowOrBoc) //星际监察者
+            //肉后
+            .AddModItem("ThoriumMod/StriderTear", (0, 10, 0, 0), Condition.Hardmode) //极地遁蛛
+            .AddModItem("ThoriumMod/VoidLens", (0, 10, 0, 0), Condition.Hardmode) //堕落注视者
+            .AddModItem("ThoriumMod/AbyssalShadow2", (0, 25, 0, 0), Condition.DownedPlantera) //遗忘之主
+            .AddModItem("ThoriumMod/DoomSayersCoin", (0, 35, 0, 0), Condition.DownedCultist); //始生灾灵
 
             #endregion
 

@@ -192,7 +192,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.BloodySpine, (0, 5, 0, 0)) //克苏鲁之脑
             .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
             .AddItem(ItemID.Abeemination, (0, 5, 0, 0)) //蜂王
-            .AddItem(ModContent.ItemType<GentleSkull>(), (0, 5, 0, 0)) //骷髅王
+            .AddItem(ItemType<GentleSkull>(), (0, 5, 0, 0)) //骷髅王
             .AddItem(ItemID.DeerThing, (0, 5, 0, 0)) //独眼巨鹿
             .AddItem(ItemID.GuideVoodooDoll, (0, 8, 0, 0)) //血肉之墙
             //肉后
@@ -200,11 +200,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.MechanicalWorm, (0, 15, 0, 0), Condition.Hardmode) //毁灭者
             .AddItem(ItemID.MechanicalEye, (0, 15, 0, 0), Condition.Hardmode) //双子魔眼
             .AddItem(ItemID.MechanicalSkull, (0, 15, 0, 0), Condition.Hardmode) //机械骷髅王
-            .AddItem(ModContent.ItemType<NoRootFlower>(), (0, 20, 0, 0), Condition.DownedMechBossAll) //世纪之花
+            .AddItem(ItemType<NoRootFlower>(), (0, 20, 0, 0), Condition.DownedMechBossAll) //世纪之花
             .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //光之女皇
             .AddItem(ItemID.LihzahrdPowerCell, (0, 30, 0, 0), Condition.DownedPlantera) //石巨人
             .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //猪龙鱼公爵
-            .AddItem(ModContent.ItemType<ForbiddenPaper>(), (0, 35, 0, 0), Condition.DownedGolem) //拜月教邪教徒
+            .AddItem(ItemType<ForbiddenPaper>(), (0, 35, 0, 0), Condition.DownedGolem) //拜月教邪教徒
             .AddItem(ItemID.CelestialSigil, (0, 40, 0, 0), Condition.DownedCultist); //月亮领主
 
             #endregion

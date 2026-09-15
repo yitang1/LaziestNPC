@@ -26,7 +26,7 @@ namespace LaziestNPC.Globals.GlobalItems
         /// <param name="modItemPath">格式为 "模组名/物品类名"，例如"CatalystMod/AstrageldonBag"</param>
         /// <param name="price">自定义价格（铜币），通常由 buyPrice 方法生成</param>
         /// <param name="conditions">可选的解锁条件，不传则无条件</param>
-        /// <returns>返回 shop 自身，支持链式调用</returns>
+        /// <returns>返回shop自身，支持链式调用</returns>
         public static NPCShop AddModItem(this NPCShop shop, string modItemPath, (int plat, int gold, int silver, int copper) price, params Condition[] conditions)
         {
             int copperPrice = price.copper + price.silver * 100 + price.gold * 10000 + price.plat * 1000000;

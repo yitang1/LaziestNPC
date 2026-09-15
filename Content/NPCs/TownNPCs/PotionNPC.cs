@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent.Bestiary;
+using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Globals.GlobalItems;
+using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -131,7 +133,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.ManaPotion, (0, 0, 5, 0)) //魔力药水 100
                 .AddItem(ItemID.GreaterManaPotion, (0, 0, 50, 0), Condition.Hardmode) //强效魔力药水 200
                 .AddItem(ItemID.SuperManaPotion, (0, 0, 75, 0), Condition.Hardmode); //超级魔力药水 300
-                                                                                     //.AddItem(ItemID.SuperManaPotion, (0, 1, 25, 0), Condition.DownedPlantera); //超级魔力药水 400
+               //.AddItem(ItemID.SuperManaPotion, (0, 1, 25, 0), Condition.DownedPlantera); //超级魔力药水 400
 
             #endregion
 
@@ -171,12 +173,69 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 战斗类药水
-
+            vPotion.AddItem(ItemID.RegenerationPotion, (0, 0, 50, 0)) //再生药水
+                .AddItem(ItemID.SwiftnessPotion, (0, 0, 50, 0)) //敏捷药水
+                .AddItem(ItemID.IronskinPotion, (0, 0, 50, 0)) //铁皮药水
+                .AddItem(ItemID.AmmoReservationPotion, (0, 0, 50, 0)) //弹药储备药水
+                .AddItem(ItemID.ArcheryPotion, (0, 0, 50, 0)) //箭术药水
+                .AddItem(ItemID.ManaRegenerationPotion, (0, 0, 50, 0)) //魔力再生药水
+                .AddItem(ItemID.MagicPowerPotion, (0, 0, 50, 0)) //魔能药水
+                .AddItem(ItemID.SummoningPotion, (0, 0, 50, 0)) //召唤药水
+                .AddItem(ItemID.HeartreachPotion, (0, 0, 50, 0)) //拾心药水
+                .AddItem(ItemID.EndurancePotion, (0, 0, 50, 0)) //耐力药水
+                .AddItem(ItemID.ThornsPotion, (0, 0, 50, 0)) //荆棘药水
+                .AddItem(ItemID.RagePotion, (0, 0, 50, 0)) //怒气药水
+                .AddItem(ItemID.WrathPotion, (0, 0, 50, 0)) //暴怒药水
+                .AddItem(ItemID.InfernoPotion, (0, 0, 50, 0)) //狱火药水
+                .AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron) //生命力药水
+                .AddItem(ItemID.TitanPotion, (0, 0, 50, 0)) //泰坦药水
+                .AddItem(ItemID.WarmthPotion, (0, 0, 50, 0)) //保暖药水
+                .AddItem(ItemID.BattlePotion, (0, 0, 50, 0)) //战斗药水
+                .AddItem(ItemID.CalmingPotion, (0, 0, 50, 0)) //镇静药水
+                .AddItem(ItemID.FlaskofIchor, (0, 1, 50, 0), Condition.Hardmode); //灵液药剂
             #endregion
 
             #endregion
 
             #region 【模组药水】
+
+            #region 恢复类药水
+            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 50, 0)) //乱渊炖 120 150
+            .AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0)) //血鳍 240
+            .AddModItem("CalamityMod/SupremeHealingPotion", (0, 1, 50, 0)) //至尊治疗药水 250
+            .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 0, 0)) //终极治疗药水 300
+
+            .AddModItem("CalamityMod/SupremeManaPotion", (0, 1, 0, 0)); //至尊魔力药水 400
+
+            #endregion
+
+            #region 实用类药水
+            mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
+            .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
+            .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)); //全知药水
+
+            #endregion
+
+            #region 战斗类药水
+            //肉前
+            mPotion.AddModItem("CalamityMod/AnechoicCoating", (0, 0, 50, 0)) //吸音涂层
+            .AddModItem("CalamityMod/BoundingPotion", (0, 0, 50, 0)) //弹跳药水
+            .AddModItem("CalamityMod/CalciumPotion", (0, 0, 50, 0)) //钙质药水
+            .AddModItem("CalamityMod/SulphurskinPotion", (0, 0, 50, 0)) //硫磺皮肤药水
+            .AddModItem("CalamityMod/ShadowPotion", (0, 0, 75, 0)) //暗影药水
+            //肉后
+            .AddModItem("CalamityMod/PhotosynthesisPotion", (0, 1, 0, 0), Condition.Hardmode) //光合药水
+            .AddModItem("CalamityMod/SoaringPotion", (0, 1, 0, 0), Condition.Hardmode) //腾飞药水
+            .AddModItem("CalamityMod/GravityNormalizerPotion", (0, 1, 0, 0), DownedAstrum) //重力复原药水
+            .AddModItem("CalamityMod/AstralInjection", (0, 1, 0, 0), DownedAstrum) //星幻注射剂
+            //月后
+            .AddModItem("CalamityMod/CeaselessHungerPotion", (0, 1, 50, 0), DownedAstrum) //无尽吞噬药水
+            //武器灌注瓶
+            .AddModItem("CalamityMod/FlaskOfCrumbling", (0, 1, 0, 0), Condition.Hardmode) //粉碎瓶
+            .AddModItem("CalamityMod/FlaskOfBrimstone", (0, 1, 0, 0), DownedCalamitas) //硫火瓶
+            .AddModItem("CalamityMod/FlaskOfHolyFlames", (0, 1, 50, 0), Condition.DownedMoonLord); //圣火瓶
+
+            #endregion
 
             #endregion
 

@@ -22,12 +22,13 @@ namespace LaziestNPC.Content.Items.SummonItems
         {
             Item.width = 42;
             Item.height = 52;
-            Item.rare = ItemRarityID.Red;
             Item.useAnimation = 45;
             Item.useTime = 45;
+            Item.maxStack = 1;
+            Item.value = 0;
+            Item.rare = ItemRarityID.Red;
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.UseSound = SoundID.Item4;
-            Item.maxStack = 1;
             Item.consumable = false;
         }
 

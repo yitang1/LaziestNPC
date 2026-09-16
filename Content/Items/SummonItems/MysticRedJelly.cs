@@ -23,6 +23,7 @@ namespace LaziestNPC.Content.Items.SummonItems
             Item.height = 50;
             Item.useAnimation = 45;
             Item.useTime = 45;
+            Item.value = Item.buyPrice(0, 4, 0, 0);
             Item.rare = ItemRarityID.Blue;
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.consumable = false;

@@ -8,6 +8,7 @@ using Terraria.Utilities;
 using Terraria.GameContent.Bestiary;
 using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Globals.GlobalItems;
+using LaziestNPC.Content.Items.Potions;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
@@ -109,7 +110,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 【原版药水】
 
-            #region 恢复类药水
+            #region [恢复类药水]
 
             #region 治疗药水
             //肉前
@@ -139,7 +140,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region 实用类药水
+            #region [实用类药水]
             vPotion.AddItem(ItemID.NightOwlPotion, (0, 0, 50, 0)) //夜视药水
                 .AddItem(ItemID.ShinePotion, (0, 0, 50, 0)) //光芒药水
                 .AddItem(ItemID.SpelunkerPotion, (0, 0, 50, 0)) //洞穴探险药水
@@ -172,7 +173,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region 战斗类药水
+            #region [战斗类药水]
             vPotion.AddItem(ItemID.RegenerationPotion, (0, 0, 50, 0)) //再生药水
                 .AddItem(ItemID.SwiftnessPotion, (0, 0, 50, 0)) //敏捷药水
                 .AddItem(ItemID.IronskinPotion, (0, 0, 50, 0)) //铁皮药水
@@ -199,24 +200,34 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 【模组药水】
 
-            #region 恢复类药水
-            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 50, 0)) //乱渊炖 120 150
-            .AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0)) //血鳍 240
+            #region [恢复类药水]
+            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //乱渊炖 120 150
+
+            #region 灾厄 Calamity Mod
+            mPotion.AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0)) //血鳍 240
             .AddModItem("CalamityMod/SupremeHealingPotion", (0, 1, 50, 0)) //至尊治疗药水 250
             .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 0, 0)) //终极治疗药水 300
 
             .AddModItem("CalamityMod/SupremeManaPotion", (0, 1, 0, 0)); //至尊魔力药水 400
+            
+            #endregion
 
             #endregion
 
-            #region 实用类药水
+            #region [实用类药水]
+
+            #region 灾厄 Calamity Mod
             mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
             .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
             .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)); //全知药水
+            
+            #endregion
 
             #endregion
 
-            #region 战斗类药水
+            #region [战斗类药水]
+
+            #region 灾厄 Calamity Mod
             //肉前
             mPotion.AddModItem("CalamityMod/AnechoicCoating", (0, 0, 50, 0)) //吸音涂层
             .AddModItem("CalamityMod/BoundingPotion", (0, 0, 50, 0)) //弹跳药水
@@ -234,6 +245,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/FlaskOfCrumbling", (0, 1, 0, 0), Condition.Hardmode) //粉碎瓶
             .AddModItem("CalamityMod/FlaskOfBrimstone", (0, 1, 0, 0), DownedCalamitas) //硫火瓶
             .AddModItem("CalamityMod/FlaskOfHolyFlames", (0, 1, 50, 0), Condition.DownedMoonLord); //圣火瓶
+
+            #endregion
+
+            #region
+            #endregion
 
             #endregion
 

@@ -33,6 +33,16 @@ TrinketNPC: {
 	Tooltip: “汪！”
 }
 
+HadalStew: {
+	DisplayName: 乱渊炖
+	Tooltip:
+		'''
+		只造成[PotionSick]秒耐药性减益
+		{$CommonItemTooltip.MajorStats}
+		{$CommonItemTooltip.MinuteDuration}
+		'''
+}
+
 MysticRedJelly: {
 	DisplayName: 神奇红色果冻
 	Tooltip:

@@ -151,7 +151,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 【原版相关内容】
 
-            #region 原版Boss宝藏袋
+            #region [原版Boss宝藏袋]
             //肉前
             vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
@@ -175,7 +175,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.MoonLordBossBag, (0, 75, 0, 0), Condition.DownedMoonLord); //月总
             #endregion
 
-            #region 原版事件召唤物品
+            #region [原版事件召唤物品]
             vanShop.AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
             .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
             .AddItem(ItemID.PirateMap, (0, 5, 0, 0), Condition.Hardmode) //海盗入侵
@@ -185,7 +185,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera); //霜月
             #endregion
 
-            #region 原版Boss召唤物品
+            #region [原版Boss召唤物品]
             //肉前
             vanShop.AddItem(ItemID.SlimeCrown, (0, 1, 0, 0)) //史莱姆王
             .AddItem(ItemID.SuspiciousLookingEye, (0, 1, 0, 0)) //克苏鲁之眼
@@ -209,7 +209,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region 原版稀有敌怪召唤物品
+            #region [原版稀有敌怪召唤物品]
             //肉前
             vanShop.AddModItem("Fargowiltas/WormSnack", (0, 1, 0, 0)) //巨型蠕虫/挖掘怪
             .AddModItem("Fargowiltas/PinkSlimeCrown", (0, 4, 0, 0)) //粉史莱姆
@@ -332,7 +332,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [模组事件召唤物品]
 
-            #region 灾厄
+            #region 灾厄 Calamity Mod
             modSum.AddModItem("CalamityMod/TorrentialTear", (0, 1, 50, 0), Condition.DownedSkeletron) //雨
             .AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu) //酸雨
             .AddModItem("CalamityMod/AridArtifact", (0, 5, 0, 0), Condition.Hardmode) //沙尘暴
@@ -385,8 +385,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             //肉前
             modSum.AddModItem("FargowiltasSouls/SquirrelCoatofArms", (0, 1, 0, 0)) //特洛伊松鼠
             .AddModItem("FargowiltasSouls/CoffinSummon", (0, 1, 0, 0)) //咒缚灵棺
-            //肉后
             .AddModItem("FargowiltasSouls/DevisCurse", (0, 10, 0, 0), Condition.BloodMoon) //戴薇安
+            //肉后
             .AddModItem("FargowiltasSouls/MechLure", (0, 10, 0, 0), Condition.Hardmode) //放逐遗爵
             .AddModItem("FargowiltasSouls/FragilePixieLamp", (0, 15, 0, 0), Condition.Hardmode) //飘渺游光
             //月后

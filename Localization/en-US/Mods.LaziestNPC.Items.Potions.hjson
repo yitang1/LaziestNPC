@@ -1,0 +1,84 @@
+HadalStew: {
+	DisplayName: 乱渊炖
+	Tooltip:
+		'''
+		只造成[PotionSick]秒耐药性减益
+		{$CommonItemTooltip.MajorStats}
+		{$CommonItemTooltip.MinuteDuration}
+		'''
+}
+
+TriumphPotion: {
+	DisplayName: 胜利药水
+	Tooltip:
+		'''
+		降低敌人造成的接触伤害
+		敌人生命值越低，减伤越高，最高15%
+		'''
+	CommonTips: 长按“左Shift”键以显示额外信息
+	ContentTexts:
+		'''
+		[c/8ADDFF:战局中最大的误判，莫过于轻视将死的反抗者。]
+		[c/8ADDFF:海洋王国的子民向来平静，哪怕处于濒死边缘也极少显露恐慌，]
+		[c/8ADDFF:这让他们的敌人误以为胜利唾手可得。]
+		[c/5C95A1:但这份表面的孱弱恰恰是致命的诱饵，]
+		[c/5C95A1:当敌人发觉那致命的最后一击并未生效时，他们即将面对的，]
+		[c/5C95A1:是铭刻于血脉中汹涌澎湃的愤怒，以及随之而来的致命反扑。]
+		'''
+}
+
+YharimsStimulants: {
+	DisplayName: 魔君牌兴奋剂
+	Tooltip:
+		'''
+		增强大量关于进攻和防御的属性：
+		所有职业的伤害提高5%
+		所有职业的暴击率提高2%
+		近战速度提高7.5%，挖掘速度提高10%
+		仆从击退力提高100%，移动速度提高7.5%
+		伤害减免提高4%，增加10点防御力
+		鞭子的攻击速度提高7.5%
+		'''
+}
+
+CadencePotion: {
+	DisplayName: 韵律药水
+	Tooltip:
+		'''
+		获得心律和谐增益：
+		增加2.5点生命再生速度
+		最大生命值提高25%
+		扩大红心的拾取范围
+		'''
+}
+
+RevivifyPotion: {
+	DisplayName: 新生药水
+	Tooltip:
+		'''
+		让敌人在攻击你时治疗你
+		治疗量为你所受伤害的1/15
+		'''
+}
+
+PenumbraPotion: {
+	DisplayName: 半影药水
+	Tooltip:
+		'''
+		[CalamityMod][Vanilla]
+		[c/FBFBE0:“潜行于阴影之中”]
+		'''
+	CalamityText:
+		'''
+		在你静止或移动时
+		盗贼潜行值恢复速度会提高15%
+		在日食期间或穿戴全套日影盔甲时
+		潜行值恢复速度会提高至20%
+		'''
+	VanillaText:
+		'''
+		你有1%的几率闪避任意攻击
+		在任意事件或Boss战期间
+		这个概率会提升至5%
+		'''
+}

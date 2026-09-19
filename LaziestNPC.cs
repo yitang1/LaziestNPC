@@ -9,6 +9,7 @@ using LaziestNPC.Globals.GlobalNPCs;
 using LaziestNPC.Common.UI;
 using System.IO;
 using Terraria.ID;
+using LaziestNPC.WeakReferences.CalamityMod;
 
 namespace LaziestNPC
 {

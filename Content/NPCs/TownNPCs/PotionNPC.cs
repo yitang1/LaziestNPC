@@ -201,7 +201,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【模组药水】
 
             #region [恢复类药水]
+
+            #region 本模组独立
             mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //乱渊炖 120 150
+
+            #endregion
 
             #region 灾厄 Calamity Mod
             mPotion.AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0)) //血鳍 240
@@ -220,12 +224,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
             .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
             .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)); //全知药水
-            
+
             #endregion
 
             #endregion
 
             #region [战斗类药水]
+            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //胜利药水
+
+            #region 本模组独立
+
+            #endregion
 
             #region 灾厄 Calamity Mod
             //肉前
@@ -237,8 +246,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             //肉后
             .AddModItem("CalamityMod/PhotosynthesisPotion", (0, 1, 0, 0), Condition.Hardmode) //光合药水
             .AddModItem("CalamityMod/SoaringPotion", (0, 1, 0, 0), Condition.Hardmode) //腾飞药水
-            .AddModItem("CalamityMod/GravityNormalizerPotion", (0, 1, 0, 0), DownedAstrum) //重力复原药水
-            .AddModItem("CalamityMod/AstralInjection", (0, 1, 0, 0), DownedAstrum) //星幻注射剂
+            .AddModItem("CalamityMod/GravityNormalizerPotion", (0, 1, 25, 0), DownedAstrum) //重力复原药水
+            .AddModItem("CalamityMod/AstralInjection", (0, 1, 25, 0), DownedAstrum) //星幻注射剂
             //月后
             .AddModItem("CalamityMod/CeaselessHungerPotion", (0, 1, 50, 0), DownedAstrum) //无尽吞噬药水
             //武器灌注瓶

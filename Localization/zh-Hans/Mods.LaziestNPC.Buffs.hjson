@@ -1,0 +1,49 @@
+TriumphBuff: {
+	DisplayName: 胜利之战
+	Description:
+		'''
+		敌人的接触伤害降低
+		他们的生命值越低
+		伤害降低的幅度就越大
+		'''
+}
+
+YharimPower: {
+	DisplayName: 亚利姆之力
+	Description: 你感觉可以把世界撕成两半……空手足矣！
+}
+
+CadenceBuff: {
+	DisplayName: 心律和谐
+	Description: 你心灵纯净
+}
+
+Revivify: {
+	DisplayName: 重振精神
+	Description: 受伤时，会按比例恢复一部分生命值
+}
+
+PenumbraBuff: {
+	DisplayName: 半影
+	Description: 你的脚步如影随形
+}
+
+ArmorShattering: {
+	DisplayName: 护甲粉碎
+	Description: 你会对敌人造成碎甲减益
+}
+
+TitanScale: {
+	DisplayName: 泰坦之鳞
+	Description: 你感觉你所向披靡
+}
+
+ProfanedRageBuff: {
+	DisplayName: 渎神之怒
+	Description: 亵渎之火焚烧着你的血液
+}
+
+DraconicSurgeBuff: {
+	DisplayName: 龙魂加持
+	Description: 神龙的力量顺着你的血流灌注全身
+}

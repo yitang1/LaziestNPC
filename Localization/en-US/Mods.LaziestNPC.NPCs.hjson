@@ -1,12 +1,12 @@
 //Town NPCs
 BossNPC: {
-	DisplayName: Boss NPC
-	Name.BossNPC: Piggy
+	DisplayName: Boss物品商人
+	Name.BossNPC: 猪猪
 
 	Chat: {
-		Normal1: *Piggy's Voice*
-		Normal2: *Piggy's Voice*
-		Normal3: *Piggy's Voice*
+		Normal1: *猪猪的声音*
+		Normal2: 哼哼~
+		Normal3: 呼噜~
 	}
 
 	TownNPCMood: {
@@ -21,7 +21,7 @@ BossNPC: {
 	}
 
 	ShopName: {
-		VanillaAll: 原版商店
+		VanillaAll: 原版相关内容
 		ModBags: 模组宝藏袋
 		ModSums: 模组召唤物
 		CycleShop: 切换商店

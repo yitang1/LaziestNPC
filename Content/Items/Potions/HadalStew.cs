@@ -10,8 +10,9 @@ using Terraria.ModLoader;
 
 namespace LaziestNPC.Content.Items.Potions
 {
-    public class HadalStew : ModItem
+    public class HadalStew : ModItem, ILocalizedModType
     {
+        public new string LocalizationCategory => "Items.Potions";
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 30;
@@ -67,11 +68,11 @@ namespace LaziestNPC.Content.Items.Potions
                 && Calamity.TryFind<ModItem>("CoastalDemonfish", out ModItem CoastalDemonfish))
             {
                 CreateRecipe()
-                .AddIngredient(AbyssGravel.Type, 3)
-                .AddIngredient(CoastalDemonfish.Type, 2)
-                .AddIngredient(ItemID.Bowl)
-                .AddTile(TileID.CookingPots)
-                .Register();
+                    .AddIngredient(AbyssGravel.Type, 3)
+                    .AddIngredient(CoastalDemonfish.Type, 2)
+                    .AddIngredient(ItemID.Bowl)
+                    .AddTile(TileID.CookingPots)
+                    .Register();
 
                 CreateRecipe()
                     .AddIngredient(Voidstone.Type, 3)

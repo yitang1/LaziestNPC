@@ -10,6 +10,7 @@ namespace LaziestNPC.WeakReferences.CalamityMod
     [JITWhenModsEnabled("CalamityMod")]
     public static class WRCalamityHelper
     {
+        //灾厄Mod 半影药水 增强盗贼职业属性
         public static void ApplyCalamityPenumbraPotion(Player player)
         {
             CalamityPlayer calamityPlayer = player.Calamity();

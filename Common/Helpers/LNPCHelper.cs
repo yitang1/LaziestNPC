@@ -7,7 +7,6 @@ using Terraria.Chat;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using LaziestNPC.Globals.GlobalPlayers;
-using CalamityMod;
 using Terraria.GameContent.Events;
 using Terraria.ID;
 

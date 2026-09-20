@@ -4,4 +4,4 @@ version = 0.0.1
 modReferences = ShopExtender
 weakReferences = CalamityMod
 homepage = https://github.com/yitang1/LaziestNPC
-buildIgnore = .git\*, .vs\*, bin\*, obj\*, Properties\*, .editorconfig, *.csproj, *.sln, WeakReferences\*
+buildIgnore = .git\*, .vs\*, bin\*, obj\*, Properties\*, .editorconfig, README.md, *.csproj, *.sln, WeakReferences\DLL*

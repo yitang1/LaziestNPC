@@ -30,7 +30,7 @@ PenumbraBuff: {
 
 ArmorShattering: {
 	DisplayName: 护甲粉碎
-	Description: 你会对敌人造成碎甲减益
+	Description: 敌人的护甲被撕裂了
 }
 
 TitanScale: {

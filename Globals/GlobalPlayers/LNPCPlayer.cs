@@ -10,6 +10,8 @@ using Terraria.ModLoader.IO;
 using LaziestNPC.Globals.GlobalOthers;
 using LaziestNPC.Content.Items.SummonItems;
 using LaziestNPC.Common.Helpers;
+using LaziestNPC.Content.Buffs.Potions;
+using LaziestNPC.Globals.GlobalMods.WeakReferences.CalamityMod;
 
 namespace LaziestNPC.Globals.GlobalPlayers
 {
@@ -22,6 +24,8 @@ namespace LaziestNPC.Globals.GlobalPlayers
             cadence = false;
             revivify = false;
             penumbra = false;
+            armorShattering = false;
+            tScale = false;
         }
 
         public override void UpdateDead()
@@ -31,6 +35,9 @@ namespace LaziestNPC.Globals.GlobalPlayers
             cadence = false;
             revivify = false;
             penumbra = false;
+            armorShattering = false;
+            tScale = false;
+            titanBoost = 0;
         }
 
         //确保状态的数据保存和持久化
@@ -97,6 +104,19 @@ namespace LaziestNPC.Globals.GlobalPlayers
             }
         }
 
+        public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            Player.LaziestNPC().titanBoost = 600;
+        }
+
+        public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            if (TrueMeleeHelper.IsTrueMelee(proj))
+            {
+                titanBoost = 600;
+            }
+        }
+
         public override void PostUpdateEquips()
         {
             if (cadence)
@@ -138,6 +158,38 @@ namespace LaziestNPC.Globals.GlobalPlayers
             {
                 //生命拾心的药水效果
                 Player.lifeMagnet = true;
+            }
+
+            if (armorShattering)
+            {
+                Player.GetDamage(DamageClass.Generic) += 0.08f;
+                Player.GetCritChance(DamageClass.Generic) += 8f;
+
+                if (!ModLoader.HasMod("CalamityMod"))
+                {
+                    Player.GetArmorPenetration(DamageClass.Generic) += 50f;
+                }
+            }
+
+            if (tScale)
+            {
+                Player.endurance += 0.05f;
+                Player.statDefense += 5;
+                Player.kbBuff = true;
+                if (titanBoost > 0)
+                {
+                    Player.statDefense += 25;
+                    Player.endurance += 0.1f;
+                }
+            }
+            else
+            {
+                titanBoost = 0;
+            }
+
+            if (titanBoost > 0)
+            {
+                titanBoost--;
             }
         }
 
@@ -220,5 +272,8 @@ namespace LaziestNPC.Globals.GlobalPlayers
         public bool cadence = false;
         public bool revivify = false;
         public bool penumbra = false;
+        public bool armorShattering = false;
+        public bool tScale = false;
+        public int titanBoost = 0;
     }
 }

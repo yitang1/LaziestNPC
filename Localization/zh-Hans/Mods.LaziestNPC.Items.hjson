@@ -33,6 +33,11 @@ TrinketNPC: {
 	Tooltip: “汪！”
 }
 
+GalacticaSingularity: {
+	DisplayName: 星系异石
+	Tooltip: 广阔宇宙的结晶
+}
+
 MysticRedJelly: {
 	DisplayName: 神奇红色果冻
 	Tooltip:

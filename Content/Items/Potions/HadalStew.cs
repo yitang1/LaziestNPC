@@ -12,6 +12,7 @@ namespace LaziestNPC.Content.Items.Potions
 {
     public class HadalStew : ModItem, ILocalizedModType
     {
+        //这玩意修改的是 Mods.LaziestNPC.Items.HadalStew 路径中的“Items”键
         public new string LocalizationCategory => "Items.Potions";
         public override void SetStaticDefaults()
         {

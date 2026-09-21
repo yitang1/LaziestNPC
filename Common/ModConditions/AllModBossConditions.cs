@@ -10,6 +10,8 @@ namespace LaziestNPC.Common.ModConditions
     public static class AllModBossConditions
     {
         #region 灾厄 Calamity Mod
+        public static Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
+
         public static Condition DownedDesertBug => ModBosses.GetCondition("DesertScourge"); //荒漠灾虫
         public static Condition DownedCrabulon => ModBosses.GetCondition("Crabulon"); //菌生蟹
         public static Condition DownedPerforator => ModBosses.GetCondition("Perforator"); //血肉宿主

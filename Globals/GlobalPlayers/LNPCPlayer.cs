@@ -26,6 +26,8 @@ namespace LaziestNPC.Globals.GlobalPlayers
             penumbra = false;
             armorShattering = false;
             tScale = false;
+            profanedRage = false;
+            draconicSurge = false;
         }
 
         public override void UpdateDead()
@@ -38,6 +40,8 @@ namespace LaziestNPC.Globals.GlobalPlayers
             armorShattering = false;
             tScale = false;
             titanBoost = 0;
+            profanedRage = false;
+            draconicSurge = false;
         }
 
         //确保状态的数据保存和持久化
@@ -106,12 +110,24 @@ namespace LaziestNPC.Globals.GlobalPlayers
 
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
+            //PostUpdateMiscEffects()这个方法在游戏里每秒调用60次，因此600的变量就是10秒
             Player.LaziestNPC().titanBoost = 600;
         }
 
         public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)
         {
+            //灾厄Mod的真近战武器
             if (TrueMeleeHelper.IsTrueMelee(proj))
+            {
+                titanBoost = 600;
+            }
+            //原版的特例(这几个就算剑刃本身也不触发效果，不知为何，暂且认为挥舞的伤害全是剑气)
+            //暂时不知道有没有漏网之鱼😡
+            if (proj.type == ProjectileID.NightsEdge
+                || proj.type == ProjectileID.TrueNightsEdge
+                || proj.type == ProjectileID.Excalibur
+                || proj.type == ProjectileID.TrueExcalibur
+                || proj.type == ProjectileID.TheHorsemansBlade)
             {
                 titanBoost = 600;
             }
@@ -191,17 +207,69 @@ namespace LaziestNPC.Globals.GlobalPlayers
             {
                 titanBoost--;
             }
+
+            if (profanedRage)
+            {
+                Player.GetCritChance(DamageClass.Generic) += 12f;
+            }
+
+            double flightTimeMult = 1f + (draconicSurge ? 0.2f : 0f);
+
+            if (Player.wingTimeMax > 0)
+            {
+                Player.wingTimeMax = (int)(Player.wingTimeMax * flightTimeMult);
+            }
+            if (draconicSurge)
+            {
+                //Player.accRunSpeed += 0.1f;
+                //Player.runAcceleration += 0.1f;
+                Player.statDefense += 16;
+            }
+            //每次进游戏只会检查一次
+            if (calamityRebornBuffType == -1)
+            {
+                if (ModLoader.TryGetMod("CalamityMod", out Mod calamity)
+                    && calamity.TryFind<ModBuff>("SilvaRevival", out ModBuff SilvaRevival))
+                {
+                    calamityRebornBuffType = SilvaRevival.Type;
+                }
+                else
+                {
+                    //标记已查找但不可用，不再重试
+                    calamityRebornBuffType = -2; 
+                }
+            }
+            if (calamityRebornCooldown > 0)
+            {
+                calamityRebornCooldown--;
+            }
+            //玩家触发灾厄里【始源林海套装】的无敌效果，并获得【始源林海无敌】增益时 ↓
+            if (Player.LaziestNPC().draconicSurge && calamityRebornCooldown <= 0
+                && calamityRebornBuffType > 0 && Player.HasBuff(calamityRebornBuffType))
+            {
+                Player.Heal(Player.statLifeMax2 / 2);
+                // 5分钟冷却时间
+                calamityRebornCooldown = 5 * 60 * 60;
+            }
         }
 
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
         {
-            if (TryReborn())
+            if (LNPCHelper.TryRebornWithTheReturner(Player))
             {
                 //复活成功，阻止死亡
                 playSound = false;
                 genDust = false;
                 return false; //返回false阻止玩家死亡
             }
+
+            if (LNPCHelper.TryRebornWithLunarArmor(Player))
+            {
+                playSound = false;
+                genDust = false;
+                return false;
+            }
+
             return true; //复活失败，正常死亡
         }
 
@@ -222,48 +290,6 @@ namespace LaziestNPC.Globals.GlobalPlayers
             return false;
         }
 
-        //TheReturner的复活逻辑封装
-        private bool TryReborn()
-        {
-            //检查背包中是否收藏了TheReturner
-            bool hasFavorited = false;
-            foreach (Item item in Player.inventory)
-                if (item.type == ModContent.ItemType<TheReturner>() && item.favorited) { hasFavorited = true; break; }
-            if (!hasFavorited) return false;
-
-            //判断可用次数
-            bool canRevive = true;
-            if (!Main.hardMode && EnablePre)
-            {
-                canRevive = true;
-                EnablePre = false;
-            }
-            else if (Main.hardMode && EnableHard)
-            {
-                canRevive = true;
-                EnableHard = false;
-            }
-            if (!canRevive) return false;
-
-            //50%概率
-            if (Main.rand.NextFloat() >= 0.5f) return false;
-
-            //执行复活
-            Player.statLife += Player.statLifeMax2;
-            Player.HealEffect(Player.statLifeMax2, true);
-            Player.immune = true;
-            Player.immuneTime = 120;
-            Player.dead = false;
-
-            //雷击特效
-            LightningFlashDust.SpawnBolt(Player.Center);
-            SoundEngine.PlaySound(SoundID.Thunder, Player.Center);
-            Main.NewText(Language.GetTextValue("Mods.LaziestNPC.World.Items.TheReturner.Reborn"), new Color(255, 70, 123));
-
-            return true;
-        }
-
-
         public bool EnablePre = true;
         public bool EnableHard = true;
 
@@ -275,5 +301,12 @@ namespace LaziestNPC.Globals.GlobalPlayers
         public bool armorShattering = false;
         public bool tScale = false;
         public int titanBoost = 0;
+        public bool profanedRage = false;
+
+        public bool draconicSurge = false;
+        //-1表示未开始查找，-2表示查找失败(灾厄未加载或找不到)，大于0表示找到了
+        private static int calamityRebornBuffType = -1;
+        //每个玩家独立的冷却倒计时
+        public int calamityRebornCooldown = 0;
     }
 }

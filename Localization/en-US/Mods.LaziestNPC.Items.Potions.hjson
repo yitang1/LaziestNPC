@@ -65,8 +65,8 @@ PenumbraPotion: {
 	DisplayName: 半影药水
 	Tooltip:
 		'''
-		[CalamityMod][Vanilla]
-		[c/FBFBE0:“潜行于阴影之中”]
+		[CalamityMod]
+		[Vanilla]
 		'''
 	CalamityText:
 		'''
@@ -88,7 +88,8 @@ ShatteringPotion: {
 	Tooltip:
 		'''
 		伤害和暴击率提高8%
-		[CalamityMod][Vanilla]
+		[CalamityMod]
+		[Vanilla]
 		'''
 	CalamityText:
 		'''
@@ -109,5 +110,39 @@ TitanScalePotion: {
 		使用真近战武器命中敌人后：
 		10秒内会增加25点防御力
 		同时伤害减免提高10%
+		'''
+}
+
+ProfanedRagePotion: {
+	DisplayName: 渎神之怒药水
+	Tooltip:
+		'''
+		所有暴击率提高12%
+		此增益不会和其他药水冲突
+		'''
+}
+
+DraconicElixir: {
+	DisplayName: 龙魂秘药
+	Tooltip:
+		'''
+		增加16点防御
+		翅膀的飞行时间提高20%
+		[CalamityMod]
+		[Vanilla]
+		'''
+	CalamityText:
+		'''
+		始源林海无敌效果在触发时
+		会为你恢复一半的生命值
+		此效果有5分钟的冷却时间
+		'''
+	VanillaText:
+		'''
+		当你装备任意整套耀斑、
+		星旋、星云或星尘盔甲时：
+		受到致死伤害会原地复活
+		并为你恢复一半的生命值
+		此效果有5分钟的冷却时间
 		'''
 }

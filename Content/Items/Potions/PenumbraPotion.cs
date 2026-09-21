@@ -24,7 +24,7 @@ namespace LaziestNPC.Content.Items.Potions
 		{
             Item.DefaultToFood(26, 30, BuffType<PenumbraBuff>(), 28800, true);
             Item.rare = ItemRarityID.Lime;
-            Item.value = Item.buyPrice(0, 1, 50, 0);
+            Item.value = Item.buyPrice(0, 1, 25, 0);
 		}
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)

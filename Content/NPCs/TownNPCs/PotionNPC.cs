@@ -203,7 +203,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [恢复类药水]
 
             #region 本模组独立
-            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //乱渊炖 120 150
+            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0), Condition.DownedEowOrBoc); //乱渊炖 120 150
 
             #endregion
 
@@ -230,10 +230,19 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [战斗类药水]
-            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //胜利药水
 
             #region 本模组独立
+            mPotion.AddItem(ItemType<TriumphPotion>(), (0, 0, 75, 0), KingSlimeOrDesertBug) //胜利药水
+            .AddItem(ItemType<YharimsStimulants>(), (0, 1, 0, 0), Condition.DownedSkeletron) //魔君牌兴奋剂
 
+            .AddItem(ItemType<CadencePotion>(), (0, 1, 25, 0), Condition.Hardmode) //韵律药水
+            .AddItem(ItemType<RevivifyPotion>(), (0, 1, 25, 0), Condition.Hardmode) //新生药水
+            .AddItem(ItemType<PenumbraPotion>(), (0, 1, 25, 0), Condition.DownedPlantera) //半影药水
+            .AddItem(ItemType<ShatteringPotion>(), (0, 1, 25, 0), Condition.DownedGolem) //粉碎药水
+            .AddItem(ItemType<TitanScalePotion>(), (0, 1, 25, 0), Condition.DownedGolem) //泰坦之鳞药水
+            .AddItem(ItemType<ProfanedRagePotion>(), (0, 1, 50, 0), Condition.DownedCultist) //渎神之怒药水
+
+            .AddItem(ItemType<DraconicElixir>(), (0, 2, 0, 0), Condition.DownedMoonLord); //龙魂秘药
             #endregion
 
             #region 灾厄 Calamity Mod
@@ -257,7 +266,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region
+            #region 瑟银 Thorium Mod
             #endregion
 
             #endregion

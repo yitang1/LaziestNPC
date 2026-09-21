@@ -10,7 +10,7 @@ namespace LaziestNPC.Globals.GlobalMods.WeakReferences.CalamityMod
 {
     public class WRCalamityPlayer : ModPlayer
     { 
-        //灾厄Mod 半影药水 增强盗贼职业属性
+        //灾厄Mod 半影药水 加强盗贼职业属性
         public override void PostUpdateMiscEffects()
         {
             if (!Player.LaziestNPC().penumbra)

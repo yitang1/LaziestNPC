@@ -21,36 +21,36 @@ namespace LaziestNPC.Common.ModConditions
             ("Crabulon", "CalamityMod", new string[] {"Crabulon"}), //菌生蟹
             ("Perforator", "CalamityMod", new string[] {"PerforatorHive"}), //血肉宿主
             ("HiveMind", "CalamityMod", new string[] {"HiveMind"}), //腐巢意志
-            ("PerOrHive", "CalamityMod", new string[] { "PerforatorHive", "HiveMind"}), //血肉宿主 或 腐巢意志
+            ("PerOrHive", "CalamityMod", new string[] {"PerforatorHive", "HiveMind"}), //血肉宿主 或 腐巢意志
             ("SlimeGod", "CalamityMod", new string[] {"SlimeGodCore"}), //史莱姆之神
             
-            ("Cryogen", "CalamityMod", new string[] { "Cryogen"}), //极地之灵
-            ("AquaticScourge", "CalamityMod", new string[] { "AquaticScourgeHead", "AquaticScourgeBody", "AquaticScourgeBodyAlt", "AquaticScourgeTail"}), //渊海灾虫
-            ("Brimstone", "CalamityMod", new string[] { "BrimstoneElemental"}), //硫磺火元素
-            ("AstrumAureus", "CalamityMod", new string[] { "AstrumAureus"}), //白金星舰
-            ("Calamitas", "CalamityMod", new string[] { "CalamitasClone"}), //灾厄之影
-            ("Leviathan", "CalamityMod", new string[] { "Leviathan", "Anahita"}), //阿娜希塔和利维坦
-            ("Plague", "CalamityMod", new string[] { "PlaguebringerGoliath"}), //瘟疫使者歌莉娅
-            ("Ravager", "CalamityMod", new string[] { "RavagerBody"}), //毁灭魔像
-            ("AstrumDeus", "CalamityMod", new string[] { "AstrumDeusHead", "AstrumDeusBody", "AstrumDeusTail"}), //星神游龙
+            ("Cryogen", "CalamityMod", new string[] {"Cryogen"}), //极地之灵
+            ("AquaticScourge", "CalamityMod", new string[] {"AquaticScourgeHead", "AquaticScourgeBody", "AquaticScourgeBodyAlt", "AquaticScourgeTail"}), //渊海灾虫
+            ("Brimstone", "CalamityMod", new string[] {"BrimstoneElemental"}), //硫磺火元素
+            ("AstrumAureus", "CalamityMod", new string[] {"AstrumAureus"}), //白金星舰
+            ("Calamitas", "CalamityMod", new string[] {"CalamitasClone"}), //灾厄之影
+            ("Leviathan", "CalamityMod", new string[] {"Leviathan", "Anahita"}), //阿娜希塔和利维坦
+            ("Plague", "CalamityMod", new string[] {"PlaguebringerGoliath"}), //瘟疫使者歌莉娅
+            ("Ravager", "CalamityMod", new string[] {"RavagerBody"}), //毁灭魔像
+            ("AstrumDeus", "CalamityMod", new string[] {"AstrumDeusHead", "AstrumDeusBody", "AstrumDeusTail"}), //星神游龙
 
-            ("Dragonfolly", "CalamityMod", new string[] { "Dragonfolly"}), //痴愚金龙
-            ("Guardians", "CalamityMod", new string[] { "ProfanedGuardianCommander"}), //亵渎守卫
-            ("Providence", "CalamityMod", new string[] { "Providence"}), //亵渎天神
-            ("StormWeaver", "CalamityMod", new string[] { "StormWeaverHead", "StormWeaverBody", "StormWeaverTail"}), //风暴编织者
-            ("CeaselessVoid", "CalamityMod", new string[] { "CeaselessVoid", "DarkEnergy"}), //无尽虚空
-            ("Signus", "CalamityMod", new string[] { "Signus"}), //西格纳斯
-            ("Polterghast", "CalamityMod", new string[] { "Polterghast"}), //噬魂幽花
-            ("OldDuke", "CalamityMod", new string[] { "OldDuke"}), //硫海遗爵
-            ("DOG", "CalamityMod", new string[] { "DevourerofGodsHead", "DevourerofGodsBody", "DevourerofGodsTail"}), //神明吞噬者
-            ("Yharon", "CalamityMod", new string[] { "Yharon"}), //犽戎
-            ("ExoMechs", "CalamityMod", new string[] { "Artemis", "Apollo", "AresBody", "AresGaussNuke", "AresLaserCannon", "AresPlasmaFlamethrower", "AresTeslaCannon", "ThanatosHead", "ThanatosBody1", "ThanatosBody2", "ThanatosTail"}), //星流巨械
-            ("SCalamitas", "CalamityMod", new string[] { "SupremeCalamitas"}), //终灾
+            ("Dragonfolly", "CalamityMod", new string[] {"Dragonfolly"}), //痴愚金龙
+            ("Guardians", "CalamityMod", new string[] {"ProfanedGuardianCommander"}), //亵渎守卫
+            ("Providence", "CalamityMod", new string[] {"Providence"}), //亵渎天神
+            ("StormWeaver", "CalamityMod", new string[] {"StormWeaverHead", "StormWeaverBody", "StormWeaverTail"}), //风暴编织者
+            ("CeaselessVoid", "CalamityMod", new string[] {"CeaselessVoid", "DarkEnergy"}), //无尽虚空
+            ("Signus", "CalamityMod", new string[] {"Signus"}), //西格纳斯
+            ("Polterghast", "CalamityMod", new string[] {"Polterghast"}), //噬魂幽花
+            ("OldDuke", "CalamityMod", new string[] {"OldDuke"}), //硫海遗爵
+            ("DOG", "CalamityMod", new string[] {"DevourerofGodsHead", "DevourerofGodsBody", "DevourerofGodsTail"}), //神明吞噬者
+            ("Yharon", "CalamityMod", new string[] {"Yharon"}), //犽戎
+            ("ExoMechs", "CalamityMod", new string[] {"Artemis", "Apollo", "AresBody", "AresGaussNuke", "AresLaserCannon", "AresPlasmaFlamethrower", "AresTeslaCannon", "ThanatosHead", "ThanatosBody1", "ThanatosBody2", "ThanatosTail"}), //星流巨械
+            ("SCalamitas", "CalamityMod", new string[] {"SupremeCalamitas"}), //终灾
             
             #endregion
 
             #region 灾劫 Catalyst Mod
-            ("Astrageldon", "CatalystMod", new string[] { "Astrageldon"}), //末世星史莱姆
+            ("Astrageldon", "CatalystMod", new string[] {"Astrageldon"}), //末世星史莱姆
 
             #endregion
 
@@ -67,17 +67,19 @@ namespace LaziestNPC.Common.ModConditions
             #endregion
 
             #region 瑟银 Thorium Mod
-            ("GrandThunderBird", "ThoriumMod", new string[] { "TheGrandThunderBird"}), //惊雷王鹰
-            ("QueenJellyfish", "ThoriumMod", new string[] { "QueenJellyfish"}), //水母皇后
-            ("Viscount", "ThoriumMod", new string[] { "Viscount"}), //蝙蝠子爵
-            ("GraniteEnergyStorm", "ThoriumMod", new string[] { "GraniteEnergyStorm"}), //花岗岩流能风暴
-            ("BuriedChampion", "ThoriumMod", new string[] { "BuriedChampion"}), //英灵遗骸
-            ("StarScouter", "ThoriumMod", new string[] { "StarScouter"}), //星际监察者
-            ("BoreanStrider", "ThoriumMod", new string[] { "BoreanStrider", "BoreanStriderPopped"}), //极地遁蛛
-            ("FallenBeholder", "ThoriumMod", new string[] { "FallenBeholder", "FallenBeholder2"}), //堕落注视者
-            ("Lich", "ThoriumMod", new string[] { "Lich", "LichHeadless"}), //巫妖
-            ("ForgottenOne", "ThoriumMod", new string[] { "ForgottenOne", "ForgottenOneCracked", "ForgottenOneReleased"}), //遗忘之主
-            ("ThePrimordials", "ThoriumMod", new string[] { "DreamEater", "SlagFury", "Omnicide", "Aquaius"}), //始生灾灵
+            ("GrandThunderBird", "ThoriumMod", new string[] {"TheGrandThunderBird"}), //惊雷王鹰
+            ("QueenJellyfish", "ThoriumMod", new string[] {"QueenJellyfish"}), //水母皇后
+            ("Viscount", "ThoriumMod", new string[] {"Viscount"}), //蝙蝠子爵
+            ("GraniteEnergyStorm", "ThoriumMod", new string[] {"GraniteEnergyStorm"}), //花岗岩流能风暴
+            ("BuriedChampion", "ThoriumMod", new string[] {"BuriedChampion"}), //英灵遗骸
+            ("StarScouter", "ThoriumMod", new string[] {"StarScouter"}), //星际监察者
+            ("BoreanStrider", "ThoriumMod", new string[] {"BoreanStrider", "BoreanStriderPopped"}), //极地遁蛛
+            ("FallenBeholder", "ThoriumMod", new string[] {"FallenBeholder", "FallenBeholder2"}), //堕落注视者
+            ("Lich", "ThoriumMod", new string[] {"Lich", "LichHeadless"}), //巫妖
+            ("ForgottenOne", "ThoriumMod", new string[] {"ForgottenOne", "ForgottenOneCracked", "ForgottenOneReleased"}), //遗忘之主
+            ("ThePrimordials", "ThoriumMod", new string[] {"DreamEater", "SlagFury", "Omnicide", "Aquaius"}), //始生灾灵
+            //迷你
+            ("PatchWerk", "ThoriumMod", new string[] {"PatchWerk"}), //缝合人
 
             #endregion
 

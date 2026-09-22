@@ -9,6 +9,12 @@ namespace LaziestNPC.Common.ModConditions
     //所有模组Boss的击败条件
     public static class AllModBossConditions
     {
+        #region 原版
+        public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
+        public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
+
+        #endregion
+
         #region 灾厄 Calamity Mod
         public static Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
 
@@ -74,6 +80,8 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedLich => ModBosses.GetCondition("Lich"); //巫妖
         public static Condition DownedForgottenOne => ModBosses.GetCondition("ForgottenOne"); //遗忘之主
         public static Condition DownedThePrimordials => ModBosses.GetCondition("ThePrimordials"); //始生灾灵
+        //迷你
+        public static Condition DownedPatchWerk => ModBosses.GetCondition("PatchWerk"); //缝合人
 
         #endregion
 

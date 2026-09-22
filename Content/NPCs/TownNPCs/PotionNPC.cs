@@ -203,33 +203,31 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [恢复类药水]
 
             #region 本模组独立
-            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0), Condition.DownedEowOrBoc); //乱渊炖 120 150
+            mPotion.AddItem(ItemType<HadalStew>(), (0, 0, 75, 0)); //乱渊炖 120 150
 
             #endregion
 
             #region 灾厄 Calamity Mod
-            mPotion.AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0)) //血鳍 240
-            .AddModItem("CalamityMod/SupremeHealingPotion", (0, 1, 50, 0)) //至尊治疗药水 250
-            .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 0, 0)) //终极治疗药水 300
+            mPotion.AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0), DownedProvidence) //血鳍 240
+            .AddModItem("CalamityMod/SupremeHealingPotion", (0, 1, 50, 0), DownedProvidence) //至尊治疗药水 250
+            .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 0, 0), DownedDOG) //终极治疗药水 300
 
-            .AddModItem("CalamityMod/SupremeManaPotion", (0, 1, 0, 0)); //至尊魔力药水 400
-            
+            .AddModItem("CalamityMod/SupremeManaPotion", (0, 1, 0, 0), Condition.DownedMoonLord); //至尊魔力药水 400
+
+            #endregion
+
+            #region 瑟银 Thorium Mod
+            mPotion.AddModItem("ThoriumMod/SpringWater", (0, 0, 50, 0)) //泉水 125
+            .AddModItem("ThoriumMod/Jelly", (0, 0, 25, 0), Condition.DownedSkeletron) //果酱 75
+            .AddModItem("ThoriumMod/MidnightOil", (0, 0, 25, 0), Condition.DownedSkeletron) //午夜之油 75
+
+            .AddModItem("ThoriumMod/LifeWater", (0, 0, 50, 0), Condition.Hardmode); //生命之水 125
+
             #endregion
 
             #endregion
 
-            #region [实用类药水]
-
-            #region 灾厄 Calamity Mod
-            mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
-            .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
-            .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)); //全知药水
-
-            #endregion
-
-            #endregion
-
-            #region [战斗类药水]
+            #region [战斗类/实用类药水]
 
             #region 本模组独立
             mPotion.AddItem(ItemType<TriumphPotion>(), (0, 0, 75, 0), KingSlimeOrDesertBug) //胜利药水
@@ -246,8 +244,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 灾厄 Calamity Mod
+            //[实用类药水] 模组药水都放在一起
+            mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
+            .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
+            .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)) //全知药水
+            .AddModItem("CalamityMod/AnechoicCoating", (0, 0, 50, 0)) //吸音涂层
             //肉前
-            mPotion.AddModItem("CalamityMod/AnechoicCoating", (0, 0, 50, 0)) //吸音涂层
             .AddModItem("CalamityMod/BoundingPotion", (0, 0, 50, 0)) //弹跳药水
             .AddModItem("CalamityMod/CalciumPotion", (0, 0, 50, 0)) //钙质药水
             .AddModItem("CalamityMod/SulphurskinPotion", (0, 0, 50, 0)) //硫磺皮肤药水
@@ -267,6 +269,37 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 瑟银 Thorium Mod
+            //肉前
+            mPotion.AddModItem("ThoriumMod/AquaPotion", (0, 0, 50, 0)) //潜水药水
+            .AddModItem("ThoriumMod/ArtilleryPotion", (0, 0, 50, 0)) //集群火炮药水
+            .AddModItem("ThoriumMod/AssassinPotion", (0, 0, 50, 0)) //刺客药水
+            .AddModItem("ThoriumMod/BouncingFlamePotion", (0, 0, 50, 0)) //弹跳火焰药水
+            .AddModItem("ThoriumMod/ConflagrationPotion", (0, 0, 50, 0)) //燃炎药水
+            .AddModItem("ThoriumMod/EarwormPotion", (0, 0, 50, 0)) //耳虫药水
+            .AddModItem("ThoriumMod/FrenzyPotion", (0, 0, 50, 0)) //狂怒药水
+            .AddModItem("ThoriumMod/GlowingPotion", (0, 0, 50, 0)) //光辉药水
+            .AddModItem("ThoriumMod/HydrationPotion", (0, 0, 50, 0)) //补水药水
+            .AddModItem("ThoriumMod/BloodPotion", (0, 0, 50, 0), Condition.BloodMoon) //堕血药水
+            .AddModItem("ThoriumMod/CreativityPotion", (0, 0, 75, 0), DownedGrandThunderBird) //创意药水
+            .AddModItem("ThoriumMod/WarmongerPotion", (0, 0, 75, 0), Condition.DownedEowOrBoc) //好战药水
+            //肉后
+            .AddModItem("ThoriumMod/ArcanePotion", (0, 1, 0, 0), Condition.Hardmode) //奥术药水
+            .AddModItem("ThoriumMod/HolyPotion", (0, 1, 0, 0), Condition.Hardmode) //圣洁药水
+            .AddModItem("ThoriumMod/InspirationReachPotion", (0, 1, 0, 0), Condition.Hardmode) //灵感之触药水
+            .AddModItem("ThoriumMod/KineticPotion", (0, 1, 0, 0), Condition.Hardmode) //动能药水
+            //特殊
+            .AddModItem("ThoriumMod/DeepFreezeCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //深寒涂层
+            .AddModItem("ThoriumMod/SporeCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //孢子涂层
+            .AddModItem("ThoriumMod/ToxicCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //剧毒涂层
+            .AddModItem("ThoriumMod/ExplosiveCoatingItem", (0, 0, 50, 0), QueenBeeAndEowOrBoc) //爆炸涂层
+            .AddModItem("ThoriumMod/GorgonCoatingItem", (0, 0, 75, 0), QueenBeeAndSkeletron) //石化涂层
+            
+            .AddModItem("ThoriumMod/BatRepellent", (0, 1, 0, 0), DownedPatchWerk) //蝙蝠趋避剂
+            .AddModItem("ThoriumMod/FishRepellent", (0, 1, 0, 0), DownedPatchWerk) //鱼类趋避剂
+            .AddModItem("ThoriumMod/InsectRepellent", (0, 1, 0, 0), DownedPatchWerk) //昆虫趋避剂
+            .AddModItem("ThoriumMod/SkeletonRepellent", (0, 1, 0, 0), DownedPatchWerk) //骷髅趋避剂
+            .AddModItem("ThoriumMod/ZombieRepellent", (0, 1, 0, 0), DownedPatchWerk); //僵尸趋避剂
+
             #endregion
 
             #endregion

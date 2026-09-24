@@ -340,9 +340,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region
-            #endregion
-
             #endregion
 
             #region [模组Boss召唤物品]

@@ -20,7 +20,7 @@ namespace LaziestNPC.Globals.GlobalItems
         }
 
         /// <summary>
-        /// 尝试从其他模组添加一个物品到商店。如果该模组未加载或物品不存在，则什么都不做。
+        /// 尝试从其他模组添加一个物品到商店。如果该模组未加载或物品不存在，也不会报错。
         /// </summary>
         /// <param name="shop">当前商店对象</param>
         /// <param name="modItemPath">格式为 "模组名/物品类名"，例如"CatalystMod/AstrageldonBag"</param>

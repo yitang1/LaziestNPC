@@ -134,7 +134,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.ManaPotion, (0, 0, 5, 0)) //魔力药水 100
                 .AddItem(ItemID.GreaterManaPotion, (0, 0, 50, 0), Condition.Hardmode) //强效魔力药水 200
                 .AddItem(ItemID.SuperManaPotion, (0, 0, 75, 0), Condition.Hardmode); //超级魔力药水 300
-               //.AddItem(ItemID.SuperManaPotion, (0, 1, 25, 0), Condition.DownedPlantera); //超级魔力药水 400
+                                                                                     //.AddItem(ItemID.SuperManaPotion, (0, 1, 25, 0), Condition.DownedPlantera); //超级魔力药水 400
 
             #endregion
 
@@ -162,14 +162,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.LuckPotionGreater, (0, 2, 0, 0)) //强效幸运药水
                 .AddItem(ItemID.InvisibilityPotion, (0, 0, 50, 0)) //隐身药水
                 .AddItem(ItemID.GenderChangePotion, (0, 1, 0, 0)) //变性药水
-                .AddItem(ItemID.LovePotion, (0, 1, 0, 0), Condition.Hardmode) //爱情药水
                 .AddItem(ItemID.StinkPotion, (0, 0, 50, 0)) //臭味药水
                 .AddItem(ItemID.BiomeSightPotion, (0, 0, 50, 0)) //生物群系视觉药水
                 .AddItem(ItemID.RecallPotion, (0, 0, 50, 0)) //回忆药水
                 .AddItem(ItemID.PotionOfReturn, (0, 0, 80, 0)) //返回药水
                 .AddItem(ItemID.WormholePotion, (0, 0, 50, 0)) //虫洞药水
                 .AddItem(ItemID.TeleportationPotion, (0, 0, 50, 0)) //传送药水
-                .AddItem(ItemID.RedPotion, (0, 2, 0, 0)); //红药水
+                .AddItem(ItemID.RedPotion, (0, 2, 0, 0)) //红药水
+                .AddItem(ItemID.LovePotion, (0, 1, 0, 0), Condition.Hardmode); //爱情药水
 
             #endregion
 
@@ -188,12 +188,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.RagePotion, (0, 0, 50, 0)) //怒气药水
                 .AddItem(ItemID.WrathPotion, (0, 0, 50, 0)) //暴怒药水
                 .AddItem(ItemID.InfernoPotion, (0, 0, 50, 0)) //狱火药水
-                .AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron) //生命力药水
                 .AddItem(ItemID.TitanPotion, (0, 0, 50, 0)) //泰坦药水
                 .AddItem(ItemID.WarmthPotion, (0, 0, 50, 0)) //保暖药水
                 .AddItem(ItemID.BattlePotion, (0, 0, 50, 0)) //战斗药水
                 .AddItem(ItemID.CalmingPotion, (0, 0, 50, 0)) //镇静药水
-                .AddItem(ItemID.FlaskofIchor, (0, 1, 50, 0), Condition.Hardmode); //灵液药剂
+                .AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron) //生命力药水
+                //特殊
+                .AddItem(ItemID.FlaskofFire, (0, 0, 50, 0), QueenBeeAndEowOrBoc) //烈火药剂
+                .AddItem(ItemID.FlaskofPoison, (0, 0, 50, 0), Condition.DownedQueenBee) //毒药剂
+                .AddItem(ItemID.FlaskofIchor, (0, 1, 50, 0), Condition.Hardmode) //灵液药剂
+                .AddItem(ItemID.FlaskofCursedFlames, (0, 1, 50, 0), Condition.Hardmode) //诅咒焰药剂
+                .AddItem(ItemID.FlaskofVenom, (0, 1, 50, 0), Condition.DownedPlantera); //毒液药剂
             #endregion
 
             #endregion

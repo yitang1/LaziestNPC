@@ -1,8 +1,9 @@
-﻿using LaziestNPC.Common.ModBossess;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using LaziestNPC.Common.ModBossess;
+using LaziestNPC.Globals.GlobalSystem;
 
 namespace LaziestNPC.Common.ModConditions
 {
@@ -12,6 +13,7 @@ namespace LaziestNPC.Common.ModConditions
         #region 原版
         public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
         public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
+        public static Condition MourningWoodOrSplinter = new Condition("MourningWoodOrSplinter", () => Condition.DownedMourningWood.IsMet() || NPCCondition.downedSplinterling); //哀木 / 树精
 
         #endregion
 

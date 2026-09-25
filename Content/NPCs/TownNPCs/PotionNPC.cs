@@ -191,10 +191,13 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.TitanPotion, (0, 0, 50, 0)) //泰坦药水
                 .AddItem(ItemID.WarmthPotion, (0, 0, 50, 0)) //保暖药水
                 .AddItem(ItemID.BattlePotion, (0, 0, 50, 0)) //战斗药水
-                .AddItem(ItemID.CalmingPotion, (0, 0, 50, 0)) //镇静药水
-                .AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron) //生命力药水
-                //特殊
-                .AddItem(ItemID.FlaskofFire, (0, 0, 50, 0), QueenBeeAndEowOrBoc) //烈火药剂
+                .AddItem(ItemID.CalmingPotion, (0, 0, 50, 0)); //镇静药水
+            if (ModLoader.HasMod("CalamityMod"))
+                vPotion.AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0)); //生命力药水
+            else
+                vPotion.AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron); //生命力药水
+            //特殊
+            vPotion.AddItem(ItemID.FlaskofFire, (0, 0, 50, 0), QueenBeeAndEowOrBoc) //烈火药剂
                 .AddItem(ItemID.FlaskofPoison, (0, 0, 50, 0), Condition.DownedQueenBee) //毒药剂
                 .AddItem(ItemID.FlaskofIchor, (0, 1, 50, 0), Condition.Hardmode) //灵液药剂
                 .AddItem(ItemID.FlaskofCursedFlames, (0, 1, 50, 0), Condition.Hardmode) //诅咒焰药剂

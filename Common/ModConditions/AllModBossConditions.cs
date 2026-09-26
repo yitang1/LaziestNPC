@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using LaziestNPC.Common.ModBossess;
-using LaziestNPC.Globals.GlobalSystem;
+using LaziestNPC.Globals.GlobalNPCs;
 
 namespace LaziestNPC.Common.ModConditions
 {

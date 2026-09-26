@@ -4,18 +4,18 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Terraria;
-using Terraria.ID;
-using Terraria.UI.Chat;
-using Terraria.ModLoader;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.UI.Chat;
+using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Common.Helpers;
-using LaziestNPC.Common.UI;
 using LaziestNPC.Common.Rarities;
 
-namespace LaziestNPC.Content.Items.SummonItems
+namespace LaziestNPC.Content.Items.Others
 {
-    public class TheReturner : ModItem
+    public class DoubleFishJade : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -24,25 +24,20 @@ namespace LaziestNPC.Content.Items.SummonItems
 
         public override void SetDefaults()
         {
-            Item.width = 42;
-            Item.height = 52;
-            Item.useAnimation = 45;
-            Item.useTime = 45;
-            Item.maxStack = 1;
-            Item.value = 0;
+            Item.width = 71;
+            Item.height = 76;
+            Item.maxStack = 9999;
+            Item.value = Item.sellPrice(0, 25, 0, 0);
             Item.rare = ModContent.RarityType<Rainbow>();
-            Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.UseSound = SoundID.Item4;
-            Item.consumable = false;
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             string extraText;
             if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
-                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.TheReturner.ContentTexts");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DoubleFishJade.ContentTexts");
             else
-                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.TheReturner.CommonTips");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DoubleFishJade.CommonTips");
 
             foreach (TooltipLine line in tooltips)
             {
@@ -50,24 +45,13 @@ namespace LaziestNPC.Content.Items.SummonItems
             }
         }
 
-        //是否可以右键
-        public override bool AltFunctionUse(Player player)
+        public override void AddRecipes()
         {
-            return true;
-        }
-
-        public override bool? UseItem(Player player)
-        {
-            //右键
-            if (player.altFunctionUse == 2)
-            {
-                ModContent.GetInstance<ItemControlUISystem>().ShowUI();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            CreateRecipe()
+            .AddCustomShimmerResult(ItemType<DoubleFishJade>(), 2)
+            .AddIngredient(ItemType<DoubleFishJade>())
+            .AddCondition(Condition.NearShimmer)
+            .Register();
         }
 
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)
@@ -80,9 +64,9 @@ namespace LaziestNPC.Content.Items.SummonItems
             Vector2 startPos = new Vector2(line.X, line.Y);
             Vector2 scale = line.BaseScale;
 
-            Color topColor = new Color(255, 206, 163);
-            Color midColor = new Color(255, 150, 90);
-            Color bottomColor = new Color(255, 89, 52);
+            Color topColor = new Color(119, 234, 4);
+            Color midColor = new Color(80, 240, 180);
+            Color bottomColor = new Color(11, 241, 223);
 
             string text = line.Text;
             int charCount = text.Length;
@@ -99,6 +83,7 @@ namespace LaziestNPC.Content.Items.SummonItems
 
                 float t = charCount > 1 ? (float)i / (charCount - 1) : 0f;
 
+                //两段插值：0~0.5, 0.5~1 
                 Color charColor = t < 0.5f
                     ? Color.Lerp(topColor, midColor, t * 2f)
                     : Color.Lerp(midColor, bottomColor, (t - 0.5f) * 2f);
@@ -115,7 +100,7 @@ namespace LaziestNPC.Content.Items.SummonItems
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
-            LNPCHelper.DrawInventoryCustomScale(spriteBatch, TextureAssets.Item[Type].Value, position, frame, drawColor, itemColor, origin, scale, 0.8f, new Vector2(0f, 0f));
+            LNPCHelper.DrawInventoryCustomScale(spriteBatch, TextureAssets.Item[Type].Value, position, frame, drawColor, itemColor, origin, scale, 0.5f, new Vector2(0f, 0f));
             return false;
         }
     }

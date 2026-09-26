@@ -7,6 +7,9 @@ using Terraria.GameContent;
 using Microsoft.Xna.Framework;
 using LaziestNPC.Common.Helpers;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System.Collections.Generic;
+using Terraria.Localization;
 
 namespace LaziestNPC.Content.Items.SummonItems
 {
@@ -27,6 +30,20 @@ namespace LaziestNPC.Content.Items.SummonItems
             Item.rare = ItemRarityID.Cyan;
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.consumable = false;
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            string extraText;
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.ForbiddenPaper.ContentTexts");
+            else
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.ForbiddenPaper.CommonTips");
+
+            foreach (TooltipLine line in tooltips)
+            {
+                line.Text = line.Text.Replace("[ExtraText]", extraText);
+            }
         }
 
         public override bool CanUseItem(Player player) => !NPC.AnyNPCs(NPCID.CultistBoss);

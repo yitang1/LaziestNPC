@@ -1,8 +1,8 @@
-﻿using LaziestNPC.Common.ModBossess;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using LaziestNPC.Common.ModBossess;
 
 namespace LaziestNPC.Common.ModConditions
 {
@@ -90,8 +90,6 @@ namespace LaziestNPC.Common.ModConditions
             #region 救赎 Mod of Redemption
             ("Thunderird", "Redemption", new string[] {"TheGranThunderBird"})
             #endregion*/
-
-
 
             #region 
             #endregion

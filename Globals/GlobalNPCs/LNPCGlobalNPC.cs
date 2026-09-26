@@ -13,7 +13,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
         {
             if (player.whoAmI != Main.myPlayer)
                 return;
-
+            //粉碎药水
             if (player.LaziestNPC().armorShattering)
             {
                 InflictArmorCrunch(npc);
@@ -26,7 +26,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
                 return;
 
             Player player = Main.player[projectile.owner];
-
+            //粉碎药水
             if (player.LaziestNPC().armorShattering)
             {
                 InflictArmorCrunch(npc);

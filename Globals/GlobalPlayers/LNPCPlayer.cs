@@ -12,6 +12,8 @@ using LaziestNPC.Content.Items.SummonItems;
 using LaziestNPC.Common.Helpers;
 using LaziestNPC.Content.Buffs.Potions;
 using LaziestNPC.Globals.GlobalMods.WeakReferences.CalamityMod;
+using LaziestNPC.Content.Items.Others;
+using LaziestNPC.Globals.GlobalSystem;
 
 namespace LaziestNPC.Globals.GlobalPlayers
 {
@@ -290,6 +292,27 @@ namespace LaziestNPC.Globals.GlobalPlayers
             return false;
         }
 
+        public override void PostBuyItem(NPC vendor, Item[] shopInventory, Item item)
+        {
+            if (item.type == ModContent.ItemType<DoubleFishJade>())
+            {
+                LNPCSystem.fishJadeBuyCount++;
+
+                if (LNPCSystem.fishJadeBuyCount >= 3)
+                {
+                    //从当前商店数组中移除该物品
+                    for (int i = 0; i < shopInventory.Length; i++)
+                    {
+                        if (shopInventory[i].type == ModContent.ItemType<DoubleFishJade>())
+                        {
+                            shopInventory[i] = new Item(); //置空
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
         public bool EnablePre = true;
         public bool EnableHard = true;
 
@@ -308,5 +331,6 @@ namespace LaziestNPC.Globals.GlobalPlayers
         private static int calamityRebornBuffType = -1;
         //每个玩家独立的冷却倒计时
         public int calamityRebornCooldown = 0;
+
     }
 }

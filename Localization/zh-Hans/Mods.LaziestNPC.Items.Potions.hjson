@@ -15,7 +15,7 @@ TriumphPotion: {
 		降低敌人造成的接触伤害
 		敌人生命值越低，减伤越高，最高15%
 		'''
-	CommonTips: 长按“左Shift”键以显示额外信息
+	CommonTips: "[c/FBFBE0:长按“左Shift”键以显示额外信息]"
 	ContentTexts:
 		'''
 		[c/8ADDFF:战局中最大的误判，莫过于轻视将死的反抗者。]

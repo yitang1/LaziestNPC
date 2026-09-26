@@ -16,6 +16,8 @@ using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using LaziestNPC.Content.Items.SummonItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
+using LaziestNPC.Content.Items.Others;
+using static LaziestNPC.Globals.GlobalItems.ItemCondition;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -154,6 +156,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [原版Boss宝藏袋]
             //肉前
             vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
+            .AddItem(ItemType<DoubleFishJade>(), (0, 1, 0, 0), CanBuyFishJade)
+            .AddItem(ItemType<DoubleFishJade>(), (0, 1, 0, 0), CanBuyFishJade)
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
             .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑

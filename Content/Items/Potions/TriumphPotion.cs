@@ -29,17 +29,17 @@ namespace LaziestNPC.Content.Items.Potions
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             //根据是否按住左Shift，决定要追加的文本
-            string newText;
+            string extraText;
             if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
             {
-                newText = Language.GetTextValue("Mods.LaziestNPC.Items.Potions.TriumphPotion.ContentTexts");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.Potions.TriumphPotion.ContentTexts");
             }
             else
             {
-                newText = Language.GetTextValue("Mods.LaziestNPC.Items.Potions.TriumphPotion.CommonTips");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.Potions.TriumphPotion.CommonTips");
             }
 
-            tooltips.Add(new TooltipLine(Mod, "TriumphPotion_newText", newText));
+            tooltips.Add(new TooltipLine(Mod, "TriumphPotion_ExtraText", extraText));
         }
 
         public override void AddRecipes()

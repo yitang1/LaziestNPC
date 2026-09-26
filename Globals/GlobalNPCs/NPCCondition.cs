@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace LaziestNPC.Globals.GlobalSystem
+namespace LaziestNPC.Globals.GlobalNPCs
 {
     public class NPCCondition : ModSystem
     {

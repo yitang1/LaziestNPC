@@ -51,12 +51,14 @@ namespace LaziestNPC.Globals.GlobalPlayers
         {
             tag["EnablePre"] = EnablePre;
             tag["EnableHard"] = EnableHard;
+            tag["calamityRebornCooldown"] = calamityRebornCooldown;
         }
 
         public override void LoadData(TagCompound tag)
         {
             EnablePre = tag.GetBool("EnablePre");
             EnableHard = tag.GetBool("EnableHard");
+            calamityRebornCooldown = tag.GetInt("calamityRebornCooldown");
         }
 
         public override void UpdateLifeRegen()
@@ -296,9 +298,9 @@ namespace LaziestNPC.Globals.GlobalPlayers
         {
             if (item.type == ModContent.ItemType<DoubleFishJade>())
             {
-                LNPCSystem.fishJadeBuyCount++;
+                WorldCondition.FishJadeBuyCount++;
 
-                if (LNPCSystem.fishJadeBuyCount >= 3)
+                if (WorldCondition.FishJadeBuyCount >= 3)
                 {
                     //从当前商店数组中移除该物品
                     for (int i = 0; i < shopInventory.Length; i++)

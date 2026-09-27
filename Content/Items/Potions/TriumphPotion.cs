@@ -28,9 +28,9 @@ namespace LaziestNPC.Content.Items.Potions
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            //根据是否按住左Shift，决定要追加的文本
+            //根据是否按住Shift，决定要追加的文本
             string extraText;
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift) || Keyboard.GetState().IsKeyDown(Keys.RightShift))
             {
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.Potions.TriumphPotion.ContentTexts");
             }

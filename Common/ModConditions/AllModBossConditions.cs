@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using LaziestNPC.Common.ModBossess;
 using LaziestNPC.Globals.GlobalNPCs;
+using LaziestNPC.Globals.GlobalSystem;
 
 namespace LaziestNPC.Common.ModConditions
 {
@@ -11,14 +12,25 @@ namespace LaziestNPC.Common.ModConditions
     public static class AllModBossConditions
     {
         #region 原版
+        public static readonly Condition BloodMoonHappened = new("BloodMoonHappened", () => WorldCondition.BloodMoonHappened); //发生过血月
+        public static Condition HMAndBloodMoon = new Condition("HMAndBloodMoon", () => Main.hardMode && WorldCondition.BloodMoonHappened); //肉后 + 血月
+        public static Condition SnowMoonHappened = new Condition("SnowMoonHappened", () => WorldCondition.SnowMoonHappened); //发生过霜月事件
+        
         public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
         public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
         public static Condition MourningWoodOrSplinter = new Condition("MourningWoodOrSplinter", () => Condition.DownedMourningWood.IsMet() || NPCCondition.downedSplinterling); //哀木 / 树精
+        
+        public static Condition DownedAnyPillar = new Condition("DownedPillar", () =>
+        Condition.DownedSolarPillar.IsMet() || Condition.DownedVortexPillar.IsMet()
+        || Condition.DownedNebulaPillar.IsMet() || Condition.DownedStardustPillar.IsMet()); //任意一个天界柱
 
         #endregion
 
         #region 灾厄 Calamity Mod
         public static Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
+        public static Condition DOGAndSnowMoon = new Condition("DOGAndSnowMoon", () => WorldCondition.SnowMoonDOG); //神吞 + 霜月
+        public static Condition DOGAndPumpkinMoon = new Condition("DOGAndPumpkinMoon", () => WorldCondition.PumpkinMoonDOG); //神吞 + 南瓜月
+        public static Condition DOGAndEclipse = new Condition("DOGAndEclipse", () => WorldCondition.EclipseDOG); //神吞 + 日食
 
         public static Condition DownedDesertBug => ModBosses.GetCondition("DesertScourge"); //荒漠灾虫
         public static Condition DownedCrabulon => ModBosses.GetCondition("Crabulon"); //菌生蟹
@@ -48,7 +60,7 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedDOG => ModBosses.GetCondition("DOG"); //神明吞噬者
         public static Condition DownedYharon => ModBosses.GetCondition("Yharon"); //犽戎
         public static Condition DownedDraedon => ModBosses.GetCondition("ExoMechs"); //星流巨械
-        public static Condition DownedSCalamitas => ModBosses.GetCondition("SCalamitas"); //终灾
+        public static Condition DownedSCala => ModBosses.GetCondition("SCalamitas"); //终灾
 
         #endregion
 

@@ -155,9 +155,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [原版Boss宝藏袋]
             //肉前
-            vanShop.AddItem(ItemType<TheReturner>(), (0, 1, 0, 0))
-            .AddItem(ItemType<DoubleFishJade>(), (0, 1, 0, 0), CanBuyFishJade)
-            .AddItem(ItemType<DoubleFishJade>(), (0, 1, 0, 0), CanBuyFishJade)
+            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 0, 1))
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade)
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade)
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
             .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
@@ -287,7 +287,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/DevourerofGodsBag", (1, 0, 0, 0), DownedDOG) //神明吞噬者
             .AddModItem("CalamityMod/YharonBag", (2, 0, 0, 0), DownedYharon) //犽戎
             .AddModItem("CalamityMod/DraedonBag", (3, 0, 0, 0), DownedDraedon) //星流巨械
-            .AddModItem("CalamityMod/CalamitasCoffer", (5, 0, 0, 0), DownedSCalamitas); //终灾
+            .AddModItem("CalamityMod/CalamitasCoffer", (5, 0, 0, 0), DownedSCala); //终灾
 
             #endregion
 
@@ -373,7 +373,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/BloodwormItem", (0, 50, 0, 0), Condition.DownedMoonLord) //硫海遗爵
             .AddModItem("CalamityMod/CosmicWorm", (0, 55, 0, 0), Condition.DownedMoonLord) //神明吞噬者
             .AddModItem("CalamityMod/YharonEgg", (0, 60, 0, 0), DownedDragonfolly) //犽戎
-            .AddModItem("CalamityMod/CeremonialUrn", (0, 65, 0, 0), DownedSCalamitas); //终灾
+            .AddModItem("CalamityMod/CeremonialUrn", (0, 65, 0, 0), DownedSCala); //终灾
 
             #endregion
 
@@ -386,7 +386,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             //肉前
             modSum.AddModItem("FargowiltasSouls/SquirrelCoatofArms", (0, 1, 0, 0)) //特洛伊松鼠
             .AddModItem("FargowiltasSouls/CoffinSummon", (0, 1, 0, 0)) //咒缚灵棺
-            .AddModItem("FargowiltasSouls/DevisCurse", (0, 10, 0, 0), Condition.BloodMoon) //戴薇安
+            .AddModItem("FargowiltasSouls/DevisCurse", (0, 10, 0, 0)) //戴薇安
             //肉后
             .AddModItem("FargowiltasSouls/MechLure", (0, 10, 0, 0), Condition.Hardmode) //放逐遗爵
             .AddModItem("FargowiltasSouls/FragilePixieLamp", (0, 15, 0, 0), Condition.Hardmode) //飘渺游光

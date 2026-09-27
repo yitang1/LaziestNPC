@@ -287,7 +287,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/FrenzyPotion", (0, 0, 50, 0)) //狂怒药水
             .AddModItem("ThoriumMod/GlowingPotion", (0, 0, 50, 0)) //光辉药水
             .AddModItem("ThoriumMod/HydrationPotion", (0, 0, 50, 0)) //补水药水
-            .AddModItem("ThoriumMod/BloodPotion", (0, 0, 50, 0), Condition.BloodMoon) //堕血药水
+            .AddModItem("ThoriumMod/BloodPotion", (0, 0, 50, 0), BloodMoonHappened) //堕血药水
             .AddModItem("ThoriumMod/CreativityPotion", (0, 0, 75, 0), DownedGrandThunderBird) //创意药水
             .AddModItem("ThoriumMod/WarmongerPotion", (0, 0, 75, 0), Condition.DownedEowOrBoc) //好战药水
             //肉后

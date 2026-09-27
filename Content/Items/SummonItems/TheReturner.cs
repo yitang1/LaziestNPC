@@ -24,12 +24,12 @@ namespace LaziestNPC.Content.Items.SummonItems
 
         public override void SetDefaults()
         {
-            Item.width = 42;
-            Item.height = 52;
+            Item.width = 62;
+            Item.height = 76;
             Item.useAnimation = 45;
             Item.useTime = 45;
             Item.maxStack = 1;
-            Item.value = 0;
+            Item.value = Item.sellPrice(0, 0, 0, 1);
             Item.rare = ModContent.RarityType<Rainbow>();
             Item.useStyle = ItemUseStyleID.HoldUp;
             Item.UseSound = SoundID.Item4;
@@ -39,7 +39,7 @@ namespace LaziestNPC.Content.Items.SummonItems
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             string extraText;
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift) || Keyboard.GetState().IsKeyDown(Keys.RightShift))
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.TheReturner.ContentTexts");
             else
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.TheReturner.CommonTips");
@@ -55,19 +55,17 @@ namespace LaziestNPC.Content.Items.SummonItems
         {
             return true;
         }
-
+        //物品使用过后发生的逻辑，即执行使用后的具体效果
         public override bool? UseItem(Player player)
         {
             //右键
-            if (player.altFunctionUse == 2)
-            {
-                ModContent.GetInstance<ItemControlUISystem>().ShowUI();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            ModContent.GetInstance<ItemControlUISystem>().ShowUI();
+            return true;
+        }
+        //物品是否能使用
+        public override bool CanUseItem(Player player)
+        {
+            return player.altFunctionUse == 2;
         }
 
         public override bool PreDrawTooltipLine(DrawableTooltipLine line, ref int yOffset)

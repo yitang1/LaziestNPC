@@ -97,7 +97,7 @@ ForbiddenPaper: {
 		不消耗
 		[ExtraText]
 		'''
-	CommonTips: "[c/FBFBE0:长按“左Shift”键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
 	ContentTexts:
 		'''
 		[c/88E6FF:直视图案时，会感受到一股滔天的恨意。]
@@ -110,7 +110,7 @@ ForbiddenPaper: {
 }
 
 TheReturner: {
-	DisplayName: 归乡者项链
+	DisplayName: 归乡者吊坠
 	Tooltip:
 		'''
 		右键开启面板，基础功能：
@@ -120,10 +120,11 @@ TheReturner: {
 		[ExtraText]
 		[c/FF467B:【神惧之物】]
 		'''
-	CommonTips: "[c/FBFBE0:长按“左Shift”键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
 	ContentTexts:
 		'''
-		[c/88E6FF:内含模糊信息：“易阴阳”、“倒因果”...]
+		[c/88E6FF:内含模糊信息，依稀可见的字样有：]
+		[c/88E6FF:“...易阴阳、倒因果” “归乡之地...” “祂们...”]
 		[c/FBFBE0:“此物疑似来自异界或更高维度，]
 		[c/FBFBE0:拥有翻云雨、唤日月之伟力。]
 		[c/FBFBE0:所以这东西…怎么会在这个地方？”]
@@ -141,23 +142,20 @@ DoubleFishJade: {
 		[ExtraText]
 		[c/FF467B:【神惧之物】]
 		'''
-	CommonTips: "[c/FBFBE0:长按“左Shift”键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
 	ContentTexts:
 		'''
 		[c/8ADDFF:镜中有影，影外生形，无妄无梦，无始无终...]
-
 		[c/FBFBE0:“在很久很久以前，有一个非常贪心的玩家，]
-		[c/FBFBE0:他在阅读完双鱼玉佩的信息介绍后，灵机一动，开口道：]
+		[c/FBFBE0:他在阅读完双鱼玉佩的物品信息后，灵机一动，开口道：]
 		[c/FBFBE0:忽略NPC快乐度带来的售价浮动，理论上来算的话，]
-		[c/FBFBE0:扔8次，256个，64铂金；]
-		[c/FBFBE0:扔9次，512个，128铂金；]
-		[c/FBFBE0:扔10次，1024个，256铂金；]
-		[c/FBFBE0:扔11次，2048个，512铂金...]
+		[c/FBFBE0:扔8次，256个，64铂金；扔9次，512个，128铂金；]
+		[c/FBFBE0:扔10次，1024个，256铂金；扔11次，2048个，512铂金...]
 		[c/FBFBE0:于是他立马疯狂地将这个物品反反复复扔到微光里，]
 		[c/FBFBE0:每次一堆复制品出来后，他都两眼冒金光，]
 		[c/FBFBE0:然后大喊：发财了发财了！钱啊~这全都是钱啊~哦耶哦耶~]
 		[c/FBFBE0:然而，他话音刚落——]
 		[c/FBFBE0:他的电脑就冒烟了。(后来花了一万多块钱才修好)]
-		[c/FBFBE0:      ——节选自文章《论指数幂的恐怖之处》”]
+		[c/FBFBE0:       ——节选自文章《论指数幂的恐怖之处》”]
 		'''
 }

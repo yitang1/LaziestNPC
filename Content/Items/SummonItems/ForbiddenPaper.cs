@@ -35,7 +35,7 @@ namespace LaziestNPC.Content.Items.SummonItems
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             string extraText;
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift) || Keyboard.GetState().IsKeyDown(Keys.RightShift))
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.ForbiddenPaper.ContentTexts");
             else
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.ForbiddenPaper.CommonTips");

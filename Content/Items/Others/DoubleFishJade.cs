@@ -34,7 +34,7 @@ namespace LaziestNPC.Content.Items.Others
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             string extraText;
-            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift))
+            if (Keyboard.GetState().IsKeyDown(Keys.LeftShift) || Keyboard.GetState().IsKeyDown(Keys.RightShift))
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DoubleFishJade.ContentTexts");
             else
                 extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DoubleFishJade.CommonTips");

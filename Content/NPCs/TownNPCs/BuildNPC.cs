@@ -219,7 +219,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.PalmWood, (0, 0, 0, 10)) //棕榈木
             .AddItem(ItemID.DynastyWood, (0, 0, 0, 20)) //王朝木
             .AddItem(ItemID.AshWood, (0, 0, 0, 10)) //灰烬木
-            .AddItem(ItemID.SpookyWood, (0, 0, 1, 0), MourningWoodOrSplinter) //阴森木
+            .AddItem(ItemID.SpookyWood, (0, 0, 1, 0), PumpkinMoonHappened) //阴森木
             .AddItem(ItemID.CandyCaneBlock, (0, 0, 0, 10)) //糖棒块
             .AddItem(ItemID.GreenCandyCaneBlock, (0, 0, 0, 10)) //绿糖棒块
             .AddItem(ItemID.Glass, (0, 0, 0, 5)) //玻璃

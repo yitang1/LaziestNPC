@@ -39,7 +39,7 @@
 **商品的解锁条件，遵循该物品在游戏流程中最早可正常获取或触发的时期。**  
 <br>
 <details>
-<summary><b>📌 Mod设计原则：一些示例</b></summary>
+<summary><b>📌【Mod设计原则：一些示例】</b></summary>
 
 - **示例①**  
 [血月](https://terraria.wiki.gg/zh/wiki/%E8%A1%80%E6%9C%88?variant=zh-hans#%E6%9D%A1%E4%BB%B6)事件的触发条件，理论上，在玩家击败任意Boss和事件前就能满足，  
@@ -59,7 +59,7 @@
 </details>
 <br>
 <details>
-<summary><b>📋 Mod设计原则：一些补充</b></summary>
+<summary><b>📋【Mod设计原则：一些补充】</b></summary>
 
 - 如果一个物品能够被玩家制作合成出来，那此物品一般情况下，不会在商店中进行售卖。  
   例如配饰商人会售卖合成创造之手的四个配饰，但永远不会售卖[创造之手](https://terraria.wiki.gg/zh/wiki/%E5%88%9B%E9%80%A0%E4%B9%8B%E6%89%8B#%E9%85%8D%E6%96%B9)本身。  

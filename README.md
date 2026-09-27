@@ -14,7 +14,7 @@
 添加多名NPC商人以售卖原版和模组中各种各样的物品。  
 
 ### Mod兼容
-> [!IMPORTANT]
+> [!NOTE]
 > - **Calamity Mod (灾厄)** :white_check_mark:  
 > - **Catalyst Mod (灾劫)** :white_check_mark:  
 > - **Fargo's Mutant Mod (Fargo突变)** :white_check_mark:  
@@ -61,16 +61,17 @@
 <details>
 <summary><b>📋 Mod设计原则：一些补充</b></summary>
 
-- 如果一个物品能够被玩家制作合成出来，那此物品一般不会在商店中进行售卖。  
+- 如果一个物品能够被玩家制作合成出来，那此物品一般情况下，不会在商店中进行售卖。  
   例如配饰商人会售卖合成创造之手的四个配饰，但永远不会售卖[创造之手](https://terraria.wiki.gg/zh/wiki/%E5%88%9B%E9%80%A0%E4%B9%8B%E6%89%8B#%E9%85%8D%E6%96%B9)本身。  
 
 - 事件中击败某些敌怪才能获得的物品，只需要经历一下事件即可解锁，不需要完整等待事件结束，也不需要击杀事件中某些敌怪。  
   例如南瓜月事件中的阴森木，使用南瓜月勋章召唤南瓜月事件，再强制调整时间为白天，阴森木依然会在商店中成功解锁。  
 
-- 对于原版NPC和其他Mod的NPC售卖的商品，大部分情况下，本模组内的NPC不会售卖。  
+- 对于原版NPC和其他Mod的NPC售卖的商品，一般情况下，本模组内的NPC不会售卖。  
+  例如[非法枪械部件](https://terraria.wiki.gg/zh/wiki/%E9%9D%9E%E6%B3%95%E6%9E%AA%E6%A2%B0%E9%83%A8%E4%BB%B6)、[金尘](https://terraria.wiki.gg/zh/wiki/%E9%87%91%E5%B0%98)、[小瓶毒液](https://terraria.wiki.gg/zh/wiki/%E5%B0%8F%E7%93%B6%E6%AF%92%E6%B6%B2)。
 
-- 对于能从Boss宝藏袋里开出来的材料，材料商人不会再重复售卖。  
-  例如材料商人不会售卖原版机械Boss的[力量之魂、视域之魂和恐惧之魂](https://terraria.wiki.gg/zh/wiki/%E5%AE%9D%E8%97%8F%E8%A2%8B?variant=zh-hans#The_Twins)，
-  因为Boss宝藏袋在本模组中已经有NPC售卖了。
+- 对于能从Boss宝藏袋里开出来的材料，一般情况下，材料商人不会再重复售卖。  
+  例如材料商人不会售卖原版机械Boss的[力量之魂、视域之魂和恐惧之魂](https://terraria.wiki.gg/zh/wiki/%E5%AE%9D%E8%97%8F%E8%A2%8B?variant=zh-hans#The_Twins)，  
+  因为Boss宝藏袋在本模组中已经有NPC售卖了。  
 
 </details>

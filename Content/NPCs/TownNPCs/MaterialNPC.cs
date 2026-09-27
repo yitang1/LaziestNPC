@@ -206,7 +206,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/StormlionMandible", (0, 0, 15, 0)) //风暴之颚
             .AddModItem("CalamityMod/BlightedGel", (0, 0, 15, 0)) //枯萎凝胶
             .AddModItem("CalamityMod/AncientBoneDust", (0, 0, 15, 0)) //上古骨灰
-            .AddModItem("CalamityMod/DemonicBoneAsh", (0, 0, 25, 0)) //恶魔骨灰
             .AddModItem("CalamityMod/BloodOrb", (0, 0, 50, 0)) //血珠
             .AddModItem("CalamityMod/SulphuricScale", (0, 0, 50, 0), Condition.DownedEyeOfCthulhu) //硫磺鳞片
             .AddModItem("CalamityMod/PearlShard", (0, 0, 25, 0), DownedDesertBug) //珍珠碎片

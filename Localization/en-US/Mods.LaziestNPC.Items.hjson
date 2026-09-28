@@ -38,6 +38,52 @@ GalacticaSingularity: {
 	Tooltip: 广阔宇宙的结晶
 }
 
+DreamSeaCallingBottle: {
+	DisplayName: 唤海瓶
+	Tooltip:
+		'''
+        在物品栏中右键以打开
+        根据当前世界所处的时期
+        会获得原版所有的普通鱼
+        [c/FF3333:警告：29种物品会瞬间塞满你的物品栏]
+        [ExtraText]
+		'''
+    CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	ContentTexts:
+		'''
+        [c/FBFBE0:“梦境之海传说中的神灵——「织梦女神」在成神前，]
+        [c/FBFBE0:曾经还是作为超凡者时，使用过的物品。]
+        [c/FBFBE0:在毁天灭地的梦之潮汐事件发生时，]
+        [c/FBFBE0:她举瓶，将亿万梦海生物吸纳其中，平息了灾难。”]
+        '''
+}
+
+DreamSeaCrateBook: {
+	DisplayName: 梦海宝匣大全
+	Tooltip:
+		'''
+        在物品栏中右键以打开
+        根据当前世界所处的时期
+        会获得原版所有的钓鱼宝匣
+        [c/FF3333:警告：26种物品会瞬间塞满你的物品栏]
+        [ExtraText]
+		'''
+    CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	ContentTexts:
+		'''
+        [c/FBFBE0:“梦境之海的一座海岛上居住的某位渔民，]
+        [c/FBFBE0:其耗费了毕生精力整理的宝匣图鉴。]
+        [c/FBFBE0:传闻这位渔民去世后，给自己的孩子们托了梦，]
+        [c/FBFBE0:梦中他自称受到了「织梦女神」的祝福，]
+        [c/FBFBE0:那本宝匣图鉴也被赐予了超凡之力，]
+        [c/FBFBE0:拥有了取之不尽用之不竭的财富，告诫需火速藏匿。]
+        [c/FBFBE0:他的孩子们醒来后惊恐不已，慌忙上报当地政府。]
+        [c/FBFBE0:值得注意的是，经过披星殿堂的考证和研究，]
+        [c/FBFBE0:已确定此物不属于【神惧之物】，也没有任何超凡之力的痕迹。]
+        [c/FBFBE0:——只是一本并不齐全的、破旧的宝匣图鉴而已。”]
+        '''
+}
+
 MysticRedJelly: {
 	DisplayName: 神奇红色果冻
 	Tooltip:

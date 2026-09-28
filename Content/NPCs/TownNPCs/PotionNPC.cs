@@ -121,7 +121,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 .AddItem(ItemID.Eggnog, (0, 0, 5, 0)) //蛋酒 80
                 .AddItem(ItemID.RestorationPotion, (0, 0, 15, 0)) //恢复药水 90
                 .AddItem(ItemID.HealingPotion, (0, 0, 5, 0)) //治疗药水 100
-                .AddItem(ItemID.Honeyfin, (0, 0, 20, 0)) //蜂蜜鱼 120
+                .AddItem(ItemID.Honeyfin, (0, 0, 45, 0)) //蜂蜜鱼 120
             //肉后
                 .AddItem(ItemID.GreaterHealingPotion, (0, 0, 50, 0), Condition.Hardmode) //强效治疗药水 150
                 //.AddItem(ItemID.LifeFruitHealingPotion, (0, 1, 0, 0), Condition.Hardmode) //丛林果汁 180

@@ -147,8 +147,8 @@ OreNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 各种矿物
-	button2: 各种宝箱
+	button1: 矿物商店
+	button2: 宝匣商店
 }
 
 TrinketNPC: {
@@ -172,6 +172,6 @@ TrinketNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 饰品商店
-	button2: 功能性家具
+	button1: 原版配饰
+	button2: 模组配饰
 }

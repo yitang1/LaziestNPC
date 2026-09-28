@@ -11,7 +11,6 @@ using Terraria.Utilities;
 using LaziestNPC.Globals.GlobalItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Common.ModBossess;
-using LaziestNPC.Content.Items.SummonItems;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -126,9 +125,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.GlowingMushroom, (0, 0, 1, 50)) //发光蘑菇
             .AddItem(ItemID.ViciousMushroom, (0, 0, 3, 0)) //毒蘑菇
             .AddItem(ItemID.VileMushroom, (0, 0, 3, 0)) //魔菇
-            .AddItem(ItemID.Coral, (0, 0, 3, 0)) //珊瑚
-            .AddItem(ItemID.Seashell, (0, 0, 3, 0)) //贝壳
-            .AddItem(ItemID.Starfish, (0, 0, 3, 0)) //海星
+            .AddItem(ItemID.Coral, (0, 0, 5, 0)) //珊瑚
+            .AddItem(ItemID.Seashell, (0, 0, 5, 0)) //贝壳
+            .AddItem(ItemID.Starfish, (0, 0, 5, 0)) //海星
             .AddItem(ItemID.FallenStar, (0, 0, 25, 0)) //坠落之星
             .AddItem(ItemID.Bass, (0, 1, 50, 0)) //鲈鱼
             .AddItem(ItemID.Gel, (0, 0, 0, 10)) //凝胶
@@ -142,30 +141,30 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.Vine, (0, 0, 5, 0)) //藤蔓
             .AddItem(ItemID.Feather, (0, 0, 5, 0)) //羽毛
             .AddItem(ItemID.AntlionMandible, (0, 0, 2, 0)) //蚁狮上颚
-            .AddItem(ItemID.RottenChunk, (0, 0, 2, 0)) //腐肉
-            .AddItem(ItemID.Vertebrae, (0, 0, 2, 0)) //椎骨
-            .AddItem(ItemID.WormTooth, (0, 0, 2, 0)) //蠕虫牙齿
-            .AddItem(ItemID.SharkFin, (0, 0, 3, 0)) //鲨鱼鳍
-            .AddItem(ItemID.TatteredCloth, (0, 0, 5, 0)) //破布
-            .AddItem(ItemID.TissueSample, (0, 0, 8, 0), Condition.DownedEowOrBoc) //组织样本
-            .AddItem(ItemID.ShadowScale, (0, 0, 8, 0), Condition.DownedEowOrBoc) //暗影鳞片
-            .AddItem(ItemID.Bone, (0, 0, 8, 50), Condition.DownedSkeletron) //骨头
+            .AddItem(ItemID.RottenChunk, (0, 0, 5, 0)) //腐肉
+            .AddItem(ItemID.Vertebrae, (0, 0, 5, 0)) //椎骨
+            .AddItem(ItemID.WormTooth, (0, 0, 5, 0)) //蠕虫牙齿
+            .AddItem(ItemID.SharkFin, (0, 0, 5, 0)) //鲨鱼鳍
+            .AddItem(ItemID.TatteredCloth, (0, 0, 10, 0)) //破布
+            .AddItem(ItemID.TissueSample, (0, 0, 25, 0), Condition.DownedEowOrBoc) //组织样本
+            .AddItem(ItemID.ShadowScale, (0, 0, 25, 0), Condition.DownedEowOrBoc) //暗影鳞片
+            .AddItem(ItemID.Bone, (0, 0, 25, 50), Condition.DownedSkeletron) //骨头
 
             .AddItem(ItemID.Present, (0, 1, 50, 0)) //礼物
             .AddItem(ItemID.GoodieBag, (0, 1, 50, 0)) //礼袋
             //肉后
-            .AddItem(ItemID.SoulofLight, (0, 0, 10, 0), Condition.Hardmode) //光明之魂
-            .AddItem(ItemID.SoulofNight, (0, 0, 10, 0), Condition.Hardmode) //暗影之魂
-            .AddItem(ItemID.SoulofFlight, (0, 0, 10, 0), Condition.Hardmode) //飞翔之魂
-            .AddItem(ItemID.CursedFlame, (0, 0, 10, 0), Condition.Hardmode) //诅咒焰
-            .AddItem(ItemID.Ichor, (0, 0, 10, 0), Condition.Hardmode) //灵液
-            .AddItem(ItemID.DarkShard, (0, 0, 25, 0), Condition.Hardmode) //暗影碎块
-            .AddItem(ItemID.LightShard, (0, 0, 25, 0), Condition.Hardmode) //光明碎块
-            .AddItem(ItemID.AncientCloth, (0, 0, 25, 0), Condition.Hardmode) //远古布匹
-            .AddItem(ItemID.PixieDust, (0, 0, 10, 0), Condition.Hardmode) //妖精尘
-            .AddItem(ItemID.UnicornHorn, (0, 0, 10, 0), Condition.Hardmode) //独角兽角
-            .AddItem(ItemID.CrystalShard, (0, 0, 10, 0), Condition.Hardmode) //水晶碎块
-            .AddItem(ItemID.SpiderFang, (0, 0, 25, 0), Condition.Hardmode) //蜘蛛牙
+            .AddItem(ItemID.SoulofLight, (0, 0, 50, 0), Condition.Hardmode) //光明之魂
+            .AddItem(ItemID.SoulofNight, (0, 0, 50, 0), Condition.Hardmode) //暗影之魂
+            .AddItem(ItemID.SoulofFlight, (0, 0, 50, 0), Condition.Hardmode) //飞翔之魂
+            .AddItem(ItemID.CursedFlame, (0, 0, 50, 0), Condition.Hardmode) //诅咒焰
+            .AddItem(ItemID.Ichor, (0, 0, 50, 0), Condition.Hardmode) //灵液
+            .AddItem(ItemID.DarkShard, (0, 0, 50, 0), Condition.Hardmode) //暗影碎块
+            .AddItem(ItemID.LightShard, (0, 0, 50, 0), Condition.Hardmode) //光明碎块
+            .AddItem(ItemID.AncientCloth, (0, 0, 50, 0), Condition.Hardmode) //远古布匹
+            .AddItem(ItemID.PixieDust, (0, 0, 50, 0), Condition.Hardmode) //妖精尘
+            .AddItem(ItemID.UnicornHorn, (0, 0, 50, 0), Condition.Hardmode) //独角兽角
+            .AddItem(ItemID.CrystalShard, (0, 0, 50, 0), Condition.Hardmode) //水晶碎块
+            .AddItem(ItemID.SpiderFang, (0, 0, 50, 0), Condition.Hardmode) //蜘蛛牙
             .AddItem(ItemID.FrostCore, (0, 1, 0, 0), Condition.Hardmode) //寒霜核
             .AddItem(ItemID.AncientBattleArmorMaterial, (0, 1, 0, 0), Condition.Hardmode) //禁戒碎片
             .AddItem(ItemID.TurtleShell, (0, 1, 0, 0), Condition.Hardmode) //海龟壳

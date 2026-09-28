@@ -155,9 +155,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [原版Boss宝藏袋]
             //肉前
-            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 0, 1))
-            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade)
-            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade)
+            vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 0, 1)) //归乡者吊坠
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade) //双鱼玉佩
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade) //双鱼玉佩
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
             .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑

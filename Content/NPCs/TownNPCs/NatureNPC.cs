@@ -7,13 +7,12 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent.ItemDropRules;
 using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
-using Terraria.GameContent.ItemDropRules;
 using LaziestNPC.Content.Items.Consumables;
-using Terraria.UI;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -178,7 +177,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [瑟银 Thorium Mod]
-            plcr.AddModItem("ThoriumMod/OpalBunny", (0, 0, 5, 0)) //欧珀兔兔
+            plcr.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)) //海藻
+            .AddModItem("ThoriumMod/OpalBunny", (0, 0, 5, 0)) //欧珀兔兔
             .AddModItem("ThoriumMod/AquamarineBunny", (0, 0, 5, 0)) //海蓝宝石兔兔
             .AddModItem("ThoriumMod/Crow", (0, 0, 5, 0)) //乌鸦
             .AddModItem("ThoriumMod/DumboOctopus", (0, 0, 5, 0)) //小飞象章鱼

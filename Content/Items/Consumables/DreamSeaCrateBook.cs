@@ -50,6 +50,7 @@ namespace LaziestNPC.Content.Items.Consumables
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
+            #region [原版]
             //宝匣-肉前
             itemLoot.Add(ItemDropRule.Common(ItemID.WoodenCrate)); //木匣
             itemLoot.Add(ItemDropRule.Common(ItemID.IronCrate)); //铁匣
@@ -79,6 +80,33 @@ namespace LaziestNPC.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.HallowedFishingCrateHard)); //天赐匣
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.LavaCrateHard)); //狱石匣
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.DungeonFishingCrateHard)); //围栏匣
+
+            #endregion
+
+            #region [灾厄 Calamity Mod]
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "SulphurousCrate"); //硫海匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "MonolithCrate"); //星石匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "SlagCrate"); //焦炭匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "EutrophicCrate"); //富养匣
+
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "HydrothermalCrate", new Conditions.IsHardmode()); //渊泉匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "AstralCrate", new Conditions.IsHardmode()); //星幻匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "BrimstoneCrate", new Conditions.IsHardmode()); //硫磺火匣
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "PrismCrate", new Conditions.IsHardmode()); //棱晶匣
+
+            #endregion
+
+            #region [瑟银 Thorium Mod]
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "AquaticDepthsCrate", new DownedEowOrBoc()); //渊海匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "ScarletCrate"); //绯红匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "StrangeCrate"); //奇特匣
+
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "AbyssalCrate", new Conditions.IsHardmode()); //深渊匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "SinisterCrate", new Conditions.IsHardmode()); //不详匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "WondrousCrate", new Conditions.IsHardmode()); //奇妙匣
+
+            #endregion
+
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)

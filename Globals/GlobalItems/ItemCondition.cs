@@ -18,4 +18,11 @@ namespace LaziestNPC.Globals.GlobalItems
         public bool CanShowItemDropInUI() => false;
         public string GetConditionDescription() => null;
     }
+
+    public class DownedEowOrBoc : IItemDropRuleCondition
+    {
+        public bool CanDrop(DropAttemptInfo info) => NPC.downedBoss2;
+        public bool CanShowItemDropInUI() => false;
+        public string GetConditionDescription() => null;
+    }
 }

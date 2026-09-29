@@ -47,12 +47,15 @@ namespace LaziestNPC.Common.Helpers
             return false;
         }
 
-        //“摸彩袋类”物品添加模组物品
-        public static void AddModItemLoot(ItemLoot itemLoot, string modName, string itemName)
+        //“摸彩袋类”物品添加[模组]物品
+        public static void AddModItemLoot(ItemLoot itemLoot, string modName, string itemName, IItemDropRuleCondition condition = null)
         {
             if (ModLoader.TryGetMod(modName, out Mod mod) && mod.TryFind(itemName, out ModItem modItem))
             {
-                itemLoot.Add(ItemDropRule.Common(modItem.Type));
+                if (condition == null)
+                    itemLoot.Add(ItemDropRule.Common(modItem.Type));
+                else
+                    itemLoot.Add(ItemDropRule.ByCondition(condition, modItem.Type));
             }
         }
 

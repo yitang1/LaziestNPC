@@ -264,8 +264,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【渔获物品】
 
             #region [原版]
-            fishery.AddItem(ItemType<DreamSeaCallingBottle>(), (5, 0, 0, 0)) //唤海瓶
-            .AddItem(ItemType<DreamSeaCrateBook>(), (5, 0, 0, 0)) //梦海宝匣大全
+            fishery.AddItem(ItemType<DreamSeaCallingBottle>(), (0, 15, 0, 0)) //唤海瓶
+            .AddItem(ItemType<DreamSeaCrateBook>(), (0, 25, 0, 0)) //梦海宝匣大全
             //渔夫任务鱼饵 ↓
             .AddItem(ItemID.ApprenticeBait, (0, 0, 5, 0)) //学徒鱼饵
             .AddItem(ItemID.JourneymanBait, (0, 0, 10, 0)) //熟练鱼饵

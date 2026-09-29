@@ -29,6 +29,7 @@ namespace LaziestNPC.Common.ModConditions
 
         #region 灾厄 Calamity Mod
         public static Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
+        public static Condition AstrumBugAndCultist = new Condition("AstrumBugAndCultist", () => Condition.DownedCultist.IsMet() && DownedAstrumBug.IsMet()); //星神游龙 + 拜月教邪教徒
         public static Condition DOGAndSnowMoon = new Condition("DOGAndSnowMoon", () => WorldCondition.SnowMoonDOG); //神吞 + 霜月
         public static Condition DOGAndPumpkinMoon = new Condition("DOGAndPumpkinMoon", () => WorldCondition.PumpkinMoonDOG); //神吞 + 南瓜月
         public static Condition DOGAndEclipse = new Condition("DOGAndEclipse", () => WorldCondition.EclipseDOG); //神吞 + 日食

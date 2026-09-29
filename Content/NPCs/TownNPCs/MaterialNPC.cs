@@ -162,7 +162,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.SoulofFright, (0, 1, 50, 0), Condition.DownedSkeletronPrime) //恐惧之魂
             .AddItem(ItemID.HallowedBar, (0, 1, 50, 0), Condition.DownedMechBossAny) //神圣锭
             .AddItem(ItemID.ButterflyDust, (0, 1, 50, 0), Condition.DownedMechBossAny) //蝴蝶尘
-            .AddItem(ItemID.Ectoplasm, (0, 2, 0, 0), Condition.DownedPlantera) //灵质
+            .AddItem(ItemID.Ectoplasm, (0, 2, 0, 0), Condition.DownedPlantera) //灵气
             .AddItem(ItemID.BrokenHeroSword, (0, 5, 0, 0), Condition.DownedPlantera) //断裂英雄剑
             .AddItem(ItemID.LunarTabletFragment, (0, 2, 0, 0), Condition.DownedPlantera); //日耀碑牌碎片
             if (ModLoader.HasMod("CalamityMod"))

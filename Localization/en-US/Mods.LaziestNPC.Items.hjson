@@ -28,11 +28,6 @@ OreNPC: {
 	Tooltip: “咕噜...”
 }
 
-TrinketNPC: {
-	DisplayName: 配饰商人
-	Tooltip: “汪！”
-}
-
 GalacticaSingularity: {
 	DisplayName: 星系异石
 	Tooltip: 广阔宇宙的结晶
@@ -64,7 +59,7 @@ DreamSeaCrateBook: {
 		'''
 		在物品栏中右键以打开
 		根据当前世界所处的时期
-		会获得原版所有的钓鱼宝匣
+		会获得原版和模组的钓鱼宝匣
 		[c/FF3333:警告：大量宝匣会瞬间塞满你的物品栏]
 		[ExtraText]
 		'''

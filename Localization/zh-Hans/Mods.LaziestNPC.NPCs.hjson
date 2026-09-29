@@ -148,30 +148,5 @@ OreNPC: {
 	}
 
 	button1: 矿物商店
-	button2: 宝匣商店
-}
-
-TrinketNPC: {
-	DisplayName: 配饰商人
-	Name.TrinketNPC: 柯基
-
-	Chat: {
-		Normal1: 汪汪！
-		Normal2: 汪！
-		Normal3: 汪汪汪！
-	}
-
-	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
-	}
-
-	button1: 原版配饰
-	button2: 模组配饰
+	button2: 配饰商店
 }

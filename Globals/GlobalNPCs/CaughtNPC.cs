@@ -89,10 +89,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
             Add("BossNPC", ModContent.NPCType<BossNPC>());
             Add("PotionNPC", ModContent.NPCType<PotionNPC>());
             Add("BuildNPC", ModContent.NPCType<BuildNPC>());
+            Add("MaterialNPC", ModContent.NPCType<MaterialNPC>());
             Add("NatureNPC", ModContent.NPCType<NatureNPC>());
             Add("OreNPC", ModContent.NPCType<OreNPC>());
-            Add("MaterialNPC", ModContent.NPCType<MaterialNPC>());
-            Add("TrinketNPC", ModContent.NPCType<TrinketNPC>());
         }
     }
 

@@ -170,7 +170,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/Navystone", (0, 0, 0, 10)) //沉沦渊石
             .AddModItem("CalamityMod/SulphurousSand", (0, 0, 0, 10)) //硫磺沙
             .AddModItem("CalamityMod/BrimstoneSlag", (0, 0, 0, 20)) //硫磺火石砖
-            .AddModItem("CalamityMod/PlantyMush", (0, 0, 5, 0)) //植物混融块
+            .AddModItem("CalamityMod/PlantyMush", (0, 0, 10, 0)) //植物混融块
             .AddModItem("CalamityMod/AbyssGravel", (0, 0, 0, 20), Condition.DownedEowOrBoc) //深渊砾石
             .AddModItem("CalamityMod/Voidstone", (0, 0, 1, 0), Condition.Hardmode) //虚空石
             //星辉瘟疫

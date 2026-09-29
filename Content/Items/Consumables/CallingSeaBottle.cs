@@ -14,7 +14,7 @@ using LaziestNPC.Common.Rarities;
 
 namespace LaziestNPC.Content.Items.Consumables
 {
-    public class DreamSeaCallingBottle : ModItem
+    public class CallingSeaBottle : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -35,9 +35,9 @@ namespace LaziestNPC.Content.Items.Consumables
         {
             string extraText;
             if (Keyboard.GetState().IsKeyDown(Keys.LeftShift) || Keyboard.GetState().IsKeyDown(Keys.RightShift))
-                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DreamSeaCallingBottle.ContentTexts");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.CallingSeaBottle.ContentTexts");
             else
-                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.DreamSeaCallingBottle.CommonTips");
+                extraText = Language.GetTextValue("Mods.LaziestNPC.Items.CallingSeaBottle.CommonTips");
 
             foreach (TooltipLine line in tooltips)
             {
@@ -49,6 +49,7 @@ namespace LaziestNPC.Content.Items.Consumables
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
+            #region [原版]
             //鱼-森林 ↓
             itemLoot.Add(ItemDropRule.Common(ItemID.Bass)); //鲈鱼
             itemLoot.Add(ItemDropRule.Common(ItemID.Salmon)); //三文鱼
@@ -89,6 +90,15 @@ namespace LaziestNPC.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.PrincessFish)); //公主鱼
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Prismite)); //七彩矿鱼
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.ChaosFish)); //混沌鱼
+
+            #endregion
+
+            /*#region [灾厄 Calamity Mod]
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "RoverDrive");
+            LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "AncientFossil");
+
+            #endregion*/
+
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)

@@ -113,18 +113,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【原版材料】
             //肉前
             vMat.AddItem(ItemID.Bottle, (0, 0, 0, 10)) //玻璃瓶
-            .AddItem(ItemID.Daybloom, (0, 0, 2, 0)) //太阳花
-            .AddItem(ItemID.Moonglow, (0, 0, 2, 0)) //月光草
-            .AddItem(ItemID.Blinkroot, (0, 0, 2, 0)) //闪耀根
-            .AddItem(ItemID.Waterleaf, (0, 0, 2, 0)) //水叶草
-            .AddItem(ItemID.Deathweed, (0, 0, 2, 0)) //死亡草
-            .AddItem(ItemID.Shiverthorn, (0, 0, 2, 0)) //寒颤棘
-            .AddItem(ItemID.Fireblossom, (0, 0, 2, 0)) //火焰花
-            .AddItem(ItemID.HerbBag, (0, 0, 10, 0)) //草药袋
-            .AddItem(ItemID.Mushroom, (0, 0, 1, 0)) //蘑菇
-            .AddItem(ItemID.GlowingMushroom, (0, 0, 1, 50)) //发光蘑菇
-            .AddItem(ItemID.ViciousMushroom, (0, 0, 3, 0)) //毒蘑菇
-            .AddItem(ItemID.VileMushroom, (0, 0, 3, 0)) //魔菇
             .AddItem(ItemID.Coral, (0, 0, 5, 0)) //珊瑚
             .AddItem(ItemID.Seashell, (0, 0, 5, 0)) //贝壳
             .AddItem(ItemID.Starfish, (0, 0, 5, 0)) //海星

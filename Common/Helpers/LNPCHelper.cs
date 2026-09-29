@@ -7,9 +7,10 @@ using Terraria.ID;
 using Terraria.Chat;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using LaziestNPC.Globals.GlobalPlayers;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.GameContent.Events;
 using Terraria.Audio;
+using LaziestNPC.Globals.GlobalPlayers;
 using LaziestNPC.Content.Items.SummonItems;
 using LaziestNPC.Globals.GlobalOthers;
 
@@ -44,6 +45,15 @@ namespace LaziestNPC.Common.Helpers
             if (ModLoader.HasMod("CalamityMod") && AcidRainEvent.AcidRainEventIsOngoing)
                 return true;*/
             return false;
+        }
+
+        //“摸彩袋类”物品添加模组物品
+        public static void AddModItemLoot(ItemLoot itemLoot, string modName, string itemName)
+        {
+            if (ModLoader.TryGetMod(modName, out Mod mod) && mod.TryFind(itemName, out ModItem modItem))
+            {
+                itemLoot.Add(ItemDropRule.Common(modItem.Type));
+            }
         }
 
         //物品【TheReturner】的复活逻辑封装

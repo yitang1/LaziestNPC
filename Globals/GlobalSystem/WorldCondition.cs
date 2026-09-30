@@ -14,6 +14,7 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             FishJadeBuyCount = 0;
             BloodMoonHappened = false;
+            EclipseHappened = false;
             SnowMoonHappened = false;
             PumpkinMoonHappened = false;
 
@@ -25,6 +26,7 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             FishJadeBuyCount = 0;
             BloodMoonHappened = false;
+            EclipseHappened = false;
             SnowMoonHappened = false;
             PumpkinMoonHappened = false;
 
@@ -37,6 +39,7 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             FishJadeBuyCount = tag.GetInt("FishJadeBuyCount");
             BloodMoonHappened = tag.GetBool("BloodMoonHappened");
+            EclipseHappened = tag.GetBool("EclipseHappened");
             SnowMoonHappened = tag.GetBool("SnowMoonHappened");
             PumpkinMoonHappened = tag.GetBool("PumpkinMoonHappened");
 
@@ -49,6 +52,7 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             tag["FishJadeBuyCount"] = FishJadeBuyCount;
             tag["BloodMoonHappened"] = BloodMoonHappened;
+            tag["EclipseHappened"] = EclipseHappened;
             tag["SnowMoonHappened"] = SnowMoonHappened;
             tag["PumpkinMoonHappened"] = PumpkinMoonHappened;
 
@@ -61,10 +65,13 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             if (Main.bloodMoon)
                 BloodMoonHappened = true;
+            if (Main.eclipse)
+                EclipseHappened = true;
             if (Main.snowMoon)
                 SnowMoonHappened = true;
             if (Main.pumpkinMoon)
                 PumpkinMoonHappened = true;
+
             if (Main.snowMoon && DownedDOG.IsMet())
                 SnowMoonDOG = true;
             if (Main.pumpkinMoon && DownedDOG.IsMet())
@@ -75,6 +82,7 @@ namespace LaziestNPC.Globals.GlobalSystem
 
         public static int FishJadeBuyCount = 0;
         public static bool BloodMoonHappened = false;
+        public static bool EclipseHappened = false;
         public static bool SnowMoonHappened = false;
         public static bool PumpkinMoonHappened = false;
 

@@ -14,8 +14,9 @@ namespace LaziestNPC.Common.ModConditions
         #region 原版
         public static readonly Condition BloodMoonHappened = new("BloodMoonHappened", () => WorldCondition.BloodMoonHappened); //发生过血月
         public static Condition HMAndBloodMoon = new Condition("HMAndBloodMoon", () => Main.hardMode && WorldCondition.BloodMoonHappened); //肉后 + 血月
-        public static Condition SnowMoonHappened = new Condition("SnowMoonHappened", () => WorldCondition.SnowMoonHappened); //发生过霜月事件
-        public static Condition PumpkinMoonHappened = new Condition("PumpkinMoonHappened", () => WorldCondition.PumpkinMoonHappened); //发生过南瓜月事件
+        public static Condition EclipseHappened = new Condition("EclipseHappened", () => WorldCondition.EclipseHappened); //发生过日食
+        public static Condition SnowMoonHappened = new Condition("SnowMoonHappened", () => WorldCondition.SnowMoonHappened); //发生过霜月
+        public static Condition PumpkinMoonHappened = new Condition("PumpkinMoonHappened", () => WorldCondition.PumpkinMoonHappened); //发生过南瓜月
         
         public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
         public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王

@@ -1,8 +1,8 @@
-﻿using LaziestNPC.Globals.Config;
-using System;
+﻿using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Globals.GlobalNPCs
 {

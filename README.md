@@ -97,3 +97,6 @@ Win+R 输入shell:Personal
   因为Boss宝藏袋在本模组中已经有NPC售卖了。  
 
 </details>
+<br>
+
+**有什么问题或Bug记得去👉[告诉我](https://space.bilibili.com/8452156)**

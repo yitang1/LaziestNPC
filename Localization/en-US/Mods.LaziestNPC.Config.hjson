@@ -1,0 +1,18 @@
+LNPCConfig: {
+	DisplayName: LaziestNPC 模组配置
+
+	Headers: {
+		LNPCs: "[i:GuideVoodooDoll] NPC相关"
+	}
+
+	LNPCInvincible: {
+		Label: "[i:CombatBookVolumeTwo] 所有城镇NPC无敌"
+		Tooltip: 包括受缚NPC、躺着睡觉的渔夫和酒馆老板
+	}
+
+	LNPCCritterInvincible: {
+		Label: "[i:Bunny] 所有小动物无敌"
+		Tooltip: 包括七彩草蛉
+	}
+
+}

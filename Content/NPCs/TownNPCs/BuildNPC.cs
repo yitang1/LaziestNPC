@@ -193,7 +193,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/LeakyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //渗漏海洋块
             .AddModItem("ThoriumMod/MossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //多苔海洋块
             .AddModItem("ThoriumMod/LeakyMossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc); //渗漏多苔海洋块
-            
+
             #endregion
 
             #endregion
@@ -203,8 +203,32 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【建筑物块】
 
             #region [原版物块]
+
+            #region 战斗场地类物品
+            buildingB.AddItem(ItemID.Campfire, (0, 0, 5, 0)) //篝火
+            .AddItem(ItemID.SliceOfCake, (0, 3, 0, 0), Condition.NpcIsPresent(NPCID.PartyGirl)) //蛋糕块
+            .AddItem(ItemID.WaterBucket, (0, 0, 25, 0)) //水桶
+            .AddItem(ItemID.LavaBucket, (0, 0, 50, 0)) //熔岩桶
+            .AddItem(ItemID.HoneyBucket, (0, 0, 50, 0)) //蜂蜜桶
+            .AddItem(ItemID.HeartLantern, (0, 2, 0, 0)) //心形灯笼
+            .AddItem(ItemID.StarinaBottle, (0, 2, 0, 0)) //星星瓶
+            //蜡烛 ↓
+            .AddItem(ItemID.PeaceCandle, (0, 1, 50, 0)) //和平蜡烛
+            .AddItem(ItemID.WaterCandle, (0, 1, 50, 0), Condition.DownedSkeletron) //水蜡烛
+            //职业相关(利器站、弹药箱、水晶球等) ↓
+            .AddItem(ItemID.CatBast, (0, 3, 0, 0)) //巴斯特雕像
+            .AddItem(ItemID.WarTable, (0, 4, 0, 0), Condition.DownedOldOnesArmyAny) //战争桌
+            .AddItem(ItemID.SharpeningStation, (0, 3, 0, 0)) //利器站
+            .AddItem(ItemID.AmmoBox, (0, 3, 0, 0)) //弹药箱
+            .AddItem(ItemID.GardenGnome, (0, 3, 0, 0)) //花园侏儒
+            .AddItem(ItemID.BewitchingTable, (0, 5, 0, 0), Condition.DownedSkeletron) //施法桌
+            .AddItem(ItemID.AlchemyTable, (0, 5, 0, 0), Condition.DownedSkeletron) //炼药桌
+            .AddItem(ItemID.CrystalBall, (0, 10, 0, 0), Condition.Hardmode) //水晶球
+
+            #endregion
+
             //照明物块
-            buildingB.AddItem(ItemID.WhiteTorch, (0, 0, 0, 20)) //白火把
+            .AddItem(ItemID.WhiteTorch, (0, 0, 0, 20)) //白火把
             .AddItem(ItemID.UltrabrightTorch, (0, 0, 0, 50)) //超亮火把
             .AddItem(ItemID.GlassLantern, (0, 0, 0, 10)) //玻璃灯笼
             .AddItem(ItemID.GlassLamp, (0, 0, 0, 10)) //玻璃灯
@@ -258,16 +282,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.MeatGrinder, (0, 2, 0, 0), Condition.Hardmode) //绞肉机
             .AddItem(ItemID.FleshCloningVaat, (0, 2, 0, 0), Condition.DownedMechBossAny) //血肉克隆台
             .AddItem(ItemID.LesionStation, (0, 2, 0, 0), Condition.DownedMechBossAny) //病变站(腐变室)
-            .AddItem(ItemID.LihzahrdFurnace, (0, 3, 0, 0), Condition.DownedPlantera) //丛林蜥蜴熔炉
-            .AddItem(ItemID.LunarCraftingStation, (0, 10, 0, 0), Condition.DownedCultist) //远古操纵机
-            //关于建筑的饰品
-            .AddItem(ItemID.PortableStool, (0, 1, 0, 0)) //便携凳(梯凳)
-            .AddItem(ItemID.AncientChisel, (0, 5, 0, 0)) //远古凿子
-            .AddItem(ItemID.BrickLayer, (0, 5, 0, 0)) //砌砖刀
-            .AddItem(ItemID.ExtendoGrip, (0, 5, 0, 0)) //加长握爪
-            .AddItem(ItemID.PaintSprayer, (0, 5, 0, 0)) //喷漆器
-            .AddItem(ItemID.PortableCementMixer, (0, 5, 0, 0)) //便携式水泥搅拌机
-            .AddItem(ItemID.TreasureMagnet, (0, 5, 0, 0), Condition.DownedSkeletron); //宝藏磁石
+            .AddItem(ItemID.LihzahrdFurnace, (0, 3, 0, 0), Condition.DownedPlantera); //丛林蜥蜴熔炉
+            //.AddItem(ItemID.LunarCraftingStation, (0, 10, 0, 0), Condition.DownedCultist); //远古操纵机
 
             #endregion
 
@@ -276,7 +292,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 灾厄 Calamity Mod
             buildingB.AddModItem("CalamityMod/Acidwood", (0, 0, 0, 10)) //酸蚀木
             .AddModItem("CalamityMod/ScorchedBone", (0, 0, 0, 10), Condition.DownedEowOrBoc) //焦灼脊骨
-            .AddModItem("CalamityMod/AstralMonolith", (0, 0, 0, 50), Condition.Hardmode); //星幻木材
+            .AddModItem("CalamityMod/AstralMonolith", (0, 0, 0, 50), Condition.Hardmode) //星幻木材
+            .AddModItem("CalamityMod/TranquilityCandle", (0, 2, 0, 0), Condition.Hardmode) //安宁蜡烛
+            .AddModItem("CalamityMod/ChaosCandle", (0, 2, 0, 0), Condition.Hardmode) //混沌蜡烛
+            .AddModItem("CalamityMod/CrimsonEffigy", (0, 5, 0, 0)) //猩红雕像
+            .AddModItem("CalamityMod/CorruptionEffigy", (0, 5, 0, 0)) //腐化雕像
+            .AddModItem("CalamityMod/EffigyOfDecay", (0, 5, 0, 0)); //腐朽雕像
 
             #endregion
 

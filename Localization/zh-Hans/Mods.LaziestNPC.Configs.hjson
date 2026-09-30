@@ -1,9 +1,6 @@
 LNPCConfig: {
 	DisplayName: LaziestNPC 模组配置
-
-	Headers: {
-		LNPCs: "[i:GuideVoodooDoll] NPC相关"
-	}
+	Headers.LNPCs: "[i:GuideVoodooDoll] NPC相关"
 
 	LNPCInvincible: {
 		Label: "[i:CombatBookVolumeTwo] 所有城镇NPC无敌"

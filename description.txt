@@ -1,18 +1,22 @@
 
-此Mod拥有以下内容：
+Mod内容简述：
 [i:3459]添加了多名NPC商人以售卖原版和模组中各种各样的物品。
-[i:3459]原版和模组的食物类物品会出现在所有NPC的商店中。  
-[i:3459]添加了原版和模组内很多物品的合成配方。(包括商店内没有的类别，例如坐骑、武器)  
+[i:3459]原版和模组的食物类物品会出现在所有NPC的商店中。(未来更新的内容)
+[i:3459]添加了原版和模组内很多物品的合成配方。(包括商店内没有的类别，例如坐骑、武器)  (未来更新的内容)
 [i:3459]添加了一些提高游戏体验的新物品。  
 
 [i:3459]适配和兼容的Mod：
-Calamity Mod (灾厄)  
-Catalyst Mod (灾劫)  
-Fargo's Mutant Mod (Fargo突变)  
-Fargo's Souls Mod (Fargo魂石)  
-Thorium Mod (瑟银)  
+Calamity Mod (灾厄) 
+Catalyst Mod (灾劫) 
+Fargo's Mutant Mod (Fargo突变) 
+Fargo's Souls Mod (Fargo魂石) 
+Thorium Mod (瑟银) 
+......
 
 (注：以上Mod可以多开也可以单开，甚至只加载本Mod一个，也没问题，商店内容会自动适配)
 
-模组主页↓ (重要更新内容和发布资源)
+模组发布页 (更新内容和发布资源)
 https://github.com/yitang1/LaziestNPC
+
+问题和Bug反馈 (B站个人主页)
+https://space.bilibili.com/8452156

@@ -47,7 +47,22 @@ namespace LaziestNPC.Common.Helpers
             return false;
         }
 
-        //“摸彩袋类”物品添加[模组]物品
+        //添加[模组]物品作为[配方材料] (若没查询到这个物品也不会报错，后果是这个配方材料在配方中消失)
+        public static Recipe AddModMaterial(this Recipe recipe, Mod mod, string itemName, int stack = 1)
+        {
+            if (mod.TryFind(itemName, out ModItem item))
+                recipe.AddIngredient(item.Type, stack);
+            return recipe;
+        }
+        //添加[模组]物品作为[配方合成站]
+        public static Recipe AddModTile(this Recipe recipe, Mod mod, string tileName)
+        {
+            if (mod.TryFind(tileName, out ModTile tile))
+                recipe.AddTile(tile.Type);
+            return recipe;
+        }
+
+        //为“摸彩袋类”物品添加[模组]物品
         public static void AddModItemLoot(ItemLoot itemLoot, string modName, string itemName, IItemDropRuleCondition condition = null)
         {
             if (ModLoader.TryGetMod(modName, out Mod mod) && mod.TryFind(itemName, out ModItem modItem))

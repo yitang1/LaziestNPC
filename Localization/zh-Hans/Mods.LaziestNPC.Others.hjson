@@ -1,1 +1,8 @@
-RecipeGroups.AnyFood: 任意食物
+RecipeGroup: {
+	AnyFood: 任意食物
+	IronBarGroups: 铁锭或铅锭
+	SilverOrTungstenBar: 银锭或钨锭
+	PlatinumBarGroups: 铂金锭或金锭
+	PerEvilMaterials: 任意邪恶材料
+	PlatinumWatchGroups: 铂金表或金表
+}

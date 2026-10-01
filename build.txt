@@ -1,6 +1,6 @@
 displayName = Laziest NPC
 author = yitang
-version = 0.0.2
+version = 0.0.3
 modReferences = ShopExtender
 weakReferences = CalamityMod
 homepage = https://github.com/yitang1/LaziestNPC

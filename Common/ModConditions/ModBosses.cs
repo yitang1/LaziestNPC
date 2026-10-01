@@ -103,13 +103,11 @@ namespace LaziestNPC.Common.ModBossess
         /// </summary>
         public static Condition GetCondition(string bossKey)
         {
-            return new Condition($"ModBosses.{bossKey}_Debug", () => true);
-
-            /*if (AllBossInfos.TryGetValue(bossKey, out BossInfo info))
+            if (AllBossInfos.TryGetValue(bossKey, out BossInfo info))
             {
                 return new Condition($"ModBosses.{bossKey}", () => info.Downed);
             }
-            return new Condition($"ModBosses.{bossKey}_Missing", () => false);*/
+            return new Condition($"ModBosses.{bossKey}_Missing", () => false);
         }
 
         /// <summary>

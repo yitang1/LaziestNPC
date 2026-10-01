@@ -8,7 +8,30 @@
 > • NPC售卖物品的解锁时期更合理、更准确。  
 > • 支持并适配更多tmod创意工坊的其他Mod。  
 
-> **当前正在开发制作中......**  
+> **当前正在开发制作中......**
+
+### Mod下载与安装
+- **点击这里👉** [LaziestNPC.tmod是Mod文件](https://github.com/yitang1/LaziestNPC/releases)  
+
+<details>
+<summary><b>📥【安装方法】</b></summary>
+
+- **方法①**  
+打开Steam里的tmodloader，  
+在游戏主界面依次点击—“创意工坊”—“管理模组”(就是平时你查看Mod的模组列表)，  
+最下方中间有一个“打开模组文件夹”，点击后打开一个文件夹，  
+把下好的Mod放进去即可，记得在“管理模组”里启用。
+
+- **方法②**  
+直接放在 你的电脑 “我的文档”里的My Games\Terraria\tModLoader\Mods文件夹，  
+和上面是同一个位置，把下好的Mod放进去。  
+
+- **方法③**  
+Win+R 输入shell:Personal  
+然后依次打开My Games\Terraria\tModLoader\Mods文件夹，  
+把下好的Mod放进去。  
+
+</details>
 
 ### Mod核心目标
 添加多名NPC商人以售卖原版和模组中各种各样的物品。  
@@ -74,3 +97,6 @@
   因为Boss宝藏袋在本模组中已经有NPC售卖了。  
 
 </details>
+<br>
+
+**有什么问题或Bug记得去👉[告诉我](https://space.bilibili.com/8452156)**

@@ -100,7 +100,7 @@ namespace LaziestNPC.Common.Helpers
             }
 
             //【第三层判定】50%概率
-            if (Main.rand.NextFloat() >= 0.5f) return false;
+            if (Main.rand.Next(100) < 50) return false;
 
             //执行复活
             player.statLife += player.statLifeMax2;

@@ -131,7 +131,7 @@ namespace LaziestNPC.Common.Helpers
 
             player.Heal(player.statLifeMax2 / 2);
             player.immune = true;
-            player.immuneTime = 300;
+            player.immuneTime = 180;
             player.dead = false;
 
             LPlayer.calamityRebornCooldown = 5 * 60 * 60;

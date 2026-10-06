@@ -66,7 +66,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 4;
+            return numTownNPCs > 5;
         }
 
         public override List<string> SetNPCNameList()

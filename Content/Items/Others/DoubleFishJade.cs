@@ -27,7 +27,7 @@ namespace LaziestNPC.Content.Items.Others
             Item.width = 71;
             Item.height = 76;
             Item.maxStack = 9999;
-            Item.value = Item.sellPrice(0, 25, 0, 0);
+            Item.value = Item.sellPrice(0, 15, 0, 0);
             Item.rare = ModContent.RarityType<Rainbow>();
         }
 

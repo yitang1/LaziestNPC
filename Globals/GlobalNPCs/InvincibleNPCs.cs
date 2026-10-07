@@ -26,7 +26,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
             if (LNPCConfig.Instance.LNPCCritterInvincible)
             {
-                if (npc.CountsAsACritter)
+                if (npc.CountsAsACritter && npc.type != NPCID.EmpressButterfly)
                 {
                     npc.friendly = true;
                     npc.lavaImmune = true;
@@ -58,7 +58,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
             if (LNPCConfig.Instance.LNPCCritterInvincible)
             {
-                if (npc.CountsAsACritter)
+                if (npc.CountsAsACritter && npc.type != NPCID.EmpressButterfly)
                 {
                     return true;
                 }

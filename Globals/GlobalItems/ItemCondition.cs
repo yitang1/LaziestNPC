@@ -9,7 +9,8 @@ namespace LaziestNPC.Globals.GlobalItems
 {
     public static class ItemCondition
     {
-        public static Condition CanBuyFishJade = new Condition("CanBuyFishJade", () => WorldCondition.FishJadeBuyCount < 3);
+        public static Condition CanBuyFishJadeFirst = new Condition("CanBuyFishJadeFirst", () => WorldCondition.FishJadeBuyCount < 1);
+        public static Condition CanBuyFishJadeSecond = new Condition("CanBuyFishJadeSecond", () => WorldCondition.FishJadeBuyCount < 2);
     }
 
     public class DownedSkeletron : IItemDropRuleCondition

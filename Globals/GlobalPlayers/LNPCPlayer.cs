@@ -300,7 +300,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
             {
                 WorldCondition.FishJadeBuyCount++;
 
-                if (WorldCondition.FishJadeBuyCount >= 3)
+                if (WorldCondition.FishJadeBuyCount >= 1)
                 {
                     //从当前商店数组中移除该物品
                     for (int i = 0; i < shopInventory.Length; i++)

@@ -9,6 +9,6 @@ LNPCConfig: {
 
 	LNPCCritterInvincible: {
 		Label: "[i:Bunny] 所有小动物无敌"
-		Tooltip: 包括七彩草蛉
+		Tooltip: 不包括七彩草蛉
 	}
 }

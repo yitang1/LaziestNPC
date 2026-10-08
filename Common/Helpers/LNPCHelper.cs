@@ -13,6 +13,7 @@ using Terraria.Audio;
 using LaziestNPC.Globals.GlobalPlayers;
 using LaziestNPC.Content.Items.SummonItems;
 using LaziestNPC.Globals.GlobalOthers;
+using Terraria.Utilities;
 
 namespace LaziestNPC.Common.Helpers
 {
@@ -26,10 +27,12 @@ namespace LaziestNPC.Common.Helpers
             spriteBatch.Draw(texture, position, new Rectangle?(frame), drawColor, 0f, origin, wantedScale, 0, 0f);
         }
 
-        /* 拓展方法，在另一个地方对某一个类(LNPCPlayer)创建一个方法(LaziestNPC)，
-		但对那个类的代码没有做任何涉及和改动。在其他地方可以直接去调用实例( player.LaziestNPC() )，
-		看起来就像是在调用那个类的实例方法一样，但实际上不是那个类的。
-        也就是所谓的“方法套方法”，套了一层皮，呃唔。*/
+        /// <summary>
+        /// 拓展方法，在另一个地方对某一个类(LNPCPlayer)创建一个方法(LaziestNPC)，<br/>
+		/// 但对那个类的代码没有做任何涉及和改动。在其他地方可以直接去调用实例(player.LaziestNPC() )，<br/>
+		/// 看起来就像是在调用那个类的实例方法一样，但实际上不是那个类的。<br/>
+        /// 也就是所谓的“方法套方法”，套了一层皮，呃唔。
+        /// </summary>
         public static LNPCPlayer LaziestNPC(this Player player)
         {
             return player.GetModPlayer<LNPCPlayer>();
@@ -82,7 +85,13 @@ namespace LaziestNPC.Common.Helpers
             //【第一层判定】检查背包中是否收藏了TheReturner
             bool hasFavorited = false;
             foreach (Item item in player.inventory)
-                if (item.type == ModContent.ItemType<TheReturner>() && item.favorited) { hasFavorited = true; break; }
+            {
+                if (item.type == ModContent.ItemType<TheReturner>() && item.favorited) 
+                { 
+                    hasFavorited = true;
+                    break;
+                }
+            }
             if (!hasFavorited) return false;
 
             //【第二层判定】判断可用次数
@@ -117,7 +126,7 @@ namespace LaziestNPC.Common.Helpers
             return true;
         }
 
-        //药水【龙魂秘药】在原版的功能
+        //药水【龙魂秘药】在原版的复活功能
         public static bool TryRebornWithLunarArmor(Player player)
         {
             if (ModLoader.HasMod("CalamityMod"))

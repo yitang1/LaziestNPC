@@ -109,6 +109,58 @@ namespace LaziestNPC.Content.Items.Consumables
 
         }
 
+        public override void PostDrawTooltipLine(DrawableTooltipLine line)
+        {
+            string plain = "";
+            int i = 0;
+            while (i < line.Text.Length)
+            {
+                if (i + 2 < line.Text.Length && line.Text[i] == '[' && line.Text[i + 1] == 'c' && line.Text[i + 2] == '/')
+                {
+                    int colon = line.Text.IndexOf(':', i);
+                    if (colon < 0)
+                    {
+                        plain += line.Text[i];
+                        i++;
+                    }
+                    else
+                    {
+                        i = colon + 1;
+                        while (i < line.Text.Length && line.Text[i] != ']')
+                        {
+                            plain += line.Text[i];
+                            i++;
+                        }
+                        if (i < line.Text.Length)
+                            i++;
+                    }
+                }
+                else
+                {
+                    plain += line.Text[i];
+                    i++;
+                }
+            }
+
+            if (plain.Contains("超凡之物"))
+            {
+                int index = plain.IndexOf("超凡之物");
+                string beforeText = plain.Substring(0, index);
+                Vector2 beforeSize = FontAssets.MouseText.Value.MeasureString(beforeText) * line.BaseScale;
+                Vector2 targetSize = FontAssets.MouseText.Value.MeasureString("超凡之物") * line.BaseScale;
+
+                float startX = line.X + beforeSize.X;
+                float y = line.Y;
+                float width = targetSize.X;
+                float height = targetSize.Y;
+
+                Main.spriteBatch.Draw(
+                    TextureAssets.MagicPixel.Value,
+                    new Rectangle((int)startX, (int)(y + height * 0.3f), (int)width, 1),
+                    new Color(128, 128, 128));
+            }
+        }
+
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
             LNPCHelper.DrawInventoryCustomScale(spriteBatch, TextureAssets.Item[Type].Value, position, frame, drawColor, itemColor, origin, scale, 0.6f, new Vector2(0f, 0f));

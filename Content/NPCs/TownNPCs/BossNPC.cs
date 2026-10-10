@@ -15,28 +15,26 @@ using static LaziestNPC.LaziestNPC;
 using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using LaziestNPC.Content.Items.SummonItems;
-using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Content.Items.Others;
+using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using static LaziestNPC.Globals.GlobalItems.ItemCondition;
+using static LaziestNPC.Common.Helpers.LNPCHelper;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
     public class BossNPC : ModNPC
     {
-        private static int ShopNum = 1;
-
-        private const string VanillaAll = "VanillaAll";
-        private const string ModBags = "ModBags";
-        private const string ModSums = "ModSums";
-
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 5;
-            //NPCID.Sets.ExtraFramesCount[Type] = 0;
-            //NPCID.Sets.AttackFrameCount[Type] = 0; 
-            NPCID.Sets.DangerDetectRange[Type] = 220; 
-
+            Main.npcFrameCount[Type] = 21;
+            NPCID.Sets.ExtraFramesCount[Type] = 7;
+            NPCID.Sets.AttackFrameCount[Type] = 2; 
+            NPCID.Sets.DangerDetectRange[Type] = 220;
+            NPCID.Sets.AttackType[NPC.type] = 0;
+            NPCID.Sets.AttackTime[NPC.type] = 15; //控制单次动作的观感，动作持续时间
+            NPCID.Sets.AttackAverageChance[NPC.type] = 15; //控制攻击倾向，多久才会触发下一次攻击
+            NPCID.Sets.ShimmerTownTransform[Type] = false;
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
             {
                 SpriteDirection = 1,
@@ -57,17 +55,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.townNPC = true;
             NPC.friendly = true;
             NPC.width = 20;
-            NPC.height = 20;
+            NPC.height = 40;
             NPC.aiStyle = NPCAIStyleID.Passive;
-            NPC.damage = 10;
-            NPC.defense = 15;
-            NPC.lifeMax = 250;
+            NPC.defense = 100;
+            NPC.lifeMax = 300;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            AIType = NPCID.Squirrel;
-            //AnimationType = NPCID.Guide;
-            // ↑这条【暂时】要删掉，因为这个【临时贴图】实际上不是NPC而是一个中立生物的
+            AnimationType = NPCID.Dryad;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -82,7 +77,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 5;
+            return numTownNPCs > 6;
         }
 
         public override List<string> SetNPCNameList()
@@ -96,11 +91,19 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         public override string GetChat()
         {
             WeightedRandom<string> dialogue = new WeightedRandom<string>();
+
             dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
             dialogue.Add(this.GetLocalizedValue("Chat.Normal2"));
             dialogue.Add(this.GetLocalizedValue("Chat.Normal3"));
+
             return dialogue;
         }
+
+        private static int ShopNum = 1;
+
+        private const string VanillaAll = "VanillaAll";
+        private const string ModBags = "ModBags";
+        private const string ModSums = "ModSums";
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
@@ -156,8 +159,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [原版Boss宝藏袋]
             //肉前
             vanShop.AddItem(ItemType<TheReturner>(), (0, 0, 0, 1)) //归乡者吊坠
-            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade) //双鱼玉佩
-            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJade) //双鱼玉佩
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeFirst) //双鱼玉佩
+            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeSecond) //双鱼玉佩
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
             .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
@@ -422,95 +425,27 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             modSum.Register();
         }
 
-        //正式添加新贴图后删掉
-        public override void FindFrame(int frameHeight)
+        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
         {
-            if (NPC.velocity.Y == 0f)
-            {
-                if (!NPC.IsABestiaryIconDummy)
-                {
-                    if (NPC.direction == 1)
-                    {
-                        NPC.spriteDirection = -1;
-                    }
-                    if (NPC.direction == -1)
-                    {
-                        NPC.spriteDirection = 1;
-                    }
-
-                    if (NPC.velocity.X == 0f)
-                    {
-                        NPC.frame.Y = 0;
-                        NPC.frameCounter = 0.0;
-                        return;
-                    }
-                }
-                NPC.frameCounter += NPC.IsABestiaryIconDummy ? 0.6f : Math.Abs(NPC.velocity.X) * 0.25f;
-                NPC.frameCounter += 1.0;
-                if (NPC.frameCounter > 12.0)
-                {
-                    NPC.frame.Y = NPC.frame.Y + frameHeight;
-                    NPC.frameCounter = 0.0;
-                }
-                if (NPC.frame.Y / frameHeight >= Main.npcFrameCount[NPC.type] - 1)
-                {
-                    NPC.frame.Y = frameHeight;
-                }
-            }
-            else
-            {
-                NPC.frameCounter = 0.0;
-                NPC.frame.Y = frameHeight * 2;
-            }
-        }
-
-        //正式添加新贴图后删掉
-        public override void PostAI()
-        {
-            float maxSpeed = 0.7f;
-            if (Math.Abs(NPC.velocity.X) > maxSpeed)
-            {
-                NPC.velocity.X = Math.Sign(NPC.velocity.X) * maxSpeed;
-            }
-        }
-
-        /*public override void TownNPCAttackStrength(ref int damage, ref float knockback)
-        {
-            damage = 70;
+            damage = 2;
             knockback = 3f;
         }
-
-        public override void DrawTownAttackGun(ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)
+        //控制攻击频率的下限，能保证“两次攻击之间至少隔多久”
+        public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
         {
-            scale = 1f;
-            horizontalHoldoutOffset = 20;
-            if (!NPC.downedMoonlord)
-            {
-                item = TextureAssets.Item[ItemID.Shotgun].Value;
-            }
-            if (NPC.downedMoonlord)
-            {
-                item = TextureAssets.Item[ItemID.VortexBeater].Value;
-            }
+            cooldown = 120;
+            randExtraCooldown = 30;
         }
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
-            if (!NPC.downedMoonlord)
-            {
-                attackDelay = 10;
-                projType = 279;
-            }
-            if (NPC.downedMoonlord)
-            {
-                attackDelay = 4;
-                projType = 638;
-            }
+            projType = 483;
+            attackDelay = 10;
         }
 
         public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
         {
-            multiplier = 12f;
-        }*/
+            multiplier = 8f;
+        }
     }
 }

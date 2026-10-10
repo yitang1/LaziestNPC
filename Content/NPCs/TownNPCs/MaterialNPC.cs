@@ -45,9 +45,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.width = 20;
             NPC.height = 20;
             NPC.aiStyle = NPCAIStyleID.Passive;
-            NPC.damage = 10;
-            NPC.defense = 15;
-            NPC.lifeMax = 250;
+            NPC.defense = 100;
+            NPC.lifeMax = 300;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;

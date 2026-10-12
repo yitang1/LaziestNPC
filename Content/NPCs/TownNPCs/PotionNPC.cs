@@ -18,10 +18,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
     {
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 27;
-            NPCID.Sets.ExtraFramesCount[Type] = 20;
-            NPCID.Sets.AttackFrameCount[Type] = 0;
-            NPCID.Sets.DangerDetectRange[Type] = 220;
+            Main.npcFrameCount[Type] = 21;
+            NPCID.Sets.ExtraFramesCount[Type] = 7;
+            NPCID.Sets.AttackFrameCount[Type] = 2;
+            NPCID.Sets.DangerDetectRange[Type] = 300;
+            NPCID.Sets.AttackType[NPC.type] = 0;
+            NPCID.Sets.AttackTime[NPC.type] = 20;
+            NPCID.Sets.AttackAverageChance[NPC.type] = 20;
+            NPCID.Sets.ShimmerTownTransform[Type] = false;
 
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
             {
@@ -42,15 +46,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.townNPC = true;
             NPC.friendly = true;
             NPC.width = 20;
-            NPC.height = 20;
+            NPC.height = 40;
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.defense = 100;
-            NPC.lifeMax = 300;
+            NPC.lifeMax = 500;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.TownBunny;
-            //AnimationType = NPCID.Guide;
+            AnimationType = NPCID.Dryad;
         }
 
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -316,6 +319,29 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             vPotion.Register();
             mPotion.Register();
+        }
+
+        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+        {
+            damage = 2;
+            knockback = 3f;
+        }
+
+        public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
+        {
+            cooldown = 180;
+            randExtraCooldown = 60;
+        }
+
+        public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
+        {
+            projType = ProjectileID.LostSoulFriendly;
+            attackDelay = 10;
+        }
+
+        public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
+        {
+            multiplier = 8f;
         }
     }
 }

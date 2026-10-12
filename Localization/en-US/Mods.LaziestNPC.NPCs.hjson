@@ -1,7 +1,7 @@
 //Town NPCs
 BossNPC: {
-	DisplayName: Boss物品商人
-	Name.BossNPC: 猪猪
+	DisplayName: 试炼官
+	Name.BossNPC: ""
 
 	Chat: {
 		Normal1: *猪猪的声音*

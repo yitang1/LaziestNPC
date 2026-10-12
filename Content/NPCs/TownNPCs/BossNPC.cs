@@ -30,11 +30,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             Main.npcFrameCount[Type] = 21;
             NPCID.Sets.ExtraFramesCount[Type] = 7;
             NPCID.Sets.AttackFrameCount[Type] = 2; 
-            NPCID.Sets.DangerDetectRange[Type] = 220;
+            NPCID.Sets.DangerDetectRange[Type] = 300;
             NPCID.Sets.AttackType[NPC.type] = 0;
-            NPCID.Sets.AttackTime[NPC.type] = 15; //控制单次动作的观感，动作持续时间
-            NPCID.Sets.AttackAverageChance[NPC.type] = 15; //控制攻击倾向，多久才会触发下一次攻击
+            NPCID.Sets.AttackTime[NPC.type] = 20; //控制单次动作的观感，动作持续时间
+            NPCID.Sets.AttackAverageChance[NPC.type] = 20; //控制攻击倾向，多久才会触发下一次攻击
             NPCID.Sets.ShimmerTownTransform[Type] = false;
+
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
             {
                 SpriteDirection = 1,
@@ -58,7 +59,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             NPC.height = 40;
             NPC.aiStyle = NPCAIStyleID.Passive;
             NPC.defense = 100;
-            NPC.lifeMax = 300;
+            NPC.lifeMax = 500;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
@@ -433,13 +434,13 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         //控制攻击频率的下限，能保证“两次攻击之间至少隔多久”
         public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
         {
-            cooldown = 120;
-            randExtraCooldown = 30;
+            cooldown = 180;
+            randExtraCooldown = 60;
         }
 
         public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
         {
-            projType = 483;
+            projType = ProjectileID.DD2PhoenixBowShot;
             attackDelay = 10;
         }
 

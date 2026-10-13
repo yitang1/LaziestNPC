@@ -17,53 +17,22 @@ using LaziestNPC.Content.Items.Consumables;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class NatureNPC : ModNPC
+    public class NatureNPC : TownLNPC
     {
+        protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.NatureNPC";
+        protected override string NPCNameText => "Name.NatureNPC";
+        protected override int AttackProjType => ProjectileID.SeedlerNut;
+
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 27;
-            NPCID.Sets.ExtraFramesCount[Type] = 20;
-            NPCID.Sets.AttackFrameCount[Type] = 0;
-            NPCID.Sets.DangerDetectRange[Type] = 220;
+            base.SetStaticDefaults();
 
-            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
-            {
-                Velocity = -1f,
-                Direction = -1
-            };
-            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
             /*NPC.Happiness
 				.SetBiomeAffection<OceanBiome>(AffectionLevel.Like)
 				.SetBiomeAffection<SnowBiome>(AffectionLevel.Love)
 				.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Dislike)
 				.SetNPCAffection(NPCID.Cyborg, AffectionLevel.Love)
 				.SetNPCAffection(NPCID.Steampunker, AffectionLevel.Like);*/
-        }
-
-        public override void SetDefaults()
-        {
-            NPC.townNPC = true;
-            NPC.friendly = true;
-            NPC.width = 20;
-            NPC.height = 20;
-            NPC.aiStyle = NPCAIStyleID.Passive;
-            NPC.defense = 100;
-            NPC.lifeMax = 300;
-            NPC.HitSound = SoundID.NPCHit1;
-            NPC.DeathSound = SoundID.NPCDeath1;
-            NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.TownBunny;
-            //AnimationType = NPCID.Guide;
-        }
-
-        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-        {
-            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-            {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.NatureNPC")
-            });
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
@@ -84,20 +53,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             return false;
         }
 
-        public override List<string> SetNPCNameList()
-        {
-            return new List<string>()
-            {
-                this.GetLocalizedValue("Name.NatureNPC")
-            };
-        }
-
         public override string GetChat()
         {
-            WeightedRandom<string> dialogue = new WeightedRandom<string>();
-            dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
-            dialogue.Add(this.GetLocalizedValue("Chat.Normal2"));
-            return dialogue;
+            WeightedRandom<string> chat = new WeightedRandom<string>();
+
+            chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal2"));
+
+            return chat;
         }
 
         public override void SetChatButtons(ref string button, ref string button2)

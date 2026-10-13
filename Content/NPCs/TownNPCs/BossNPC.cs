@@ -23,26 +23,16 @@ using static LaziestNPC.Common.Helpers.LNPCHelper;
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     [AutoloadHead]
-    public class BossNPC : ModNPC
+    public class BossNPC : TownLNPC
     {
+        protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.BossNPC";
+        protected override string NPCNameText => "Name.BossNPC";
+        protected override int AttackProjType => ProjectileID.DD2PhoenixBowShot;
+
         public override void SetStaticDefaults()
         {
-            Main.npcFrameCount[Type] = 21;
-            NPCID.Sets.ExtraFramesCount[Type] = 7;
-            NPCID.Sets.AttackFrameCount[Type] = 2; 
-            NPCID.Sets.DangerDetectRange[Type] = 300;
-            NPCID.Sets.AttackType[NPC.type] = 0;
-            NPCID.Sets.AttackTime[NPC.type] = 20; //控制单次动作的观感，动作持续时间
-            NPCID.Sets.AttackAverageChance[NPC.type] = 20; //控制攻击倾向，多久才会触发下一次攻击
-            NPCID.Sets.ShimmerTownTransform[Type] = false;
+            base.SetStaticDefaults();
 
-            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new()
-            {
-                SpriteDirection = 1,
-                Direction = -1,
-                Velocity = 0.1f
-            };
-            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
             /*NPC.Happiness
 				.SetBiomeAffection<OceanBiome>(AffectionLevel.Like)
 				.SetBiomeAffection<SnowBiome>(AffectionLevel.Love)
@@ -51,53 +41,22 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 				.SetNPCAffection(NPCID.Steampunker, AffectionLevel.Like);*/
         }
 
-        public override void SetDefaults()
-        {
-            NPC.townNPC = true;
-            NPC.friendly = true;
-            NPC.width = 20;
-            NPC.height = 40;
-            NPC.aiStyle = NPCAIStyleID.Passive;
-            NPC.defense = 100;
-            NPC.lifeMax = 500;
-            NPC.HitSound = SoundID.NPCHit1;
-            NPC.DeathSound = SoundID.NPCDeath1;
-            NPC.knockBackResist = 0.5f;
-            AnimationType = NPCID.Dryad;
-        }
-
-        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
-        {
-            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[]
-            {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Times.DayTime,
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
-                new FlavorTextBestiaryInfoElement("Mods.LaziestNPC.Bestiary.BossNPC")
-            });
-        }
-
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
             return numTownNPCs > 6;
         }
 
-        public override List<string> SetNPCNameList()
-        {
-            return new List<string>()
-            {
-                this.GetLocalizedValue("Name.BossNPC")
-            };
-        }
-
         public override string GetChat()
         {
-            WeightedRandom<string> dialogue = new WeightedRandom<string>();
+            //权重值，默认不写就是1.0。这个和随机方法效果一样，是TR的
+            //若三句台词，默认都是1.0，总权重是3.0，即每句话出现概率是1/3
+            WeightedRandom<string> chat = new WeightedRandom<string>();
 
-            dialogue.Add(this.GetLocalizedValue("Chat.Normal1"));
-            dialogue.Add(this.GetLocalizedValue("Chat.Normal2"));
-            dialogue.Add(this.GetLocalizedValue("Chat.Normal3"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal2"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal3"));
 
-            return dialogue;
+            return chat;
         }
 
         private static int ShopNum = 1;
@@ -420,33 +379,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-
             vanShop.Register();
             modBag.Register();
             modSum.Register();
-        }
-
-        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
-        {
-            damage = 2;
-            knockback = 3f;
-        }
-        //控制攻击频率的下限，能保证“两次攻击之间至少隔多久”
-        public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
-        {
-            cooldown = 180;
-            randExtraCooldown = 60;
-        }
-
-        public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
-        {
-            projType = ProjectileID.DD2PhoenixBowShot;
-            attackDelay = 10;
-        }
-
-        public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
-        {
-            multiplier = 8f;
         }
     }
 }

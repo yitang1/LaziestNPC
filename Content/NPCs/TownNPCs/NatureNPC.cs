@@ -22,6 +22,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.NatureNPC";
         protected override string NPCNameText => "Name.NatureNPC";
         protected override int AttackProjType => ProjectileID.SeedlerNut;
+        protected override int AttackProjDamage => 3;
 
         public override void SetStaticDefaults()
         {

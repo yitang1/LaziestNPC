@@ -15,7 +15,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected virtual string BestiaryText => ""; //图鉴文本
         protected virtual string NPCNameText => ""; //NPC名字
         protected abstract int AttackProjType { get; } //射弹ID
-        protected virtual int AttackProjDamage => 2; //射弹基础伤害
+        protected virtual int AttackProjDamage => 3; //射弹基础伤害
 
         public override void SetStaticDefaults()
         {

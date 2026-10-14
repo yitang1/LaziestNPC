@@ -17,6 +17,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.BuildNPC";
         protected override string NPCNameText => "Name.BuildNPC";
         protected override int AttackProjType => ProjectileID.BookStaffShot;
+        protected override int AttackProjDamage => 4;
 
         public override void SetStaticDefaults()
         {

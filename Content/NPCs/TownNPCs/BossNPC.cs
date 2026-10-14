@@ -28,6 +28,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.BossNPC";
         protected override string NPCNameText => "Name.BossNPC";
         protected override int AttackProjType => ProjectileID.DD2PhoenixBowShot;
+        protected override int AttackProjDamage => 3;
 
         public override void SetStaticDefaults()
         {

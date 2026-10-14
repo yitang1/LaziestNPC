@@ -19,6 +19,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.PotionNPC";
         protected override string NPCNameText => "Name.PotionNPC";
         protected override int AttackProjType => ProjectileID.LostSoulFriendly;
+        protected override int AttackProjDamage => 2;
 
         public override void SetStaticDefaults()
         {

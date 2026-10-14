@@ -20,7 +20,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         protected override string BestiaryText => "Mods.LaziestNPC.Bestiary.MaterialNPC";
         protected override string NPCNameText => "Name.MaterialNPC";
         protected override int AttackProjType => ProjectileID.StarCannonStar;
-        protected override int AttackProjDamage => 3;
+        protected override int AttackProjDamage => 4;
 
         public override void SetStaticDefaults()
         {

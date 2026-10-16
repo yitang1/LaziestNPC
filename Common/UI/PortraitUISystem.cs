@@ -6,11 +6,10 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
-using CalamityMod.Prefixes;
-using LaziestNPC.Content.NPCs.TownNPCs;
 using Terraria.GameContent;
 using Terraria.UI.Chat;
 using Terraria.Localization;
+using LaziestNPC.Content.NPCs.TownNPCs;
 
 namespace LaziestNPC.Common.UI
 {
@@ -25,7 +24,7 @@ namespace LaziestNPC.Common.UI
         private int portraitAnimTimer = 0; //弹跳计时器
 
         //2.注册绘制层
-        //找到原版对话窗口所在的图层，在它后面插入我们自己的肖像层。
+        //找到原版对话窗口所在的图层，在它后面插入肖像层。
         //这样肖像会绘制在对话窗口旁边，且不会挡住对话内容。
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
@@ -85,7 +84,7 @@ namespace LaziestNPC.Common.UI
             float offsetX = -28f; //负值往左，正值往右
             float offsetY = -25f; //负值往上，正值往下
 
-            //(5-1) 计算弹跳偏移
+            //(6) 计算弹跳偏移
             portraitAnimTimer++;
             float bounceOffset = 0f;
             if (portraitAnimTimer < 20)
@@ -102,13 +101,13 @@ namespace LaziestNPC.Common.UI
             float portraitX = dialogLeft - size - gap + offsetX;
             float portraitY = dialogTop + offsetY + bounceOffset;
 
-            //(6)：绘制背景框
+            //(7)：绘制背景框
             Texture2D bg = ModContent.Request<Texture2D>("LaziestNPC/Assets/UI/PortraitBackground").Value;
             Main.spriteBatch.Draw(bg,
                 new Rectangle((int)portraitX, (int)portraitY, (int)size, (int)size),
                 Color.White);
 
-            //(7)：绘制肖像图
+            //(8)：绘制肖像图
             //路径来自 currentPortraitPath，是对话开始时随机缓存的那一张。
             Texture2D portrait = ModContent.Request<Texture2D>(currentPortraitPath).Value;
 
@@ -126,7 +125,7 @@ namespace LaziestNPC.Common.UI
                 new Rectangle((int)drawX, (int)drawY, (int)drawWidth, (int)drawHeight),
                 Color.White);
 
-            //(8)：绘制NPC名字
+            //(9)：绘制NPC名字
             //名字显示在肖像框下方，水平居中。
             string npcName = Language.GetTextValue($"Mods.LaziestNPC.NPCs.{npc.ModNPC.Name}.PortraitName");
             Vector2 nameSize = ChatManager.GetStringSize(FontAssets.MouseText.Value, npcName, Vector2.One);
@@ -140,13 +139,37 @@ namespace LaziestNPC.Common.UI
         //每张图等概率。
         private string PickPortraitPath(NPC npc)
         {
+            if (npc.ModNPC is BossNPC)
+            {
+                int num = Main.rand.Next(2);
+                return "LaziestNPC/Assets/Portraits/BossNPC_" + num;
+            }
             if (npc.ModNPC is NatureNPC)
             {
-                int variant = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + variant;
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
             }
+            /*if (npc.ModNPC is NatureNPC)
+            {
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+            }
+            if (npc.ModNPC is NatureNPC)
+            {
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+            }
+            if (npc.ModNPC is NatureNPC)
+            {
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+            }
+            if (npc.ModNPC is NatureNPC)
+            {
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+            }*/
 
-            
             return null;
         }
     }

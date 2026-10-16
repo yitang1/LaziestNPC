@@ -144,30 +144,30 @@ namespace LaziestNPC.Common.UI
                 int num = Main.rand.Next(2);
                 return "LaziestNPC/Assets/Portraits/BossNPC_" + num;
             }
-            if (npc.ModNPC is NatureNPC)
+            if (npc.ModNPC is PotionNPC)
             {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
-            }
-            /*if (npc.ModNPC is NatureNPC)
-            {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+                int num = Main.rand.Next(2);
+                return "LaziestNPC/Assets/Portraits/PotionNPC_" + num;
             }
             if (npc.ModNPC is NatureNPC)
             {
                 int num = Main.rand.Next(3);
                 return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
             }
-            if (npc.ModNPC is NatureNPC)
+            /*if (npc.ModNPC is MaterialNPC)
             {
                 int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+                return "LaziestNPC/Assets/Portraits/MaterialNPC_" + num;
             }
-            if (npc.ModNPC is NatureNPC)
+            if (npc.ModNPC is BuildNPC)
             {
                 int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
+                return "LaziestNPC/Assets/Portraits/BuildNPC_" + num;
+            }
+            if (npc.ModNPC is OreNPC)
+            {
+                int num = Main.rand.Next(3);
+                return "LaziestNPC/Assets/Portraits/OreNPC_" + num;
             }*/
 
             return null;

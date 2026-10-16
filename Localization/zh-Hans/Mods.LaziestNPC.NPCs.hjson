@@ -2,6 +2,7 @@
 BossNPC: {
 	DisplayName: 试炼官
 	Name.BossNPC: ""
+	PortraitName: 试炼官
 
 	Chat: {
 		Normal1: *猪猪的声音*
@@ -31,6 +32,7 @@ BossNPC: {
 PotionNPC: {
 	DisplayName: 酿灵师
 	Name.PotionNPC: 小幽
+	PortraitName: 酿灵师 小幽
 
 	Chat: {
 		Normal1: *兔兔的声音*
@@ -55,6 +57,7 @@ PotionNPC: {
 MaterialNPC: {
 	DisplayName: 星海商人
 	Name.MaterialNPC: ""
+	PortraitName: 星海商人
 
 	Chat: {
 		Normal1: 喵喵~
@@ -80,6 +83,7 @@ MaterialNPC: {
 BuildNPC: {
 	DisplayName: 机枢学者
 	Name.BuildNPC: 巧巧
+	PortraitName: 机枢学者 巧巧
 
 	Chat: {
 		Normal1: 汪汪！
@@ -105,6 +109,7 @@ BuildNPC: {
 NatureNPC: {
 	DisplayName: 采花匠
 	Name.NatureNPC: 小向阳
+	PortraitName: 采花匠 小向阳
 
 	Chat: {
 		Normal1: *兔兔的声音*
@@ -129,6 +134,7 @@ NatureNPC: {
 OreNPC: {
 	DisplayName: 收藏家
 	Name.OreNPC: ""
+	PortraitName: 收藏家
 
 	Chat: {
 		Normal1: 喵喵~

@@ -10,8 +10,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     public abstract class TownLNPC : ModNPC
     {
-        //protected IList<string> OnceChats = new List<string>(); //战后首句文本
-
         protected virtual string BestiaryText => ""; //图鉴文本
         protected virtual string NPCNameText => ""; //NPC名字
         protected abstract int AttackProjType { get; } //射弹ID
@@ -91,16 +89,5 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             multiplier = 8f;
         }
-
-        /*public override void LoadData(TagCompound tag)
-        {
-            OnceChats = tag.GetList<string>("OnceChats");
-        }
-        //每个存档独立存储
-        public override void SaveData(TagCompound tag)
-        {
-            tag["OnceChats"] = OnceChats;
-        }*/
-
     }
 }

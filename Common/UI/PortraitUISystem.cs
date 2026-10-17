@@ -259,18 +259,12 @@ namespace LaziestNPC.Common.UI
                 if (npc.type == NPCID.BestiaryGirl)
                 {
                     bool isWerefox = (Main.moonPhase == 0 || Main.bloodMoon) && !Main.dayTime;
+                    string suffix = npc.IsShimmerVariant ? "_Shimmer" : "";
 
                     if (isWerefox)
-                        return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Werefox";
-                    
-                    if (npc.IsShimmerVariant)
-                    {
-                        if (isWerefox)
-                            return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Werefox_Shimmer";
-                        return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Shimmer";
-                    }
+                        return $"LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Werefox{suffix}";
 
-                    return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl";
+                    return $"LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl{suffix}";
                 }
 
                 //3.城镇NPC + 城镇史莱姆

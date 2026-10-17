@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -111,15 +111,31 @@ namespace LaziestNPC.Common.UI
             //路径来自 currentPortraitPath，是对话开始时随机缓存的那一张。
             Texture2D portrait = ModContent.Request<Texture2D>(currentPortraitPath).Value;
 
-            //按原图宽高比计算绘制高度。宽度固定为size，高度按比例换算。
-            float ratio = (float)portrait.Height / portrait.Width;
-            float drawWidth = size;
-            float drawHeight = size * ratio;
+            float drawWidth;
+            float drawHeight;
+            float drawX;
+            float drawY;
 
-            //水平方向和背景框对齐，垂直方向底部对齐背景框底部。
-            //这样如果肖像比框高，超出部分会向上溢出，不会被裁掉。
-            float drawX = portraitX;
-            float drawY = portraitY + size - drawHeight;
+            if (currentPortraitPath.Contains("/Vanilla/"))
+            {
+                //原版肖像：200×200的图，角色占中间100×100。
+                //画成 224×224，角色正好变成112×112，与背景框一致。
+                drawWidth = size * 1.8f;
+                drawHeight = size * 1.8f;
+                drawX = portraitX + (size - drawWidth) / 2f;
+                drawY = portraitY + (size - drawHeight) / 2f;
+            }
+            else
+            {
+                //Mod肖像：按原图宽高比计算绘制高度。宽度固定为size，高度按比例换算。
+                float ratio = (float)portrait.Height / portrait.Width;
+                drawWidth = size;
+                drawHeight = size * ratio;
+                //水平方向和背景框对齐，垂直方向底部对齐背景框底部。
+                //这样如果肖像比框高，超出部分会向上溢出，不会被裁掉。
+                drawX = portraitX;
+                drawY = portraitY + size - drawHeight;
+            }
 
             Main.spriteBatch.Draw(portrait,
                 new Rectangle((int)drawX, (int)drawY, (int)drawWidth, (int)drawHeight),
@@ -127,50 +143,145 @@ namespace LaziestNPC.Common.UI
 
             //(9)：绘制NPC名字
             //名字显示在肖像框下方，水平居中。
-            string npcName = Language.GetTextValue($"Mods.LaziestNPC.NPCs.{npc.ModNPC.Name}.PortraitName");
+            string npcName;
+            if (npc.ModNPC != null)
+            {
+                //模组NPC
+                npcName = Language.GetTextValue($"Mods.LaziestNPC.NPCs.{npc.ModNPC.Name}.PortraitName");
+            }
+            else
+            {
+                //原版NPC
+                //TypeName会根据语言环境返回对应的职业名文本，即中文是“向导”，英文是"Guide"
+                //GivenName是NPC的名字，但有些NPC貌似并没有，例如圣诞老人
+                npcName = npc.HasGivenName ? npc.TypeName + " " + npc.GivenName : npc.TypeName;
+            }
             Vector2 nameSize = ChatManager.GetStringSize(FontAssets.MouseText.Value, npcName, Vector2.One);
             float nameX = portraitX + (size - nameSize.X) / 2f;
             float nameY = portraitY + size + 2f;
             Utils.DrawBorderString(Main.spriteBatch, npcName, new Vector2(nameX, nameY), Color.White);
         }
 
+        private static readonly Dictionary<int, string> VanillaPortraits = new()
+        {
+            //原版城镇NPC
+            { NPCID.Guide, "Guide" }, //向导
+            { NPCID.Merchant, "Merchant" }, //商人
+            { NPCID.Nurse, "Nurse" }, //护士
+            { NPCID.Demolitionist, "Demolitionist" }, //爆破专家
+            { NPCID.DyeTrader, "DyeTrader" }, //染料商
+            { NPCID.Angler, "Angler" }, //渔夫
+            //{ NPCID.BestiaryGirl, "BestiaryGirl" }, //动物学家
+            { NPCID.Dryad, "Dryad" }, //树妖
+            { NPCID.Painter, "Painter" }, //油漆工
+            { NPCID.Golfer, "Golfer" }, //高尔夫球手
+            { NPCID.ArmsDealer, "ArmsDealer" }, //军火商
+            { NPCID.DD2Bartender, "DD2Bartender" }, //酒馆老板
+            { NPCID.Stylist, "Stylist" }, //发型师
+            { NPCID.GoblinTinkerer, "GoblinTinkerer" }, //哥布林工匠
+            { NPCID.WitchDoctor, "WitchDoctor" }, //巫医
+            { NPCID.Clothier, "Clothier" }, //服装商
+            { NPCID.Mechanic, "Mechanic" }, //机械师
+            { NPCID.PartyGirl, "PartyGirl" }, //派对女孩
+            { NPCID.Wizard, "Wizard" }, //巫师
+            { NPCID.TaxCollector, "TaxCollector" }, //税收官
+            { NPCID.Truffle, "Truffle" }, //松露人
+            { NPCID.Pirate, "Pirate" }, //海盗
+            { NPCID.Steampunker, "Steampunker" }, //蒸汽朋克人
+            { NPCID.Cyborg, "Cyborg" }, //机器侠
+            { NPCID.SantaClaus, "SantaClaus" }, //圣诞老人
+            { NPCID.Princess, "Princess" }, //公主
+
+            { NPCID.TravellingMerchant, "TravellingMerchant" }, //旅商
+            { NPCID.OldMan, "OldMan" }, //老人
+            { NPCID.SkeletonMerchant, "SkeletonMerchant" }, //骷髅商人
+
+            //城镇史莱姆
+            { NPCID.TownSlimeCopper, "TownSlimeCopper" }, //侍卫史莱姆
+            { NPCID.TownSlimePurple, "TownSlimePurple" }, //笨拙史莱姆
+            { NPCID.TownSlimeBlue, "TownSlimeBlue" }, //书呆子史莱姆
+            { NPCID.TownSlimeRed, "TownSlimeRed" }, //暴躁史莱姆
+            { NPCID.TownSlimeYellow, "TownSlimeYellow" }, //神秘史莱姆
+            { NPCID.TownSlimeOld, "TownSlimeOld" }, //长者史莱姆
+            { NPCID.TownSlimeGreen, "TownSlimeGreen" }, //酷酷史莱姆
+            { NPCID.TownSlimeRainbow, "TownSlimeRainbow" }, //天后史莱姆
+
+            /*//城镇宠物
+            { NPCID.TownCat, "TownCat" }, //城镇猫咪
+            { NPCID.TownDog, "TownDog" }, //城镇狗狗
+            { NPCID.TownBunny, "TownBunny" }, //城镇兔兔*/
+
+        };
+
+        private static readonly Dictionary<Type, (string BaseName, int Num)> ModPortraits = new()
+        {
+            { typeof(BossNPC), ("BossNPC", 2) }, //试炼官
+            { typeof(PotionNPC), ("PotionNPC", 2) }, //酿灵师
+            { typeof(NatureNPC), ("NatureNPC", 3) }, //采花匠
+        };
+
         //4.随机选择肖像
         //对话刚开始时调用一次，返回该NPC本次对话要显示的肖像路径。
         //每张图等概率。
         private string PickPortraitPath(NPC npc)
         {
-            if (npc.ModNPC is BossNPC)
+            //本模组NPC
+            if (npc.ModNPC != null)
             {
-                int num = Main.rand.Next(2);
-                return "LaziestNPC/Assets/Portraits/BossNPC_" + num;
+                if (ModPortraits.TryGetValue(npc.ModNPC.GetType(), out var info))
+                {
+                    int num = Main.rand.Next(info.Num);
+                    return $"LaziestNPC/Assets/Portraits/LNPC/{info.BaseName}_{num}";
+                }
             }
-            if (npc.ModNPC is PotionNPC)
-            {
-                int num = Main.rand.Next(2);
-                return "LaziestNPC/Assets/Portraits/PotionNPC_" + num;
-            }
-            if (npc.ModNPC is NatureNPC)
-            {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/NatureNPC_" + num;
-            }
-            /*if (npc.ModNPC is MaterialNPC)
-            {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/MaterialNPC_" + num;
-            }
-            if (npc.ModNPC is BuildNPC)
-            {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/BuildNPC_" + num;
-            }
-            if (npc.ModNPC is OreNPC)
-            {
-                int num = Main.rand.Next(3);
-                return "LaziestNPC/Assets/Portraits/OreNPC_" + num;
-            }*/
 
+            //原版NPC
+            if (npc.ModNPC == null)
+            {
+                //1.城镇宠物：按townNpcVariationIndex映射品种
+                if (npc.type == NPCID.TownCat)
+                {
+                    string[] catBreeds = { "Siamese", "Black", "OrangeTabby", "RussianBlue", "Silver", "White" };
+                    return $"LaziestNPC/Assets/Portraits/Vanilla/TownCat_{catBreeds[npc.townNpcVariationIndex]}";
+                }
+                if (npc.type == NPCID.TownDog)
+                {
+                    string[] dogBreeds = { "Labrador", "PitBull", "Beagle", "Corgi", "Dalmatian", "Husky" };
+                    return $"LaziestNPC/Assets/Portraits/Vanilla/TownDog_{dogBreeds[npc.townNpcVariationIndex]}";
+                }
+                if (npc.type == NPCID.TownBunny)
+                {
+                    string[] bunnyBreeds = { "White", "Angora", "Dutch", "Flemish", "Lop", "Silver"};
+                    return $"LaziestNPC/Assets/Portraits/Vanilla/TownBunny_{bunnyBreeds[npc.townNpcVariationIndex]}";
+                }
+
+                //2.动物学家(正常+兽人化 共四张不同的肖像图)
+                if (npc.type == NPCID.BestiaryGirl)
+                {
+                    bool isWerefox = (Main.moonPhase == 0 || Main.bloodMoon) && !Main.dayTime;
+
+                    if (isWerefox)
+                        return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Werefox";
+                    
+                    if (npc.IsShimmerVariant)
+                    {
+                        if (isWerefox)
+                            return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Werefox_Shimmer";
+                        return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl_Shimmer";
+                    }
+
+                    return "LaziestNPC/Assets/Portraits/Vanilla/BestiaryGirl";
+                }
+
+                //3.城镇NPC + 城镇史莱姆
+                if (VanillaPortraits.TryGetValue(npc.type, out string baseName))
+                {
+                    string suffix = npc.IsShimmerVariant ? "_Shimmer" : "";
+                    return $"LaziestNPC/Assets/Portraits/Vanilla/{baseName}{suffix}";
+                }
+            }
             return null;
         }
+
     }
 }

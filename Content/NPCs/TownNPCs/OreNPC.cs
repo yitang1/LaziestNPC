@@ -11,6 +11,7 @@ using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
+using Terraria.GameContent;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -32,6 +33,15 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 				.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Dislike)
 				.SetNPCAffection(NPCID.Cyborg, AffectionLevel.Love)
 				.SetNPCAffection(NPCID.Steampunker, AffectionLevel.Like);*/
+        }
+
+        public override ITownNPCProfile TownNPCProfile()
+        {
+            return new Profiles.DefaultNPCProfile(
+                Texture,
+                NPCHeadLoader.GetHeadSlot(HeadTexture),
+                Texture + "_Party"
+            );
         }
 
         public override bool CanTownNPCSpawn(int numTownNPCs)

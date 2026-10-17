@@ -33,6 +33,18 @@ GalacticaSingularity: {
 	Tooltip: 广阔宇宙的结晶
 }
 
+ThrownShimmerWater: {
+	DisplayName: 微光水瓶
+	Tooltip:
+		'''
+		投掷微光水瓶，能够穿过物块和液体
+		被水瓶击中的生物会进行微光转化
+		[L]“全新‘微光淋浴’服务，
+		无需排队，无需跑腿，
+		原地砸脸，即刻变形。”
+		'''
+}
+
 CallingSeaBottle: {
 	DisplayName: 唤海瓶
 	Tooltip:

@@ -19,6 +19,7 @@ using LaziestNPC.Content.Items.Others;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using static LaziestNPC.Globals.GlobalItems.ItemCondition;
 using static LaziestNPC.Common.Helpers.LNPCHelper;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -44,7 +45,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 6;
+            return numTownNPCs > 6 && LNPCConfig.Instance.LNPCBossNPC;
         }
 
         public override string GetChat()

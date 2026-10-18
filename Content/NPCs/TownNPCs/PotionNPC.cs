@@ -10,6 +10,7 @@ using static Terraria.ModLoader.ModContent;
 using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Content.Items.Potions;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -35,7 +36,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 5;
+            return numTownNPCs > 5 && LNPCConfig.Instance.LNPCPotionNPC;
         }
 
         public override string GetChat()

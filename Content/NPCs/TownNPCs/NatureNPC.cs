@@ -13,6 +13,7 @@ using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Content.Items.Consumables;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -38,17 +39,16 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            for (int k = 0; k < Main.maxPlayers; k++)
+            if (LNPCConfig.Instance.LNPCNatureNPC)
             {
-                Player player = Main.player[k];
-                if (!player.active)
+                for (int k = 0; k < Main.maxPlayers; k++)
                 {
-                    continue;
-                }
-                //任何在线的玩家的背包中存在【鲈鱼】物品时，NPC生成
-                if (player.inventory.Any(item => item.type == ItemID.Bass))
-                {
-                    return true;
+                    Player player = Main.player[k];
+                    if (!player.active)
+                        continue;
+                    //任何在线的玩家的背包中存在【鲈鱼】物品时，NPC生成
+                    if (player.inventory.Any(item => item.type == ItemID.Bass))
+                        return true;
                 }
             }
             return false;

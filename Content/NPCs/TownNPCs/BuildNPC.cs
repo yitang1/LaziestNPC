@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using Terraria.Utilities;
 using LaziestNPC.Globals.GlobalItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -33,7 +34,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            return numTownNPCs > 3;
+            return numTownNPCs > 3 && LNPCConfig.Instance.LNPCBuildNPC;
         }
 
         public override string GetChat()

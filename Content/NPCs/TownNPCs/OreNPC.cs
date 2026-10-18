@@ -12,6 +12,7 @@ using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Common.ModBossess;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using Terraria.GameContent;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -46,17 +47,16 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            for (int k = 0; k < Main.maxPlayers; k++)
+            if (LNPCConfig.Instance.LNPCOreNPC)
             {
-                Player player = Main.player[k];
-                if (!player.active)
+                for (int k = 0; k < Main.maxPlayers; k++)
                 {
-                    continue;
-                }
-                //玩家的背包中存在【铁矿】或【铅矿】时，NPC生成
-                if (player.inventory.Any(item => item.type == ItemID.IronOre || item.type == ItemID.LeadOre))
-                {
-                    return true;
+                    Player player = Main.player[k];
+                    if (!player.active)
+                        continue;
+                    //玩家的背包中存在【铁矿】或【铅矿】时，NPC生成
+                    if (player.inventory.Any(item => item.type == ItemID.IronOre || item.type == ItemID.LeadOre))
+                        return true;
                 }
             }
             return false;

@@ -18,6 +18,11 @@ LNPCConfig: {
 
 	ShowPortrait: {
 		Label: "[i:PinWheel] NPC对话肖像图"
-		Tooltip: 启用后，本Mod和原版NPC的对话界面会显示肖像图和名字
+		Tooltip: 
+			'''
+			启用后，
+			本Mod和原版的NPC对话界面
+			会显示对应NPC的肖像图和名字
+			'''
 	}
 }

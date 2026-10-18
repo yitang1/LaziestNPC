@@ -17,10 +17,17 @@ namespace LaziestNPC.Globals.Config
 
         [DefaultValue(true)]
         [ReloadRequired]
+        public bool ShowPortrait;
+
+        [Header("OtherNPCs")]
+
+        [DefaultValue(true)]
+        [ReloadRequired]
         public bool LNPCInvincible;
 
         [DefaultValue(true)]
         [ReloadRequired]
         public bool LNPCCritterInvincible;
+
     }
 }

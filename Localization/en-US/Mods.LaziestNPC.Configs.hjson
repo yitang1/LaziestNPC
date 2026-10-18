@@ -1,6 +1,7 @@
 LNPCConfig: {
 	DisplayName: LaziestNPC 模组配置
-	Headers.LNPCs: "[i:GuideVoodooDoll] NPC相关"
+	Headers.LNPCs: "[i:GuideVoodooDoll] 模组NPC相关"
+	Headers.OtherNPCs: "[i:ClothierVoodooDoll] 其他NPC相关"
 
 	LNPCInvincible: {
 		Label: "[i:CombatBookVolumeTwo] 所有城镇NPC无敌"
@@ -10,5 +11,10 @@ LNPCConfig: {
 	LNPCCritterInvincible: {
 		Label: "[i:Bunny] 所有小动物无敌"
 		Tooltip: 不包括七彩草蛉
+	}
+
+	ShowPortrait: {
+		Label: "[i:PinWheel] NPC对话肖像图"
+		Tooltip: 启用后，本Mod和原版NPC的对话界面会显示肖像图和名字
 	}
 }

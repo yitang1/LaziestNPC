@@ -257,7 +257,7 @@ namespace LaziestNPC.Common.UI
             { typeof(MaterialNPC), ("MaterialNPC", 2) }, //星海商人
             { typeof(BuildNPC), ("BuildNPC", 2) }, //机枢学者
             { typeof(NatureNPC), ("NatureNPC", 3) }, //采花匠
-            { typeof(OreNPC), ("OreNPC", 3) }, //收藏家
+            { typeof(OreNPC), ("OreNPC", 2) }, //收藏家
         };
 
         //4.随机选择肖像

@@ -28,6 +28,36 @@ OreNPC: {
 	Tooltip: “咕噜...”
 }
 
+BossNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
+PotionNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
+MaterialNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
+BuildNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
+NatureNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
+OreNPCIcon: {
+	DisplayName: 模组配置图标
+	Tooltip: ""
+}
+
 GalacticaSingularity: {
 	DisplayName: 星系异石
 	Tooltip: 广阔宇宙的结晶

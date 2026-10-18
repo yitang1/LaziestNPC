@@ -1,4 +1,3 @@
-//Town NPCs
 BossNPC: {
 	DisplayName: 试炼官
 	Name.BossNPC: ""

@@ -10,6 +10,7 @@ using Terraria.GameContent;
 using Terraria.UI.Chat;
 using Terraria.Localization;
 using LaziestNPC.Content.NPCs.TownNPCs;
+using LaziestNPC.Globals.Config;
 
 namespace LaziestNPC.Common.UI
 {
@@ -18,8 +19,12 @@ namespace LaziestNPC.Common.UI
         //1.跨帧保存
         //currentPortraitPath 存当前对话该显示哪张肖像图。
         //lastTalkNPC 记录上一帧正在对话的NPC索引，用来判断“对话是不是刚刚开始”。
-        //这两个字段必须放在方法外面，否则每帧都会被重置，就起不到缓存作用了。
         private string currentPortraitPath = null;
+        //缓存贴图
+        private Texture2D currentPortraitTexture = null;
+        //缓存名字
+        private string currentNpcName = null;
+        private Vector2 currentNameSize;
         private int lastTalkNPC = -1;
         private int portraitAnimTimer = 0; //弹跳计时器
 
@@ -42,13 +47,28 @@ namespace LaziestNPC.Common.UI
         {
             Player player = Main.LocalPlayer;
 
+            if (!LNPCConfig.Instance.ShowPortrait)
+            {
+                currentPortraitPath = null;
+                currentPortraitTexture = null;
+                lastTalkNPC = -1;
+                currentNpcName = null;
+                currentNameSize = Vector2.Zero;
+                return;
+            }
+
             //(1)：判断对话是否开启
             //没有对话文本，或者没有和任何NPC对话，就清空缓存，不绘制。
             //清空缓存是为了下次对话时能重新随机一张肖像。
             if (Main.npcChatText == "" || player.talkNPC < 0)
             {
                 currentPortraitPath = null;
+                //清空贴图缓存
+                currentPortraitTexture = null; 
                 lastTalkNPC = -1;
+                //清空名字缓存
+                currentNpcName = null;
+                currentNameSize = Vector2.Zero;
                 return;
             }
 
@@ -61,12 +81,29 @@ namespace LaziestNPC.Common.UI
             if (player.talkNPC != lastTalkNPC)
             {
                 currentPortraitPath = PickPortraitPath(npc);
+
+                //一次性请求贴图并缓存
+                if (currentPortraitPath != null)
+                    currentPortraitTexture = ModContent.Request<Texture2D>(
+                        currentPortraitPath,
+                        ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                else
+                    currentPortraitTexture = null;
+
+                //计算名字和尺寸，只做一次
+                if (npc.ModNPC != null)
+                    currentNpcName = Language.GetTextValue($"Mods.LaziestNPC.NPCs.{npc.ModNPC.Name}.PortraitName");
+                else
+                    currentNpcName = npc.HasGivenName ? npc.TypeName + " " + npc.GivenName : npc.TypeName;
+
+                currentNameSize = ChatManager.GetStringSize(FontAssets.MouseText.Value, currentNpcName, Vector2.One);
+
                 portraitAnimTimer = 0;
             }
             lastTalkNPC = player.talkNPC;
 
             //(3)：没有对应肖像就不绘制
-            if (currentPortraitPath == null)
+            if (currentPortraitTexture == null)
                 return;
 
             //(4)：计算对话框位置
@@ -108,8 +145,8 @@ namespace LaziestNPC.Common.UI
                 Color.White);
 
             //(8)：绘制肖像图
-            //路径来自 currentPortraitPath，是对话开始时随机缓存的那一张。
-            Texture2D portrait = ModContent.Request<Texture2D>(currentPortraitPath).Value;
+            //直接使用对话开始时缓存好的贴图，不再每帧请求
+            Texture2D portrait = currentPortraitTexture;
 
             float drawWidth;
             float drawHeight;
@@ -157,9 +194,9 @@ namespace LaziestNPC.Common.UI
                 npcName = npc.HasGivenName ? npc.TypeName + " " + npc.GivenName : npc.TypeName;
             }
             Vector2 nameSize = ChatManager.GetStringSize(FontAssets.MouseText.Value, npcName, Vector2.One);
-            float nameX = portraitX + (size - nameSize.X) / 2f;
+            float nameX = portraitX + (size - currentNameSize.X) / 2f;
             float nameY = portraitY + size + 2f;
-            Utils.DrawBorderString(Main.spriteBatch, npcName, new Vector2(nameX, nameY), Color.White);
+            Utils.DrawBorderString(Main.spriteBatch, currentNpcName, new Vector2(nameX, nameY), Color.White);
         }
 
         private static readonly Dictionary<int, string> VanillaPortraits = new()
@@ -217,6 +254,7 @@ namespace LaziestNPC.Common.UI
         {
             { typeof(BossNPC), ("BossNPC", 2) }, //试炼官
             { typeof(PotionNPC), ("PotionNPC", 2) }, //酿灵师
+            { typeof(BuildNPC), ("BuildNPC", 2) }, //机枢学者
             { typeof(NatureNPC), ("NatureNPC", 3) }, //采花匠
         };
 

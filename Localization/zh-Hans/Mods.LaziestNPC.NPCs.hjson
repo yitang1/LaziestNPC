@@ -7,6 +7,8 @@ BossNPC: {
 		Normal1: *猪猪的声音*
 		Normal2: 哼哼~
 		Normal3: 呼噜~
+		BloodMoon0: XXX
+		MoonLord0: XXX
 	}
 
 	TownNPCMood: {

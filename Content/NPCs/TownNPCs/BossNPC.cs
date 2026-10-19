@@ -20,6 +20,8 @@ using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using static LaziestNPC.Globals.GlobalItems.ItemCondition;
 using static LaziestNPC.Common.Helpers.LNPCHelper;
 using LaziestNPC.Globals.Config;
+using LaziestNPC.Globals.GlobalPlayers;
+using LaziestNPC.Common.Helpers;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -50,15 +52,44 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override string GetChat()
         {
+            Player player = Main.LocalPlayer;
+            TownLNPCPlayer LTPlayer = player.LaziestTownLNPC();
+
             //权重值，默认不写就是1.0。这个和随机方法效果一样，是TR的
             //若三句台词，默认都是1.0，总权重是3.0，即每句话出现概率是1/3
             WeightedRandom<string> chat = new WeightedRandom<string>();
 
+            //满足条件时，触发优先级最高的特殊台词
+            if (LTPlayer.OnceBossChats.Contains("MoonLord"))
+            {
+                LTPlayer.OnceBossChats.Remove("MoonLord");
+
+                return this.GetLocalizedValue("Chat.MoonLord0");
+            }
+            if (LTPlayer.OnceBossChats.Contains("BloodMoon"))
+            {
+                LTPlayer.OnceBossChats.Remove("BloodMoon");
+
+                return this.GetLocalizedValue("Chat.BloodMoon0");
+            }
+
+            //日常对话，权重1.0
             chat.Add(this.GetLocalizedValue("Chat.Normal1"));
             chat.Add(this.GetLocalizedValue("Chat.Normal2"));
             chat.Add(this.GetLocalizedValue("Chat.Normal3"));
 
-            return chat;
+
+            //Boss或事件的专属对话，权重0.3
+            if (NPC.downedSlimeKing)
+                chat.Add(this.GetLocalizedValue("Chat.SlimeKing"), 0.3);
+
+            if (NPC.downedBoss1)
+                chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu"), 0.3);
+
+            if (Main.bloodMoon)
+                chat.Add(this.GetLocalizedValue("Chat.BloodMoon"), 0.3);
+
+            return chat.Get();
         }
 
         private static int ShopNum = 1;

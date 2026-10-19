@@ -63,21 +63,15 @@ namespace LaziestNPC.Globals.GlobalSystem
 
         public override void PostUpdateWorld()
         {
-            if (Main.bloodMoon)
-                BloodMoonHappened = true;
-            if (Main.eclipse)
-                EclipseHappened = true;
-            if (Main.snowMoon)
-                SnowMoonHappened = true;
-            if (Main.pumpkinMoon)
-                PumpkinMoonHappened = true;
+            //曾经发生过的事件，就会永久变为true
+            if (Main.bloodMoon) BloodMoonHappened = true;
+            if (Main.eclipse) EclipseHappened = true;
+            if (Main.snowMoon) SnowMoonHappened = true;
+            if (Main.pumpkinMoon) PumpkinMoonHappened = true;
 
-            if (Main.snowMoon && DownedDOG.IsMet())
-                SnowMoonDOG = true;
-            if (Main.pumpkinMoon && DownedDOG.IsMet())
-                PumpkinMoonDOG = true;
-            if (Main.eclipse && DownedDOG.IsMet())
-                EclipseDOG = true;
+            if (Main.snowMoon && DownedDOG.IsMet()) SnowMoonDOG = true;
+            if (Main.pumpkinMoon && DownedDOG.IsMet()) PumpkinMoonDOG = true;
+            if (Main.eclipse && DownedDOG.IsMet()) EclipseDOG = true;
         }
 
         public static int FishJadeBuyCount = 0;

@@ -10,10 +10,10 @@ using Terraria.ModLoader;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.GameContent.Events;
 using Terraria.Audio;
+using Terraria.Utilities;
 using LaziestNPC.Globals.GlobalPlayers;
 using LaziestNPC.Content.Items.SummonItems;
 using LaziestNPC.Globals.GlobalOthers;
-using Terraria.Utilities;
 
 namespace LaziestNPC.Common.Helpers
 {
@@ -36,6 +36,11 @@ namespace LaziestNPC.Common.Helpers
         public static LNPCPlayer LaziestNPC(this Player player)
         {
             return player.GetModPlayer<LNPCPlayer>();
+        }
+
+        public static TownLNPCPlayer LaziestTownLNPC(this Player player)
+        {
+            return player.GetModPlayer<TownLNPCPlayer>();
         }
 
         //是否处于任意Boss战或事件期间

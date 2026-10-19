@@ -7,7 +7,7 @@ using LaziestNPC.Globals.GlobalPlayers;
 
 namespace LaziestNPC.Globals.GlobalNPCs
 {
-    public class LNPCGlobalNPC : GlobalNPC
+    public class ArmorCrunch : GlobalNPC
     {
         public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
         {

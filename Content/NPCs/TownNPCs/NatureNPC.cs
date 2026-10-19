@@ -41,11 +41,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             if (LNPCConfig.Instance.LNPCNatureNPC)
             {
-                for (int k = 0; k < Main.maxPlayers; k++)
+                foreach (var player in Main.ActivePlayers)
                 {
-                    Player player = Main.player[k];
-                    if (!player.active)
-                        continue;
                     //任何在线的玩家的背包中存在【鲈鱼】物品时，NPC生成
                     if (player.inventory.Any(item => item.type == ItemID.Bass))
                         return true;

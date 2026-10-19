@@ -49,11 +49,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             if (LNPCConfig.Instance.LNPCOreNPC)
             {
-                for (int k = 0; k < Main.maxPlayers; k++)
+                foreach (var player in Main.ActivePlayers)
                 {
-                    Player player = Main.player[k];
-                    if (!player.active)
-                        continue;
                     //玩家的背包中存在【铁矿】或【铅矿】时，NPC生成
                     if (player.inventory.Any(item => item.type == ItemID.IronOre || item.type == ItemID.LeadOre))
                         return true;

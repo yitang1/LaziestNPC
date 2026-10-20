@@ -66,28 +66,26 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
                 return this.GetLocalizedValue("Chat.MoonLord0");
             }
-            if (LTPlayer.OnceBossChats.Contains("BloodMoon"))
-            {
-                LTPlayer.OnceBossChats.Remove("BloodMoon");
-
-                return this.GetLocalizedValue("Chat.BloodMoon0");
-            }
 
             //日常对话，权重1.0
             chat.Add(this.GetLocalizedValue("Chat.Normal1"));
             chat.Add(this.GetLocalizedValue("Chat.Normal2"));
             chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal4"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal5"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal6"));
+            chat.Add(this.GetLocalizedValue("Chat.Normal7"), 0.5);
 
 
             //Boss或事件的专属对话，权重0.3
-            if (NPC.downedSlimeKing)
+            /*if (NPC.downedSlimeKing)
                 chat.Add(this.GetLocalizedValue("Chat.SlimeKing"), 0.3);
 
             if (NPC.downedBoss1)
                 chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu"), 0.3);
 
             if (Main.bloodMoon)
-                chat.Add(this.GetLocalizedValue("Chat.BloodMoon"), 0.3);
+                chat.Add(this.GetLocalizedValue("Chat.BloodMoon"), 0.3);*/
 
             return chat.Get();
         }

@@ -14,7 +14,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
 
         public override void SaveData(TagCompound tag)
         {
-            tag["PendingBossChats"] = OnceBossChats;
+            tag["OnceBossChats"] = OnceBossChats;
         }
 
         public override void LoadData(TagCompound tag)

@@ -63,8 +63,6 @@ namespace LaziestNPC
                         default:
                             break;
                     }
-                    //广播世界状态给所有客户端
-                    NetMessage.SendData(MessageID.WorldData);
                 }
             }
         }

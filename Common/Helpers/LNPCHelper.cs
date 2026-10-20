@@ -98,7 +98,7 @@ namespace LaziestNPC.Common.Helpers
                 }
             }
             if (!hasFavorited) return false;
-
+            
             //【第二层判定】判断可用次数
             if (!Main.hardMode && LPlayer.EnablePre)
             {
@@ -115,7 +115,7 @@ namespace LaziestNPC.Common.Helpers
 
             //【第三层判定】50%概率
             if (Main.rand.Next(100) < 50) return false;
-
+            
             //执行复活
             player.statLife += player.statLifeMax2;
             player.HealEffect(player.statLifeMax2, true);

@@ -138,9 +138,7 @@ namespace LaziestNPC.Common.UI
                     if (!Sandstorm.Happening)
                     {
                         Main.NewText(Language.GetTextValue("Mods.LaziestNPC.World.Items.TheReturner.SandstormOn"), new Color(255, 200, 61));
-                        Sandstorm.Happening = true;
-                        Sandstorm.TimeLeft = 36000;
-                        Sandstorm.IntendedSeverity = 0.4f + Main.rand.NextFloat() * 0.3f;
+                        Sandstorm.StartSandstorm();
                     }
                 }
                 else
@@ -148,9 +146,7 @@ namespace LaziestNPC.Common.UI
                     if (Sandstorm.Happening)
                     {
                         Main.NewText(Language.GetTextValue("Mods.LaziestNPC.World.Items.TheReturner.SandstormOff"), new Color(255, 200, 61));
-                        Sandstorm.Happening = false;
-                        Sandstorm.TimeLeft = 0;
-                        Sandstorm.IntendedSeverity = 0f;
+                        Sandstorm.StopSandstorm();
                     }
                 }
             }
@@ -162,9 +158,7 @@ namespace LaziestNPC.Common.UI
                     if (!Main.raining)
                     {
                         Main.NewText(Language.GetTextValue("Mods.LaziestNPC.World.Items.TheReturner.RainOn"), new Color(133, 215, 255));
-                        Main.rainTime = 86400 / 24 * 12;
-                        Main.raining = true;
-                        Main.maxRaining = Main.cloudAlpha = 0.9f;
+                        Main.StartRain();
                     }
                 }
                 else
@@ -232,14 +226,12 @@ namespace LaziestNPC.Common.UI
             if (Main.IsItRaining || Main.IsItStorming)
             {
                 Main.StopRain();
-                Main.cloudAlpha = 0f;
+                //Main.cloudAlpha = 0f;
                 anyCanceled = true;
             }
             if (Sandstorm.Happening)
             {
-                Sandstorm.Happening = false;
-                Sandstorm.TimeLeft = 0;
-                Sandstorm.IntendedSeverity = 0f;
+                Sandstorm.StopSandstorm();
                 anyCanceled = true;
             }
             if (Main.WindyEnoughForKiteDrops)

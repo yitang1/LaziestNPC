@@ -10,7 +10,7 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/BossNPCIcon] 生成NPC：试炼官"
 		Tooltip:
 			'''
-			开启后，试炼官会在满足条件时生成
+			启用后，试炼官会在满足条件时生成
 			此NPC售卖：原版和模组的Boss宝藏袋，Boss、敌怪和事件的召唤物品
 
 			生成条件：世界中至少有[c/F2E635:6]名城镇NPC存在
@@ -21,7 +21,7 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/PotionNPCIcon] 生成NPC：酿灵师"
 		Tooltip:
 			'''
-			开启后，酿灵师会在满足条件时生成
+			启用后，酿灵师会在满足条件时生成
 			此NPC售卖：原版和模组的各种药水
 
 			生成条件：世界中至少有[c/F2E635:5]名城镇NPC存在
@@ -32,7 +32,7 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/MaterialNPCIcon] 生成NPC：星海商人"
 		Tooltip:
 			'''
-			开启后，星海商人会在满足条件时生成
+			启用后，星海商人会在满足条件时生成
 			此NPC售卖：原版和模组的各种材料
 
 			生成条件：世界中至少有[c/F2E635:4]名城镇NPC存在
@@ -43,7 +43,7 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/BuildNPCIcon] 生成NPC：机枢学者"
 		Tooltip:
 			'''
-			开启后，机枢学者会在满足条件时生成
+			启用后，机枢学者会在满足条件时生成
 			此NPC售卖：原版和模组的物块和制作站
 
 			生成条件：世界中至少有[c/F2E635:3]名城镇NPC存在
@@ -54,7 +54,7 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/NatureNPCIcon] 生成NPC：采花匠"
 		Tooltip:
 			'''
-			开启后，采花匠会在满足条件时生成
+			启用后，采花匠会在满足条件时生成
 			此NPC售卖：原版和模组的动植物、渔获和钓鱼任务奖励
 
 			生成条件：物品栏中有[i:2290][c/F2E635:鲈鱼]
@@ -65,10 +65,10 @@ LNPCConfig: {
 		Label: "[i:LaziestNPC/OreNPCIcon] 生成NPC：收藏家"
 		Tooltip:
 			'''
-			开启后，收藏家会在满足条件时生成
+			启用后，收藏家会在满足条件时生成
 			此NPC售卖：原版和模组的矿物和配饰
 
-			生成条件：物品栏中有[i:11][i:700][c/F2E635:铁矿]或c/F2E635:铅矿]
+			生成条件：物品栏中有[i:11][c/F2E635:铁矿]或[i:700][c/F2E635:铅矿]
 			'''
 	}
 

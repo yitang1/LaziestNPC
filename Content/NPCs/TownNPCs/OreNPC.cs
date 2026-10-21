@@ -13,6 +13,8 @@ using LaziestNPC.Common.ModBossess;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using Terraria.GameContent;
 using LaziestNPC.Globals.Config;
+using LaziestNPC.Common.Helpers;
+using LaziestNPC.Globals.GlobalPlayers;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -59,15 +61,50 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             return false;
         }
 
+        private static readonly (string Flag, string ChatKey)[] NPCBossChats =
+        {
+            //肉前
+            ("WallOfFlesh_OreNPC", "Chat.WallOfFlesh00"), //血肉之墙
+        };
+
         public override string GetChat()
         {
-            WeightedRandom<string> chat = new WeightedRandom<string>();
+            Player player = Main.LocalPlayer;
+            TownLNPCPlayer LTPlayer = player.LaziestTownLNPC();
 
-            chat.Add(this.GetLocalizedValue("Chat.Normal1"));
-            chat.Add(this.GetLocalizedValue("Chat.Normal2"));
-            chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+            //满足条件时，触发优先级最高的特殊台词
+            foreach (var id in NPCBossChats)
+            {
+                if (LTPlayer.OnceBossChats.Contains(id.Flag))
+                {
+                    LTPlayer.OnceBossChats.Remove(id.Flag);
+                    return this.GetLocalizedValue(id.ChatKey);
+                }
+            }
 
-            return chat;
+            if (Main.rand.Next(100) < 70)
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
+
+                chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal2"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal4"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal5"));
+
+                return chat.Get();
+
+            }
+            else
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
+
+                if (Main.hardMode) chat.Add(this.GetLocalizedValue("Chat.WallOfFlesh0")); //血肉之墙
+
+                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+
+                return chat.Get();
+            }
         }
 
         public override void SetChatButtons(ref string button, ref string button2)

@@ -25,7 +25,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
                 NPCID.QueenBee => ["QueenBee_BossNPC"], //蜂王
                 NPCID.SkeletronHead => ["Skeletron_BossNPC"], //骷髅王
                 NPCID.Deerclops => ["Deerclops_BossNPC"], //独眼巨鹿
-                NPCID.WallofFlesh => ["WallOfFlesh_BossNPC"], //血肉之墙
+                NPCID.WallofFlesh => ["WallOfFlesh_BossNPC", "WallOfFlesh_OreNPC"], //血肉之墙
 
                 NPCID.QueenSlimeBoss => ["QueenSlime_BossNPC"], //史莱姆皇后
                 NPCID.TheDestroyer => ["TheDestroyer_BossNPC"], //毁灭者

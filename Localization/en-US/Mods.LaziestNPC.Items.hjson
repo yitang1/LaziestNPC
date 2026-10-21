@@ -1,31 +1,31 @@
 BossNPC: {
-	DisplayName: Boss物品商人
-	Tooltip: “*猪猪的声音*”
+	DisplayName: 试炼官
+	Tooltip: “你好，试炼者。有什么关于战斗和冒险方面的需要吗？”
 }
 
 PotionNPC: {
-	DisplayName: 药水商人
-	Tooltip: “*兔兔的声音*”
-}
-
-BuildNPC: {
-	DisplayName: 建筑商人
-	Tooltip: “汪汪！”
+	DisplayName: 酿灵师
+	Tooltip: “我新调了一瓶药，但不知道效果怎么样……要试试吗？”
 }
 
 MaterialNPC: {
-	DisplayName: 材料商人
-	Tooltip: “喵喵~”
+	DisplayName: 星海商人
+	Tooltip: “你好啊，在找什么素材？告诉我名字就行。”
+}
+
+BuildNPC: {
+	DisplayName: 机枢学者
+	Tooltip: “如果你哪天想盖一座真正宏伟的建筑，记得叫上我。”
 }
 
 NatureNPC: {
-	DisplayName: 自然商人
-	Tooltip: “*小兔子的声音*”
+	DisplayName: 采花匠
+	Tooltip: “如果你不开心，就来找我玩吧。”
 }
 
 OreNPC: {
-	DisplayName: 矿物商人
-	Tooltip: “咕噜...”
+	DisplayName: 收藏家
+	Tooltip: “看看我这里这些亮晶晶的东西，能让人心情变好。”
 }
 
 BossNPCIcon: {

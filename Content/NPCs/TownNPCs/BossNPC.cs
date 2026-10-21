@@ -75,7 +75,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             ("MoonLord_BossNPC", "Chat.MoonLord00"), //月亮领主
         };
 
-        //【一位数表示关于Boss的日常台词"Chat.KingSlime0"，两位数表示刚击败Boss后的首句台词"Chat.KingSlime00"】
+        //【一位数表示关于Boss的日常台词"Chat.KingSlime0"】
+        //【两位数表示刚击败Boss后的首句台词"Chat.KingSlime00"】
         public override string GetChat()
         {
             Player player = Main.LocalPlayer;
@@ -98,7 +99,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 //若三句台词，默认都是1.0，总权重是3.0，即每句话出现概率是1/3
                 WeightedRandom<string> chat = new WeightedRandom<string>();
 
-                //日常对话，默认权重1.0
+                //【日常对话，默认权重1.0】
                 chat.Add(this.GetLocalizedValue("Chat.Normal1"));
                 chat.Add(this.GetLocalizedValue("Chat.Normal2"));
                 chat.Add(this.GetLocalizedValue("Chat.Normal3"));
@@ -114,15 +115,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 WeightedRandom<string> chat = new WeightedRandom<string>();
 
-                //日常对话，Boss或事件的专属对话，权重1.0
+                //【日常对话，Boss或事件的专属对话，权重1.0】
+                //史莱姆王
                 if (NPC.downedSlimeKing)
                 {
-                    chat.Add(this.GetLocalizedValue("Chat.KingSlime0")); //史莱姆王
+                    chat.Add(this.GetLocalizedValue("Chat.KingSlime0"));
                     chat.Add(this.GetLocalizedValue("Chat.KingSlime1"));
                 }
+                //克苏鲁之眼
                 if (NPC.downedBoss1)
                 {
-                    chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu0")); //克苏鲁之眼
+                    chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu0"));
                     chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu1"));
 
                 }

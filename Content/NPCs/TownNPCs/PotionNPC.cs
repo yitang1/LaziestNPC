@@ -11,6 +11,7 @@ using LaziestNPC.Globals.GlobalItems;
 using LaziestNPC.Content.Items.Potions;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Globals.Config;
+using LaziestNPC.Common.Helpers;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -45,22 +46,24 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 WeightedRandom<string> chat = new WeightedRandom<string>();
 
-                /*chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal1"));
 
-                chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+                chat.Add(this.GetGenderValue("Chat.Normal2"));
+                chat.Add(this.GetGenderValue("Chat.Normal3"));
+
                 chat.Add(this.GetLocalizedValue("Chat.Normal4"));
-                chat.Add(this.GetLocalizedValue("Chat.Normal5"));*/
+                chat.Add(this.GetLocalizedValue("Chat.Normal5"));
 
-                if (Main.LocalPlayer.Male)
+                if (!Main.dayTime)
                 {
-                    //玩家是男性
-                    chat.Add(this.GetLocalizedValue("Chat.Normal2_Male"));
+                    chat.Add(this.GetLocalizedValue("Chat.Night0"));
+                    chat.Add(this.GetLocalizedValue("Chat.Night1"));
                 }
-                else
-                {
-                    //玩家是女性
-                    chat.Add(this.GetLocalizedValue("Chat.Normal2_Female"));
-                }
+
+                chat.Add(this.GetLocalizedValue("Chat.Normal6"), 0.2);
+                chat.Add(this.GetLocalizedValue("Chat.Normal7"), 0.1);
+                chat.Add(this.GetLocalizedValue("Chat.Normal8"), 0.1);
+
 
                 return chat.Get();
 
@@ -68,6 +71,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             else
             {
                 WeightedRandom<string> chat = new WeightedRandom<string>();
+
+                //肉后时期
+                if (Main.hardMode) chat.Add(this.GetLocalizedValue("Chat.HardMode0"));
+
+
+                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.NoBoss"));
 
                 return chat.Get();
             }

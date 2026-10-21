@@ -82,6 +82,13 @@ namespace LaziestNPC.Common.Helpers
             }
         }
 
+        //根据本地玩家性别，自动取用带_Male/_Female后缀的本地化文本
+        public static string GetGenderValue(this ModNPC npc, string baseKey)
+        {
+            string suffix = Main.LocalPlayer.Male ? "_Male" : "_Female";
+            return npc.GetLocalizedValue(baseKey + suffix);
+        }
+
         //物品【TheReturner】的复活逻辑封装
         public static bool TryRebornWithTheReturner(Player player)
         {

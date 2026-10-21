@@ -22,6 +22,7 @@ using static LaziestNPC.Common.Helpers.LNPCHelper;
 using LaziestNPC.Globals.Config;
 using LaziestNPC.Globals.GlobalPlayers;
 using LaziestNPC.Common.Helpers;
+using LaziestNPC.Globals.GlobalNPCs;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -50,21 +51,46 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             return numTownNPCs > 6 && LNPCConfig.Instance.LNPCBossNPC;
         }
 
+        private static readonly (string Flag, string ChatKey)[] NPCBossChats =
+        {
+            //肉前
+            ("KingSlime_BossNPC", "Chat.KingSlime00"), //史莱姆王
+            ("EyeOfCthulhu_BossNPC", "Chat.EyeOfCthulhu00"), //克苏鲁之眼
+            ("BrainOfCthulhu_BossNPC", "Chat.BrainOfCthulhu00"), //克苏鲁之脑
+            ("EaterOfWorlds_BossNPC", "Chat.EaterOfWorlds00"), //世界吞噬怪
+            ("QueenBee_BossNPC", "Chat.QueenBee00"), //蜂王
+            ("Skeletron_BossNPC", "Chat.Skeletron00"), //骷髅王
+            ("Deerclops_BossNPC", "Chat.Deerclops00"), //独眼巨鹿
+            ("WallOfFlesh_BossNPC", "Chat.WallOfFlesh00"), //血肉之墙
+            //肉后
+            ("QueenSlime_BossNPC", "Chat.QueenSlime00"), //史莱姆皇后
+            ("TheDestroyer_BossNPC", "Chat.TheDestroyer00"), //毁灭者
+            ("TheTwins_BossNPC", "Chat.TheTwins00"), //双子魔眼
+            ("SkeletronPrime_BossNPC", "Chat.SkeletronPrime00"), //机械骷髅王
+            ("Plantera_BossNPC", "Chat.Plantera00"), //世纪之花
+            ("EmpressOfLight_BossNPC", "Chat.EmpressOfLight00"), //光之女皇
+            ("Golem_BossNPC", "Chat.Golem00"), //石巨人
+            ("DukeFishron_BossNPC", "Chat.DukeFishron00"), //猪龙鱼公爵
+            ("MoonLord_BossNPC", "Chat.MoonLord00"), //月亮领主
+        };
+
         public override string GetChat()
         {
             Player player = Main.LocalPlayer;
             TownLNPCPlayer LTPlayer = player.LaziestTownLNPC();
 
             //满足条件时，触发优先级最高的特殊台词
-            if (LTPlayer.OnceBossChats.Contains("MoonLord"))
+            foreach (var id in NPCBossChats)
             {
-                LTPlayer.OnceBossChats.Remove("MoonLord");
-
-                return this.GetLocalizedValue("Chat.MoonLord00");
+                if (LTPlayer.OnceBossChats.Contains(id.Flag))
+                {
+                    LTPlayer.OnceBossChats.Remove(id.Flag);
+                    return this.GetLocalizedValue(id.ChatKey);
+                }
             }
 
-            //70%概率出现日常类台词，30%是其他类台词
-            if (Main.rand.Next(100) < 70)
+            //60%概率出现日常类台词，40%是其他类台词
+            if (Main.rand.Next(100) < 60)
             {
                 //权重值，默认不写就是1.0。这个和随机方法效果一样，是TR的
                 //若三句台词，默认都是1.0，总权重是3.0，即每句话出现概率是1/3
@@ -86,21 +112,30 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 WeightedRandom<string> chat = new WeightedRandom<string>();
 
-                chat.Add(this.GetLocalizedValue("Chat.AnyBoss"));
+                //Boss或事件的专属对话，权重1.0
+                if (NPC.downedSlimeKing) chat.Add(this.GetLocalizedValue("Chat.KingSlime0")); //史莱姆王
+                if (NPC.downedBoss1) chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu0")); //克苏鲁之眼
+                if (NPCCondition.downedBrainOfCthulhu) chat.Add(this.GetLocalizedValue("Chat.BrainOfCthulhu0")); //克苏鲁之脑
+                if (NPCCondition.downedEaterOfWorlds) chat.Add(this.GetLocalizedValue("Chat.EaterOfWorlds0")); //世界吞噬怪
+                if (NPC.downedQueenBee) chat.Add(this.GetLocalizedValue("Chat.QueenBee0")); //蜂王
+                if (NPC.downedBoss3) chat.Add(this.GetLocalizedValue("Chat.Skeletron0")); //骷髅王
+                if (NPC.downedDeerclops) chat.Add(this.GetLocalizedValue("Chat.Deerclops0")); //独眼巨鹿
+                if (Main.hardMode) chat.Add(this.GetLocalizedValue("Chat.WallOfFlesh0")); //血肉之墙
 
-                //Boss或事件的专属对话，权重0.3
-                if (NPC.downedSlimeKing)
-                    chat.Add(this.GetLocalizedValue("Chat.SlimeKing"));
-
-                if (NPC.downedBoss1)
-                    chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu"));
-
-                if (NPC.downedMoonlord)
-                    chat.Add(this.GetLocalizedValue("Chat.Moonlord"));
-
-                if (NPC.downedMoonlord)
-                    chat.Add(this.GetLocalizedValue("Chat.Moonlord00"), 0.1);
+                if (NPC.downedQueenSlime) chat.Add(this.GetLocalizedValue("Chat.QueenSlime0")); //史莱姆皇后
+                if (NPC.downedMechBoss1) chat.Add(this.GetLocalizedValue("Chat.TheDestroyer0")); //毁灭者
+                if (NPC.downedMechBoss2) chat.Add(this.GetLocalizedValue("Chat.TheTwins0")); //双子魔眼
+                if (NPC.downedMechBoss3) chat.Add(this.GetLocalizedValue("Chat.SkeletronPrime0")); //机械骷髅王
+                if (NPC.downedPlantBoss) chat.Add(this.GetLocalizedValue("Chat.Plantera0")); //世纪之花
+                if (NPC.downedEmpressOfLight) chat.Add(this.GetLocalizedValue("Chat.EmpressOfLight0")); //光之女皇
+                if (NPC.downedGolemBoss) chat.Add(this.GetLocalizedValue("Chat.Golem0")); //石巨人
+                if (NPC.downedFishron) chat.Add(this.GetLocalizedValue("Chat.DukeFishron0")); //猪龙鱼公爵
+                if (NPC.downedMoonlord) chat.Add(this.GetLocalizedValue("Chat.Moonlord0")); //月亮领主
                 
+                if (NPC.downedMoonlord) chat.Add(this.GetLocalizedValue("Chat.Moonlord00"), 0.1); //月亮领主(特殊)
+
+                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.NoBoss"));
+
                 return chat.Get();
             }
         }
@@ -169,8 +204,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeSecond) //双鱼玉佩
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
-            .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //克苏鲁之脑
-            .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), Condition.DownedEowOrBoc) //世界吞噬怪
+            .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), DownedBrainOfCthulh) //克苏鲁之脑
+            .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), DownedEaterOfWorlds) //世界吞噬怪
             .AddItem(ItemID.QueenBeeBossBag, (0, 20, 0, 0), Condition.DownedQueenBee) //蜂王
             .AddItem(ItemID.SkeletronBossBag, (0, 25, 0, 0), Condition.DownedSkeletron) //骷髅王
             .AddItem(ItemID.DeerclopsBossBag, (0, 30, 0, 0), Condition.DownedDeerclops) //独眼巨鹿

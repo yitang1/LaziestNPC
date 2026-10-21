@@ -36,6 +36,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
                 NPCID.HallowBoss => ["EmpressOfLight_BossNPC"], //光之女皇
                 NPCID.Golem => ["Golem_BossNPC"], //石巨人
                 NPCID.DukeFishron => ["DukeFishron_BossNPC"], //猪龙鱼公爵
+                NPCID.CultistBoss => ["Cultist_BossNPC"], //拜月教邪教徒
                 NPCID.MoonLordCore => ["MoonLord_BossNPC"], //月亮领主
 
                 _ => null

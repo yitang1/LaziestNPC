@@ -71,9 +71,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             ("EmpressOfLight_BossNPC", "Chat.EmpressOfLight00"), //光之女皇
             ("Golem_BossNPC", "Chat.Golem00"), //石巨人
             ("DukeFishron_BossNPC", "Chat.DukeFishron00"), //猪龙鱼公爵
+            ("Cultist_BossNPC", "Chat.Cultist00"), //拜月教邪教徒
             ("MoonLord_BossNPC", "Chat.MoonLord00"), //月亮领主
         };
 
+        //【一位数表示关于Boss的日常台词"Chat.KingSlime0"，两位数表示刚击败Boss后的首句台词"Chat.KingSlime00"】
         public override string GetChat()
         {
             Player player = Main.LocalPlayer;
@@ -112,9 +114,19 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             {
                 WeightedRandom<string> chat = new WeightedRandom<string>();
 
-                //Boss或事件的专属对话，权重1.0
-                if (NPC.downedSlimeKing) chat.Add(this.GetLocalizedValue("Chat.KingSlime0")); //史莱姆王
-                if (NPC.downedBoss1) chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu0")); //克苏鲁之眼
+                //日常对话，Boss或事件的专属对话，权重1.0
+                if (NPC.downedSlimeKing)
+                {
+                    chat.Add(this.GetLocalizedValue("Chat.KingSlime0")); //史莱姆王
+                    chat.Add(this.GetLocalizedValue("Chat.KingSlime1"));
+                }
+                if (NPC.downedBoss1)
+                {
+                    chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu0")); //克苏鲁之眼
+                    chat.Add(this.GetLocalizedValue("Chat.EyeOfCthulhu1"));
+
+                }
+
                 if (NPCCondition.downedBrainOfCthulhu) chat.Add(this.GetLocalizedValue("Chat.BrainOfCthulhu0")); //克苏鲁之脑
                 if (NPCCondition.downedEaterOfWorlds) chat.Add(this.GetLocalizedValue("Chat.EaterOfWorlds0")); //世界吞噬怪
                 if (NPC.downedQueenBee) chat.Add(this.GetLocalizedValue("Chat.QueenBee0")); //蜂王
@@ -130,10 +142,15 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 if (NPC.downedEmpressOfLight) chat.Add(this.GetLocalizedValue("Chat.EmpressOfLight0")); //光之女皇
                 if (NPC.downedGolemBoss) chat.Add(this.GetLocalizedValue("Chat.Golem0")); //石巨人
                 if (NPC.downedFishron) chat.Add(this.GetLocalizedValue("Chat.DukeFishron0")); //猪龙鱼公爵
-                if (NPC.downedMoonlord) chat.Add(this.GetLocalizedValue("Chat.Moonlord0")); //月亮领主
+                if (NPC.downedAncientCultist) chat.Add(this.GetLocalizedValue("Chat.Cultist0")); //拜月教邪教徒
                 
-                if (NPC.downedMoonlord) chat.Add(this.GetLocalizedValue("Chat.Moonlord00"), 0.1); //月亮领主(特殊)
+                if (NPC.downedMoonlord)
+                {
+                    chat.Add(this.GetLocalizedValue("Chat.Moonlord0"), 0.1); //月亮领主(特殊)
+                    chat.Add(this.GetLocalizedValue("Chat.Moonlord1")); //月亮领主
 
+                }
+                
                 if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.NoBoss"));
 
                 return chat.Get();

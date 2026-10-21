@@ -41,12 +41,36 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override string GetChat()
         {
-            WeightedRandom<string> chat = new WeightedRandom<string>();
+            if (Main.rand.Next(100) < 70)
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
 
-            chat.Add(this.GetLocalizedValue("Chat.Normal1"));
-            chat.Add(this.GetLocalizedValue("Chat.Normal2"));
+                /*chat.Add(this.GetLocalizedValue("Chat.Normal1"));
 
-            return chat;
+                chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal4"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal5"));*/
+
+                if (Main.LocalPlayer.Male)
+                {
+                    //玩家是男性
+                    chat.Add(this.GetLocalizedValue("Chat.Normal2_Male"));
+                }
+                else
+                {
+                    //玩家是女性
+                    chat.Add(this.GetLocalizedValue("Chat.Normal2_Female"));
+                }
+
+                return chat.Get();
+
+            }
+            else
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
+
+                return chat.Get();
+            }
         }
 
         public override void SetChatButtons(ref string button, ref string button2)

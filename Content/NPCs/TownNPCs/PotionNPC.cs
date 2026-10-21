@@ -76,7 +76,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 if (Main.hardMode) chat.Add(this.GetLocalizedValue("Chat.HardMode0"));
 
 
-                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.NoBoss"));
+                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.Normal5"));
 
                 return chat.Get();
             }

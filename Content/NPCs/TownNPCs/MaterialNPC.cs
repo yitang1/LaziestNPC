@@ -12,6 +12,7 @@ using LaziestNPC.Globals.GlobalItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Common.ModBossess;
 using LaziestNPC.Globals.Config;
+using LaziestNPC.Common.Helpers;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -42,13 +43,28 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override string GetChat()
         {
-            WeightedRandom<string> chat = new WeightedRandom<string>();
+            if (Main.rand.Next(100) < 70)
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
 
-            chat.Add(this.GetLocalizedValue("Chat.Normal1"));
-            chat.Add(this.GetLocalizedValue("Chat.Normal2"));
-            chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal2"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal3"));
+                chat.Add(this.GetLocalizedValue("Chat.Normal4"));
 
-            return chat;
+                chat.Add(this.GetLocalizedValue("Chat.Normal5"), 0.1);
+
+                return chat.Get();
+
+            }
+            else
+            {
+                WeightedRandom<string> chat = new WeightedRandom<string>();
+
+                if (chat.elements.Count == 0) chat.Add(this.GetLocalizedValue("Chat.Normal1"));
+
+                return chat.Get();
+            }
         }
 
         public override void SetChatButtons(ref string button, ref string button2)

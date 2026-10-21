@@ -18,10 +18,10 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition SnowMoonHappened = new Condition("SnowMoonHappened", () => WorldCondition.SnowMoonHappened); //发生过霜月
         public static Condition PumpkinMoonHappened = new Condition("PumpkinMoonHappened", () => WorldCondition.PumpkinMoonHappened); //发生过南瓜月
         
-        public static Condition DownedBrainOfCthulh = new Condition("DownedBrainOfCthulh", () => NPCCondition.downedBrainOfCthulhu); //克苏鲁之脑
+        public static Condition DownedBrainOfCthulhu = new Condition("DownedBrainOfCthulhu", () => NPCCondition.downedBrainOfCthulhu); //克苏鲁之脑
         public static Condition DownedEaterOfWorlds = new Condition("DownedEaterOfWorlds", () => NPCCondition.downedEaterOfWorlds); //世界吞噬怪
         public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
-        public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
+        public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndSkeletron", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
         //public static Condition MourningWoodOrSplinter = new Condition("MourningWoodOrSplinter", () => Condition.DownedMourningWood.IsMet() || NPCCondition.downedSplinterling); //哀木 / 树精
         
         public static Condition DownedAnyPillar = new Condition("DownedPillar", () =>

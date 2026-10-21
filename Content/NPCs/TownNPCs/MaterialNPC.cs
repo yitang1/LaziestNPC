@@ -114,8 +114,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.WormTooth, (0, 0, 5, 0)) //蠕虫牙齿
             .AddItem(ItemID.SharkFin, (0, 0, 5, 0)) //鲨鱼鳍
             .AddItem(ItemID.TatteredCloth, (0, 0, 10, 0)) //破布
-            .AddItem(ItemID.TissueSample, (0, 0, 25, 0), Condition.DownedEowOrBoc) //组织样本
-            .AddItem(ItemID.ShadowScale, (0, 0, 25, 0), Condition.DownedEowOrBoc) //暗影鳞片
+            .AddItem(ItemID.TissueSample, (0, 0, 25, 0), DownedBrainOfCthulhu) //组织样本
+            .AddItem(ItemID.ShadowScale, (0, 0, 25, 0), DownedEaterOfWorlds) //暗影鳞片
             .AddItem(ItemID.Bone, (0, 0, 25, 50), Condition.DownedSkeletron) //骨头
 
             .AddItem(ItemID.Present, (0, 1, 50, 0)) //礼物

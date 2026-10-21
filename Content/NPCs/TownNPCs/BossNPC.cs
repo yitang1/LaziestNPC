@@ -224,7 +224,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeSecond) //双鱼玉佩
             .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
-            .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), DownedBrainOfCthulh) //克苏鲁之脑
+            .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), DownedBrainOfCthulhu) //克苏鲁之脑
             .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), DownedEaterOfWorlds) //世界吞噬怪
             .AddItem(ItemID.QueenBeeBossBag, (0, 20, 0, 0), Condition.DownedQueenBee) //蜂王
             .AddItem(ItemID.SkeletronBossBag, (0, 25, 0, 0), Condition.DownedSkeletron) //骷髅王

@@ -77,12 +77,6 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.SandBlock, 5)
                 .AddTile(TileID.Loom)
                 .Register();
-            //星星发夹
-            Recipe.Create(ItemID.StarHairpin)
-                .AddIngredient(ItemID.Silk, 5)
-                .AddIngredient(ItemID.FallenStar)
-                .AddTile(TileID.Loom)
-                .Register();
             //航鱼靴
             Recipe.Create(ItemID.SailfishBoots)
                 .AddIngredient(ItemID.Silk, 10)
@@ -90,9 +84,17 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Coral, 5)
                 .AddTile(TileID.Loom)
                 .Register();
+            //整蛊坐垫
+            Recipe.Create(ItemID.WhoopieCushion)
+                .AddIngredient(ItemID.Leather, 5)
+                .AddIngredient(ItemID.StinkPotion, 3)
+                .AddIngredient(ItemID.Cloud, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
             #endregion
 
-            #region 【消耗品与召唤物】
+            #region 【消耗品】
             //生命水晶
             Recipe.Create(ItemID.LifeCrystal)
                 .AddIngredient(ItemID.StoneBlock, 2)
@@ -107,6 +109,16 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.HallowedBar)
                 .AddTile(TileID.DemonAltar)
                 .Register();
+            //Joja可乐
+            Recipe.Create(ItemID.JojaCola)
+                .AddIngredient(ItemID.AppleJuice)
+                .AddIngredient(ItemID.MasterBait)
+                .AddTile(TileID.Furnaces)
+                .Register();
+
+            #endregion
+
+            #region 【召唤物品】
             //松露虫
             Recipe.Create(ItemID.TruffleWorm)
                 .AddIngredient(ItemID.Worm)
@@ -127,33 +139,15 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Ectoplasm, 5)
                 .AddTile(TileID.CrystalBall)
                 .Register();
-            //Joja可乐
-            Recipe.Create(ItemID.JojaCola)
-                .AddIngredient(ItemID.AppleJuice)
-                .AddIngredient(ItemID.MasterBait)
-                .AddTile(TileID.Furnaces)
-                .Register();
-            //胡萝卜
-            Recipe.Create(ItemID.Carrot)
-                .AddIngredient(ItemID.Daybloom)
-                .AddIngredient(ItemID.Acorn)
-                .Register();
             #endregion
 
-            #region 【武器】
+            #region 【近战武器】
             //拍拍手
             Recipe.Create(ItemID.SlapHand)
                 .AddIngredient(ItemID.ZombieArm)
                 .AddIngredient(ItemID.Bone, 10)
                 .AddIngredient(ItemID.SoulofNight, 5)
                 .AddTile(TileID.MythrilAnvil)
-                .Register();
-            //史莱姆枪
-            Recipe.Create(ItemID.SlimeGun)
-                .AddRecipeGroup("PlatinumBarGroups", 3)
-                .AddIngredient(ItemID.Sapphire, 5)
-                .AddIngredient(ItemID.Gel, 30)
-                .AddTile(TileID.Solidifier)
                 .Register();
             //骨剑
             Recipe.Create(ItemID.BoneSword)
@@ -165,34 +159,6 @@ namespace LaziestNPC.Globals.GlobalRecipes
             Recipe.Create(ItemID.Yelets)
                 .AddIngredient(ItemID.JungleYoyo)
                 .AddIngredient(ItemID.HallowedBar, 8)
-                .AddTile(TileID.MythrilAnvil)
-                .Register();
-            /*//天顶剑
-            Recipe.Create(ItemID.Zenith)
-                .AddIngredient(ItemID.TerraBlade)
-                .AddIngredient(ItemID.Meowmere)
-                .AddIngredient(ItemID.StarWrath)
-                .AddIngredient(ItemID.InfluxWaver)
-                .AddIngredient(ItemID.TheHorsemansBlade)
-                .AddIngredient(ItemID.Seedler)
-                .AddIngredient(ItemID.Starfury)
-                .AddIngredient(ItemID.BeeKeeper)
-                .AddIngredient(ItemID.EnchantedSword)
-                .AddIngredient(ItemID.CopperShortsword)
-                .AddTile(TileID.MythrilAnvil)
-                .Register(); */
-            //吸血鬼青蛙法杖
-            Recipe.Create(ItemID.VampireFrogStaff)
-                .AddIngredient(ItemID.Frog)
-                .AddIngredient(ItemID.ChumBucket, 5)
-                .AddIngredient(ItemID.CrimtaneBar, 10)
-                .AddTile(TileID.Anvils)
-                .Register();
-            //致命球法杖
-            Recipe.Create(ItemID.DeadlySphereStaff)
-                .AddIngredient(ItemID.SpikyBall, 20)
-                .AddIngredient(ItemID.LunarTabletFragment, 10)
-                .AddIngredient(ItemID.Ectoplasm, 5)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
             //链刀
@@ -223,6 +189,24 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.IceBlock, 20)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
+
+            /*//天顶剑
+            Recipe.Create(ItemID.Zenith)
+                .AddIngredient(ItemID.TerraBlade)
+                .AddIngredient(ItemID.Meowmere)
+                .AddIngredient(ItemID.StarWrath)
+                .AddIngredient(ItemID.InfluxWaver)
+                .AddIngredient(ItemID.TheHorsemansBlade)
+                .AddIngredient(ItemID.Seedler)
+                .AddIngredient(ItemID.Starfury)
+                .AddIngredient(ItemID.BeeKeeper)
+                .AddIngredient(ItemID.EnchantedSword)
+                .AddIngredient(ItemID.CopperShortsword)
+                .AddTile(TileID.MythrilAnvil)
+                .Register(); */
+            #endregion
+
+            #region 【远程武器】
             //鱼叉枪
             Recipe.Create(ItemID.Harpoon)
                 .AddIngredient(ItemID.SpikyBall, 5)
@@ -230,6 +214,10 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddRecipeGroup("IronBarGroups", 5)
                 .AddTile(TileID.Anvils)
                 .Register();
+
+            #endregion
+
+            #region 【魔法武器】
             //恶魔锄刀(恶魔之镰)
             Recipe.Create(ItemID.DemonScythe)
                 .AddIngredient(ItemID.Book)
@@ -237,16 +225,28 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.HellstoneBar, 5)
                 .AddTile(TileID.Bookcases)
                 .Register();
+
+            #endregion
+
+            #region 【召唤武器】
+            //吸血鬼青蛙法杖
+            Recipe.Create(ItemID.VampireFrogStaff)
+                .AddIngredient(ItemID.Frog)
+                .AddIngredient(ItemID.ChumBucket, 5)
+                .AddIngredient(ItemID.CrimtaneBar, 10)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //致命球法杖
+            Recipe.Create(ItemID.DeadlySphereStaff)
+                .AddIngredient(ItemID.SpikyBall, 20)
+                .AddIngredient(ItemID.LunarTabletFragment, 10)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
             #endregion
 
             #region 【工具】
-            //魔法海螺
-            Recipe.Create(ItemID.MagicConch)
-                .AddIngredient(ItemID.Seashell, 5)
-                .AddIngredient(ItemID.Starfish, 10)
-                .AddIngredient(ItemID.SandBlock, 20)
-                .AddTile(TileID.Anvils)
-                .Register();
             //激光钻头
             Recipe.Create(ItemID.LaserDrill)
                 .AddIngredient(ItemID.Picksaw)
@@ -263,13 +263,17 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .Register();
             #endregion
 
-            #region 【材料与放置物】
+            #region 【材料】
             //黑墨水
             Recipe.Create(ItemID.BlackInk)
                 .AddIngredient(ItemID.DeathweedSeeds)
                 .AddIngredient(ItemID.BlackLens)
                 .AddTile(TileID.Bottles)
                 .Register();
+
+            #endregion
+
+            #region 【放置物】
             //活火块
             Recipe.Create(ItemID.LivingFireBlock, 10)
                 .AddIngredient(ItemID.Hellstone)
@@ -278,7 +282,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .Register();
             #endregion
 
-            #region 【家具与装饰】
+            #region 【家具】
             //地狱熔炉
             Recipe.Create(ItemID.Hellforge)
                 .AddIngredient(ItemID.Furnace)
@@ -307,7 +311,24 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .Register();
             #endregion
 
-            #region 【盔甲与时装】
+            #region 【盔甲】
+            //夜视头盔
+            Recipe.Create(ItemID.NightVisionHelmet)
+                .AddIngredient(ItemID.Granite, 10)
+                .AddIngredient(ItemID.Glass, 5)
+                .AddIngredient(ItemID.NightOwlPotion, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            #endregion
+
+            #region 【时装】
+            //星星发夹
+            Recipe.Create(ItemID.StarHairpin)
+                .AddIngredient(ItemID.Silk, 5)
+                .AddIngredient(ItemID.FallenStar)
+                .AddTile(TileID.Loom)
+                .Register();
             //猫咪衣
             Recipe.Create(ItemID.CatShirt)
                 .AddIngredient(ItemID.Silk, 20)
@@ -320,23 +341,29 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.GoodieBag)
                 .AddTile(TileID.Loom)
                 .Register();
-            //夜视头盔
-            Recipe.Create(ItemID.NightVisionHelmet)
-                .AddIngredient(ItemID.Granite, 10)
-                .AddIngredient(ItemID.Glass, 5)
-                .AddIngredient(ItemID.NightOwlPotion, 5)
-                .AddTile(TileID.Anvils)
-                .Register();
             #endregion
 
             #region 【杂项】
-            //整蛊坐垫
-            Recipe.Create(ItemID.WhoopieCushion)
-                .AddIngredient(ItemID.Leather, 5)
-                .AddIngredient(ItemID.StinkPotion, 3)
-                .AddIngredient(ItemID.Cloud, 5)
-                .AddTile(TileID.TinkerersWorkbench)
+            //魔法海螺
+            Recipe.Create(ItemID.MagicConch)
+                .AddIngredient(ItemID.Seashell, 5)
+                .AddIngredient(ItemID.Starfish, 10)
+                .AddIngredient(ItemID.SandBlock, 20)
+                .AddTile(TileID.Anvils)
                 .Register();
+            //史莱姆枪
+            Recipe.Create(ItemID.SlimeGun)
+                .AddRecipeGroup("PlatinumBarGroups", 3)
+                .AddIngredient(ItemID.Sapphire, 5)
+                .AddIngredient(ItemID.Gel, 30)
+                .AddTile(TileID.Solidifier)
+                .Register();
+            //胡萝卜
+            Recipe.Create(ItemID.Carrot)
+                .AddIngredient(ItemID.Daybloom)
+                .AddIngredient(ItemID.Acorn)
+                .Register();
+
             #endregion
         }
     }

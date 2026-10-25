@@ -183,10 +183,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.ApprenticeBait, (0, 0, 5, 0)) //学徒鱼饵
             .AddItem(ItemID.JourneymanBait, (0, 0, 10, 0)) //熟手诱饵
             .AddItem(ItemID.MasterBait, (0, 0, 50, 0)) //大师鱼饵
-            //水母鱼饵 ↓
+            //一些水生生物 ↓
             .AddItem(ItemID.BlueJellyfish, (0, 0, 75, 0)) //蓝水母
             .AddItem(ItemID.GreenJellyfish, (0, 1, 0, 0), Condition.Hardmode) //绿水母
             .AddItem(ItemID.PinkJellyfish, (0, 0, 75, 0)) //粉水母
+            .AddItem(ItemID.Oyster, (0, 0, 20, 0)) //牡蛎
             .AddItem(ItemID.ChumBucket, (0, 1, 0, 0), BloodMoonHappened) //鱼饵桶(血月)
             //渔夫商店补充 ↓
             .AddItem(ItemID.AnglerHat, (0, 5, 0, 0)) //渔夫帽

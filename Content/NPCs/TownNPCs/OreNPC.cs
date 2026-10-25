@@ -153,8 +153,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.PlatinumOre, (0, 1, 0, 0)) //铂金矿
             .AddItem(ItemID.Obsidian, (0, 0, 25, 0)) //黑曜石
 
-            .AddItem(ItemID.DemoniteOre, (0, 1, 0, 0)) //魔矿
-            .AddItem(ItemID.CrimtaneOre, (0, 1, 0, 0)) //猩红矿
+            .AddItem(ItemID.CrimtaneOre, (0, 1, 25, 0)) //猩红矿
+            .AddItem(ItemID.DemoniteOre, (0, 1, 25, 0)) //魔矿
             .AddItem(ItemID.Meteorite, (0, 1, 50, 0), Condition.DownedEowOrBoc) //陨石
             .AddItem(ItemID.Hellstone, (0, 1, 50, 0), Condition.DownedEowOrBoc) //狱石
             .AddItem(ItemID.LifeCrystal, (0, 5, 0, 0), Condition.DownedEyeOfCthulhu) //生命水晶

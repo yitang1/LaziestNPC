@@ -247,6 +247,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.Furnace, (0, 0, 5, 0)) //熔炉
             .AddItem(ItemID.Hellforge, (0, 2, 0, 0), Condition.DownedEowOrBoc) //地狱熔炉
             .AddItem(ItemID.TitaniumForge, (0, 5, 0, 0), Condition.Hardmode) //钛金熔炉
+            .AddItem(ItemID.CookingPot, (0, 0, 5, 0)) //烹饪锅
             .AddItem(ItemID.Book, (0, 0, 1, 0)) //书
             .AddItem(ItemID.HeavyWorkBench, (0, 0, 5, 0)) //重型工作台(重型装配台)
             .AddItem(ItemID.LivingLoom, (0, 0, 10, 0)) //生命织布机
@@ -262,8 +263,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.MeatGrinder, (0, 2, 0, 0), Condition.Hardmode) //绞肉机
             .AddItem(ItemID.FleshCloningVaat, (0, 2, 0, 0), Condition.DownedMechBossAny) //血肉克隆台
             .AddItem(ItemID.LesionStation, (0, 2, 0, 0), Condition.DownedMechBossAny) //病变站(腐变室)
-            .AddItem(ItemID.LihzahrdFurnace, (0, 3, 0, 0), Condition.DownedPlantera); //丛林蜥蜴熔炉
-            //.AddItem(ItemID.LunarCraftingStation, (0, 10, 0, 0), Condition.DownedCultist); //远古操纵机
+            .AddItem(ItemID.LihzahrdFurnace, (0, 3, 0, 0), Condition.DownedPlantera) //丛林蜥蜴熔炉
+            .AddItem(ItemID.LunarCraftingStation, (0, 10, 0, 0), Condition.DownedCultist); //远古操纵机
 
             #endregion
 

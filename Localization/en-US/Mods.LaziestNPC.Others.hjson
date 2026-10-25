@@ -1,5 +1,6 @@
 RecipeGroup: {
 	AnyFood: 任意食物
+	CopperBarGroups: 铜锭或锡锭
 	IronBarGroups: 铁锭或铅锭
 	SilverOrTungstenBar: 银锭或钨锭
 	PlatinumBarGroups: 铂金锭或金锭

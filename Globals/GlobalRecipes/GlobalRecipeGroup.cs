@@ -36,6 +36,11 @@ namespace LaziestNPC.Globals.GlobalRecipes
 
             #region 【各类材料】
 
+            //铜锭或锡锭
+            RecipeGroup CopperBarGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.CopperBarGroups"), ItemID.CopperBar, ItemID.TinBar);
+            RecipeGroup.RegisterGroup("CopperBarGroups", CopperBarGroups);
+
             //铁锭或铅锭
             RecipeGroup IronBarGroups = new RecipeGroup(() =>
             Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.IronBarGroups"), ItemID.IronBar, ItemID.LeadBar);

@@ -130,19 +130,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //松露虫
             .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //七彩草蛉
             //染料 ↓
-            .AddItem(ItemID.RedHusk, (0, 1, 0, 0)) //红外壳
-            .AddItem(ItemID.OrangeBloodroot, (0, 1, 0, 0)) //橙血根草
-            .AddItem(ItemID.YellowMarigold, (0, 1, 0, 0)) //黄万寿菊
-            .AddItem(ItemID.LimeKelp, (0, 1, 0, 0)) //橙绿海藻
-            .AddItem(ItemID.GreenMushroom, (0, 1, 0, 0)) //绿蘑菇
-            .AddItem(ItemID.TealMushroom, (0, 1, 0, 0)) //青绿蘑菇
-            .AddItem(ItemID.CyanHusk, (0, 1, 0, 0)) //青外壳
-            .AddItem(ItemID.SkyBlueFlower, (0, 1, 0, 0)) //天蓝花朵
-            .AddItem(ItemID.BlueBerries, (0, 1, 0, 0)) //蓝浆果
-            .AddItem(ItemID.PurpleMucos, (0, 1, 0, 0)) //紫粘液
-            .AddItem(ItemID.VioletHusk, (0, 1, 0, 0)) //蓝紫外壳
-            .AddItem(ItemID.PinkPricklyPear, (0, 1, 0, 0)) //粉仙人掌果
-            .AddItem(ItemID.BlackInk, (0, 1, 0, 0)); //黑墨水
+            .AddItem(ItemID.RedHusk, (0, 1, 50, 0)) //红外壳
+            .AddItem(ItemID.OrangeBloodroot, (0, 1, 50, 0)) //橙血根草
+            .AddItem(ItemID.YellowMarigold, (0, 1, 50, 0)) //黄万寿菊
+            .AddItem(ItemID.LimeKelp, (0, 1, 50, 0)) //橙绿海藻
+            .AddItem(ItemID.GreenMushroom, (0, 1, 50, 0)) //绿蘑菇
+            .AddItem(ItemID.TealMushroom, (0, 1, 50, 0)) //青绿蘑菇
+            .AddItem(ItemID.CyanHusk, (0, 1, 50, 0)) //青外壳
+            .AddItem(ItemID.SkyBlueFlower, (0, 1, 50, 0)) //天蓝花朵
+            .AddItem(ItemID.BlueBerries, (0, 1, 50, 0)) //蓝浆果
+            .AddItem(ItemID.PurpleMucos, (0, 1, 50, 0)) //紫粘液
+            .AddItem(ItemID.VioletHusk, (0, 1, 50, 0)) //蓝紫外壳
+            .AddItem(ItemID.PinkPricklyPear, (0, 1, 50, 0)) //粉仙人掌果
+            .AddItem(ItemID.BlackInk, (0, 1, 50, 0)) //黑墨水
+
+            .AddItem(ItemID.JungleRose, (0, 2, 0, 0)); //丛林玫瑰
 
             #endregion
 

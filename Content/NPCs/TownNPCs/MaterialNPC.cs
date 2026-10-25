@@ -99,7 +99,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.FallenStar, (0, 0, 25, 0)) //坠落之星
             .AddItem(ItemID.Bass, (0, 1, 50, 0)) //鲈鱼
             .AddItem(ItemID.Gel, (0, 0, 0, 10)) //凝胶
-            .AddItem(ItemID.PinkGel, (0, 0, 8, 0)) //粉凝胶
+            .AddItem(ItemID.PinkGel, (0, 0, 10, 0)) //粉凝胶
             .AddItem(ItemID.Lens, (0, 0, 0, 75)) //晶状体
             .AddItem(ItemID.BlackLens, (0, 1, 0, 0)) //黑晶状体
             .AddItem(ItemID.Cobweb, (0, 0, 1, 50)) //蛛网

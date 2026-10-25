@@ -59,7 +59,7 @@ namespace LaziestNPC.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.Common(ItemID.Stinkfish)); //臭味鱼
             //itemLoot.Add(ItemDropRule.Common(ItemID.BombFish)); //炸弹鱼
             //鱼-沙漠 ↓
-            itemLoot.Add(ItemDropRule.Common(ItemID.Oyster)); //牡蛎
+            //itemLoot.Add(ItemDropRule.Common(ItemID.Oyster)); //牡蛎
             itemLoot.Add(ItemDropRule.Common(ItemID.Flounder)); //偏口鱼
             itemLoot.Add(ItemDropRule.Common(ItemID.RockLobster)); //岩石龙虾
             //鱼-雪原 ↓

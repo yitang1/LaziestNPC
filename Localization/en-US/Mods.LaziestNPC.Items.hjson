@@ -75,6 +75,28 @@ ThrownShimmerWater: {
 		'''
 }
 
+HeartSacredRing: {
+	DisplayName: 红心圣戒
+	Tooltip:
+		'''
+		增加1点生命再生速度
+		受伤时，大幅提升至10点生命再生速度
+		之后，在5秒内会逐渐衰减至1点
+		[ExtraText]
+		'''
+	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	ContentTexts:
+		'''
+		[L]“在[c/95E5DD:红心王国]的授勋仪式上，女王会将这枚戒指亲自赐予即将踏上战场的骑士。
+		心脏般跳动的红宝石，镶嵌着不屈与自由的金色双翼。
+		骑士们饱含热泪亲吻它，高呼凯旋的誓言，带着满身荣光冲向敌阵。
+
+		四大王国的战火燃烧了太久。
+		其实女王心里很清楚，这份无上而光荣的祝福——
+		注定要伴随它的主人，永远留在那片被鲜血浸透的焦土之上。”
+		'''
+}
+
 CallingSeaBottle: {
 	DisplayName: 唤海瓶
 	Tooltip:

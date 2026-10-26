@@ -30,6 +30,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
             tScale = false;
             profanedRage = false;
             draconicSurge = false;
+            HeartSacredRing = false;
         }
 
         public override void UpdateDead()
@@ -44,6 +45,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
             titanBoost = 0;
             profanedRage = false;
             draconicSurge = false;
+            HeartSacredRing = false;
         }
 
         //确保状态的数据保存和持久化
@@ -70,6 +72,19 @@ namespace LaziestNPC.Globals.GlobalPlayers
                 那么游戏里实际显示和应用的生命再生速度为增加2.5点。*/
                 Player.lifeRegen += 5;
             }
+
+            if (HeartSacredRing)
+            {
+                if (HeartSacredRingTimer > 0)
+                {
+                    int num = 2 + (18 * HeartSacredRingTimer) / 300;
+                    Player.lifeRegen += num;
+                }
+                else
+                {
+                    Player.lifeRegen += 2;
+                }
+            }
         }
 
         public override void OnHurt(Player.HurtInfo info)
@@ -81,6 +96,11 @@ namespace LaziestNPC.Globals.GlobalPlayers
                 int revivifyNum = (int)(info.Damage / 15.0);
                 Player.statLife += revivifyNum;
                 Player.HealEffect(revivifyNum, true);
+            }
+
+            if (HeartSacredRing)
+            {
+                HeartSacredRingTimer = 300;
             }
         }
 
@@ -137,6 +157,12 @@ namespace LaziestNPC.Globals.GlobalPlayers
             }
         }
 
+        public override void PreUpdate()
+        {
+            if (HeartSacredRingTimer > 0)
+                HeartSacredRingTimer--;
+        }
+
         public override void PostUpdateEquips()
         {
             if (cadence)
@@ -157,6 +183,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
                 #endregion
                 Player.statLifeMax2 += Player.statLifeMax / 100 * 25;
             }
+
         }
 
         public override void PostUpdateMiscEffects()
@@ -334,5 +361,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
         //每个玩家独立的冷却倒计时
         public int calamityRebornCooldown = 0;
 
+        public int HeartSacredRingTimer = 0;
+        public bool HeartSacredRing = false;
     }
 }

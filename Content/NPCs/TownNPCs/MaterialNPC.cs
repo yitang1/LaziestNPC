@@ -144,7 +144,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.ButterflyDust, (0, 1, 50, 0), Condition.DownedMechBossAny) //蝴蝶尘
             .AddItem(ItemID.Ectoplasm, (0, 2, 0, 0), Condition.DownedPlantera) //灵气
             .AddItem(ItemID.BrokenHeroSword, (0, 5, 0, 0), Condition.DownedPlantera) //断裂英雄剑
-            .AddItem(ItemID.LunarTabletFragment, (0, 2, 0, 0), Condition.DownedPlantera); //日耀碑牌碎片
+            .AddItem(ItemID.LunarTabletFragment, (0, 2, 0, 0), Condition.DownedPlantera) //日耀碑牌碎片
+            .AddItem(ItemID.SpookyTwig, (0, 5, 0, 0), Condition.DownedMourningWood) //阴森嫩枝
+            .AddItem(ItemID.BlackFairyDust, (0, 5, 0, 0), Condition.DownedPumpking); //黑色仙尘
             if (ModLoader.HasMod("CalamityMod"))
             {
                 vMat.AddItem(ItemID.FragmentSolar, (0, 2, 50, 0), Condition.DownedCultist) //日耀碎片

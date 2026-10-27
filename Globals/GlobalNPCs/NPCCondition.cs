@@ -13,12 +13,20 @@ namespace LaziestNPC.Globals.GlobalNPCs
         public static bool downedBrainOfCthulhu;
         public static bool downedEaterOfWorlds;
 
+        public static bool downedDarkMage;
+        public static bool downedOgre;
+        public static bool downedBetsy;
+
         public override void OnWorldLoad()
         {
             downedSplinterling = false;
 
             downedBrainOfCthulhu = false;
             downedEaterOfWorlds = false;
+
+            downedDarkMage = false;
+            downedOgre = false;
+            downedBetsy = false;
         }
 
         public override void OnWorldUnload()
@@ -27,6 +35,10 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
             downedBrainOfCthulhu = false;
             downedEaterOfWorlds = false;
+
+            downedDarkMage = false;
+            downedOgre = false;
+            downedBetsy = false;
         }
 
         public override void LoadWorldData(TagCompound tag)
@@ -35,6 +47,10 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
             downedBrainOfCthulhu = tag.GetBool("downedBrainOfCthulhu");
             downedEaterOfWorlds = tag.GetBool("downedEaterOfWorlds");
+
+            downedDarkMage = tag.GetBool("downedDarkMage");
+            downedOgre = tag.GetBool("downedOgre");
+            downedBetsy = tag.GetBool("downedBetsy");
         }
 
         public override void SaveWorldData(TagCompound tag)
@@ -43,6 +59,10 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
             tag["downedBrainOfCthulhu"] = downedBrainOfCthulhu;
             tag["downedEaterOfWorlds"] = downedEaterOfWorlds;
+
+            tag["downedDarkMage"] = downedDarkMage;
+            tag["downedOgre"] = downedOgre;
+            tag["downedBetsy"] = downedBetsy;
         }
     }
 
@@ -60,6 +80,16 @@ namespace LaziestNPC.Globals.GlobalNPCs
             //世界吞噬怪
             if (npc.type == NPCID.EaterofWorldsHead)
                 NPCCondition.downedEaterOfWorlds = true;
+
+            //黑暗魔法师 
+            if (npc.type == NPCID.DD2DarkMageT1 || npc.type == NPCID.DD2DarkMageT3)
+                NPCCondition.downedDarkMage = true;
+            //食人魔 
+            if (npc.type == NPCID.DD2OgreT2 || npc.type == NPCID.DD2OgreT3)
+                NPCCondition.downedOgre = true;
+            //双足翼龙 
+            if (npc.type == NPCID.DD2Betsy)
+                NPCCondition.downedBetsy = true;
         }
     }
 }

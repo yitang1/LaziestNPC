@@ -64,7 +64,7 @@ namespace LaziestNPC.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.Common(ItemID.CorruptFishingCrate)); //腐化匣
             itemLoot.Add(ItemDropRule.Common(ItemID.HallowedFishingCrate)); //神圣匣
             itemLoot.Add(ItemDropRule.Common(ItemID.LavaCrate)); //黑曜石匣
-            itemLoot.Add(ItemDropRule.ByCondition(new DownedSkeletron(), ItemID.DungeonFishingCrate)); //地牢匣
+            itemLoot.Add(ItemDropRule.ByCondition(new DropCondition(() => NPC.downedBoss3), ItemID.DungeonFishingCrate)); //地牢匣
 
             //宝匣-肉后
             itemLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.WoodenCrateHard)); //珍珠木匣
@@ -97,7 +97,7 @@ namespace LaziestNPC.Content.Items.Consumables
             #endregion
 
             #region [瑟银 Thorium Mod]
-            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "AquaticDepthsCrate", new DownedEowOrBoc()); //渊海匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "AquaticDepthsCrate", new DropCondition(() => NPC.downedBoss2)); //渊海匣
             LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "ScarletCrate"); //绯红匣
             LNPCHelper.AddModItemLoot(itemLoot, "ThoriumMod", "StrangeCrate"); //奇特匣
 

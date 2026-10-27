@@ -147,5 +147,13 @@ namespace LaziestNPC.Common.ModBossess
                 }
             }
         }
+
+        //返回模组Boss击败结果的公开方法，返回bool
+        public static bool IsDowned(string bossKey)
+        {
+            if (AllBossInfos.TryGetValue(bossKey, out BossInfo info))
+                return info.Downed;
+            return false;
+        }
     }
 }

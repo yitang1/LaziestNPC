@@ -2,8 +2,8 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using LaziestNPC.Globals.GlobalSystem;
 using Terraria.GameContent.ItemDropRules;
+using LaziestNPC.Globals.GlobalSystem;
 
 namespace LaziestNPC.Globals.GlobalItems
 {
@@ -13,17 +13,19 @@ namespace LaziestNPC.Globals.GlobalItems
         public static Condition CanBuyFishJadeSecond = new Condition("CanBuyFishJadeSecond", () => WorldCondition.FishJadeBuyCount < 2);
     }
 
-    public class DownedSkeletron : IItemDropRuleCondition
+    //通用摸彩袋类掉落条件
+    public class DropCondition : IItemDropRuleCondition
     {
-        public bool CanDrop(DropAttemptInfo info) => NPC.downedBoss3;
-        public bool CanShowItemDropInUI() => false;
+        private readonly Func<bool> check;
+
+        public DropCondition(Func<bool> condition)
+        {
+            check = condition;
+        }
+
+        public bool CanDrop(DropAttemptInfo info) => check();
+        public bool CanShowItemDropInUI() => true;
         public string GetConditionDescription() => null;
     }
 
-    public class DownedEowOrBoc : IItemDropRuleCondition
-    {
-        public bool CanDrop(DropAttemptInfo info) => NPC.downedBoss2;
-        public bool CanShowItemDropInUI() => false;
-        public string GetConditionDescription() => null;
-    }
 }

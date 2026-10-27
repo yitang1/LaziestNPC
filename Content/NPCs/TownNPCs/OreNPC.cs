@@ -313,7 +313,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.MoonCharm, (0, 6, 0, 0), Condition.Hardmode) //月光护身符
             .AddItem(ItemID.NeptunesShell, (0, 8, 0, 0), EclipseHappened) //海神贝壳
             .AddItem(ItemID.MoonStone, (0, 8, 0, 0), EclipseHappened) //月亮石
-                                                                      //.AddItem(ItemID.SunStone, (0, 20, 0, 0), Condition.DownedGolem) //太阳石
+            //.AddItem(ItemID.SunStone, (0, 20, 0, 0), Condition.DownedGolem) //太阳石
 
             #endregion
 

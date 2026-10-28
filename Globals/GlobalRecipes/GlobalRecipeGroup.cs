@@ -71,7 +71,12 @@ namespace LaziestNPC.Globals.GlobalRecipes
             //钛金锭或精金锭
             RecipeGroup TitaniumBarGroups = new RecipeGroup(() =>
             Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.TitaniumBarGroups"), ItemID.TitaniumBar, ItemID.AdamantiteBar);
-            RecipeGroup.RegisterGroup("TitaniumGroups", TitaniumBarGroups);
+            RecipeGroup.RegisterGroup("TitaniumBarGroups", TitaniumBarGroups);
+
+            //猩红锭或魔矿锭 (任意邪恶锭)
+            RecipeGroup CrimtaneBarGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.CrimtaneBarGroups"), ItemID.CrimtaneBar, ItemID.DemoniteBar);
+            RecipeGroup.RegisterGroup("CrimtaneBarGroups", CrimtaneBarGroups);
 
             //椎骨或腐肉 (任意邪恶材料)
             RecipeGroup PerEvilMaterial = new RecipeGroup(() =>

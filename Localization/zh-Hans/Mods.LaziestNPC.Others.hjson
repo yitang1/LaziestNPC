@@ -7,6 +7,7 @@ RecipeGroup: {
 	CobaltBarGroups: 钴锭或钯金锭
 	MythrilBarGroups: 秘银锭或山铜锭
 	TitaniumBarGroups: 钛金锭或精金锭
+	CrimtaneBarGroups: 任意邪恶锭
 	PerEvilMaterials: 任意邪恶材料
 	PlatinumWatchGroups: 铂金表或金表
 	SilverWatchGroups: 银表或钨表

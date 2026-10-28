@@ -2,7 +2,7 @@ RecipeGroup: {
 	AnyFood: 任意食物
 	CopperBarGroups: 铜锭或锡锭
 	IronBarGroups: 铁锭或铅锭
-	SilverOrTungstenBar: 银锭或钨锭
+	SilverBarGroups: 银锭或钨锭
 	PlatinumBarGroups: 铂金锭或金锭
 	CobaltBarGroups: 钴锭或钯金锭
 	MythrilBarGroups: 秘银锭或山铜锭

@@ -224,8 +224,8 @@ namespace LaziestNPC.Globals.GlobalRecipes
             #region 【信息类】
             //雷达
             Recipe.Create(ItemID.Radar)
-                .AddRecipeGroup("SilverBarGroups", 4)
-                .AddIngredient(ItemID.Glass, 2)
+                .AddRecipeGroup("SilverBarGroups", 2)
+                .AddIngredient(ItemID.Glass)
                 .AddIngredient(ItemID.Emerald)
                 .AddTile(TileID.Anvils)
                 .Register();
@@ -248,6 +248,36 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddRecipeGroup("SilverBarGroups", 5)
                 .AddIngredient(ItemID.Bone, 10)
                 .AddIngredient(ItemID.Diamond, 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //生命体分析机
+            Recipe.Create(ItemID.LifeformAnalyzer)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Diamond, 5)
+                .AddIngredient(ItemID.Ruby)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //金属探测器
+            Recipe.Create(ItemID.MetalDetector)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddIngredient(ItemID.Diamond)
+                .AddIngredient(ItemID.Emerald)
+                .AddIngredient(ItemID.Ruby)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //秒表
+            Recipe.Create(ItemID.Stopwatch)
+                .AddRecipeGroup("SilverWatchGroups", 5)
+                .AddRecipeGroup("IronBarGroups", 2)
+                .AddIngredient(ItemID.Ruby)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //每秒伤害计数器
+            Recipe.Create(ItemID.DPSMeter)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddRecipeGroup("SilverBarGroups", 2)
+                .AddIngredient(ItemID.Ruby, 5)
                 .AddTile(TileID.Anvils)
                 .Register();
 

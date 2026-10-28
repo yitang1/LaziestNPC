@@ -70,6 +70,10 @@ namespace LaziestNPC.Globals.GlobalRecipes
             RecipeGroup PlatinumWatchGroups = new RecipeGroup(() =>
             Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.PlatinumWatchGroups"), ItemID.PlatinumWatch, ItemID.GoldWatch);
             RecipeGroup.RegisterGroup("PlatinumWatchGroups", PlatinumWatchGroups);
+            //银表或钨表
+            RecipeGroup SilverWatchGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.SilverWatchGroups"), ItemID.SilverWatch, ItemID.TungstenWatch);
+            RecipeGroup.RegisterGroup("SilverWatchGroups", SilverWatchGroups);
             
             #endregion
 

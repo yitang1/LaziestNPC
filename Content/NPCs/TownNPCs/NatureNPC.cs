@@ -194,12 +194,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.AnglerVest, (0, 5, 0, 0)) //渔夫背心
             .AddItem(ItemID.AnglerPants, (0, 5, 0, 0)) //渔夫裤
             .AddItem(ItemID.FishingBobber, (0, 1, 0, 0)) //钓鱼浮标
-            .AddItem(ItemID.HighTestFishingLine, (0, 4, 0, 0)) //优质钓鱼线
-            .AddItem(ItemID.AnglerEarring, (0, 4, 0, 0)) //渔夫耳环
-            .AddItem(ItemID.TackleBox, (0, 4, 0, 0)) //钓具箱
-            .AddItem(ItemID.FishermansGuide, (0, 4, 0, 0)) //渔民袖珍宝典
-            .AddItem(ItemID.WeatherRadio, (0, 4, 0, 0)) //天气收音机
-            .AddItem(ItemID.Sextant, (0, 4, 0, 0)) //六分仪
+            .AddItem(ItemID.HighTestFishingLine, (0, 5, 0, 0)) //优质钓鱼线
+            .AddItem(ItemID.AnglerEarring, (0, 5, 0, 0)) //渔夫耳环
+            .AddItem(ItemID.TackleBox, (0, 5, 0, 0)) //钓具箱
+            .AddItem(ItemID.FishermansGuide, (0, 5, 0, 0)) //渔民袖珍宝典
+            .AddItem(ItemID.WeatherRadio, (0, 5, 0, 0)) //天气收音机
+            .AddItem(ItemID.Sextant, (0, 5, 0, 0)) //六分仪
 
             .AddItem(ItemID.FuzzyCarrot, (0, 5, 0, 0)) //绒毛胡萝卜
             .AddItem(ItemID.FishMinecart, (0, 5, 0, 0)) //鲤鱼矿车

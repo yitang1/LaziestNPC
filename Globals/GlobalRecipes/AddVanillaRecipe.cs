@@ -10,6 +10,225 @@ namespace LaziestNPC.Globals.GlobalRecipes
         public override void AddRecipes()
         {
             #region 【配饰】
+
+            #region 【机动性】
+            //雏翼
+            Recipe.Create(ItemID.CreativeWings)
+                .AddIngredient(ItemID.Feather, 10)
+                .AddIngredient(ItemID.Cloud, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //赫尔墨斯靴
+            Recipe.Create(ItemID.HermesBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Feather, 5)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Loom)
+                .Register();
+            //疾风雪靴
+            Recipe.Create(ItemID.FlurryBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Shiverthorn, 5)
+                .AddIngredient(ItemID.SnowBlock, 10)
+                .AddTile(TileID.Loom)
+                .Register();
+            //脚蹼
+            Recipe.Create(ItemID.Flipper)
+                .AddIngredient(ItemID.Silk, 5)
+                .AddIngredient(ItemID.FlipperPotion)
+                .AddIngredient(ItemID.Gel, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //潜水头盔
+            Recipe.Create(ItemID.DivingHelmet)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddIngredient(ItemID.GillsPotion)
+                .AddIngredient(ItemID.SharkFin)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //闪亮红气球
+            Recipe.Create(ItemID.ShinyRedBalloon)
+                .AddIngredient(ItemID.WhiteString)
+                .AddIngredient(ItemID.Cloud, 10)
+                .AddIngredient(ItemID.RedHusk)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            /*//气球河豚鱼
+            Recipe.Create(ItemID.BalloonPufferfish)
+                .AddIngredient(ItemID.ShinyRedBalloon)
+                .AddIngredient(ItemID.Pufferfish)
+                .AddTile(TileID.WorkBenches)
+                .Register();*/
+            //沙丘行者靴
+            Recipe.Create(ItemID.SandBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Waterleaf, 5)
+                .AddIngredient(ItemID.SandBlock, 10)
+                .AddTile(TileID.Loom)
+                .Register();
+            //航鱼靴(旗鱼靴)
+            Recipe.Create(ItemID.SailfishBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Seashell, 5)
+                .AddIngredient(ItemID.CoralstoneBlock, 10)
+                .AddTile(TileID.Loom)
+                .Register();
+            //水上漂靴
+            Recipe.Create(ItemID.WaterWalkingBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.WaterWalkingPotion)
+                .AddIngredient(ItemID.Coral, 10)
+                .AddTile(TileID.Loom)
+                .Register();
+            /*//水上漂靴
+            Recipe.Create(ItemID.WaterWalkingBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.WaterWalkingPotion)
+                .AddIngredient(ItemID.WaterBlock, 10)
+                .AddTile(TileID.Loom)
+                .Register();*/
+            //鞋带束头
+            Recipe.Create(ItemID.Aglet)
+                .AddRecipeGroup("CopperBarGroups", 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //幸运马掌
+            Recipe.Create(ItemID.LuckyHorseshoe)
+                .AddRecipeGroup("PlatinumBarGroups", 4)
+                .AddIngredient(ItemID.Cloud, 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //蛙腿
+            Recipe.Create(ItemID.FrogLeg)
+                .AddIngredient(ItemID.Frog, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //疾风脚镯
+            Recipe.Create(ItemID.AnkletoftheWind)
+                .AddIngredient(ItemID.JungleSpores, 10)
+                .AddIngredient(ItemID.Vine, 5)
+                .AddIngredient(ItemID.PinkGel)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //溜冰鞋
+            Recipe.Create(ItemID.IceSkates)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Shiverthorn, 5)
+                .AddIngredient(ItemID.IceBlock, 10)
+                .AddTile(TileID.Loom)
+                .Register();
+            //云朵瓶
+            Recipe.Create(ItemID.CloudinaBottle)
+                .AddIngredient(ItemID.Bottle)
+                .AddIngredient(ItemID.Cloud, 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //暴雪瓶
+            Recipe.Create(ItemID.BlizzardinaBottle)
+                .AddIngredient(ItemID.CloudinaBottle)
+                .AddIngredient(ItemID.IceBlock, 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //沙暴瓶
+            Recipe.Create(ItemID.SandstorminaBottle)
+                .AddIngredient(ItemID.CloudinaBottle)
+                .AddIngredient(ItemID.SandBlock, 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //海啸瓶
+            Recipe.Create(ItemID.TsunamiInABottle)
+                .AddIngredient(ItemID.CloudinaBottle)
+                .AddIngredient(ItemID.CoralstoneBlock, 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            /*//海啸瓶
+            Recipe.Create(ItemID.TsunamiInABottle)
+                .AddIngredient(ItemID.CloudinaBottle)
+                .AddIngredient(ItemID.WaterBlock, 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.Anvils)
+                .Register();*/
+            //攀爬爪
+            Recipe.Create(ItemID.ClimbingClaws)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddIngredient(ItemID.Gel, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //鞋钉
+            Recipe.Create(ItemID.ShoeSpikes)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddIngredient(ItemID.Gel, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //飞毯
+            Recipe.Create(ItemID.FlyingCarpet)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Feather, 5)
+                .AddIngredient(ItemID.Amber)
+                .AddTile(TileID.Loom)
+                .Register();
+            //浮游圈
+            Recipe.Create(ItemID.FloatingTube)
+                .AddIngredient(ItemID.Leather, 5)
+                .AddIngredient(ItemID.Cloud, 5)
+                .AddIngredient(ItemID.WaterWalkingPotion)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            /*//牧羊符文
+            Recipe.Create(ItemID.DeadCellsRamRune)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.BoulderBlock, 10)
+                .AddTile(TileID.Anvils)
+                .Register();*/
+            //梯凳
+            Recipe.Create(ItemID.PortableStool)
+                .AddRecipeGroup("Wood", 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //分趾厚底袜
+            Recipe.Create(ItemID.Tabi)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.BlackInk)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.Loom)
+                .Register();
+            //黑腰带
+            Recipe.Create(ItemID.BlackBelt)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.BlackInk)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.Loom)
+                .Register();
+            //蛾怪之翼
+            Recipe.Create(ItemID.MothronWings)
+                .AddIngredient(ItemID.SoulofFlight, 20)
+                .AddIngredient(ItemID.LunarTabletFragment, 5)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+            //喜庆之翼
+            Recipe.Create(ItemID.FestiveWings)
+                .AddIngredient(ItemID.SoulofFlight, 20)
+                .AddIngredient(ItemID.PineTreeBlock, 10)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            #endregion
+
+            #region 【信息类】
+            //雷达
+            Recipe.Create(ItemID.Radar)
+                .AddRecipeGroup("SilverBarGroups", 4)
+                .AddIngredient(ItemID.Glass, 2)
+                .AddIngredient(ItemID.Emerald)
+                .AddTile(TileID.Anvils)
+                .Register();
             //深度计
             Recipe.Create(ItemID.DepthMeter)
                 .AddRecipeGroup("SilverBarGroups", 5)
@@ -31,61 +250,100 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Diamond, 2)
                 .AddTile(TileID.Anvils)
                 .Register();
-            //雏翼
-            Recipe.Create(ItemID.CreativeWings)
-                .AddIngredient(ItemID.Cloud, 5)
-                .AddIngredient(ItemID.Feather, 10)
-                .AddTile(TileID.Anvils)
-                .Register();
-            //疾风雪靴
-            Recipe.Create(ItemID.FlurryBoots)
-                .AddIngredient(ItemID.Silk, 10)
-                .AddIngredient(ItemID.Shiverthorn, 5)
-                .AddIngredient(ItemID.IceBlock, 5)
-                .AddTile(TileID.Loom)
-                .Register();
-            //远古凿子
-            Recipe.Create(ItemID.AncientChisel)
-                .AddIngredient(ItemID.MiningPotion, 5)
-                .AddRecipeGroup("PlatinumBarGroups", 5)
-                .AddIngredient(ItemID.SandBlock, 20)
-                .AddTile(TileID.Anvils)
-                .Register();
-            //脚蹼
-            Recipe.Create(ItemID.Flipper)
-                .AddIngredient(ItemID.Silk, 5)
-                .AddIngredient(ItemID.FlipperPotion, 5)
-                .AddIngredient(ItemID.Gel, 2)
-                .AddTile(TileID.Anvils)
-                .Register();
-            //潜水头盔
-            Recipe.Create(ItemID.DivingHelmet)
-                .AddRecipeGroup("IronBarGroups", 5)
-                .AddIngredient(ItemID.GillsPotion, 5)
-                .AddIngredient(ItemID.SharkFin, 1)
-                .AddTile(TileID.Anvils)
-                .Register();
-            //闪亮红气球
-            Recipe.Create(ItemID.ShinyRedBalloon)
-                .AddIngredient(ItemID.WhiteString)
-                .AddIngredient(ItemID.Cloud, 10)
-                .AddIngredient(ItemID.Gel, 5)
+
+            #endregion
+
+            #region 【战斗类】
+            //大自然的恩赐
+            Recipe.Create(ItemID.NaturesGift)
+                .AddIngredient(ItemID.JungleRose)
+                .AddIngredient(ItemID.SkyBlueFlower)
+                .AddIngredient(ItemID.JungleSpores, 5)
                 .AddTile(TileID.WorkBenches)
                 .Register();
-            //沙丘行者靴
-            Recipe.Create(ItemID.SandBoots)
-                .AddIngredient(ItemID.Silk, 10)
-                .AddIngredient(ItemID.Waterleaf, 5)
-                .AddIngredient(ItemID.SandBlock, 5)
-                .AddTile(TileID.Loom)
+            //月亮石
+            Recipe.Create(ItemID.MoonStone)
+                .AddIngredient(ItemID.HallowedBar, 10)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.Moonglow)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
-            //航鱼靴
-            Recipe.Create(ItemID.SailfishBoots)
-                .AddIngredient(ItemID.Silk, 10)
-                .AddIngredient(ItemID.Seashell, 5)
-                .AddIngredient(ItemID.Coral, 5)
-                .AddTile(TileID.Loom)
+            //月光护身符
+            Recipe.Create(ItemID.MoonCharm)
+                .AddRecipeGroup("PerEvilMaterial", 10)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.Moonglow)
+                .AddTile(TileID.MythrilAnvil)
                 .Register();
+            //再生手环
+            Recipe.Create(ItemID.BandofRegeneration)
+                .AddIngredient(ItemID.LifeCrystal)
+                .AddIngredient(ItemID.Chain, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //星力手环
+            Recipe.Create(ItemID.BandofStarpower)
+                .AddIngredient(ItemID.ManaCrystal)
+                .AddIngredient(ItemID.Chain, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //恐慌项链
+            Recipe.Create(ItemID.PanicNecklace)
+                .AddIngredient(ItemID.LifeCrystal)
+                .AddIngredient(ItemID.SwiftnessPotion)
+                .AddIngredient(ItemID.Chain, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //十字项链
+            Recipe.Create(ItemID.CrossNecklace)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Chain, 5)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+
+            #endregion
+
+            #region 【非战斗类(实用类)】
+            //远古凿子
+            Recipe.Create(ItemID.AncientChisel)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.MiningPotion, 5)
+                .AddIngredient(ItemID.SandBlock, 10)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //水母项链
+            Recipe.Create(ItemID.JellyfishNecklace)
+                .AddRecipeGroup("PlatinumBarGroups", 2)
+                .AddIngredient(ItemID.Glowstick, 5)
+                .AddIngredient(ItemID.PinkPearl)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //海神贝壳
+            Recipe.Create(ItemID.NeptunesShell)
+                .AddIngredient(ItemID.HallowedBar, 10)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.PinkPearl)
+                .AddTile(TileID.MythrilAnvil)
+                .Register();
+            //熔岩护身符
+            Recipe.Create(ItemID.LavaCharm)
+                .AddIngredient(ItemID.Obsidian, 10)
+                .AddIngredient(ItemID.ObsidianSkinPotion)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //黑曜石玫瑰
+            Recipe.Create(ItemID.ObsidianRose)
+                .AddIngredient(ItemID.JungleRose)
+                .AddIngredient(ItemID.Obsidian, 10)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            #endregion
+
+            #region 【其他类】
             //整蛊坐垫
             Recipe.Create(ItemID.WhoopieCushion)
                 .AddIngredient(ItemID.Leather, 5)
@@ -93,6 +351,22 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.StinkPotion)
                 .AddTile(TileID.WorkBenches)
                 .Register();
+            //花靴
+            Recipe.Create(ItemID.FlowerBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.NaturesGift)
+                .AddIngredient(ItemID.JungleGrassSeeds, 5)
+                .AddTile(TileID.Loom)
+                .Register();
+            //烈焰靴
+            Recipe.Create(ItemID.FlameWakerBoots)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddIngredient(ItemID.Obsidian, 10)
+                .AddTile(TileID.Hellforge)
+                .Register();
+
+            #endregion
 
             #endregion
 
@@ -141,7 +415,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
             Recipe.Create(ItemID.IceSickle)
                 .AddIngredient(ItemID.Sickle)
                 .AddIngredient(ItemID.FrostCore)
-                .AddIngredient(ItemID.IceBlock, 20)
+                .AddIngredient(ItemID.IceBlock, 10)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
 
@@ -304,6 +578,23 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.BlackLens)
                 .AddTile(TileID.DyeVat)
                 .Register();
+            //白珍珠
+            Recipe.Create(ItemID.WhitePearl)
+                .AddIngredient(ItemID.Oyster, 5)
+                .Register();
+            //黑珍珠
+            Recipe.Create(ItemID.BlackPearl)
+                .AddIngredient(ItemID.Oyster, 10)
+                .Register();
+            //粉珍珠
+            Recipe.Create(ItemID.PinkPearl)
+                .AddIngredient(ItemID.Oyster, 20)
+                .Register();
+            //皮革
+            Recipe.Create(ItemID.Leather)
+                .AddRecipeGroup("PerEvilMaterial", 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
 
             #endregion
 
@@ -323,20 +614,20 @@ namespace LaziestNPC.Globals.GlobalRecipes
             //附魔日晷
             Recipe.Create(ItemID.Sundial)
                 .AddRecipeGroup("PlatinumWatchGroups")
-                .AddIngredient(ItemID.SunplateBlock, 20)
+                .AddIngredient(ItemID.SunplateBlock, 10)
                 .AddTile(TileID.SkyMill)
                 .Register();
             //哀木纪念章
             Recipe.Create(ItemID.MourningWoodTrophy)
                 .AddIngredient(ItemID.SpookyWood, 50)
-                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddIngredient(ItemID.Ectoplasm)
                 .AddTile(TileID.Solidifier)
                 .Register();
             //南瓜王纪念章
             Recipe.Create(ItemID.PumpkingTrophy)
                 .AddIngredient(ItemID.SpookyWood, 50)
                 .AddIngredient(ItemID.Pumpkin, 5)
-                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddIngredient(ItemID.Ectoplasm)
                 .AddTile(TileID.Solidifier)
                 .Register();
             #endregion

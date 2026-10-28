@@ -50,7 +50,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
 
             //银锭或钨锭
             RecipeGroup SilverBarGroups = new RecipeGroup(() => 
-            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.SilverOrTungstenBar"), ItemID.SilverBar, ItemID.TungstenBar);
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.SilverBarGroups"), ItemID.SilverBar, ItemID.TungstenBar);
             RecipeGroup.RegisterGroup("SilverBarGroups", SilverBarGroups);
             
             //铂金锭或金锭

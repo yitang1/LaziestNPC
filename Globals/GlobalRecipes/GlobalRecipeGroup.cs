@@ -34,8 +34,8 @@ namespace LaziestNPC.Globals.GlobalRecipes
             【注4】当一个饰品，可以在肉前大前期不需要打任何Boss和事件就能获得时，制作站通常是铁砧而不是工匠作坊，
 			也就是说，即使是在大前期，铁砧和工匠作坊制作的物品也具有“时期前后”、“稀有和贵重程度”的区别。
 
-            【注5】肉前的合成材料中，[主要材料]大部分都是5个到10个，肉后则大部分都是10个起步，
-            而月后则变成20个起步了，也就是随着时期不同，主材料的数量也应该增加。*/
+            【注5】肉前的合成材料中，[主要材料]大部分都是5个到10个，肉后则大部分都是10个到15个起步，
+            而月后则变成20个以上起步了，也就是随着时期不同，主材料的数量也应该增加。*/
             #region 【各类材料】
 
             //铜锭或锡锭
@@ -57,6 +57,21 @@ namespace LaziestNPC.Globals.GlobalRecipes
             RecipeGroup PlatinumBarGroups = new RecipeGroup(() =>
             Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.PlatinumBarGroups"), ItemID.PlatinumBar, ItemID.GoldBar);
             RecipeGroup.RegisterGroup("PlatinumBarGroups", PlatinumBarGroups);
+            
+            //钴锭或钯金锭
+            RecipeGroup CobaltBarGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.CobaltBarGroups"), ItemID.CobaltBar, ItemID.PalladiumBar);
+            RecipeGroup.RegisterGroup("CobaltBarGroups", CobaltBarGroups);
+
+            //秘银锭或山铜锭
+            RecipeGroup MythrilBarGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.MythrilBarGroups"), ItemID.MythrilBar, ItemID.OrichalcumBar);
+            RecipeGroup.RegisterGroup("MythrilBarGroups", MythrilBarGroups);
+
+            //钛金锭或精金锭
+            RecipeGroup TitaniumBarGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.TitaniumBarGroups"), ItemID.TitaniumBar, ItemID.AdamantiteBar);
+            RecipeGroup.RegisterGroup("TitaniumGroups", TitaniumBarGroups);
 
             //椎骨或腐肉 (任意邪恶材料)
             RecipeGroup PerEvilMaterial = new RecipeGroup(() =>

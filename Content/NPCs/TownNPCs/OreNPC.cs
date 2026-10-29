@@ -270,21 +270,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.WhiteString, (0, 1, 0, 0)) //白绳
             .AddItem(ItemID.BlueCounterweight, (0, 1, 0, 0)) //蓝平衡锤
             .AddItem(ItemID.YoYoGlove, (0, 5, 0, 0), Condition.Hardmode) //悠悠球手套
-
+            //战士职业 ↓
             .AddItem(ItemID.FeralClaws, (0, 3, 0, 0)) //猛爪手套
             .AddItem(ItemID.MagmaStone, (0, 4, 0, 0)) //岩浆石
-
+            //射手职业 ↓
             .AddItem(ItemID.SharkToothNecklace, (0, 2, 0, 0)) //鲨牙项链
             .AddItem(ItemID.MagicQuiver, (0, 5, 0, 0), Condition.Hardmode) //魔法箭袋
             .AddItem(ItemID.RifleScope, (0, 10, 0, 0), Condition.DownedPlantera) //步枪瞄准镜
-
+            //召唤师职业 ↓
             .AddItem(ItemID.PygmyNecklace, (0, 5, 0, 0), Condition.DownedQueenBee) //矮人项链
             .AddItem(ItemID.HerculesBeetle, (0, 10, 0, 0), Condition.DownedPlantera) //大力士甲虫
             .AddItem(ItemID.NecromanticScroll, (0, 10, 0, 0), PumpkinMoonHappened) //死灵卷轴
-            .AddItem(ItemID.SquireShield, (0, 4, 0, 0), Condition.DownedEowOrBoc) //侍卫护盾
-            .AddItem(ItemID.ApprenticeScarf, (0, 4, 0, 0), Condition.DownedEowOrBoc) //学徒围巾
-            .AddItem(ItemID.MonkBelt, (0, 5, 0, 0), Condition.DownedMechBossAny) //武僧腰带
-            .AddItem(ItemID.HuntressBuckler, (0, 5, 0, 0), Condition.DownedMechBossAny) //女猎人圆盾
+            .AddItem(ItemID.SquireShield, (0, 4, 0, 0), DownedDarkMage) //侍卫护盾
+            .AddItem(ItemID.ApprenticeScarf, (0, 4, 0, 0), DownedDarkMage) //学徒围巾
+            .AddItem(ItemID.MonkBelt, (0, 5, 0, 0), DownedOgre) //武僧腰带
+            .AddItem(ItemID.HuntressBuckler, (0, 5, 0, 0), DownedOgre) //女猎人圆盾
             //防御类 ↓
             .AddItem(ItemID.FrozenTurtleShell, (0, 5, 0, 0), Condition.Hardmode) //冰冻海龟壳
             .AddItem(ItemID.PaladinsShield, (0, 10, 0, 0), Condition.DownedPlantera) //圣骑士护盾

@@ -428,6 +428,84 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.SharkFin, 2)
                 .AddTile(TileID.Anvils)
                 .Register();
+            //粘性绷带
+            Recipe.Create(ItemID.AdhesiveBandage)
+                .AddIngredient(ItemID.Cobweb, 5)
+                .AddIngredient(ItemID.Gel, 5)
+                .AddIngredient(ItemID.LesserHealingPotion)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //牛黄
+            Recipe.Create(ItemID.Bezoar)
+                .AddIngredient(ItemID.Stinger, 5)
+                .AddIngredient(ItemID.JungleSpores, 5)
+                .AddIngredient(ItemID.MudBlock, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //盔甲抛光剂
+            Recipe.Create(ItemID.ArmorPolish)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //维生素
+            Recipe.Create(ItemID.Vitamins)
+                .AddIngredient(ItemID.Ichor, 5)
+                .AddIngredient(ItemID.CursedFlame, 5)
+                .AddIngredient(ItemID.GreaterHealingPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //快走时钟
+            Recipe.Create(ItemID.FastClock)
+                .AddRecipeGroup("PlatinumWatchGroups")
+                .AddIngredient(ItemID.SoulofLight)
+                .AddIngredient(ItemID.SoulofNight)
+                .AddIngredient(ItemID.SwiftnessPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //三折地图
+            Recipe.Create(ItemID.TrifoldMap)
+                .AddIngredient(ItemID.Compass)
+                .AddIngredient(ItemID.Silk, 5)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //扩音器
+            Recipe.Create(ItemID.Megaphone)
+                .AddIngredient(ItemID.IronBar, 5)
+                .AddIngredient(ItemID.Wire, 5)
+                .AddIngredient(ItemID.Glass, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //邪眼
+            Recipe.Create(ItemID.Nazar)
+                .AddRecipeGroup("CrimtaneBarGroups", 5)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.BlackLens)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //蒙眼布
+            Recipe.Create(ItemID.Blindfold)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.HardenedSand, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //袖珍镜
+            Recipe.Create(ItemID.PocketMirror)
+                .AddIngredient(ItemID.Glass, 10)
+                .AddIngredient(ItemID.Marble, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //暖手宝
+            Recipe.Create(ItemID.HandWarmer)
+                .AddIngredient(ItemID.Silk, 10)
+                .AddIngredient(ItemID.WarmthPotion)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddTile(TileID.Loom)
+                .Register();
 
             /*//淬毒倒刺
             Recipe.Create(ItemID.PoisonBarb)

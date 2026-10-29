@@ -95,7 +95,12 @@ namespace LaziestNPC.Globals.GlobalRecipes
             RecipeGroup SilverWatchGroups = new RecipeGroup(() =>
             Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.SilverWatchGroups"), ItemID.SilverWatch, ItemID.TungstenWatch);
             RecipeGroup.RegisterGroup("SilverWatchGroups", SilverWatchGroups);
-            
+
+            //任意宝石
+            RecipeGroup GemGroups = new RecipeGroup(() =>
+            Language.GetTextValue("Mods.LaziestNPC.Others.RecipeGroup.GemGroups"),
+            ItemID.Amethyst, ItemID.Topaz, ItemID.Sapphire, ItemID.Emerald, ItemID.Ruby, ItemID.Amber, ItemID.Diamond);
+            RecipeGroup.RegisterGroup("GemGroups", GemGroups);
             #endregion
 
 

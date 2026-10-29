@@ -11,4 +11,5 @@ RecipeGroup: {
 	PerEvilMaterials: 任意邪恶材料
 	PlatinumWatchGroups: 铂金表或金表
 	SilverWatchGroups: 银表或钨表
+	GemGroups: 任意宝石
 }

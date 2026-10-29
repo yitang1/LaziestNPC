@@ -506,6 +506,49 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Fireblossom, 5)
                 .AddTile(TileID.Loom)
                 .Register();
+            //黑平衡锤
+            Recipe.Create(ItemID.BlackCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //黄平衡锤
+            Recipe.Create(ItemID.YellowCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //蓝平衡锤
+            Recipe.Create(ItemID.BlueCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //红平衡锤
+            Recipe.Create(ItemID.RedCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //紫平衡锤
+            Recipe.Create(ItemID.PurpleCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //绿平衡锤
+            Recipe.Create(ItemID.GreenCounterweight)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddRecipeGroup("GemGroups", 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //悠悠球手套
+            Recipe.Create(ItemID.YoYoGlove)
+                .AddIngredient(ItemID.TitanGlove)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.BlackInk)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
 
             /*//淬毒倒刺
             Recipe.Create(ItemID.PoisonBarb)
@@ -553,6 +596,13 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.SilverBar, 10)
                 .AddIngredient(ItemID.Bone, 5)
                 .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //魔法绳
+            Recipe.Create(ItemID.MagicString)
+                .AddIngredient(ItemID.WhiteString)
+                .AddIngredient(ItemID.HallowedBar)
+                .AddIngredient(ItemID.FallenStar)
+                .AddTile(TileID.CrystalBall)
                 .Register();*/
 
             #endregion
@@ -599,6 +649,13 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Sapphire)
                 .AddIngredient(ItemID.Ectoplasm, 5)
                 .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //防熔岩钓钩
+            Recipe.Create(ItemID.LavaFishingHook)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Obsidian, 5)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddTile(TileID.Anvils)
                 .Register();
 
             #endregion

@@ -20,6 +20,9 @@ namespace LaziestNPC.Common.ModConditions
         
         public static Condition DownedBrainOfCthulhu = new Condition("DownedBrainOfCthulhu", () => NPCCondition.downedBrainOfCthulhu); //克苏鲁之脑
         public static Condition DownedEaterOfWorlds = new Condition("DownedEaterOfWorlds", () => NPCCondition.downedEaterOfWorlds); //世界吞噬怪
+        public static Condition DownedDarkMage = new Condition("DownedDarkMage", () => NPCCondition.downedDarkMage); //黑暗魔法师
+        public static Condition DownedOgre = new Condition("DownedOgre", () => NPCCondition.downedOgre); //食人魔
+        public static Condition DownedBetsy = new Condition("DownedBetsy", () => NPCCondition.downedBetsy); //双足翼龙
         public static Condition QueenBeeAndEowOrBoc = new Condition("QueenBeeAndEowOrBoc", () => Condition.DownedQueenBee.IsMet() && Condition.DownedEowOrBoc.IsMet()); //蜂王 + 克脑/世吞
         public static Condition QueenBeeAndSkeletron = new Condition("QueenBeeAndSkeletron", () => Condition.DownedQueenBee.IsMet() && Condition.DownedSkeletron.IsMet()); //蜂王 + 骷髅王
         //public static Condition MourningWoodOrSplinter = new Condition("MourningWoodOrSplinter", () => Condition.DownedMourningWood.IsMet() || NPCCondition.downedSplinterling); //哀木 / 树精

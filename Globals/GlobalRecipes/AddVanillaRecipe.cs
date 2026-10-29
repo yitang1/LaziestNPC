@@ -53,12 +53,6 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.RedHusk)
                 .AddTile(TileID.WorkBenches)
                 .Register();
-            /*//气球河豚鱼
-            Recipe.Create(ItemID.BalloonPufferfish)
-                .AddIngredient(ItemID.ShinyRedBalloon)
-                .AddIngredient(ItemID.Pufferfish)
-                .AddTile(TileID.WorkBenches)
-                .Register();*/
             //沙丘行者靴
             Recipe.Create(ItemID.SandBoots)
                 .AddIngredient(ItemID.Silk, 10)
@@ -178,13 +172,6 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.WaterWalkingPotion)
                 .AddTile(TileID.WorkBenches)
                 .Register();
-            /*//牧羊符文
-            Recipe.Create(ItemID.DeadCellsRamRune)
-                .AddRecipeGroup("PlatinumBarGroups", 5)
-                .AddIngredient(ItemID.Bone, 5)
-                .AddIngredient(ItemID.BoulderBlock, 10)
-                .AddTile(TileID.Anvils)
-                .Register();*/
             //梯凳
             Recipe.Create(ItemID.PortableStool)
                 .AddRecipeGroup("Wood", 5)
@@ -214,10 +201,24 @@ namespace LaziestNPC.Globals.GlobalRecipes
             //喜庆之翼
             Recipe.Create(ItemID.FestiveWings)
                 .AddIngredient(ItemID.SoulofFlight, 20)
-                .AddIngredient(ItemID.PineTreeBlock, 10)
+                .AddIngredient(ItemID.PineTreeBlock, 15)
                 .AddIngredient(ItemID.Ectoplasm, 5)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
+
+            /*//气球河豚鱼
+            Recipe.Create(ItemID.BalloonPufferfish)
+                .AddIngredient(ItemID.ShinyRedBalloon)
+                .AddIngredient(ItemID.Pufferfish)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //牧羊符文
+            Recipe.Create(ItemID.DeadCellsRamRune)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.BoulderBlock, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();*/
 
             #endregion
 
@@ -296,14 +297,14 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.HallowedBar, 10)
                 .AddIngredient(ItemID.SoulofNight, 5)
                 .AddIngredient(ItemID.Moonglow)
-                .AddTile(TileID.MythrilAnvil)
+                .AddTile(TileID.TinkerersWorkbench)
                 .Register();
             //月光护身符
             Recipe.Create(ItemID.MoonCharm)
                 .AddRecipeGroup("PerEvilMaterial", 10)
                 .AddIngredient(ItemID.SoulofNight, 5)
                 .AddIngredient(ItemID.Moonglow)
-                .AddTile(TileID.MythrilAnvil)
+                .AddTile(TileID.TinkerersWorkbench)
                 .Register();
             //再生手环
             Recipe.Create(ItemID.BandofRegeneration)
@@ -326,11 +327,155 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .Register();
             //十字项链
             Recipe.Create(ItemID.CrossNecklace)
-                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.GoldBar, 5)
                 .AddIngredient(ItemID.Chain, 5)
                 .AddIngredient(ItemID.SoulofLight, 5)
-                .AddTile(TileID.MythrilAnvil)
+                .AddTile(TileID.TinkerersWorkbench)
                 .Register();
+            //腐香囊
+            Recipe.Create(ItemID.PutridScent)
+                .AddIngredient(ItemID.RottenChunk, 10)
+                .AddIngredient(ItemID.Leather, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //血肉指虎
+            Recipe.Create(ItemID.FleshKnuckles)
+                .AddIngredient(ItemID.Vertebrae, 10)
+                .AddIngredient(ItemID.CrimtaneBar, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //天界磁石
+            Recipe.Create(ItemID.CelestialMagnet)
+                .AddRecipeGroup("IronBarGroups", 5)
+                .AddIngredient(ItemID.Cloud, 10)
+                .AddIngredient(ItemID.ManaCrystal)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //镣铐
+            Recipe.Create(ItemID.Shackle)
+                .AddRecipeGroup("IronBarGroups")
+                .AddTile(TileID.Anvils)
+                .Register();
+            //点金石
+            Recipe.Create(ItemID.PhilosophersStone)
+                .AddIngredient(ItemID.PalladiumBar, 5)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.GreaterHealingPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //星星斗篷
+            Recipe.Create(ItemID.StarCloak)
+                .AddIngredient(ItemID.Silk, 15)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddIngredient(ItemID.ManaCrystal)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //钴护盾
+            Recipe.Create(ItemID.CobaltShield)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.TitanPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //猛爪手套
+            Recipe.Create(ItemID.FeralClaws)
+                .AddIngredient(ItemID.Leather, 5)
+                .AddIngredient(ItemID.Vine, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
+            //泰坦手套
+            Recipe.Create(ItemID.TitanGlove)
+                .AddIngredient(ItemID.CobaltBar, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.TitanPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //冰冻海龟壳
+            Recipe.Create(ItemID.FrozenTurtleShell)
+                .AddRecipeGroup("TitaniumBarGroups", 5)
+                .AddIngredient(ItemID.IceBlock, 15)
+                .AddIngredient(ItemID.IronskinPotion)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //圣骑士护盾
+            Recipe.Create(ItemID.PaladinsShield)
+                .AddIngredient(ItemID.HallowedBar, 15)
+                .AddRecipeGroup("TitaniumBarGroups", 10)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //魔法箭袋
+            Recipe.Create(ItemID.MagicQuiver)
+                .AddIngredient(ItemID.WoodenArrow, 20)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //岩浆石
+            Recipe.Create(ItemID.MagmaStone)
+                .AddIngredient(ItemID.Obsidian, 10)
+                .AddIngredient(ItemID.InfernoPotion)
+                .AddIngredient(ItemID.Fireblossom, 5)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //鲨牙项链
+            Recipe.Create(ItemID.SharkToothNecklace)
+                .AddIngredient(ItemID.Chain, 5)
+                .AddIngredient(ItemID.SharkFin, 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+
+            /*//淬毒倒刺
+            Recipe.Create(ItemID.PoisonBarb)
+                .AddIngredient(ItemID.Stinger, 3)
+                .AddIngredient(ItemID.Rope, 2)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //邪恶臂环
+            Recipe.Create(ItemID.WickedArmlet)
+                .AddRecipeGroup("CrimtaneBarGroups", 10)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //碎裂之石
+            Recipe.Create(ItemID.SnappingStone)
+                .AddIngredient(ItemID.Granite, 10)
+                .AddIngredient(ItemID.Sapphire, 5)
+                .AddIngredient(ItemID.Diamond)
+                .AddTile(TileID.Anvils)
+                .Register();
+            //混沌弹筒
+            Recipe.Create(ItemID.AmmoCycler4)
+                .AddRecipeGroup("TitaniumBarGroups", 10)
+                .AddIngredient(ItemID.EmptyBullet, 20)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //蛇形手环
+            Recipe.Create(ItemID.SnakeBand)
+                .AddIngredient(ItemID.VineRope)
+                .AddIngredient(ItemID.FossilOre, 10)
+                .AddIngredient(ItemID.SoulofLight, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //重型投石索
+            Recipe.Create(ItemID.HeavySling)
+                .AddIngredient(ItemID.AcornSlingshot)
+                .AddIngredient(ItemID.BoulderBlock, 5)
+                .AddIngredient(ItemID.SoulofNight, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+            //银护腕
+            Recipe.Create(ItemID.SilverBracer)
+                .AddIngredient(ItemID.SilverBar, 10)
+                .AddIngredient(ItemID.Bone, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();*/
 
             #endregion
 
@@ -354,7 +499,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.HallowedBar, 10)
                 .AddIngredient(ItemID.SoulofNight, 5)
                 .AddIngredient(ItemID.PinkPearl)
-                .AddTile(TileID.MythrilAnvil)
+                .AddTile(TileID.TinkerersWorkbench)
                 .Register();
             //熔岩护身符
             Recipe.Create(ItemID.LavaCharm)
@@ -369,6 +514,13 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Obsidian, 10)
                 .AddIngredient(ItemID.Fireblossom, 5)
                 .AddTile(TileID.Anvils)
+                .Register();
+            //步枪瞄准镜
+            Recipe.Create(ItemID.RifleScope)
+                .AddRecipeGroup("TitaniumBarGroups", 5)
+                .AddIngredient(ItemID.Sapphire)
+                .AddIngredient(ItemID.Ectoplasm, 5)
+                .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 
             #endregion
@@ -400,6 +552,8 @@ namespace LaziestNPC.Globals.GlobalRecipes
 
             #endregion
 
+            #region 【武器】
+
             #region 【近战武器】
             //拍拍手
             Recipe.Create(ItemID.SlapHand)
@@ -430,7 +584,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
             //蘑菇回旋镖
             Recipe.Create(ItemID.Shroomerang)
                 .AddIngredient(ItemID.WoodenBoomerang)
-                .AddRecipeGroup("PlatinumBarGroups", 5)
+                .AddRecipeGroup("SilverBarGroups", 5)
                 .AddIngredient(ItemID.GlowingMushroom, 10)
                 .AddTile(TileID.Anvils)
                 .Register();
@@ -445,7 +599,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
             Recipe.Create(ItemID.IceSickle)
                 .AddIngredient(ItemID.Sickle)
                 .AddIngredient(ItemID.FrostCore)
-                .AddIngredient(ItemID.IceBlock, 10)
+                .AddIngredient(ItemID.IceBlock, 15)
                 .AddTile(TileID.MythrilAnvil)
                 .Register();
 
@@ -505,7 +659,19 @@ namespace LaziestNPC.Globals.GlobalRecipes
 
             #endregion
 
-            #region 【工具类】
+            #region 【其他武器】
+            /*//橡实弹弓
+            Recipe.Create(ItemID.AcornSlingshot)
+                .AddRecipeGroup("Wood", 5)
+                .AddIngredient(ItemID.Acorn)
+                .AddTile(TileID.WorkBenches)
+                .Register();*/
+
+            #endregion
+
+            #endregion
+
+            #region 【工具】
             //激光钻头
             Recipe.Create(ItemID.LaserDrill)
                 .AddIngredient(ItemID.ChlorophyteDrill)
@@ -647,18 +813,9 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.SunplateBlock, 10)
                 .AddTile(TileID.SkyMill)
                 .Register();
-            //哀木纪念章
-            Recipe.Create(ItemID.MourningWoodTrophy)
-                .AddIngredient(ItemID.SpookyWood, 50)
-                .AddIngredient(ItemID.Ectoplasm)
-                .AddTile(TileID.Solidifier)
-                .Register();
-            //南瓜王纪念章
-            Recipe.Create(ItemID.PumpkingTrophy)
-                .AddIngredient(ItemID.SpookyWood, 50)
-                .AddIngredient(ItemID.Pumpkin, 5)
-                .AddIngredient(ItemID.Ectoplasm)
-                .AddTile(TileID.Solidifier)
+            //藤蔓绳
+            Recipe.Create(ItemID.VineRope, 3)
+                .AddIngredient(ItemID.Vine)
                 .Register();
             #endregion
 

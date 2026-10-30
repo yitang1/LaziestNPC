@@ -44,7 +44,7 @@ namespace LaziestNPC.Globals.GlobalNPCs
             return null;
         }
 
-        private bool ShouldBeInvincible(NPC npc)
+        public static bool ShouldBeInvincible(NPC npc)
         {
             if (LNPCConfig.Instance.LNPCInvincible)
             {
@@ -64,6 +64,17 @@ namespace LaziestNPC.Globals.GlobalNPCs
                 }
             }
             return false;
+        }
+    }
+
+    public class InvincibleProjectile : GlobalProjectile
+    {
+        public override bool? CanHitNPC(Projectile projectile, NPC target)
+        {
+            if (InvincibleNPCs.ShouldBeInvincible(target))
+                return false;
+
+            return null;
         }
     }
 }

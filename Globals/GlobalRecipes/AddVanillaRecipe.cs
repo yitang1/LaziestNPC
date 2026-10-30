@@ -81,7 +81,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.WaterBlock, 10)
                 .AddTile(TileID.Loom)
                 .Register();*/
-            //鞋带束头
+            //鞋带束头(金属带扣)
             Recipe.Create(ItemID.Aglet)
                 .AddRecipeGroup("CopperBarGroups", 2)
                 .AddTile(TileID.Anvils)
@@ -139,13 +139,6 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.FallenStar, 5)
                 .AddTile(TileID.Anvils)
                 .Register();
-            /*//海啸瓶
-            Recipe.Create(ItemID.TsunamiInABottle)
-                .AddIngredient(ItemID.CloudinaBottle)
-                .AddIngredient(ItemID.WaterBlock, 10)
-                .AddIngredient(ItemID.FallenStar, 5)
-                .AddTile(TileID.Anvils)
-                .Register();*/
             //攀爬爪
             Recipe.Create(ItemID.ClimbingClaws)
                 .AddRecipeGroup("IronBarGroups", 5)

@@ -11,7 +11,7 @@
 > **当前正在制作中......**
 
 ——————————————————————————————  
-### Mod下载与安装
+### 下载与安装
 - **点击这里👉** [LaziestNPC.tmod是Mod文件](https://github.com/yitang1/LaziestNPC/releases)  
 
 <details>
@@ -39,16 +39,21 @@ Win+R 输入shell:Personal
 ### Mod核心目标
 添加多名NPC商人以售卖原版和模组中各种各样的物品。  
 
-### Mod兼容
-> [!NOTE]
-> - **Calamity Mod (灾厄)** :white_check_mark:  
-> - **Catalyst Mod (灾劫)** :white_check_mark:  
-> - **Fargo's Mutant Mod (Fargo突变)** :white_check_mark:  
-> - **Fargo's Souls Mod (Fargo魂石)** :white_check_mark:  
-> - **Thorium Mod (瑟银)** :white_check_mark:  
-> - **......**  
+### 兼容Mod
+<details>
+<summary><b>⚙【点击展开】</b></summary>
 
-### Mod内容概述
+- **Calamity Mod (灾厄)** :white_check_mark:  
+- **Catalyst Mod (灾劫)** :white_check_mark:  
+- **Fargo's Mutant Mod (Fargo突变)** :white_check_mark:  
+- **Fargo's Souls Mod (Fargo魂石)** :white_check_mark:  
+- **Thorium Mod (瑟银)** :white_check_mark:  
+- **......**  
+
+</details>
+——————————————————————————————  
+
+### 内容概述
 > [!IMPORTANT]
 > - **试炼官**：售卖原版和模组的Boss宝藏袋，以及Boss、敌怪和事件的召唤物品。
 > - **酿灵师**：售卖原版和模组的治疗类、魔力类、战斗类和实用类的药水。

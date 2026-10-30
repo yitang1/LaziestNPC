@@ -682,6 +682,13 @@ namespace LaziestNPC.Globals.GlobalRecipes
                 .AddIngredient(ItemID.Obsidian, 10)
                 .AddTile(TileID.Hellforge)
                 .Register();
+            //植物纤维绳索宝典
+            Recipe.Create(ItemID.CordageGuide)
+                .AddIngredient(ItemID.Book)
+                .AddIngredient(ItemID.Daybloom, 5)
+                .AddIngredient(ItemID.Vine, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
 
             #endregion
 
@@ -858,7 +865,7 @@ namespace LaziestNPC.Globals.GlobalRecipes
             #region 【消耗品】
             //生命水晶
             Recipe.Create(ItemID.LifeCrystal)
-                .AddRecipeGroup("PlatinumBarGroups", 3)
+                .AddRecipeGroup("PlatinumBarGroups", 5)
                 .AddIngredient(ItemID.LesserHealingPotion)
                 .AddIngredient(ItemID.FallenStar)
                 .AddTile(TileID.DemonAltar)

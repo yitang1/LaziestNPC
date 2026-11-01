@@ -194,7 +194,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             else
                 vPotion.AddItem(ItemID.LifeforcePotion, (0, 1, 0, 0), Condition.DownedSkeletron); //生命力药水
             //特殊
-            vPotion.AddItem(ItemID.FlaskofFire, (0, 0, 50, 0), QueenBeeAndEowOrBoc) //烈火药剂
+            vPotion.AddItem(ItemID.FlaskofFire, (0, 0, 50, 0), Condition.DownedQueenBee, Condition.DownedEowOrBoc) //烈火药剂
                 .AddItem(ItemID.FlaskofPoison, (0, 0, 50, 0), Condition.DownedQueenBee) //毒药剂
                 .AddItem(ItemID.FlaskofIchor, (0, 1, 50, 0), Condition.Hardmode) //灵液药剂
                 .AddItem(ItemID.FlaskofCursedFlames, (0, 1, 50, 0), Condition.Hardmode) //诅咒焰药剂
@@ -248,6 +248,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemType<DraconicElixir>(), (0, 2, 0, 0), Condition.DownedMoonLord); //龙魂秘药
             #endregion
 
+            #region LuiAFK懒人 LuiAFK Reborn
+            mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedExplorer", (0, 10, 0, 0)) //探索者卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 25, 0, 0), Condition.Hardmode) //战斗卷轴
+            //战斗卷轴的配方物品 ↓
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0)) //基础增益卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0)) //伤害卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDefense", (0, 10, 0, 0), Condition.DownedSkeletron, Condition.PreHardmode) //防御卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0)) //射手卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0)) //魔法卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0)) //战斗场地卷轴
+
+            #endregion
+
             #region 灾厄 Calamity Mod
             //[实用类药水] 模组药水都放在一起
             mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
@@ -296,8 +311,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/DeepFreezeCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //深寒涂层
             .AddModItem("ThoriumMod/SporeCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //孢子涂层
             .AddModItem("ThoriumMod/ToxicCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee) //剧毒涂层
-            .AddModItem("ThoriumMod/ExplosiveCoatingItem", (0, 0, 50, 0), QueenBeeAndEowOrBoc) //爆炸涂层
-            .AddModItem("ThoriumMod/GorgonCoatingItem", (0, 0, 75, 0), QueenBeeAndSkeletron) //石化涂层
+            .AddModItem("ThoriumMod/ExplosiveCoatingItem", (0, 0, 50, 0), Condition.DownedQueenBee, Condition.DownedEowOrBoc) //爆炸涂层
+            .AddModItem("ThoriumMod/GorgonCoatingItem", (0, 0, 75, 0), Condition.DownedQueenBee, Condition.DownedSkeletron) //石化涂层
             
             .AddModItem("ThoriumMod/BatRepellent", (0, 1, 0, 0), DownedPatchWerk) //蝙蝠趋避剂
             .AddModItem("ThoriumMod/FishRepellent", (0, 1, 0, 0), DownedPatchWerk) //鱼类趋避剂

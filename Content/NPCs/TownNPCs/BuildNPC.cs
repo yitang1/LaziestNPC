@@ -288,7 +288,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("Fargowiltas/Omnistation2", (0, 5, 0, 0), Condition.Hardmode) //万能增益站(配方不同而贴图不同)
             .AddModItem("Fargowiltas/GoldenDippingVat", (0, 10, 0, 0), Condition.Hardmode) //金染缸
             .AddModItem("Fargowiltas/MultitaskCenter", (0, 20, 0, 0)) //多功能合成桌
-            .AddModItem("Fargowiltas/ElementalAssembler", (0, 20, 0, 0), QueenBeeAndSkeletron); //元素装配台
+            .AddModItem("Fargowiltas/ElementalAssembler", (0, 20, 0, 0), Condition.DownedEowOrBoc, Condition.DownedQueenBee, Condition.DownedSkeletron); //元素装配台
 
             #endregion
 

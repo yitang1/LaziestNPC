@@ -1,0 +1,71 @@
+Mods: {
+	AlchemistNPCLite: {
+		Items: {
+			BeachTeleporterPotion: {
+				DisplayName: 海滩传送药剂
+				Tooltip:
+					'''
+					将你传送至海滩处
+					方向取决于鼠标按键
+					'''
+			}
+
+			Dopamine: {
+				DisplayName: 多巴胺
+				Tooltip:
+					'''
+					获得向日葵的快乐增益
+					提高你的移动速度
+					降低敌人的生成速度
+					“让你快乐”
+					'''
+			}
+
+			NatureBlessingPotion: {
+				DisplayName: 自然赐福药剂
+				Tooltip:
+					'''
+					获得树妖祝福增益：
+					提高防御
+					增加生命再生
+					给予荆棘效果
+					'''
+			}
+
+			GreaterDangersensePotion: {
+				DisplayName: 强力危险感药剂
+				Tooltip:
+					'''
+					获得更强的危险感增益
+					能够高亮敌人的射弹
+					某些透明类射弹可能会变得更加难以看清
+					(例如月亮领主的射弹)，因此请谨慎使用
+					此效果对全体玩家同时生效
+					'''
+			}
+
+			TrapsPotion: {
+				DisplayName: 陷阱药剂
+				Tooltip:
+					'''
+					增强原版陷阱类射弹的伤害，包括：
+					飞镖陷阱、超级飞镖陷阱、尖球陷阱、
+					长矛陷阱、烈焰陷阱、热喷泉
+					并缩短目标对陷阱的受击免疫时间
+					使陷阱能更频繁地造成伤害
+					'''
+			}
+
+			SingleUseCellphone: {
+				Tooltip:
+					'''
+					召唤旅商
+					只能在白天使用
+					'''
+				DisplayName: 一次性手机
+			}
+		}
+
+		tier3PreHmOre: 三级困难模式前矿石
+	}
+}

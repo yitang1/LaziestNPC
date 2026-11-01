@@ -1,0 +1,55 @@
+Mods: {
+	AlchemistNPCLite: {
+		Items: {
+			BeachTeleporterPotion: {
+				DisplayName: Beach Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Beach
+					Side depends on used mouse button
+					'''
+			}
+
+			Dopamine: {
+				DisplayName: Dopamine
+				Tooltip:
+					'''
+					Makes you Happy
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			NatureBlessingPotion: {
+				DisplayName: Nature Blessing Potion
+				Tooltip: Grants Dryad's Blessing buff
+			}
+
+			GreaterDangersensePotion: {
+				DisplayName: Greater Dangersense Potion
+				Tooltip:
+					'''
+					Grants Greater Dangersense buff (light up enemy projectiles)
+					Some transparent projectiles may become less visible (f.e. Moon Lord's) so use with care
+					This effect is global for all players
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			TrapsPotion: {
+				DisplayName: Trapper Potion
+				Tooltip:
+					'''
+					Empoweres all traps
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			SingleUseCellphone: {
+				Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				DisplayName: Single Use Cellphone
+			}
+		}
+
+		tier3PreHmOre: tier 3 Pre-hardmode ore
+	}
+}

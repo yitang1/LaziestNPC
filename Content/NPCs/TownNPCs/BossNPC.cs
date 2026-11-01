@@ -400,6 +400,15 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 【模组召唤物品】
 
+            #region [模组其他召唤物品]
+
+            #region 炼金术士NPC AlchemistNPC Lite
+            modSum.AddModItem("AlchemistNPCLite/SingleUseCellphone", (0, 1, 0, 0)); //一次性手机
+
+            #endregion
+
+            #endregion
+
             #region [模组事件召唤物品]
 
             #region 灾厄 Calamity Mod
@@ -413,6 +422,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [模组Boss召唤物品]
+
+            #region 炼金术士NPC AlchemistNPC Lite
+            modSum.AddModItem("AlchemistNPCLite/HorrifyingSkull", (0, 1, 0, 0)); //恐怖骷髅头
+
+            #endregion
 
             #region 灾厄 Calamity Mod
             //肉前

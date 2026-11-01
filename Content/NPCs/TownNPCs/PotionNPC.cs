@@ -275,6 +275,40 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region 炼金术士NPC AlchemistNPC Lite
+            //特殊
+            mPotion.AddModItem("AlchemistNPCLite/GlobalTeleporter", (0, 10, 0, 0)) //世界传送装置
+            .AddModItem("AlchemistNPCLite/GlobalTeleporterUp", (10, 0, 0, 0), Condition.DownedMoonLord); //改良世界传送装置
+            //单体药水
+            mPotion
+            .AddModItem("AlchemistNPCLite/Dopamine", (0, 0, 50, 0)) //多巴胺
+            .AddModItem("AlchemistNPCLite/SunshinePotion", (0, 1, 0, 0)) //阳光药剂
+            .AddModItem("AlchemistNPCLite/ExcavationPotion", (0, 1, 0, 0)) //挖掘药剂
+            .AddModItem("AlchemistNPCLite/BewitchingPotion", (0, 1, 0, 0)) //迷人药剂
+            .AddModItem("AlchemistNPCLite/GreaterDangersensePotion", (0, 1, 0, 0)) //更强的危险感药剂
+            .AddModItem("AlchemistNPCLite/FortitudePotion", (0, 1, 0, 0)) //刚毅药剂
+            .AddModItem("AlchemistNPCLite/NatureBlessingPotion", (0, 1, 0, 0), Condition.DownedEyeOfCthulhu) //自然赐福药剂
+            .AddModItem("AlchemistNPCLite/InvincibilityPotion", (0, 1, 25, 0), Condition.Hardmode) //无敌药剂
+            .AddModItem("AlchemistNPCLite/TitanSkinPotion", (0, 1, 25, 0), Condition.Hardmode) //泰坦皮肤药剂
+            .AddModItem("AlchemistNPCLite/BlurringPotion", (0, 1, 50, 0), Condition.DownedMechBossAll) //模糊药剂
+            .AddModItem("AlchemistNPCLite/NinjaPotion", (0, 2, 0, 0), Condition.DownedPlantera) //忍者药剂
+            .AddModItem("AlchemistNPCLite/DiscordPotion", (0, 2, 50, 0)) //混乱药剂
+            .AddModItem("AlchemistNPCLite/PerfectDiscordPotion", (0, 5, 0, 0), Condition.Hardmode) //真·混乱药剂
+            .AddModItem("AlchemistNPCLite/TrapsPotion", (0, 1, 0, 0)); //陷阱药剂
+            //传送药剂
+            mPotion.AddModItem("AlchemistNPCLite/JungleTeleporterPotion", (0, 1, 0, 0)) //丛林传送药剂
+            .AddModItem("AlchemistNPCLite/DungeonTeleportationPotion", (0, 1, 0, 0)) //地牢传送药剂
+            .AddModItem("AlchemistNPCLite/BeachTeleporterPotion", (0, 1, 0, 0)) //海滩传送药剂
+            .AddModItem("AlchemistNPCLite/OceanTeleporterPotion", (0, 1, 0, 0)) //海洋传送药剂
+            .AddModItem("AlchemistNPCLite/UnderworldTeleportationPotion", (0, 1, 0, 0)) //地狱传送药剂            
+            .AddModItem("AlchemistNPCLite/TempleTeleportationPotion", (0, 1, 0, 0)); //神庙传送药剂
+            //药剂包
+            mPotion.AddModItem("AlchemistNPCLite/UniversalCombination", (0, 5, 0, 0), Condition.Hardmode); //万能药剂包
+            //其他
+            mPotion.AddModItem("AlchemistNPCLite/UltimaCake", (0, 3, 0, 0), Condition.Hardmode); //终极蛋糕
+
+            #endregion
+
             #region 灾厄 Calamity Mod
             //[实用类药水] 模组药水都放在一起
             mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水

@@ -250,16 +250,28 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region LuiAFK懒人 LuiAFK Reborn
             mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedExplorer", (0, 10, 0, 0)) //探索者卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 25, 0, 0), Condition.Hardmode) //战斗卷轴
-            //战斗卷轴的配方物品 ↓
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0)) //基础增益卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0)) //伤害卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 30, 0, 0), Condition.Hardmode) //战斗卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedFishing", (0, 10, 0, 0)) //垂钓卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedTravel", (0, 10, 0, 0)) //旅行卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedFlight", (0, 10, 0, 0)) //飞行卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedInvisibility", (0, 5, 0, 0)) //隐身之力
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedTeleportation", (0, 5, 0, 0)) //传送之力
+            .AddModItem("miningcracks_take_on_luiafk/UltimateBattler", (0, 15, 0, 0), Condition.DownedEowOrBoc) //极限战争
+            .AddModItem("miningcracks_take_on_luiafk/UltimatePeaceful", (0, 15, 0, 0), Condition.Hardmode) //极限和平
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedLucky", (0, 25, 0, 0)) //幸运卷轴
+            //【战斗卷轴】的配方物品 ↓
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0), Condition.PreHardmode) //基础增益卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0), Condition.PreHardmode) //伤害卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedDefense", (0, 10, 0, 0), Condition.DownedSkeletron, Condition.PreHardmode) //防御卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0)) //射手卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0)) //魔法卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0)) //战斗场地卷轴
+            //.AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0), Condition.PreHardmode) //射手卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0), Condition.PreHardmode) //魔法卷轴
+            //.AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0), Condition.PreHardmode) //战斗场地卷轴
+            //【极限战争】的配方物品 ↓
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBattler", (0, 5, 0, 0), Condition.NotDownedEowOrBoc) //战争卷轴
+            //【极限和平】的配方物品 ↓
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedPeaceful", (0, 5, 0, 0), Condition.PreHardmode); //和平卷轴
 
             #endregion
 

@@ -11,11 +11,12 @@
 [i:3458]添加了一些提高游戏体验的新物品。
 [i:3458]模组内的NPC可以被捕捉。
 [i:3458]适配和兼容的Mod：
-   [i:3457]Calamity Mod (灾厄) 
-   [i:3457]Catalyst Mod (灾劫) 
-   [i:3457]Fargo's Mutant Mod (Fargo突变) 
-   [i:3457]Fargo's Souls Mod (Fargo魂石) 
-   [i:3457]Thorium Mod (瑟银) 
+   [i:3457]Calamity Mod (灾厄)
+   [i:3457]Catalyst Mod (灾劫)
+   [i:3457]Fargo's Mutant Mod (Fargo突变)
+   [i:3457]Fargo's Souls Mod (Fargo魂石)
+   [i:3457]Thorium Mod (瑟银)
+   [i:3457]LuiAFK Reborn (LuiAFK懒人)(包括重新汉化)
     ......
 (以上Mod可以多开也可以单开，甚至只加载本Mod一个也没问题，商店内容会自动适配)
 

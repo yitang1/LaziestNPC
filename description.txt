@@ -18,6 +18,7 @@
    [i:3457]Fargo's Souls Mod (Fargo魂石)
    [i:3457]Thorium Mod (瑟银)
    [i:3457]LuiAFK Reborn (LuiAFK懒人)
+   [i:3457]LuiAFK Reborn DLC(LuiAFK懒人DLC)
    [i:3457]AlchemistNPC Lite (炼金术士NPC)
     ......
 (以上Mod可以多开也可以单开，甚至只加载本Mod一个也没问题，商店内容会自动适配)

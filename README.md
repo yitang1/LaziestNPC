@@ -43,11 +43,11 @@ Win+R 输入shell:Personal
 <details>
 <summary><b>⚙【点击展开】</b></summary>
 
-- **Calamity Mod (灾厄)** :white_check_mark:  
-- **Catalyst Mod (灾劫)** :white_check_mark:  
-- **Fargo's Mutant Mod (Fargo突变)** :white_check_mark:  
-- **Fargo's Souls Mod (Fargo魂石)** :white_check_mark:  
-- **Thorium Mod (瑟银)** :white_check_mark:  
+- **Calamity Mod (灾厄)**
+- **Catalyst Mod (灾劫)**
+- **Fargo's Mutant Mod (Fargo突变)**
+- **Fargo's Souls Mod (Fargo魂石)**
+- **Thorium Mod (瑟银)**
 - **......**  
 
 </details>
@@ -65,6 +65,7 @@ Win+R 输入shell:Personal
 > - 添加了原版和模组内大量物品的**合成配方**。
 > - 添加了一些提高游戏体验的**新物品**。
 
+——————————————————————————————  
 ### Mod设计原则
 <details>
 <summary><b>【点击展开】(非必看)</b></summary>
@@ -80,9 +81,9 @@ Win+R 输入shell:Personal
 因此，召唤血月事件的[物品](https://terraria.wiki.gg/zh/wiki/%E8%A1%80%E6%B3%AA?variant=zh-hans)会在初期“试炼官”到来后默认直接可购买。[哥布林战旗](https://terraria.wiki.gg/zh/wiki/%E5%93%A5%E5%B8%83%E6%9E%97%E5%86%9B%E9%98%9F#%E5%8F%AC%E5%94%A4)同理。  
 
 - **示例②**  
-假如同时加载了灾厄Mod，这个Mod设定月亮事件中的所有敌怪都会掉落月亮碎片，  
-理论上，玩家在击败Boss拜月教邪教徒后触发的月亮事件期间，就算没有击败任何一个天界柱也能获得月亮碎片，  
-因此，在加载灾厄Mod时，玩家在击败Boss拜月教邪教徒后，“星海商人”会直接售卖月亮碎片。  
+假如同时加载了灾厄Mod，这个Mod设定月亮事件中的所有敌怪都会掉落四柱碎片，  
+理论上，玩家在击败Boss拜月教邪教徒后触发的月亮事件期间，就算没有击败任何一个天界柱也能获得四柱碎片，  
+因此，在加载灾厄Mod时，玩家在击败Boss拜月教邪教徒后，“星海商人”会直接售卖四柱碎片。  
 
 - **示例③**  
 原版前期的一些增益类[药水](https://terraria.wiki.gg/zh/wiki/%E5%A2%9E%E7%9B%8A%E8%8D%AF%E6%B0%B4?variant=zh-hans)（例如再生、光芒、夜猫子、危险感、怒气、暴怒、召唤、钓鱼、幸运药水等等），  

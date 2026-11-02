@@ -249,28 +249,49 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region LuiAFK懒人 LuiAFK Reborn
-            //全知全能之书
-            mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedExplorer", (0, 10, 0, 0)) //探索者卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 30, 0, 0), Condition.Hardmode) //战斗卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedFishing", (0, 10, 0, 0)) //垂钓卷轴
+            //【全知全能之书】的配方物品 ↓
+            mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedExplorer", (0, 10, 0, 0)); //探索者卷轴
+            
+            if (ModLoader.HasMod("UnofficialLuiAFKDLC"))
+                mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 30, 0, 0), Condition.DownedPlantera); //战斗卷轴
+            else
+                mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 30, 0, 0), Condition.Hardmode); //战斗卷轴
+            
+            mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedFishing", (0, 10, 0, 0)) //垂钓卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedTravel", (0, 10, 0, 0)) //旅行卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedFlight", (0, 10, 0, 0)) //飞行卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedInvisibility", (0, 5, 0, 0)) //隐身之力
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedTeleportation", (0, 5, 0, 0)) //传送之力
             .AddModItem("miningcracks_take_on_luiafk/UltimateBattler", (0, 15, 0, 0), Condition.DownedEowOrBoc) //极限战争
             .AddModItem("miningcracks_take_on_luiafk/UltimatePeaceful", (0, 15, 0, 0), Condition.Hardmode) //极限和平
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedLucky", (0, 25, 0, 0)) //幸运卷轴
+            .AddModItem("miningcracks_take_on_luiafk/UnlimitedLucky", (0, 25, 0, 0)); //幸运卷轴
+            
             //【战斗卷轴】的配方物品 ↓
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0), Condition.PreHardmode) //基础增益卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0), Condition.PreHardmode) //伤害卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedDefense", (0, 10, 0, 0), Condition.DownedSkeletron, Condition.PreHardmode) //防御卷轴
-            //.AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0), Condition.PreHardmode) //射手卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0), Condition.PreHardmode) //魔法卷轴
-            //.AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0), Condition.PreHardmode) //战斗场地卷轴
+            if (ModLoader.HasMod("UnofficialLuiAFKDLC"))
+            {
+                mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0), Condition.NotDownedPlantera) //基础增益卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0), Condition.NotDownedPlantera) //伤害卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedDefense", (0, 10, 0, 0), Condition.DownedSkeletron, Condition.NotDownedPlantera) //防御卷轴
+                //.AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0), Condition.NotDownedPlantera) //射手卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0), Condition.NotDownedPlantera) //魔法卷轴
+                //.AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0), Condition.NotDownedPlantera); //战斗场地卷轴
+            }
+            else
+            {
+                mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedBasics", (0, 5, 0, 0), Condition.PreHardmode) //基础增益卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedDamage", (0, 10, 0, 0), Condition.PreHardmode) //伤害卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedDefense", (0, 10, 0, 0), Condition.DownedSkeletron, Condition.PreHardmode) //防御卷轴
+                //.AddModItem("miningcracks_take_on_luiafk/UnlimitedMelee", (0, 5, 0, 0), Condition.Hardmode) //战士卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedRange", (0, 5, 0, 0), Condition.PreHardmode) //射手卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedMagic", (0, 5, 0, 0), Condition.PreHardmode) //魔法卷轴
+                //.AddModItem("miningcracks_take_on_luiafk/UnlimitedStation", (0, 10, 0, 0), Condition.Hardmode) //增益站卷轴
+                .AddModItem("miningcracks_take_on_luiafk/UnlimitedArena", (0, 10, 0, 0), Condition.PreHardmode); //战斗场地卷轴
+            }
+
             //【极限战争】的配方物品 ↓
-            .AddModItem("miningcracks_take_on_luiafk/UnlimitedBattler", (0, 5, 0, 0), Condition.NotDownedEowOrBoc) //战争卷轴
+            mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedBattler", (0, 5, 0, 0), Condition.NotDownedEowOrBoc) //战争卷轴
             //【极限和平】的配方物品 ↓
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedPeaceful", (0, 5, 0, 0), Condition.PreHardmode); //和平卷轴
 
@@ -297,6 +318,30 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedInvincibility", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera) //庇护灵药
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedTitanSkin", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera); //泰坦韧鳞
                                                                                                                                   //.AddModItem("UnofficialLuiAFKDLC/UnlimitedNinja", (0, 0, 0, 0)) //忍者风姿
+            #endregion
+
+            #region 灾厄Mod
+            //【灾厄卷轴】的配方材料 ↓
+            mPotion.AddModItem("UnofficialLuiAFKDLC/UnlimitedMushy", (0, 5, 0, 0)) //菌生蟹之感染
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedChi", (0, 5, 0, 0)) //福业之拥
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedShadow", (0, 5, 0, 0)) //暗影面纱
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedBaguettePower", (0, 5, 0, 0), BloodMoonHappened) //法式面包
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfDepths", (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //深渊卷轴
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfEffigies", (0, 10, 0, 0), Condition.DownedEowOrBoc, DownedDesertBug) //雕像卷轴
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfInfiniteAscent", (0, 10, 0, 0), Condition.Hardmode) //升天卷轴
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedPhotosynthesis", (0, 5, 0, 0), Condition.Hardmode) //光浴之呼
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedChaosCandle", (0, 15, 0, 0), Condition.Hardmode) //混沌之魂
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedTranquilityCandle", (0, 15, 0, 0), Condition.Hardmode) //安宁之魂
+            .AddModItem("UnofficialLuiAFKDLC/FermentedBook", (0, 50, 0, 0), DownedSlimeGod, Condition.Hardmode) //酒酿之书
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfAstral", (0, 10, 0, 0), DownedAstrum) //星幻卷轴
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfCandles", (0, 25, 0, 0), Condition.DownedMoonLord) //嗜酒秘典卷轴(TODD)
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfCalamityFlasks", (0, 25, 0, 0), DownedCalamitas, Condition.DownedMoonLord) //神圣碎焰卷轴
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedBloodfin", (0, 5, 0, 0), DownedProvidence); //血鳍灵药
+
+            //【混沌之魂】和【安宁之魂】的配方材料 ↓
+            mPotion.AddModItem("UnofficialLuiAFKDLC/UnlimitedZerg", (0, 5, 0, 0), DownedSlimeGod, Condition.PreHardmode) //虫群本能
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedZen", (0, 5, 0, 0), DownedSlimeGod, Condition.PreHardmode); //安宁谐波
+
             #endregion
 
             #endregion

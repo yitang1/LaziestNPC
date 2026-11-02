@@ -63,7 +63,7 @@ namespace LaziestNPC.Globals.GlobalSystem
 
         public override void PostUpdateWorld()
         {
-            //曾经发生过的事件，就会永久变为true
+            //事件发生过一次，对应字段就会永久变为true
             if (Main.bloodMoon) BloodMoonHappened = true;
             if (Main.eclipse) EclipseHappened = true;
             if (Main.snowMoon) SnowMoonHappened = true;

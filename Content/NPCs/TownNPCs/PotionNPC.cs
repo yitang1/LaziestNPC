@@ -249,6 +249,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region LuiAFK懒人 LuiAFK Reborn
+            //全知全能之书
             mPotion.AddModItem("miningcracks_take_on_luiafk/UnlimitedExplorer", (0, 10, 0, 0)) //探索者卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedCombat", (0, 30, 0, 0), Condition.Hardmode) //战斗卷轴
             .AddModItem("miningcracks_take_on_luiafk/UnlimitedFishing", (0, 10, 0, 0)) //垂钓卷轴
@@ -275,6 +276,22 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region LuiAFK懒人DLC LuiAFK Reborn DLC
+            //【炼金秘药】
+            mPotion.AddModItem("UnofficialLuiAFKDLC/ScrollOfMinerAlchemist", (0, 10, 0, 0)) //流光挖掘卷轴
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedGreaterDangersense", (0, 5, 0, 0)) //强感真视
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedNaturesBlessing", (0, 5, 0, 0), Condition.DownedEyeOfCthulhu) //自然祝福
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedDiscord", (0, 5, 0, 0), Condition.Hardmode) //混沌神药
+            .AddModItem("UnofficialLuiAFKDLC/ScrollOfWarriorAlchemist", (0, 40, 0, 0), Condition.DownedPlantera); //刚毅阴影卷轴
+
+            //【刚毅阴影卷轴】配方物品
+            mPotion.AddModItem("UnofficialLuiAFKDLC/UnlimitedFortitude", (0, 5, 0, 0), Condition.NotDownedPlantera) //坚韧之盾
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedBlurring", (0, 5, 0, 0), Condition.DownedMechBossAll, Condition.NotDownedPlantera) //模糊斗篷
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedInvincibility", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera) //庇护灵药
+            .AddModItem("UnofficialLuiAFKDLC/UnlimitedTitanSkin", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera); //泰坦韧鳞
+            //.AddModItem("UnofficialLuiAFKDLC/UnlimitedNinja", (0, 0, 0, 0)) //忍者风姿
+            #endregion
+
             #region 炼金术士NPC AlchemistNPC Lite
             //特殊
             mPotion.AddModItem("AlchemistNPCLite/GlobalTeleporter", (0, 10, 0, 0)) //世界传送装置
@@ -292,8 +309,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("AlchemistNPCLite/TitanSkinPotion", (0, 1, 25, 0), Condition.Hardmode) //泰坦皮肤药剂
             .AddModItem("AlchemistNPCLite/BlurringPotion", (0, 1, 50, 0), Condition.DownedMechBossAll) //模糊药剂
             .AddModItem("AlchemistNPCLite/NinjaPotion", (0, 2, 0, 0), Condition.DownedPlantera) //忍者药剂
-            .AddModItem("AlchemistNPCLite/DiscordPotion", (0, 2, 50, 0)) //混乱药剂
-            .AddModItem("AlchemistNPCLite/PerfectDiscordPotion", (0, 5, 0, 0), Condition.Hardmode) //真·混乱药剂
+            .AddModItem("AlchemistNPCLite/DiscordPotion", (0, 5, 0, 0), Condition.Hardmode) //混乱药剂
+            .AddModItem("AlchemistNPCLite/PerfectDiscordPotion", (0, 10, 0, 0), Condition.DownedPlantera) //真·混乱药剂
             .AddModItem("AlchemistNPCLite/TrapsPotion", (0, 1, 0, 0)); //陷阱药剂
             //传送药剂
             mPotion.AddModItem("AlchemistNPCLite/JungleTeleporterPotion", (0, 1, 0, 0)) //丛林传送药剂

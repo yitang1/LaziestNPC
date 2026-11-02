@@ -277,6 +277,13 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region LuiAFK懒人DLC LuiAFK Reborn DLC
+
+            #region 原版补充
+            mPotion.AddModItem("UnofficialLuiAFKDLC/ScrollOfFlasks", (0, 25, 0, 0), Condition.DownedPlantera); //药剂卷轴
+
+            #endregion
+
+            #region 炼金术士NPC
             //【炼金秘药】
             mPotion.AddModItem("UnofficialLuiAFKDLC/ScrollOfMinerAlchemist", (0, 10, 0, 0)) //流光挖掘卷轴
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedGreaterDangersense", (0, 5, 0, 0)) //强感真视
@@ -289,7 +296,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedBlurring", (0, 5, 0, 0), Condition.DownedMechBossAll, Condition.NotDownedPlantera) //模糊斗篷
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedInvincibility", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera) //庇护灵药
             .AddModItem("UnofficialLuiAFKDLC/UnlimitedTitanSkin", (0, 5, 0, 0), Condition.Hardmode, Condition.NotDownedPlantera); //泰坦韧鳞
-            //.AddModItem("UnofficialLuiAFKDLC/UnlimitedNinja", (0, 0, 0, 0)) //忍者风姿
+                                                                                                                                  //.AddModItem("UnofficialLuiAFKDLC/UnlimitedNinja", (0, 0, 0, 0)) //忍者风姿
+            #endregion
+
             #endregion
 
             #region 炼金术士NPC AlchemistNPC Lite

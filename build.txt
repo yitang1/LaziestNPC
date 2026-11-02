@@ -1,6 +1,6 @@
 displayName = Laziest NPC
 author = yitang
-version = 0.0.6
+version = 0.0.7
 modReferences = ShopExtender
 weakReferences = CalamityMod, miningcracks_take_on_luiafk, AlchemistNPCLite
 homepage = https://github.com/yitang1/LaziestNPC

@@ -382,8 +382,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 灾厄 Calamity Mod
             //[实用类药水] 模组药水都放在一起
-            mPotion.AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0)) //禅定药水
-            .AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0)) //虫潮药水
+            mPotion.AddModItem("CalamityMod/ZergPotion", (0, 1, 0, 0), DownedSlimeGod) //虫潮药水
+            .AddModItem("CalamityMod/ZenPotion", (0, 1, 0, 0), DownedSlimeGod) //禅定药水
             .AddModItem("CalamityMod/PotionofOmniscience", (0, 0, 75, 0)) //全知药水
             .AddModItem("CalamityMod/AnechoicCoating", (0, 0, 50, 0)) //吸音涂层
             //肉前

@@ -348,7 +348,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 炼金术士NPC AlchemistNPC Lite
             //特殊
-            mPotion.AddModItem("AlchemistNPCLite/GlobalTeleporter", (0, 10, 0, 0)) //世界传送装置
+            mPotion.AddModItem("AlchemistNPCLite/GlobalTeleporter", (0, 10, 0, 0), Condition.Hardmode) //世界传送装置
             .AddModItem("AlchemistNPCLite/GlobalTeleporterUp", (10, 0, 0, 0), Condition.DownedMoonLord); //改良世界传送装置
             //单体药水
             mPotion

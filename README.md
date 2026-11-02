@@ -1,7 +1,7 @@
 
 ## Mod：Laziest NPC
  
-此为Steam上[**tModLoader**](https://store.steampowered.com/app/1281930/tModLoader/)的一个模组（Mod）。
+此为Steam上[**tModLoader**](https://store.steampowered.com/app/1281930/tModLoader/)的一个以NPC为核心的辅助类模组（Mod）。
 > [!TIP]
 > 原本是个人自用的Mod。  
 > 模组创建初衷：  

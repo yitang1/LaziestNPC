@@ -285,7 +285,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("AlchemistNPCLite/SunshinePotion", (0, 1, 0, 0)) //阳光药剂
             .AddModItem("AlchemistNPCLite/ExcavationPotion", (0, 1, 0, 0)) //挖掘药剂
             .AddModItem("AlchemistNPCLite/BewitchingPotion", (0, 1, 0, 0)) //迷人药剂
-            .AddModItem("AlchemistNPCLite/GreaterDangersensePotion", (0, 1, 0, 0)) //更强的危险感药剂
+            .AddModItem("AlchemistNPCLite/GreaterDangersensePotion", (0, 1, 0, 0)) //强力危险感药剂
             .AddModItem("AlchemistNPCLite/FortitudePotion", (0, 1, 0, 0)) //刚毅药剂
             .AddModItem("AlchemistNPCLite/NatureBlessingPotion", (0, 1, 0, 0), Condition.DownedEyeOfCthulhu) //自然赐福药剂
             .AddModItem("AlchemistNPCLite/InvincibilityPotion", (0, 1, 25, 0), Condition.Hardmode) //无敌药剂

@@ -49,7 +49,7 @@ Win+R 输入shell:Personal
 - **Fargo's Souls Mod (Fargo魂石)**
 - **Thorium Mod (瑟银)**
 - **LuiAFK Reborn (LuiAFK懒人)**
-- **LuiAFK Reborn DLC(LuiAFK懒人DLC)**
+- **LuiAFK Reborn DLC (LuiAFK懒人DLC)**
 - **AlchemistNPC Lite (炼金术士NPC)**
 - **......**  
 

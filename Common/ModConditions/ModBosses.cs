@@ -99,7 +99,8 @@ namespace LaziestNPC.Common.ModBossess
 
         /// <summary>
         /// 获取一个Boss的击败状态：Condition。<br/>
-        /// 如果Boss未注册或模组未加载，返回恒为false的条件。
+        /// 如果Boss未注册或模组未加载，返回恒为false的条件。<br/>
+        /// 识别的是自己定义的bossKey唯一键。
         /// </summary>
         public static Condition GetCondition(string bossKey)
         {

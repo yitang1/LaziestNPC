@@ -83,11 +83,30 @@ namespace LaziestNPC.Common.ModConditions
 
             #endregion
 
-            /*#region 旅人归途 Homeward Journey
-            ("Thunderird", "ContinentOfJourney", new string[] {"TheGranThunderBird"}),
+            #region 旅人归途 Homeward Journey
+            //肉前
+            ("GoblinChariot", "ContinentOfJourney", new string[] {"GoblinChariot"}), //哥布林战车
+            ("BigDipper", "ContinentOfJourney", new string[] {"BigDipper"}), //大熊星座
+            ("PuppetOpera", "ContinentOfJourney", new string[] {"PuppetOpera"}), //木偶歌剧
+            ("MarquisMoonsquid", "ContinentOfJourney", new string[] {"MarquisMoonsquid"}), //月光鱿侯
+            //肉后
+            ("WeatherReport", "ContinentOfJourney", new string[] {"WeatherReport"}), //天气预报
+            ("PriestessRod", "ContinentOfJourney", new string[] {"PriestessRod"}), //天竿鱼祭司
+            ("Diver", "ContinentOfJourney", new string[] {"Diver"}), //深潜者
+            ("TheMotherbrain", "ContinentOfJourney", new string[] {"TheMotherbrain"}), //母脑
+            ("WallofShadow", "ContinentOfJourney", new string[] {"WallofShadow"}), //暗影墙
+            //暗影墙后
+            ("SunSlimeGod", "ContinentOfJourney", new string[] {"SlimeGod"}), //史莱姆之神(旅人归途)
+            ("TheOverwatcher", "ContinentOfJourney", new string[] {"TheOverwatcher"}), //极视终表
+            ("TheLifebringer", "ContinentOfJourney", new string[] {"TheLifebringerHead"}), //万籁携生
+            ("TheMaterealizer", "ContinentOfJourney", new string[] {"TheMaterealizer"}), //化物天匠
+            ("ScarabBelief", "ContinentOfJourney", new string[] {"ScarabBelief"}), //圣甲虫信仰
+            ("FallingWhale", "ContinentOfJourney", new string[] {"WorldsEndEverlastingFallingWhale"}), //世末·永落鲸
+            ("TheSon", "ContinentOfJourney", new string[] {"TheSon"}), //圣子
+            
             #endregion
 
-            #region 救赎 Mod of Redemption
+            /*#region 救赎 Mod of Redemption
             ("Thunderird", "Redemption", new string[] {"TheGranThunderBird"})
             #endregion*/
 

@@ -32,19 +32,20 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region 灾厄 Calamity Mod
+        //其他
         public static Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
         public static Condition AstrumBugAndCultist = new Condition("AstrumBugAndCultist", () => Condition.DownedCultist.IsMet() && DownedAstrumBug.IsMet()); //星神游龙 + 拜月教邪教徒
         public static Condition DOGAndSnowMoon = new Condition("DOGAndSnowMoon", () => WorldCondition.SnowMoonDOG); //神吞 + 霜月
         public static Condition DOGAndPumpkinMoon = new Condition("DOGAndPumpkinMoon", () => WorldCondition.PumpkinMoonDOG); //神吞 + 南瓜月
         public static Condition DOGAndEclipse = new Condition("DOGAndEclipse", () => WorldCondition.EclipseDOG); //神吞 + 日食
-
+        //肉前
         public static Condition DownedDesertBug => ModBosses.GetCondition("DesertScourge"); //荒漠灾虫
         public static Condition DownedCrabulon => ModBosses.GetCondition("Crabulon"); //菌生蟹
         public static Condition DownedPerforator => ModBosses.GetCondition("Perforator"); //血肉宿主
         public static Condition DownedHiveMind => ModBosses.GetCondition("HiveMind"); //腐巢意志
         public static Condition PerOrHive => ModBosses.GetCondition("PerOrHive"); //血肉宿主 或 腐巢意志
         public static Condition DownedSlimeGod => ModBosses.GetCondition("SlimeGod"); //史莱姆之神
-
+        //肉后
         public static Condition DownedCryogen => ModBosses.GetCondition("Cryogen"); //极地之灵
         public static Condition DownedAquaticBug => ModBosses.GetCondition("AquaticScourge"); //渊海灾虫
         public static Condition DownedBrimstone => ModBosses.GetCondition("Brimstone"); //硫磺火元素
@@ -54,7 +55,7 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedPlague => ModBosses.GetCondition("Plague"); //瘟疫使者歌莉娅
         public static Condition DownedRavager => ModBosses.GetCondition("Ravager"); //毁灭魔像
         public static Condition DownedAstrumBug => ModBosses.GetCondition("AstrumDeus"); //星神游龙
-
+        //月后
         public static Condition DownedDragonfolly => ModBosses.GetCondition("Dragonfolly"); //痴愚金龙
         public static Condition DownedGuardians => ModBosses.GetCondition("Guardians"); //亵渎守卫
         public static Condition DownedProvidence => ModBosses.GetCondition("Providence"); //亵渎天神
@@ -88,13 +89,14 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region 瑟银 Thorium Mod
+        //肉前
         public static Condition DownedGrandThunderBird => ModBosses.GetCondition("GrandThunderBird"); //惊雷王鹰
         public static Condition DownedQueenJellyfish => ModBosses.GetCondition("QueenJellyfish"); //水母皇后
         public static Condition DownedViscount => ModBosses.GetCondition("Viscount"); //蝙蝠子爵
         public static Condition DownedGraniteEnergyStorm => ModBosses.GetCondition("GraniteEnergyStorm"); //花岗岩流能风暴
         public static Condition DownedBuriedChampion => ModBosses.GetCondition("BuriedChampion"); //英灵遗骸
         public static Condition DownedStarScouter => ModBosses.GetCondition("StarScouter"); //星际监察者
-
+        //肉后
         public static Condition DownedBoreanStrider => ModBosses.GetCondition("BoreanStrider"); //极地遁蛛
         public static Condition DownedFallenBeholder => ModBosses.GetCondition("FallenBeholder"); //堕落注视者
         public static Condition DownedLich => ModBosses.GetCondition("Lich"); //巫妖
@@ -106,6 +108,25 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region 旅人归途 Homeward Journey
+        //肉前
+        public static Condition DownedGoblinChariot => ModBosses.GetCondition("GoblinChariot"); //哥布林战车
+        public static Condition DownedBigDipper => ModBosses.GetCondition("BigDipper"); //大熊星座
+        public static Condition DownedPuppetOpera => ModBosses.GetCondition("PuppetOpera"); //木偶歌剧
+        public static Condition DownedMarquisMoonsquid => ModBosses.GetCondition("MarquisMoonsquid"); //月光鱿侯
+        //肉后
+        public static Condition DownedWeatherReport => ModBosses.GetCondition("WeatherReport"); //天气预报
+        public static Condition DownedPriestessRod => ModBosses.GetCondition("PriestessRod"); //天竿鱼祭司
+        public static Condition DownedDiver => ModBosses.GetCondition("Diver"); //深潜者
+        public static Condition DownedTheMotherbrain => ModBosses.GetCondition("TheMotherbrain"); //母脑
+        public static Condition DownedWallofShadow => ModBosses.GetCondition("WallofShadow"); //暗影墙
+        //暗影墙后
+        public static Condition DownedSunSlimeGod => ModBosses.GetCondition("SunSlimeGod"); //史莱姆之神(旅人归途)
+        public static Condition DownedTheOverwatcher => ModBosses.GetCondition("TheOverwatcher"); //极视终表
+        public static Condition DownedTheLifebringer => ModBosses.GetCondition("TheLifebringer"); //万籁携生
+        public static Condition DownedTheMaterealizer => ModBosses.GetCondition("TheMaterealizer"); //化物天匠
+        public static Condition DownedScarabBelief => ModBosses.GetCondition("ScarabBelief"); //圣甲虫信仰
+        public static Condition DownedFallingWhale => ModBosses.GetCondition("FallingWhale"); //世末·永落鲸
+        public static Condition DownedTheSon => ModBosses.GetCondition("TheSon"); //圣子
 
         #endregion
 

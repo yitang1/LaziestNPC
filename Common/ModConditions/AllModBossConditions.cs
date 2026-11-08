@@ -118,6 +118,7 @@ namespace LaziestNPC.Common.ModConditions
         public static Condition DownedPriestessRod => ModBosses.GetCondition("PriestessRod"); //天竿鱼祭司
         public static Condition DownedDiver => ModBosses.GetCondition("Diver"); //深潜者
         public static Condition DownedTheMotherbrain => ModBosses.GetCondition("TheMotherbrain"); //母脑
+        //月后
         public static Condition DownedWallofShadow => ModBosses.GetCondition("WallofShadow"); //暗影墙
         //暗影墙后
         public static Condition DownedSunSlimeGod => ModBosses.GetCondition("SunSlimeGod"); //史莱姆之神(旅人归途)

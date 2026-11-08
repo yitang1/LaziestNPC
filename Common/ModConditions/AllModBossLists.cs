@@ -94,6 +94,7 @@ namespace LaziestNPC.Common.ModConditions
             ("PriestessRod", "ContinentOfJourney", new string[] {"PriestessRod"}), //天竿鱼祭司
             ("Diver", "ContinentOfJourney", new string[] {"Diver"}), //深潜者
             ("TheMotherbrain", "ContinentOfJourney", new string[] {"TheMotherbrain"}), //母脑
+            //月后
             ("WallofShadow", "ContinentOfJourney", new string[] {"WallofShadow"}), //暗影墙
             //暗影墙后
             ("SunSlimeGod", "ContinentOfJourney", new string[] {"SlimeGod"}), //史莱姆之神(旅人归途)

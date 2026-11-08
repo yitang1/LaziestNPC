@@ -363,11 +363,14 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region Fargo魂石 Fargo's Souls Mod
+            //肉前
             modBag.AddModItem("FargowiltasSouls/TrojanSquirrelBag", (0, 5, 0, 0), DownedTrojanSquirrel) //特洛伊松鼠
             .AddModItem("FargowiltasSouls/CursedCoffinBag", (0, 5, 0, 0), DownedCursedCoffin) //咒缚灵棺
             .AddModItem("FargowiltasSouls/DeviBag", (0, 35, 0, 0), DownedDevi) //戴薇安
+            //肉后
             .AddModItem("FargowiltasSouls/BanishedBaronBag", (0, 40, 0, 0), DownedBanishedBaron) //放逐遗爵
             .AddModItem("FargowiltasSouls/LifelightBag", (0, 45, 0, 0), DownedLifelight) //飘渺游光
+            //月后
             .AddModItem("FargowiltasSouls/CosmosBag", (0, 90, 0, 0), DownedCosmosChampion) //宇宙英灵
             .AddModItem("FargowiltasSouls/AbomBag", (5, 0, 0, 0), DownedAbom) //憎恶
             .AddModItem("FargowiltasSouls/MutantBag", (10, 0, 0, 0), DownedMutant); //突变体
@@ -393,6 +396,30 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/FlyingDutchmanTreasureBag", (0, 40, 0, 0), Condition.DownedPirates) //荷兰飞盗船
             .AddModItem("ThoriumMod/OgreTreasureBag", (0, 45, 0, 0), Condition.DownedOldOnesArmyT2) //食人魔
             .AddModItem("ThoriumMod/MartianSaucerTreasureBag", (0, 65, 0, 0), Condition.DownedMartians); //火星飞碟
+
+            #endregion
+
+            #region 旅人归途 Homeward Journey
+            //肉前
+            modBag.AddModItem("ContinentOfJourney/GoblinChariotTreasureBag", (0, 5, 0, 0), DownedGoblinChariot) //哥布林战车
+            .AddModItem("ContinentOfJourney/BigDipperTreasureBag", (0, 10, 0, 0), DownedBigDipper) //大熊星座
+            .AddModItem("ContinentOfJourney/PuppetOperaTreasureBag", (0, 25, 0, 0), DownedPuppetOpera) //木偶歌剧
+            .AddModItem("ContinentOfJourney/MarquisMoonsquidTreasureBag", (0, 25, 0, 0), DownedMarquisMoonsquid) //月光鱿侯
+            //肉后
+            .AddModItem("ContinentOfJourney/WeatherReportTreasureBag", (0, 40, 0, 0), DownedWeatherReport) //天气预报
+            .AddModItem("ContinentOfJourney/PriestessRodTreasureBag", (0, 45, 0, 0), DownedPriestessRod) //天竿鱼祭司
+            .AddModItem("ContinentOfJourney/DiverTreasureBag", (0, 50, 0, 0), DownedDiver) //深潜者
+            .AddModItem("ContinentOfJourney/TheMotherbrainTreasureBag", (0, 55, 0, 0), DownedTheMotherbrain) //母脑
+            //月后
+            .AddModItem("ContinentOfJourney/WallofShadowTreasureBag", (0, 75, 0, 0), DownedWallofShadow) //暗影墙
+            //暗影墙后
+            .AddModItem("ContinentOfJourney/SlimeGodTreasureBag", (0, 80, 0, 0), DownedSunSlimeGod) //史莱姆之神
+            .AddModItem("ContinentOfJourney/TheOverwatcherTreasureBag", (1, 0, 0, 0), DownedTheOverwatcher) //极视终表
+            .AddModItem("ContinentOfJourney/TheLifebringerTreasureBag", (1, 0, 0, 0), DownedTheLifebringer) //万籁携生
+            .AddModItem("ContinentOfJourney/TheMaterealizerTreasureBag", (1, 0, 0, 0), DownedTheMaterealizer) //化物天匠
+            .AddModItem("ContinentOfJourney/ScarabBeliefTreasureBag", (1, 0, 0, 0), DownedScarabBelief) //圣甲虫信仰
+            .AddModItem("ContinentOfJourney/EverlastingFallingWhaleTreasureBag", (4, 0, 0, 0), DownedFallingWhale) //世末·永落鲸
+            .AddModItem("ContinentOfJourney/TheSonTreasureBag", (5, 0, 0, 0), DownedTheSon); //圣子
 
             #endregion
 

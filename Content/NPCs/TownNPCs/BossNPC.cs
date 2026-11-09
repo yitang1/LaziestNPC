@@ -401,7 +401,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region 旅人归途 Homeward Journey
             //肉前
-            modBag.AddModItem("ContinentOfJourney/GoblinChariotTreasureBag", (0, 5, 0, 0), DownedGoblinChariot) //哥布林战车
+            modBag.AddItem(ItemType<HJTanks>(), (1, 0, 0, 0), DownedWallofShadow) //古老世界之罐
+            .AddModItem("ContinentOfJourney/GoblinChariotTreasureBag", (0, 5, 0, 0), DownedGoblinChariot) //哥布林战车
             .AddModItem("ContinentOfJourney/BigDipperTreasureBag", (0, 10, 0, 0), DownedBigDipper) //大熊星座
             .AddModItem("ContinentOfJourney/PuppetOperaTreasureBag", (0, 25, 0, 0), DownedPuppetOpera) //木偶歌剧
             .AddModItem("ContinentOfJourney/MarquisMoonsquidTreasureBag", (0, 25, 0, 0), DownedMarquisMoonsquid) //月光鱿侯

@@ -447,6 +447,38 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region 旅人归途 Homeward Journey
+            //星座奖牌
+            modSum.AddModItem("ContinentOfJourney/CapricornMedal", (0, 5, 0, 0), DownedBigDipper) //摩羯座奖牌
+            .AddModItem("ContinentOfJourney/GeminiMedal", (0, 5, 0, 0), DownedBigDipper) //双子座奖牌
+            .AddModItem("ContinentOfJourney/LibraMedal", (0, 5, 0, 0), DownedBigDipper) //天秤座奖牌
+            .AddModItem("ContinentOfJourney/ScorpioMedal", (0, 5, 0, 0), DownedBigDipper) //天蝎座奖牌
+            .AddModItem("ContinentOfJourney/TaurusMedal", (0, 5, 0, 0), DownedBigDipper) //金牛座奖牌
+            .AddModItem("ContinentOfJourney/VirgoMedal", (0, 5, 0, 0), DownedBigDipper) //室女座奖牌
+            //天气水晶
+            .AddModItem("ContinentOfJourney/Crystal_Clear", (0, 1, 0, 0)) //天气水晶：晴朗
+            .AddModItem("ContinentOfJourney/Crystal_LowPressure", (0, 1, 0, 0)) //天气水晶：低压
+            .AddModItem("ContinentOfJourney/Crystal_HighPressure", (0, 1, 0, 0)) //天气水晶：高压
+            .AddModItem("ContinentOfJourney/Crystal_Cold", (0, 1, 0, 0)) //天气水晶：低温
+            .AddModItem("ContinentOfJourney/Crystal_Hot", (0, 1, 0, 0)) //天气水晶：高温
+            .AddModItem("ContinentOfJourney/Crystal_Harvest", (0, 1, 0, 0)) //天气水晶：丰收
+            .AddModItem("ContinentOfJourney/Crystal_Typhoon", (0, 1, 0, 0)) //天气水晶：台风
+
+            .AddModItem("ContinentOfJourney/Crystal_Nuclear", (0, 1, 0, 0)) //天气水晶：辐射
+            .AddModItem("ContinentOfJourney/Crystal_Coin", (0, 10, 0, 0), Condition.Hardmode) //天气水晶：硬币雨
+            .AddModItem("ContinentOfJourney/Crystal_Knife", (0, 15, 0, 0), Condition.DownedSkeletronPrime) //天气水晶：刀子雨
+            .AddModItem("ContinentOfJourney/Crystal_Donut", (0, 15, 0, 0), Condition.DownedMechBossAny) //天气水晶：甜甜圈季风
+            .AddModItem("ContinentOfJourney/Crystal_Mist", (0, 20, 0, 0), PumpkinMoonHappened, SnowMoonHappened) //天气水晶：迷雾
+            .AddModItem("ContinentOfJourney/Crystal_Oxygen", (0, 25, 0, 0), DownedDiver) //天气水晶：纯氧
+            .AddModItem("ContinentOfJourney/Crystal_Timenado", (0, 30, 0, 0), DownedWallofShadow) //天气水晶：时光隧道
+            .AddModItem("ContinentOfJourney/Crystal_Threebody", (0, 40, 0, 0), DownedSunSlimeGod) //天气水晶：三体
+            //其他
+            .AddModItem("ContinentOfJourney/DivineKey", (0, 10, 0, 0), Condition.Hardmode) //圣洁钥匙 (沙漠宝箱怪)
+            .AddModItem("ContinentOfJourney/PolarKey", (0, 10, 0, 0), Condition.Hardmode) //冰川钥匙 (极地宝箱怪)            
+            .AddModItem("ContinentOfJourney/LihzahrdKey", (0, 10, 0, 0), Condition.Hardmode); //蜥蜴钥匙 (神庙宝箱怪)
+            
+            #endregion
+
             #endregion
 
             #region [模组Boss召唤物品]
@@ -517,6 +549,23 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/VoidLens", (0, 10, 0, 0), Condition.Hardmode) //堕落注视者
             .AddModItem("ThoriumMod/AbyssalShadow2", (0, 25, 0, 0), Condition.DownedPlantera) //遗忘之主
             .AddModItem("ThoriumMod/DoomSayersCoin", (0, 35, 0, 0), Condition.DownedCultist); //始生灾灵
+
+            #endregion
+
+            #region 旅人归途 Homeward Journey
+            //肉前
+            modSum.AddModItem("ContinentOfJourney/PurpleFlareGun", (0, 1, 0, 0)) //紫信号枪 (哥布林战车)
+            .AddModItem("ContinentOfJourney/MaliciousPacket", (0, 5, 0, 0), Condition.DownedEowOrBoc) //恶意捆绑包 (大熊星座)
+            //肉后
+            .AddModItem("ContinentOfJourney/CyanFlareGun", (0, 10, 0, 0), Condition.Hardmode) //青色信号枪 (天气预报)
+            .AddModItem("ContinentOfJourney/CannedSoulofFlight", (0, 15, 0, 0), Condition.DownedMechBossAny) //罐装飞翔之魂 (天竿鱼祭司)
+            .AddModItem("ContinentOfJourney/UnstableGlobe", (0, 20, 0, 0), DownedDiver) //不稳定空间裂缝 (深潜者)
+            .AddModItem("ContinentOfJourney/MetalSpine", (0, 25, 0, 0), Condition.DownedPlantera) //机械脊椎 (母脑)
+            //月后
+            .AddModItem("ContinentOfJourney/UltimateTorch", (0, 30, 0, 0), Condition.DownedMoonLord) //究极火把 (暗影墙)
+            //超级困难模式
+            .AddModItem("ContinentOfJourney/SunlightCrown", (0, 40, 0, 0), DownedWallofShadow) //日冕 (史莱姆之神)
+            .AddModItem("ContinentOfJourney/HallowedAltar", (0, 50, 0, 0), DownedWallofShadow); //神圣祭坛
 
             #endregion
 

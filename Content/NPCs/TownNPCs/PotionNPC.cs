@@ -215,9 +215,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 灾厄 Calamity Mod
             mPotion.AddModItem("CalamityMod/Bloodfin", (0, 1, 50, 0), DownedProvidence) //血鳍 240
             .AddModItem("CalamityMod/SupremeHealingPotion", (0, 1, 50, 0), DownedProvidence) //至尊治疗药水 250
-            .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 0, 0), DownedDOG) //终极治疗药水 300
+            .AddModItem("CalamityMod/OmegaHealingPotion", (0, 2, 50, 0), DownedDOG) //终极治疗药水 300
 
-            .AddModItem("CalamityMod/SupremeManaPotion", (0, 1, 0, 0), Condition.DownedMoonLord); //至尊魔力药水 400
+            .AddModItem("CalamityMod/SupremeManaPotion", (0, 3, 0, 0), Condition.DownedMoonLord); //至尊魔力药水 400
 
             #endregion
 
@@ -227,6 +227,16 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/MidnightOil", (0, 0, 25, 0), Condition.DownedSkeletron) //午夜之油 75
 
             .AddModItem("ThoriumMod/LifeWater", (0, 0, 50, 0), Condition.Hardmode); //生命之水 125
+
+            #endregion
+
+            #region 旅人归途 Homeward Journey
+            mPotion.AddModItem("ContinentOfJourney/HornofHarvest", (0, 2, 75, 0), DownedTheLifebringer) //丰收号角 320
+            .AddModItem("ContinentOfJourney/UltraHealingPotion", (0, 2, 50, 0), DownedWallofShadow) //究极治疗药水 300
+            .AddModItem("ContinentOfJourney/TheBody", (0, 3, 0, 0), DownedTheSon) //彼之身 400
+
+            .AddModItem("ContinentOfJourney/UltraManaPotion", (0, 2, 50, 0), DownedWallofShadow) //究极魔力药水 320
+            .AddModItem("ContinentOfJourney/TheBlood", (0, 3, 0, 0), DownedTheSon); //彼之血 400
 
             #endregion
 
@@ -439,10 +449,30 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #endregion
+            #region 旅人归途 Homeward Journey
+            //增益药水
+            mPotion.AddModItem("ContinentOfJourney/FluorescentBerry", (0, 2, 0, 0)) //荧光果
+            .AddModItem("ContinentOfJourney/FluorescentBerryCan", (0, 2, 50, 0)) //荧光果罐头
+            .AddModItem("ContinentOfJourney/ForbiddenFruit", (0, 2, 0, 0), DownedWallofShadow) //分辨善恶果
+            .AddModItem("ContinentOfJourney/ForbiddenFruitCan", (0, 2, 50, 0), DownedWallofShadow) //禁果罐头
+            .AddModItem("ContinentOfJourney/YangPotion", (0, 2, 50, 0), DownedWallofShadow) //阳药水
+            .AddModItem("ContinentOfJourney/YinPotion", (0, 2, 50, 0), DownedWallofShadow) //阴药水
+            .AddModItem("ContinentOfJourney/FlightPotion", (0, 3, 0, 0), DownedTheMaterealizer) //飞升药水
+            .AddModItem("ContinentOfJourney/HastePotion", (0, 3, 0, 0), DownedTheMaterealizer) //急迫药水
+            .AddModItem("ContinentOfJourney/ReanimationPotion", (0, 3, 0, 0), DownedTheMaterealizer) //复生药水
+            //药剂
+            .AddModItem("ContinentOfJourney/DivineFireFlask", (0, 2, 50, 0), DownedWallofShadow, Condition.DownedQueenBee) //圣洁瓶
+            .AddModItem("ContinentOfJourney/ForceBreakFlask", (0, 2, 50, 0), DownedWallofShadow, Condition.DownedQueenBee) //断键瓶
+            .AddModItem("ContinentOfJourney/PlagueFlask", (0, 2, 50, 0), DownedWallofShadow, Condition.DownedQueenBee) //瘟疫瓶
+            .AddModItem("ContinentOfJourney/SteelFlask", (0, 2, 50, 0), DownedWallofShadow, Condition.DownedQueenBee) //钢瓶
+            //其他
+            .AddModItem("ContinentOfJourney/Iodine", (0, 1, 50, 0), Condition.DownedPlantera); //碘酒
 
             #endregion
 
+            #endregion
+
+            #endregion
 
             vPotion.Register();
             mPotion.Register();

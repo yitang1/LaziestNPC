@@ -39,6 +39,12 @@ namespace LaziestNPC.Globals.Config
 
         [Header("OtherNPCs")]
 
+        [Increment(0.5f)]
+        [Range(1, 10f)]
+        [DefaultValue(1f)]
+        [Slider]
+        public double MobHealth;
+
         [DefaultValue(true)]
         [ReloadRequired]
         public bool LNPCInvincible;
@@ -46,6 +52,7 @@ namespace LaziestNPC.Globals.Config
         [DefaultValue(true)]
         [ReloadRequired]
         public bool LNPCCritterInvincible;
+
 
     }
 }

@@ -176,6 +176,11 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region 旅人归途 Homeward Journey
+            naturalB.AddModItem("ContinentOfJourney/FluorescentGrass", (0, 1, 50, 0), Condition.DownedPlantera); //荧光草
+
+            #endregion
+
             #endregion
 
             #endregion

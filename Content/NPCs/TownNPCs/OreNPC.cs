@@ -206,6 +206,19 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+            #region [旅人归途 Homeward Journey]
+            //宝石
+            ores.AddModItem("ContinentOfJourney/Onyx", (0, 1, 0, 0), Condition.DownedPlantera) //玛瑙
+            .AddModItem("ContinentOfJourney/HauntedOnyx", (0, 1, 0, 0)) //闹鬼玛瑙
+            //矿石
+            .AddModItem("ContinentOfJourney/DeepOre", (0, 3, 0, 0), Condition.DownedPlantera) //深藏矿
+            .AddModItem("ContinentOfJourney/EternalOre", (0, 5, 0, 0), DownedWallofShadow) //永远矿
+            .AddModItem("ContinentOfJourney/LivingOre", (0, 5, 0, 0), DownedWallofShadow) //脉搏矿
+            .AddModItem("ContinentOfJourney/CubistOre", (0, 5, 0, 0), DownedWallofShadow) //立体矿
+            .AddModItem("ContinentOfJourney/FinalOre", (0, 10, 0, 0), DownedTheThree); //最终矿
+
+            #endregion
+
             #endregion
 
             #region 【配饰商店】

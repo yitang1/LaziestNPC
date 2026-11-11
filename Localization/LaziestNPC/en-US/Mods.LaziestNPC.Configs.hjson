@@ -84,7 +84,7 @@ LNPCConfig: {
 
 	MobHealth: {
 		Label: "[i:LifeCrystal] 提高所有敌对生物的血量"
-		Tooltip: 
+		Tooltip:
 			'''
 			全时期全局生效，数值是提高的倍率
 			最终血量：原本血量 乘以 此值

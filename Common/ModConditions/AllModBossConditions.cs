@@ -8,7 +8,7 @@ using LaziestNPC.Globals.GlobalSystem;
 
 namespace LaziestNPC.Common.ModConditions
 {
-    //所有模组Boss的击败条件
+    //所有敌怪的击败条件
     public static class AllModBossConditions
     {
         #region 原版

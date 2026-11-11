@@ -8,7 +8,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
 {
     public class NPCCondition : ModSystem
     {
-        public static bool downedSplinterling;
+        /*public static bool downedEyeballFlyingFish;
+        public static bool downedZombieMerman;
+        public static bool downedSplinterling;*/
 
         public static bool downedBrainOfCthulhu;
         public static bool downedEaterOfWorlds;
@@ -19,7 +21,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
         public override void OnWorldLoad()
         {
-            downedSplinterling = false;
+            /*downedEyeballFlyingFish = false;
+            downedZombieMerman = false;
+            downedSplinterling = false;*/
 
             downedBrainOfCthulhu = false;
             downedEaterOfWorlds = false;
@@ -31,7 +35,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
         public override void OnWorldUnload()
         {
-            downedSplinterling = false;
+            /*downedEyeballFlyingFish = false;
+            downedZombieMerman = false;
+            downedSplinterling = false;*/
 
             downedBrainOfCthulhu = false;
             downedEaterOfWorlds = false;
@@ -43,7 +49,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
         public override void LoadWorldData(TagCompound tag)
         {
-            downedSplinterling = tag.GetBool("downedSplinterling");
+            /*downedEyeballFlyingFish = tag.GetBool("downedEyeballFlyingFish");
+            downedZombieMerman = tag.GetBool("downedZombieMerman");
+            downedSplinterling = tag.GetBool("downedSplinterling");*/
 
             downedBrainOfCthulhu = tag.GetBool("downedBrainOfCthulhu");
             downedEaterOfWorlds = tag.GetBool("downedEaterOfWorlds");
@@ -55,7 +63,9 @@ namespace LaziestNPC.Globals.GlobalNPCs
 
         public override void SaveWorldData(TagCompound tag)
         {
-            tag["downedSplinterling"] = downedSplinterling;
+            /*tag["downedEyeballFlyingFish"] = downedEyeballFlyingFish;
+            tag["downedZombieMerman"] = downedZombieMerman;
+            tag["downedSplinterling"] = downedSplinterling;*/
 
             tag["downedBrainOfCthulhu"] = downedBrainOfCthulhu;
             tag["downedEaterOfWorlds"] = downedEaterOfWorlds;
@@ -70,9 +80,16 @@ namespace LaziestNPC.Globals.GlobalNPCs
     {
         public override void OnKill(NPC npc)
         {
-            //树精
+            /*//游荡眼球怪鱼 (血月)
+            if (npc.type == NPCID.EyeballFlyingFish)
+                NPCCondition.downedEyeballFlyingFish = true;
+            //僵尸人鱼 (血月)
+            if (npc.type == NPCID.ZombieMerman)
+                NPCCondition.downedZombieMerman = true;
+
+            //树精 (南瓜月)
             if (npc.type == NPCID.Splinterling)
-                NPCCondition.downedSplinterling = true;
+                NPCCondition.downedSplinterling = true;*/
 
             //克苏鲁之脑
             if (npc.type == NPCID.BrainofCthulhu)

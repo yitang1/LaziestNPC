@@ -87,7 +87,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             var naturalB = new NPCShop(Type, "NaturalBlocks");
             var buildingB = new NPCShop(Type, "BuildingBlocks");
 
-            //【尽量先只添加需要作为[合成配方]的物块，而不是把游戏中所有物块全添加进来，无他，唯累人尔】
+            //【尽量先只添加需要作为[合成配方]或[只能敌怪掉落]的物块，而不是把游戏中所有物块全添加进来，无他，唯累人尔】
             //【能够被其他物品合成出来的，也暂时不添加】
 
             #region 【天然物块】
@@ -296,6 +296,12 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             buildingB.AddModItem("ThoriumMod/Deadwood", (0, 0, 0, 10)) //枯木
             .AddModItem("ThoriumMod/YewWood", (0, 0, 0, 10)) //紫衫木
             .AddModItem("ThoriumMod/EvergreenBlock", (0, 0, 0, 10)); //常青木
+            #endregion
+
+            #region 旅人归途 Homeward Journey
+            buildingB.AddModItem("ContinentOfJourney/RemainsOfThePickaxeLord", (0, 0, 50, 0)) //镐神遗骸
+            .AddModItem("ContinentOfJourney/AnglerCore", (0, 1, 0, 0), BloodMoonHappened); //钓鱼佬核心
+
             #endregion
 
             #endregion

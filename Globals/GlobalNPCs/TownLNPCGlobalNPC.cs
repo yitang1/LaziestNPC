@@ -43,19 +43,19 @@ namespace LaziestNPC.Globals.GlobalNPCs
             };
 
             if (bossID != null)
+            {
+                //(再见了，player.active小弟)
+                foreach (var player in Main.ActivePlayers)
                 {
-                    //(再见了，player.active小弟)
-                    foreach (var player in Main.ActivePlayers)
+                    TownLNPCPlayer LTPlayer = player.LaziestTownLNPC();
+                    foreach (string id in bossID)
                     {
-                        TownLNPCPlayer LTPlayer = player.LaziestTownLNPC();
-                        foreach (string id in bossID)
-                        {
-                            //没有就添加这个Boss字符串
-                            if (!LTPlayer.OnceBossChats.Contains(id))
-                                LTPlayer.OnceBossChats.Add(id);
-                        }
-                   }
+                        //没有就添加这个Boss字符串
+                        if (!LTPlayer.OnceBossChats.Contains(id))
+                            LTPlayer.OnceBossChats.Add(id);
+                    }
                 }
+            }
         }
     }
 }

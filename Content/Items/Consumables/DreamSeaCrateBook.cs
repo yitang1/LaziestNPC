@@ -12,6 +12,7 @@ using Terraria.GameContent.ItemDropRules;
 using LaziestNPC.Common.Rarities;
 using LaziestNPC.Common.Helpers;
 using LaziestNPC.Globals.GlobalItems;
+using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 
 namespace LaziestNPC.Content.Items.Consumables
 {
@@ -107,6 +108,26 @@ namespace LaziestNPC.Content.Items.Consumables
 
             #endregion
 
+            #region [旅人归途 Homeward Journey]
+            //肉前
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "MazeCrate", new DropCondition(() => NPC.downedBoss2)); //迷宫匣
+            //肉后
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "MistyCrate", new Conditions.IsHardmode()); //迷雾匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "DistortedCrate", new DropCondition(() => NPC.downedPlantBoss)); //扭曲匣
+            //暗影墙后
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "QuakyCrate", new DropCondition(() => DownedWallofShadow.IsMet())); //震颤匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "SolarCrate", new DropCondition(() => DownedWallofShadow.IsMet())); //太阳匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "ForeverCrate", new DropCondition(() => DownedWallofShadow.IsMet())); //永远匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "LivingCrate", new DropCondition(() => DownedWallofShadow.IsMet())); //脉搏匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "CubistCrate", new DropCondition(() => DownedWallofShadow.IsMet())); //立体匣
+            //三至尊后
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "ShadowCrate", new DropCondition(() => DownedTheThree.IsMet())); //影子匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "ShinyCrate", new DropCondition(() => DownedSunSlimeGod.IsMet())); //闪亮匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "CountdownCrate", new DropCondition(() => DownedTheOverwatcher.IsMet())); //计时匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "MembraneCrate", new DropCondition(() => DownedTheLifebringer.IsMet())); //薄膜匣
+            LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "CubeCrate", new DropCondition(() => DownedTheMaterealizer.IsMet())); //方块匣
+            
+            #endregion
         }
 
         public override void PostDrawTooltipLine(DrawableTooltipLine line)

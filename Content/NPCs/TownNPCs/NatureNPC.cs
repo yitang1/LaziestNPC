@@ -249,6 +249,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             fishery.AddModItem("ThoriumMod/MagmaGill", (0, 0, 10, 0)) //熔岩焰鱼
             .AddModItem("ThoriumMod/FlamingCrackGut", (0, 0, 10, 0)); //燃火裂肠鱼
 
+            #endregion
+
+            #region [旅人归途 Homeward Journey]
+            fishery.AddModItem("ContinentOfJourney/CrispyButterfly", (0, 0, 15, 0), Condition.DownedMechBossAny); //酥脆蝴蝶
 
             #endregion
 

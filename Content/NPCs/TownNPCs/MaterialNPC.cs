@@ -175,7 +175,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/StormlionMandible", (0, 0, 15, 0)) //风暴之颚
             .AddModItem("CalamityMod/BlightedGel", (0, 0, 15, 0)) //枯萎凝胶
             .AddModItem("CalamityMod/AncientBoneDust", (0, 0, 15, 0)) //上古骨灰
-            .AddModItem("CalamityMod/BloodOrb", (0, 0, 50, 0)) //血珠
+            .AddModItem("CalamityMod/BloodOrb", (0, 0, 50, 0), BloodMoonHappened) //血珠
             .AddModItem("CalamityMod/SulphuricScale", (0, 0, 50, 0), Condition.DownedEyeOfCthulhu) //硫磺鳞片
             .AddModItem("CalamityMod/PearlShard", (0, 0, 25, 0), DownedDesertBug) //珍珠碎片
             .AddModItem("CalamityMod/PurifiedGel", (0, 0, 75, 0), DownedSlimeGod) //纯净凝胶
@@ -191,32 +191,32 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/DepthCells", (0, 2, 0, 0), DownedLeviathan) //深渊细胞
             .AddModItem("CalamityMod/Lumenyl", (0, 2, 0, 0), DownedLeviathan) //流明晶
             .AddModItem("CalamityMod/AureusCell", (0, 2, 0, 0), DownedAstrum) //星舰电池
-            .AddModItem("CalamityMod/PlagueCellCanister", (0, 2, 25, 0), Condition.DownedGolem) //瘟疫细胞罐
-            .AddModItem("CalamityMod/InfectedArmorPlating", (0, 2, 25, 0), DownedPlague) //瘟疫装甲镀层
-            .AddModItem("CalamityMod/MeldBlob", (0, 2, 50, 0), Condition.DownedCultist) //冥思溶剂
+            .AddModItem("CalamityMod/PlagueCellCanister", (0, 2, 50, 0), Condition.DownedGolem) //瘟疫细胞罐
+            .AddModItem("CalamityMod/InfectedArmorPlating", (0, 2, 50, 0), DownedPlague) //瘟疫装甲镀层
+            .AddModItem("CalamityMod/MeldBlob", (0, 3, 0, 0), Condition.DownedCultist) //冥思溶剂
             //月后
-            .AddModItem("CalamityMod/UnholyEssence", (0, 2, 75, 0), Condition.DownedMoonLord) //浊火精华
-            .AddModItem("CalamityMod/Necroplasm", (0, 2, 75, 0), Condition.DownedMoonLord) //灵质
-            .AddModItem("CalamityMod/EffulgentFeather", (0, 3, 0, 0), DownedDragonfolly) //闪耀金羽
-            .AddModItem("CalamityMod/DivineGeode", (0, 3, 50, 0), DownedProvidence) //神圣晶石
-            .AddModItem("CalamityMod/Bloodstone", (0, 3, 50, 0), DownedProvidence) //血石
-            .AddModItem("CalamityMod/ArmoredShell", (0, 3, 75, 0), DownedStormWeaver) //装甲外壳
-            .AddModItem("CalamityMod/DarkPlasma", (0, 3, 75, 0), DownedVoid) //暗离子体
-            .AddModItem("CalamityMod/TwistingNether", (0, 3, 75, 0), DownedSignus) //扭曲虚空
-            .AddModItem("CalamityMod/RuinousSoul", (0, 4, 0, 0), DownedPolterghast) //毁灭之灵
-            .AddModItem("CalamityMod/ReaperTooth", (0, 4, 0, 0), DownedPolterghast) //猎魂鲨牙
-            .AddModItem("CalamityMod/CosmiliteBar", (0, 4, 50, 0), DownedDOG) //宇宙锭
-            .AddModItem("CalamityMod/EndothermicEnergy", (0, 4, 50, 0), DOGAndSnowMoon) //恒温能量
-            .AddModItem("CalamityMod/NightmareFuel", (0, 4, 50, 0), DOGAndPumpkinMoon) //梦魇魔能
-            .AddModItem("CalamityMod/DarksunFragment", (0, 4, 50, 0), DOGAndEclipse) //日蚀之阴碎片
-            .AddModItem("CalamityMod/YharonSoulFragment", (0, 5, 0, 0), DownedYharon) //龙魂碎片
-            .AddModItem("CalamityMod/ExoPrism", (0, 5, 50, 0), DownedDraedon) //星流棱晶
-            .AddModItem("CalamityMod/AshesofAnnihilation", (0, 6, 0, 0), DownedSCala); //湮灭余烬
+            .AddModItem("CalamityMod/UnholyEssence", (0, 3, 50, 0), Condition.DownedMoonLord) //浊火精华
+            .AddModItem("CalamityMod/Necroplasm", (0, 3, 50, 0), Condition.DownedMoonLord) //灵质
+            .AddModItem("CalamityMod/EffulgentFeather", (0, 4, 0, 0), DownedDragonfolly) //闪耀金羽
+            .AddModItem("CalamityMod/DivineGeode", (0, 5, 0, 0), DownedProvidence) //神圣晶石
+            .AddModItem("CalamityMod/Bloodstone", (0, 5, 0, 0), DownedProvidence) //血石
+            .AddModItem("CalamityMod/ArmoredShell", (0, 6, 0, 0), DownedStormWeaver) //装甲外壳
+            .AddModItem("CalamityMod/DarkPlasma", (0, 6, 0, 0), DownedVoid) //暗离子体
+            .AddModItem("CalamityMod/TwistingNether", (0, 6, 0, 0), DownedSignus) //扭曲虚空
+            .AddModItem("CalamityMod/RuinousSoul", (0, 7, 0, 0), DownedPolterghast) //毁灭之灵
+            .AddModItem("CalamityMod/ReaperTooth", (0, 7, 50, 0), DownedPolterghast) //猎魂鲨牙
+            .AddModItem("CalamityMod/CosmiliteBar", (0, 10, 0, 0), DownedDOG) //宇宙锭
+            .AddModItem("CalamityMod/EndothermicEnergy", (0, 10, 50, 0), DOGAndSnowMoon) //恒温能量
+            .AddModItem("CalamityMod/NightmareFuel", (0, 10, 50, 0), DOGAndPumpkinMoon) //梦魇魔能
+            .AddModItem("CalamityMod/DarksunFragment", (0, 10, 50, 0), DOGAndEclipse) //日蚀之阴碎片
+            .AddModItem("CalamityMod/YharonSoulFragment", (0, 15, 0, 0), DownedYharon) //龙魂碎片
+            .AddModItem("CalamityMod/ExoPrism", (0, 20, 0, 0), DownedDraedon) //星流棱晶
+            .AddModItem("CalamityMod/AshesofAnnihilation", (0, 25, 0, 0), DownedSCala); //湮灭余烬
 
             #endregion
 
             #region [灾劫 Catalyst Mod]
-            modMat.AddModItem("CatalystMod/AstraJelly", (0, 1, 0, 0), Condition.Hardmode); //幻星凝露
+            modMat.AddModItem("CatalystMod/AstraJelly", (0, 1, 50, 0), Condition.Hardmode); //幻星凝露
 
             #endregion
 
@@ -239,15 +239,41 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/PharaohsBreath", (0, 1, 0, 0), Condition.Hardmode) //法老之息
             .AddModItem("ThoriumMod/BioMatter", (0, 1, 0, 0), Condition.Hardmode) //生物物质
             .AddModItem("ThoriumMod/AbyssalChitin", (0, 1, 0, 0), Condition.Hardmode) //深渊角质鳞
-            .AddModItem("ThoriumMod/BloodCell", (0, 1, 25, 0), HMAndBloodMoon) //血细胞
+            .AddModItem("ThoriumMod/BloodCell", (0, 1, 50, 0), HMAndBloodMoon) //血细胞
             .AddModItem("ThoriumMod/BrokenHeroFragment", (0, 2, 0, 0), Condition.DownedPlantera) //残缺英雄碎片
             .AddModItem("ThoriumMod/SolarPebble", (0, 2, 0, 0), Condition.DownedPlantera) //太阳石砾
             .AddModItem("ThoriumMod/DarkMatter", (0, 2, 0, 0), Condition.DownedPlantera) //暗物质
             .AddModItem("ThoriumMod/HolyKnightsAlloy", (0, 2, 0, 0), Condition.DownedPlantera) //圣骑士合金
             .AddModItem("ThoriumMod/Permafrost", (0, 2, 25, 0), SnowMoonHappened) //永冻土
-            .AddModItem("ThoriumMod/WhiteDwarfFragment", (0, 2, 50, 0), DownedAnyPillar) //白矮星碎片
-            .AddModItem("ThoriumMod/CelestialFragment", (0, 2, 50, 0), DownedAnyPillar) //天界碎片
-            .AddModItem("ThoriumMod/ShootingStarFragment", (0, 2, 50, 0), DownedAnyPillar); //流影掠星碎片
+            .AddModItem("ThoriumMod/WhiteDwarfFragment", (0, 3, 0, 0), DownedAnyPillar) //白矮星碎片
+            .AddModItem("ThoriumMod/CelestialFragment", (0, 3, 0, 0), DownedAnyPillar) //天界碎片
+            .AddModItem("ThoriumMod/ShootingStarFragment", (0, 3, 0, 0), DownedAnyPillar); //流影掠星碎片
+
+            #endregion
+
+            #region [旅人归途 Homeward Journey]
+            //肉前
+            modMat.AddModItem("ContinentOfJourney/Blood", (0, 0, 50, 0), BloodMoonHappened) //血液
+            //肉后
+            .AddModItem("ContinentOfJourney/FluorescentFibre", (0, 2, 0, 0), Condition.DownedPlantera) //荧光纤维
+            .AddModItem("ContinentOfJourney/AbyssFragment", (0, 2, 0, 0), Condition.DownedPlantera) //深渊碎片
+            .AddModItem("ContinentOfJourney/EssenceofDarkness", (0, 1, 0, 0), Condition.Hardmode) //黑暗精华
+            //月后
+            .AddModItem("ContinentOfJourney/SteelFeather", (0, 4, 0, 0), DownedWallofShadow) //钢羽
+            .AddModItem("ContinentOfJourney/SpiralTissue", (0, 4, 0, 0), DownedWallofShadow) //螺旋组织
+            .AddModItem("ContinentOfJourney/TrueJungleSpore", (0, 4, 0, 0), DownedWallofShadow) //真丛林孢子
+            .AddModItem("ContinentOfJourney/DenseIcicle", (0, 4, 0, 0), DownedWallofShadow) //高密度冰锥
+            .AddModItem("ContinentOfJourney/DivineShard", (0, 4, 0, 0), DownedWallofShadow) //圣洁碎片
+            .AddModItem("ContinentOfJourney/SunlightGel", (0, 4, 0, 0), DownedWallofShadow) //日光凝胶
+            .AddModItem("ContinentOfJourney/NuclearPotential", (0, 4, 0, 0), DownedWallofShadow) //核势
+            .AddModItem("ContinentOfJourney/EssenceofTime", (0, 4, 0, 0), DownedWallofShadow) //时光精华
+            .AddModItem("ContinentOfJourney/EssenceofLife", (0, 4, 0, 0), DownedWallofShadow) //生命精华
+            .AddModItem("ContinentOfJourney/EssenceofMatter", (0, 4, 0, 0), DownedWallofShadow) //物质精华
+            //暗影墙后
+            .AddModItem("ContinentOfJourney/WillToGrow", (0, 15, 0, 0), DownedTheThree) //增长意志
+            .AddModItem("ContinentOfJourney/WillToCorrode", (0, 15, 0, 0), DownedTheThree) //腐蚀意志
+            .AddModItem("ContinentOfJourney/WillToCrown", (0, 15, 0, 0), DownedTheThree) //冠冕意志
+            .AddModItem("ContinentOfJourney/BrokenObsidianSword", (0, 15, 0, 0), DownedTheThree); //黑曜石断剑
 
             #endregion
 

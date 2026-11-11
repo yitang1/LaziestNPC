@@ -108,6 +108,8 @@ namespace LaziestNPC.Common.ModConditions
         #endregion
 
         #region 旅人归途 Homeward Journey
+        //特殊
+        public static Condition DownedTheThree => new Condition("DownedTheThree", () => DownedTheOverwatcher.IsMet() && DownedTheLifebringer.IsMet() && DownedTheMaterealizer.IsMet()); //极视终表 + 万籁携生 + 化物天匠 (三至尊)
         //肉前
         public static Condition DownedGoblinChariot => ModBosses.GetCondition("GoblinChariot"); //哥布林战车
         public static Condition DownedBigDipper => ModBosses.GetCondition("BigDipper"); //大熊星座

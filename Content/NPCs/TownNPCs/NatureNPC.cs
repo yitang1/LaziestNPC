@@ -15,6 +15,7 @@ using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Content.Items.Consumables;
 using LaziestNPC.Globals.Config;
 using LaziestNPC.Common.Helpers;
+using LaziestNPC.Common.UI;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -82,28 +83,53 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             }
         }
 
+        private static readonly ShopCategory[] ShopCategoryList = new ShopCategory[]
+        {
+            new ShopCategory(
+                "PlantsCritter",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.PlantsCritter",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/PlantsCritter", 4.5f),
+
+            new ShopCategory(
+                "Fish",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.Fish",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/Fish", 0f),
+
+            new ShopCategory(
+                "Crate",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.Crate",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/Crate", 2f),
+
+            new ShopCategory(
+                "AnglerReward",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.AnglerReward",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/AnglerReward", 3f),
+        };
+
+        public override IReadOnlyList<ShopCategory> ShopCategories => ShopCategoryList;
+
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.NatureNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.NatureNPC.button2");
+            ShopCategory category = CurrentShopCategory;
+            //按钮1为当前类别的本地化名称
+            button = category != null ? Language.GetTextValue(category.NameKey) : "";
+            button2 = null;
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
-            if (firstButton)
-            {
-                shopName = "PlantsCritters";
-            }
-            else
-            {
-                shopName = "Fishery";
-            }
+            if (!firstButton)
+                return;
+
+            ShopCategory category = CurrentShopCategory;
+            if (category != null)
+                shopName = category.ShopName;
         }
 
         public override void AddShops()
         {
-            var plcr = new NPCShop(Type, "PlantsCritters");
-            var fishery = new NPCShop(Type, "Fishery");
+            var plcr = new NPCShop(Type, "PlantsCritter");
+            var fish = new NPCShop(Type, "Fish");
 
             #region 【动植物】
 
@@ -176,7 +202,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【渔获物品】
 
             #region [原版]
-            fishery.AddItem(ItemType<CallingSeaBottle>(), (0, 25, 0, 0)) //唤海瓶
+            fish.AddItem(ItemType<CallingSeaBottle>(), (0, 25, 0, 0)) //唤海瓶
             .AddItem(ItemType<DreamSeaCrateBook>(), (1, 0, 0, 0)) //梦海宝匣大全
             //鱼饵 ↓
             .AddItem(ItemID.CanOfWorms, (0, 1, 50, 0)) //蠕虫罐头
@@ -225,7 +251,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [灾厄 Calamity Mod]
             //鱼饵
-            fishery.AddModItem("CalamityMod/GrandMarquisBait", (0, 1, 0, 0)) //尊爵鱼饵
+            fish.AddModItem("CalamityMod/GrandMarquisBait", (0, 1, 0, 0)) //尊爵鱼饵
             .AddModItem("CalamityMod/ArcturusAstroidean", (0, 0, 20, 0), Condition.Hardmode) //大角海星
             .AddModItem("CalamityMod/EnchantedStarfish", (0, 1, 50, 0)) //附魔海星
             //鱼-沉沦之海 ↓
@@ -246,20 +272,20 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [瑟银 Thorium Mod]
-            fishery.AddModItem("ThoriumMod/MagmaGill", (0, 0, 10, 0)) //熔岩焰鱼
+            fish.AddModItem("ThoriumMod/MagmaGill", (0, 0, 10, 0)) //熔岩焰鱼
             .AddModItem("ThoriumMod/FlamingCrackGut", (0, 0, 10, 0)); //燃火裂肠鱼
 
             #endregion
 
             #region [旅人归途 Homeward Journey]
-            fishery.AddModItem("ContinentOfJourney/CrispyButterfly", (0, 0, 15, 0), Condition.DownedMechBossAny); //酥脆蝴蝶
+            fish.AddModItem("ContinentOfJourney/CrispyButterfly", (0, 0, 15, 0), Condition.DownedMechBossAny); //酥脆蝴蝶
 
             #endregion
 
             #endregion
 
             plcr.Register();
-            fishery.Register();
+            fish.Register();
         }
     }
 }

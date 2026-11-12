@@ -5,11 +5,36 @@ using Terraria.GameContent.Bestiary;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using LaziestNPC.Common.UI;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     public abstract class TownLNPC : ModNPC
     {
+        //当前选中的UI行的索引(其实就是int，定位列表里的元素)
+        public int CurrentShopCategoryIndex = 0;
+        //这是一个有序的虚列表，存在里面的元素，第0个、第1个、第2个等等都是固定的。
+        public virtual IReadOnlyList<ShopCategory> ShopCategories => Array.Empty<ShopCategory>();
+
+        //子类：定义自己的ShopCategory商店类别
+        public ShopCategory CurrentShopCategory
+        {
+            get
+            {
+                IReadOnlyList<ShopCategory> list = ShopCategories;
+                if (list == null || list.Count == 0)
+                    return null;
+
+                int index = CurrentShopCategoryIndex;
+                if (index < 0)
+                    index = 0;
+                if (index >= list.Count)
+                    index = list.Count - 1;
+
+                return list[index];
+            }
+        }
+
         protected virtual string BestiaryText => ""; //图鉴文本
         protected virtual string NPCNameText => ""; //NPC名字
         protected abstract int AttackProjType { get; } //射弹ID

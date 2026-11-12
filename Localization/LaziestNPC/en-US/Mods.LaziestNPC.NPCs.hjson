@@ -193,8 +193,12 @@ NatureNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 动植物
-	button2: 渔获物品
+	ShopCategory: {
+		PlantsCritter: PlantsCritter
+		Fish: 鱼类
+		Crate: 宝匣
+		AnglerReward: 渔夫奖励
+	}
 }
 
 OreNPC: {

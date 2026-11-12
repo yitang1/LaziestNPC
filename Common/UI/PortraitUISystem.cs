@@ -139,7 +139,7 @@ namespace LaziestNPC.Common.UI
             float portraitY = dialogTop + offsetY + bounceOffset;
 
             //(7)：绘制背景框
-            Texture2D bg = ModContent.Request<Texture2D>("LaziestNPC/Assets/UI/PortraitBackground").Value;
+            Texture2D bg = ModContent.Request<Texture2D>("LaziestNPC/Assets/Portraits/PortraitBackground").Value;
             Main.spriteBatch.Draw(bg,
                 new Rectangle((int)portraitX, (int)portraitY, (int)size, (int)size),
                 Color.White);

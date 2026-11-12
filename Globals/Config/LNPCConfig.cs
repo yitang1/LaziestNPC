@@ -43,7 +43,7 @@ namespace LaziestNPC.Globals.Config
         [Range(1, 10f)]
         [DefaultValue(1f)]
         [Slider]
-        public double MobHealth;
+        public float MobHealth;
 
         [DefaultValue(true)]
         [ReloadRequired]

@@ -3,8 +3,7 @@
  
 此为Steam上[**tModLoader**](https://store.steampowered.com/app/1281930/tModLoader/)的一个以NPC为核心的辅助类模组（Mod）。
 > [!TIP]
-> 原本是个人自用的Mod。  
-> 模组创建初衷：  
+> 原本是个人自用的Mod。模组创建初衷：  
 > • NPC售卖物品的解锁时期更合理、更准确。  
 > • 支持并适配更多tmod创意工坊的其他Mod。  
 
@@ -15,9 +14,13 @@
 - **点击这里👉** [LaziestNPC.tmod是Mod文件](https://github.com/yitang1/LaziestNPC/releases)  
 
 <details>
-<summary><b>📥【安装方法】</b></summary>
+<summary><b>📥【安装方法】(必看)</b></summary>
 
-- **方法①**  
+- **前置：一个叫[Shop Extender](https://steamcommunity.com/sharedfiles/filedetails/?id=3012051615)的商店翻页Mod，先安装这个。**  
+或者直接在Steam后台运行时，Win + R 键，然后粘贴下面的指令并回车：  
+steam://openurl/https://steamcommunity.com/sharedfiles/filedetails/?id=3012051615
+
+- **本Mod安装方法①**  
 打开Steam里的tmodloader，  
 在游戏主界面依次点击—“创意工坊”—“管理模组”(就是平时你查看Mod的模组列表)，  
 最下方中间有一个“打开模组文件夹”，点击后打开文件夹，把下好的Mod放进去即可，  

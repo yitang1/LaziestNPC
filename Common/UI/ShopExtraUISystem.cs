@@ -119,7 +119,7 @@ namespace LaziestNPC.Common.UI
     public class ShopExtraUIState : UIState
     {
         //可调参数：竖条UI布局
-        private static float PanelWidth = 160f; //竖条宽度
+        private static float MinPanelWidth = 160f; //竖条最小宽度
         private static float RowHeight = 48f; //每一类项目的高度
         private static float PanelPadding = 10f; //竖条内部上下左右留白
 
@@ -145,7 +145,7 @@ namespace LaziestNPC.Common.UI
         public override void OnInitialize()
         {
             panel = new UIPanel();
-            panel.Width.Set(PanelWidth, 0f);
+            panel.Width.Set(MinPanelWidth, 0f);
             panel.SetPadding(0f);
 
             panel.BackgroundColor = new Color(55, 71, 150) * 0.7f; //背景色 (第四个参数0完全透明，255完全不透明)
@@ -189,11 +189,13 @@ namespace LaziestNPC.Common.UI
 
             //根据当前对话文本的实际渲染高度动态计算对话框底部
             int lines = GetChatLineCount();
+
             float dynamicDialogHeight = DialogHeight + (lines - BaseLines) * LineHeight;
             float dialogBottom = DialogTop + dynamicDialogHeight;
 
             //竖条位置 = 对话框右边缘/下边缘 + 偏移量
-            float uiX = dialogRight - PanelWidth + UiXOffset;
+            float currentWidth = panel.Width.Pixels; //获取面板当前实际宽度
+            float uiX = dialogRight - currentWidth + UiXOffset;
             float uiY = dialogBottom + UiYOffset;
             if (uiY < DialogTop)
                 uiY = DialogTop;
@@ -220,18 +222,55 @@ namespace LaziestNPC.Common.UI
             string[] wrappedLines = Utils.WordwrapString(text, FontAssets.MouseText.Value, 480, 10, out _);
 
             int actualLines = 0;
+            string lastLine = null;
             foreach (string line in wrappedLines)
             {
                 if (!string.IsNullOrEmpty(line))
+                {
                     actualLines++;
+                    lastLine = line;
+                }
+
             }
 
+            //行尾标点超出一行的补丁
+            if (actualLines > 1 && lastLine != null && lastLine.Length > 1 && IsChinesePunctuation(lastLine[lastLine.Length - 1]))
+            {
+                float lastLineWidth = ChatManager.GetStringSize(FontAssets.MouseText.Value, lastLine, Vector2.One).X;
+                if (lastLineWidth > 450f) //如果最后一行塞得很满，原版会把结尾的标点挤到下一行
+                    actualLines++;
+            }
+            //Main.NewText($"lines={actualLines}, lastLine=[{lastLine}]");
             return Math.Max(1, actualLines);
+        }
+        private static bool IsChinesePunctuation(char c)
+        {
+            return c == '。' || c == '，' || c == '、' || c == '！' || c == '？'
+                || c == '；' || c == '：' || c == '…' || c == '—';
+        }
+
+        private float CalcPanelWidth(IReadOnlyList<ShopCategory> categories)
+        {
+            float maxTextWidth = 0f;
+            foreach (ShopCategory c in categories)
+            {
+                string text = Language.GetTextValue(c.NameKey);
+                float w = ChatManager.GetStringSize(FontAssets.MouseText.Value, text, Vector2.One).X;
+                if (w > maxTextWidth)
+                    maxTextWidth = w;
+            }
+
+            // 图标 + 左padding + 图标和文字间距 + 文字 + 右padding
+            float width = ShopCategoryRow.IconSize + 16f + maxTextWidth + PanelPadding * 2f;
+            return Math.Max(width, MinPanelWidth);
         }
 
         //当NPC更换，或类别数量发生变化，就按新的类别重新生成一遍行对象。没变化就不会重建行。
         private void RebuildRows(TownLNPC town, IReadOnlyList<ShopCategory> categories)
         {
+            float dynamicWidth = CalcPanelWidth(categories);
+            panel.Width.Set(dynamicWidth, 0f); //设置面板宽度
+
             panel.RemoveAllChildren();
             rows.Clear();
 
@@ -240,7 +279,7 @@ namespace LaziestNPC.Common.UI
                 ShopCategoryRow row = new ShopCategoryRow(categories[i], i, town);
                 row.Left.Set(PanelPadding, 0f);
                 row.Top.Set(PanelPadding + i * RowHeight, 0f);
-                row.Width.Set(PanelWidth - PanelPadding * 2f, 0f);
+                row.Width.Set(dynamicWidth - PanelPadding * 2f, 0f); //行宽改为动态宽度
                 row.Height.Set(RowHeight, 0f);
                 panel.Append(row);
                 rows.Add(row);
@@ -254,7 +293,7 @@ namespace LaziestNPC.Common.UI
     public class ShopCategoryRow : UIElement
     {
         //可调参数：图标与文字布局
-        private static float IconSize = 34f; //图标尺寸
+        public static float IconSize = 34f; //图标尺寸
         private static float IconLeftPadding = 8f; //图标距离行左边缘的间距
         private static float IconTextGap = 16f; //图标和文字之间的间距
         private static float TextVerticalOffset = 4f; //文字垂直补偿，正值向下，负值向上

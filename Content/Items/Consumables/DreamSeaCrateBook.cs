@@ -84,6 +84,7 @@ namespace LaziestNPC.Content.Items.Consumables
 
             #endregion
 
+            /*
             #region [灾厄 Calamity Mod]
             LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "SulphurousCrate"); //硫海匣
             LNPCHelper.AddModItemLoot(itemLoot, "CalamityMod", "MonolithCrate"); //星石匣
@@ -126,8 +127,10 @@ namespace LaziestNPC.Content.Items.Consumables
             LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "CountdownCrate", new DropCondition(() => DownedTheOverwatcher.IsMet())); //计时匣
             LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "MembraneCrate", new DropCondition(() => DownedTheLifebringer.IsMet())); //薄膜匣
             LNPCHelper.AddModItemLoot(itemLoot, "ContinentOfJourney", "CubeCrate", new DropCondition(() => DownedTheMaterealizer.IsMet())); //方块匣
-            
+
             #endregion
+
+            */
         }
 
         public override void PostDrawTooltipLine(DrawableTooltipLine line)

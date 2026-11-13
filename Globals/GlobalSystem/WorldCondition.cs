@@ -14,74 +14,62 @@ namespace LaziestNPC.Globals.GlobalSystem
         {
             FishJadeBuyCount = 0;
             BloodMoonHappened = false;
+            GoblinArmyHappened = false;
             EclipseHappened = false;
             SnowMoonHappened = false;
             PumpkinMoonHappened = false;
 
-            SnowMoonDOG = false;
-            PumpkinMoonDOG = false;
-            EclipseDOG = false;
         }
         public override void OnWorldUnload()
         {
             FishJadeBuyCount = 0;
             BloodMoonHappened = false;
+            GoblinArmyHappened = false;
             EclipseHappened = false;
             SnowMoonHappened = false;
             PumpkinMoonHappened = false;
 
-            SnowMoonDOG = false;
-            PumpkinMoonDOG = false;
-            EclipseDOG = false;
         }
 
         public override void LoadWorldData(TagCompound tag)
         {
             FishJadeBuyCount = tag.GetInt("FishJadeBuyCount");
             BloodMoonHappened = tag.GetBool("BloodMoonHappened");
+            GoblinArmyHappened = tag.GetBool("GoblinArmyHappened");
             EclipseHappened = tag.GetBool("EclipseHappened");
             SnowMoonHappened = tag.GetBool("SnowMoonHappened");
             PumpkinMoonHappened = tag.GetBool("PumpkinMoonHappened");
 
-            SnowMoonDOG = tag.GetBool("SnowMoonDOG");
-            PumpkinMoonDOG = tag.GetBool("PumpkinMoonDOG");
-            EclipseDOG = tag.GetBool("EclipseDOG");
         }
 
         public override void SaveWorldData(TagCompound tag)
         {
             tag["FishJadeBuyCount"] = FishJadeBuyCount;
             tag["BloodMoonHappened"] = BloodMoonHappened;
+            tag["GoblinArmyHappened"] = GoblinArmyHappened;
             tag["EclipseHappened"] = EclipseHappened;
             tag["SnowMoonHappened"] = SnowMoonHappened;
             tag["PumpkinMoonHappened"] = PumpkinMoonHappened;
 
-            tag["SnowMoonDOG"] = SnowMoonDOG;
-            tag["PumpkinMoonDOG"] = PumpkinMoonDOG;
-            tag["EclipseDOG"] = EclipseDOG;
         }
 
         public override void PostUpdateWorld()
         {
             //事件发生过一次，对应字段就会永久变为true
             if (Main.bloodMoon) BloodMoonHappened = true;
+            if (Main.invasionType == InvasionID.GoblinArmy) GoblinArmyHappened = true;
             if (Main.eclipse) EclipseHappened = true;
             if (Main.snowMoon) SnowMoonHappened = true;
             if (Main.pumpkinMoon) PumpkinMoonHappened = true;
 
-            if (Main.snowMoon && DownedDOG.IsMet()) SnowMoonDOG = true;
-            if (Main.pumpkinMoon && DownedDOG.IsMet()) PumpkinMoonDOG = true;
-            if (Main.eclipse && DownedDOG.IsMet()) EclipseDOG = true;
         }
 
         public static int FishJadeBuyCount = 0;
         public static bool BloodMoonHappened = false;
+        public static bool GoblinArmyHappened = false;
         public static bool EclipseHappened = false;
         public static bool SnowMoonHappened = false;
         public static bool PumpkinMoonHappened = false;
 
-        public static bool SnowMoonDOG = false;
-        public static bool PumpkinMoonDOG = false;
-        public static bool EclipseDOG = false;
     }
 }

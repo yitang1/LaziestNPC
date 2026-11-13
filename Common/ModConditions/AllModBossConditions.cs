@@ -13,7 +13,7 @@ namespace LaziestNPC.Common.ModConditions
     {
         #region 原版
         public static readonly Condition BloodMoonHappened = new("BloodMoonHappened", () => WorldCondition.BloodMoonHappened); //发生过血月
-        public static readonly Condition HMAndBloodMoon = new Condition("HMAndBloodMoon", () => Main.hardMode && WorldCondition.BloodMoonHappened); //肉后 + 血月
+        public static readonly Condition GoblinArmyHappened = new("GoblinArmyHappened", () => WorldCondition.GoblinArmyHappened); //发生过哥布林军队
         public static readonly Condition EclipseHappened = new Condition("EclipseHappened", () => WorldCondition.EclipseHappened); //发生过日食
         public static readonly Condition SnowMoonHappened = new Condition("SnowMoonHappened", () => WorldCondition.SnowMoonHappened); //发生过霜月
         public static readonly Condition PumpkinMoonHappened = new Condition("PumpkinMoonHappened", () => WorldCondition.PumpkinMoonHappened); //发生过南瓜月
@@ -34,10 +34,6 @@ namespace LaziestNPC.Common.ModConditions
         #region 灾厄 Calamity Mod
         //其他
         public static readonly Condition KingSlimeOrDesertBug = new Condition("KingSlimeOrDesertBug", () => Condition.DownedKingSlime.IsMet() || DownedDesertBug.IsMet()); //史莱姆王或荒漠灾虫
-        public static readonly Condition AstrumBugAndCultist = new Condition("AstrumBugAndCultist", () => Condition.DownedCultist.IsMet() && DownedAstrumBug.IsMet()); //星神游龙 + 拜月教邪教徒
-        public static readonly Condition DOGAndSnowMoon = new Condition("DOGAndSnowMoon", () => WorldCondition.SnowMoonDOG); //神吞 + 霜月
-        public static readonly Condition DOGAndPumpkinMoon = new Condition("DOGAndPumpkinMoon", () => WorldCondition.PumpkinMoonDOG); //神吞 + 南瓜月
-        public static readonly Condition DOGAndEclipse = new Condition("DOGAndEclipse", () => WorldCondition.EclipseDOG); //神吞 + 日食
         //肉前
         public static readonly Condition DownedDesertBug = ModBosses.GetCondition("DesertScourge"); //荒漠灾虫
         public static readonly Condition DownedCrabulon = ModBosses.GetCondition("Crabulon"); //菌生蟹

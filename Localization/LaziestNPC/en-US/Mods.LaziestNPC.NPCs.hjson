@@ -64,11 +64,13 @@ BossNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	ShopName: {
-		VanillaAll: 原版相关内容
-		ModBags: 模组宝藏袋
-		ModSums: 模组召唤物
-		CycleShop: 切换商店
+	ShopCategory: {
+		PreBag: 宝藏袋(肉前)
+		HardBag: 宝藏袋(肉后)
+		PostMoonBag: 宝藏袋(月后)
+		PreSum: 召唤物品(肉前)
+		HardSum: 召唤物品(肉后)
+		PostMoonSum: 召唤物品(月后)
 	}
 }
 

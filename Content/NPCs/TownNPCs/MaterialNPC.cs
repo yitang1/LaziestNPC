@@ -206,9 +206,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/RuinousSoul", (0, 7, 0, 0), DownedPolterghast) //毁灭之灵
             .AddModItem("CalamityMod/ReaperTooth", (0, 7, 50, 0), DownedPolterghast) //猎魂鲨牙
             .AddModItem("CalamityMod/CosmiliteBar", (0, 10, 0, 0), DownedDOG) //宇宙锭
-            .AddModItem("CalamityMod/EndothermicEnergy", (0, 10, 50, 0), DOGAndSnowMoon) //恒温能量
-            .AddModItem("CalamityMod/NightmareFuel", (0, 10, 50, 0), DOGAndPumpkinMoon) //梦魇魔能
-            .AddModItem("CalamityMod/DarksunFragment", (0, 10, 50, 0), DOGAndEclipse) //日蚀之阴碎片
+            .AddModItem("CalamityMod/EndothermicEnergy", (0, 10, 50, 0), DownedDOG, SnowMoonHappened) //恒温能量
+            .AddModItem("CalamityMod/NightmareFuel", (0, 10, 50, 0), DownedDOG, PumpkinMoonHappened) //梦魇魔能
+            .AddModItem("CalamityMod/DarksunFragment", (0, 10, 50, 0), DownedDOG, EclipseHappened) //日蚀之阴碎片
             .AddModItem("CalamityMod/YharonSoulFragment", (0, 15, 0, 0), DownedYharon) //龙魂碎片
             .AddModItem("CalamityMod/ExoPrism", (0, 20, 0, 0), DownedDraedon) //星流棱晶
             .AddModItem("CalamityMod/AshesofAnnihilation", (0, 25, 0, 0), DownedSCala); //湮灭余烬
@@ -239,7 +239,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/PharaohsBreath", (0, 1, 0, 0), Condition.Hardmode) //法老之息
             .AddModItem("ThoriumMod/BioMatter", (0, 1, 0, 0), Condition.Hardmode) //生物物质
             .AddModItem("ThoriumMod/AbyssalChitin", (0, 1, 0, 0), Condition.Hardmode) //深渊角质鳞
-            .AddModItem("ThoriumMod/BloodCell", (0, 1, 50, 0), HMAndBloodMoon) //血细胞
+            .AddModItem("ThoriumMod/BloodCell", (0, 1, 50, 0), BloodMoonHappened, Condition.Hardmode) //血细胞
             .AddModItem("ThoriumMod/BrokenHeroFragment", (0, 2, 0, 0), Condition.DownedPlantera) //残缺英雄碎片
             .AddModItem("ThoriumMod/SolarPebble", (0, 2, 0, 0), Condition.DownedPlantera) //太阳石砾
             .AddModItem("ThoriumMod/DarkMatter", (0, 2, 0, 0), Condition.DownedPlantera) //暗物质

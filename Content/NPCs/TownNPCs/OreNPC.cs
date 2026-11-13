@@ -178,7 +178,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/CryonicOre", (0, 2, 50, 0), DownedCryogen) //寒元矿
             .AddModItem("CalamityMod/PerennialOre", (0, 3, 0, 0), Condition.DownedPlantera) //永恒矿
             .AddModItem("CalamityMod/ScoriaOre", (0, 3, 50, 0), Condition.DownedGolem) //熔渣矿
-            .AddModItem("CalamityMod/AstralOre", (0, 4, 0, 0), AstrumBugAndCultist) //炫星矿
+            .AddModItem("CalamityMod/AstralOre", (0, 4, 0, 0), DownedAstrumBug) //炫星矿
 
             .AddModItem("CalamityMod/ExodiumCluster", (0, 5, 0, 0), Condition.DownedMoonLord) //起源之簇
             .AddModItem("CalamityMod/UelibloomOre", (0, 6, 0, 0), DownedProvidence) //龙蒿矿

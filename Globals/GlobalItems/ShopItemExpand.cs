@@ -18,7 +18,7 @@ namespace LaziestNPC.Globals.GlobalItems
             shop.Add(item, conditions);
             return shop;
         }
-
+        
         /// <summary>
         /// 尝试从其他模组添加一个物品到商店。如果该模组未加载或物品不存在，也不会报错。
         /// </summary>

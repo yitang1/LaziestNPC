@@ -194,7 +194,8 @@ NatureNPC: {
 	}
 
 	ShopCategory: {
-		PlantsCritter: 动植物
+		Critter: 小动物
+		Plant: 植物类
 		Fish: 渔获物品
 		Crate: 宝匣商店
 		AnglerReward: 渔夫奖励

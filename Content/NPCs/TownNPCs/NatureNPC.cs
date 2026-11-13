@@ -86,14 +86,19 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         private static readonly ShopCategory[] ShopCategoryList = new ShopCategory[]
         {
             new ShopCategory(
-                "PlantCritter",
-                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.PlantCritter",
-                "LaziestNPC/Assets/ShopIcons/NatureNPC/PlantCritter", 4.5f),
+                "Critter",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.Critter",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/Critter", 4.5f),
+
+            new ShopCategory(
+                "Plant",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.Plant",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/Plant", 3f),
 
             new ShopCategory(
                 "Fish",
                 "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.Fish",
-                "LaziestNPC/Assets/ShopIcons/NatureNPC/Fish", 0f),
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/Fish", 1.5f),
 
             new ShopCategory(
                 "Crate",
@@ -128,16 +133,126 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void AddShops()
         {
-            var PlantCritter = new NPCShop(Type, "PlantCritter");
+            var Critter = new NPCShop(Type, "Critter");
+            var Plant = new NPCShop(Type, "Plant");
             var fish = new NPCShop(Type, "Fish");
             var Crate = new NPCShop(Type, "Crate");
             var AnglerReward = new NPCShop(Type, "AnglerReward");
 
-            #region 【动植物】
+            #region 【小动物】
 
             #region [原版]
-            PlantCritter.AddItem(ItemType<SunlightNet>(), (0, 25, 0, 0)) //阳光捕虫网
-            .AddItem(ItemID.HerbBag, (0, 0, 25, 0)) //草药袋
+            Critter.AddItem(ItemType<SunlightNet>(), (1, 0, 0, 0)) //阳光捕虫网
+            .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //松露虫
+            .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //七彩草蛉
+            //森林 ↓
+            .AddItem(ItemID.Worm, (0, 0, 5, 0)) //蠕虫
+            .AddItem(ItemID.LadyBug, (0, 0, 5, 0)) //瓢虫
+            .AddItem(ItemID.Bird, (0, 0, 5, 0)) //鸟
+            .AddItem(ItemID.BlueJay, (0, 0, 5, 0)) //冠蓝鸦
+            .AddItem(ItemID.Cardinal, (0, 0, 5, 0)) //红雀
+            .AddItem(ItemID.Bunny, (0, 0, 5, 0)) //兔兔
+            .AddItem(ItemID.Squirrel, (0, 0, 5, 0)) //松鼠
+            .AddItem(ItemID.SquirrelRed, (0, 0, 5, 0)) //红松鼠
+            .AddItem(ItemID.Grasshopper, (0, 0, 5, 0)) //蚱蜢
+            .AddItem(ItemID.Goldfish, (0, 0, 5, 0)) //金鱼
+            .AddItem(ItemID.Turtle, (0, 0, 5, 0)) //龟
+            .AddItem(ItemID.Duck, (0, 0, 5, 0)) //鸭
+            .AddItem(ItemID.MallardDuck, (0, 0, 5, 0)) //野鸭
+            .AddItem(ItemID.WaterStrider, (0, 0, 5, 0)) //水黾
+            .AddItem(ItemID.Stinkbug, (0, 0, 5, 0)) //臭虫
+            //森林夜晚 ↓
+            .AddItem(ItemID.Firefly, (0, 0, 5, 0)) //萤火虫
+            .AddItem(ItemID.Owl, (0, 0, 5, 0)) //猫头鹰
+            .AddItem(ItemID.FairyCritterBlue, (0, 0, 5, 0)) //蓝仙灵
+            .AddItem(ItemID.FairyCritterGreen, (0, 0, 5, 0)) //绿仙灵
+            .AddItem(ItemID.FairyCritterPink, (0, 0, 5, 0)) //粉仙灵
+            //丛林 ↓
+            .AddItem(ItemID.Grubby, (0, 0, 5, 0)) //蛆虫
+            .AddItem(ItemID.Sluggy, (0, 0, 5, 0)) //鼻涕虫
+            .AddItem(ItemID.Buggy, (0, 0, 5, 0)) //蚜虫
+            .AddItem(ItemID.Frog, (0, 0, 5, 0)) //青蛙
+            .AddItem(ItemID.TurtleJungle, (0, 0, 5, 0)) //丛林龟
+            .AddItem(ItemID.YellowCockatiel, (0, 0, 5, 0)) //黄玄凤鹦鹉
+            .AddItem(ItemID.GrayCockatiel, (0, 0, 5, 0)) //灰玄凤鹦鹉
+            .AddItem(ItemID.ScarletMacaw, (0, 0, 5, 0)) //绯红金刚鹦鹉
+            .AddItem(ItemID.BlueMacaw, (0, 0, 5, 0)) //蓝金刚鹦鹉
+            .AddItem(ItemID.Toucan, (0, 0, 5, 0)) //巨嘴鸟
+            //雪原 ↓
+            .AddItem(ItemID.Penguin, (0, 0, 5, 0)) //企鹅
+            //沙漠 ↓
+            .AddItem(ItemID.Scorpion, (0, 0, 5, 0)) //蝎子
+            .AddItem(ItemID.BlackScorpion, (0, 0, 5, 0)) //黑蝎子
+            .AddItem(ItemID.Grebe, (0, 0, 5, 0)) //䴙䴘
+            .AddItem(ItemID.Pupfish, (0, 0, 5, 0)) //鳉鱼
+            //地下和洞穴 ↓
+            .AddItem(ItemID.Snail, (0, 0, 5, 0)) //蜗牛
+            .AddItem(ItemID.Mouse, (0, 0, 5, 0)) //老鼠
+            //发光蘑菇 ↓
+            .AddItem(ItemID.GlowingSnail, (0, 0, 5, 0)) //发光蜗牛
+            //海洋 ↓
+            .AddItem(ItemID.Seagull, (0, 0, 5, 0)) //海鸥
+            .AddItem(ItemID.Seahorse, (0, 0, 5, 0)) //海马
+            //.AddItem(ItemID.Pufferfish, (0, 0, 5, 0)) //河豚
+            //地狱 ↓
+            .AddItem(ItemID.Lavafly, (0, 0, 5, 0)) //熔岩萤火虫
+            .AddItem(ItemID.MagmaSnail, (0, 0, 5, 0)) //岩浆蜗牛
+            //墓地 ↓
+            .AddItem(ItemID.Rat, (0, 0, 5, 0)) //大鼠
+            .AddItem(ItemID.Maggot, (0, 0, 5, 0)) //蝇蛆
+            //微光 ↓
+            .AddItem(ItemID.Shimmerfly, (0, 0, 5, 0)) //飞灵
+            //神圣之地 ↓
+            .AddItem(ItemID.LightningBug, (0, 0, 5, 0), Condition.Hardmode) //荧光虫
+            //蝴蝶 ↓
+            .AddItem(ItemID.MonarchButterfly, (0, 0, 5, 0)) //帝王蝶
+            .AddItem(ItemID.SulphurButterfly, (0, 0, 5, 0)) //黄粉蝶
+            .AddItem(ItemID.JuliaButterfly, (0, 0, 5, 0)) //珠袖蝶
+            .AddItem(ItemID.UlyssesButterfly, (0, 0, 5, 0)) //翠凤蝶
+            .AddItem(ItemID.ZebraSwallowtailButterfly, (0, 0, 5, 0)) //带凤蝶
+            .AddItem(ItemID.PurpleEmperorButterfly, (0, 0, 5, 0)) //紫蛱蝶
+            .AddItem(ItemID.RedAdmiralButterfly, (0, 0, 5, 0)) //红蛱蝶
+            .AddItem(ItemID.TreeNymphButterfly, (0, 0, 5, 0)) //帛斑蝶
+            .AddItem(ItemID.HellButterfly, (0, 0, 5, 0)) //地狱蝴蝶
+            //蜻蜓 ↓
+            .AddItem(ItemID.RedDragonfly, (0, 0, 5, 0)) //红蜻蜓
+            .AddItem(ItemID.BlueDragonfly, (0, 0, 5, 0)) //蓝蜻蜓
+            .AddItem(ItemID.GreenDragonfly, (0, 0, 5, 0)) //绿蜻蜓
+            .AddItem(ItemID.YellowDragonfly, (0, 0, 5, 0)) //黄蜻蜓
+            .AddItem(ItemID.BlackDragonfly, (0, 0, 5, 0)) //黑蜻蜓
+            .AddItem(ItemID.OrangeDragonfly, (0, 0, 5, 0)); //橙蜻蜓
+
+            #endregion
+
+            #region [灾厄 Calamity Mod]
+            Critter.AddModItem("CalamityMod/ShroombleItem", (0, 0, 5, 0)) //茸宝
+            .AddModItem("CalamityMod/PiggyItem", (0, 0, 5, 0)) //小猪猪
+            .AddModItem("CalamityMod/BabyGhostBellItem", (0, 0, 10, 0)) //小鬼铃水母
+            .AddModItem("CalamityMod/BabyCannonballJellyfishItem", (0, 0, 10, 0)) //小炮弹水母
+            .AddModItem("CalamityMod/SeaMinnowItem", (0, 0, 10, 0)) //海洋米诺鱼
+            .AddModItem("CalamityMod/BabyFlakCrabItem", (0, 0, 50, 0), Condition.Hardmode) //小高口蟹
+            .AddModItem("CalamityMod/TwinklerItem", (0, 0, 50, 0), Condition.Hardmode); //星幻萤火虫
+
+            #endregion
+
+            #region [瑟银 Thorium Mod]
+            Critter.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)) //海藻
+            .AddModItem("ThoriumMod/OpalBunny", (0, 0, 5, 0)) //欧珀兔兔
+            .AddModItem("ThoriumMod/AquamarineBunny", (0, 0, 5, 0)) //海蓝宝石兔兔
+            .AddModItem("ThoriumMod/Crow", (0, 0, 5, 0)) //乌鸦
+            .AddModItem("ThoriumMod/DumboOctopus", (0, 0, 5, 0)) //小飞象章鱼
+            .AddModItem("ThoriumMod/PurpleDumboOctopus", (0, 0, 5, 0)) //紫小飞象章鱼
+            .AddModItem("ThoriumMod/Lobster", (0, 0, 5, 0)) //龙虾
+            .AddModItem("ThoriumMod/BlueLobster", (0, 0, 5, 0)); //蓝龙虾
+
+            #endregion
+
+            #endregion
+
+            #region 【植物类】
+
+            #region [原版]
+            Plant.AddItem(ItemID.HerbBag, (0, 0, 25, 0)) //草药袋
             .AddItem(ItemID.Mushroom, (0, 0, 1, 0)) //蘑菇
             .AddItem(ItemID.GlowingMushroom, (0, 0, 1, 50)) //发光蘑菇
             .AddItem(ItemID.ViciousMushroom, (0, 0, 3, 0)) //毒蘑菇
@@ -152,11 +267,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.HallowedSeeds, (0, 0, 1, 0), Condition.Hardmode) //神圣种子
             .AddItem(ItemID.Acorn, (0, 0, 0, 10)) //橡实
             
-            .AddItem(ItemID.Worm, (0, 0, 5, 0)) //蠕虫
-            .AddItem(ItemID.LadyBug, (0, 0, 5, 0)) //瓢虫
-            .AddItem(ItemID.Frog, (0, 0, 5, 0)) //青蛙
-            .AddItem(ItemID.TruffleWorm, (0, 10, 0, 0), Condition.Hardmode) //松露虫
-            .AddItem(ItemID.EmpressButterfly, (0, 25, 0, 0), Condition.DownedPlantera) //七彩草蛉
             //染料 ↓
             .AddItem(ItemID.RedHusk, (0, 1, 50, 0)) //红外壳
             .AddItem(ItemID.OrangeBloodroot, (0, 1, 50, 0)) //橙血根草
@@ -176,26 +286,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region [灾厄 Calamity Mod]
-            PlantCritter.AddModItem("CalamityMod/ShroombleItem", (0, 0, 5, 0)) //茸宝
-            .AddModItem("CalamityMod/PiggyItem", (0, 0, 5, 0)) //小猪猪
-            .AddModItem("CalamityMod/BabyGhostBellItem", (0, 0, 10, 0)) //小鬼铃水母
-            .AddModItem("CalamityMod/BabyCannonballJellyfishItem", (0, 0, 10, 0)) //小炮弹水母
-            .AddModItem("CalamityMod/SeaMinnowItem", (0, 0, 10, 0)) //海洋米诺鱼
-            .AddModItem("CalamityMod/BabyFlakCrabItem", (0, 0, 50, 0), Condition.Hardmode) //小高口蟹
-            .AddModItem("CalamityMod/TwinklerItem", (0, 0, 50, 0), Condition.Hardmode); //星幻萤火虫
-
-            #endregion
-
             #region [瑟银 Thorium Mod]
-            PlantCritter.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)) //海藻
-            .AddModItem("ThoriumMod/OpalBunny", (0, 0, 5, 0)) //欧珀兔兔
-            .AddModItem("ThoriumMod/AquamarineBunny", (0, 0, 5, 0)) //海蓝宝石兔兔
-            .AddModItem("ThoriumMod/Crow", (0, 0, 5, 0)) //乌鸦
-            .AddModItem("ThoriumMod/DumboOctopus", (0, 0, 5, 0)) //小飞象章鱼
-            .AddModItem("ThoriumMod/PurpleDumboOctopus", (0, 0, 5, 0)) //紫小飞象章鱼
-            .AddModItem("ThoriumMod/Lobster", (0, 0, 5, 0)) //龙虾
-            .AddModItem("ThoriumMod/BlueLobster", (0, 0, 5, 0)); //蓝龙虾
+            Plant.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)); //海藻
 
             #endregion
 
@@ -204,24 +296,63 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【渔获物品】
 
             #region [原版]
-            fish.AddItem(ItemType<CallingSeaBottle>(), (0, 25, 0, 0)) //唤海瓶
-            .AddItem(ItemType<DreamSeaCrateBook>(), (1, 0, 0, 0)) //梦海宝匣大全
+            fish.AddItem(ItemType<CallingSeaBottle>(), (1, 0, 0, 0)) //唤海瓶
             //鱼饵 ↓
             .AddItem(ItemID.CanOfWorms, (0, 1, 50, 0)) //蠕虫罐头
             .AddItem(ItemID.ApprenticeBait, (0, 0, 5, 0)) //学徒鱼饵
             .AddItem(ItemID.JourneymanBait, (0, 0, 10, 0)) //熟手诱饵
             .AddItem(ItemID.MasterBait, (0, 0, 50, 0)) //大师鱼饵
-            //一些水生生物 ↓
+            //其他水生生物 ↓
             .AddItem(ItemID.BlueJellyfish, (0, 0, 75, 0)) //蓝水母
-            .AddItem(ItemID.GreenJellyfish, (0, 1, 0, 0), Condition.Hardmode) //绿水母
             .AddItem(ItemID.PinkJellyfish, (0, 0, 75, 0)) //粉水母
-            .AddItem(ItemID.Oyster, (0, 0, 20, 0)) //牡蛎
-            .AddItem(ItemID.ChumBucket, (0, 1, 0, 0), BloodMoonHappened) //鱼饵桶(血月)
+            .AddItem(ItemID.GreenJellyfish, (0, 1, 0, 0), Condition.Hardmode) //绿水母
+            .AddItem(ItemID.ChumBucket, (0, 1, 0, 0), BloodMoonHappened); //鱼饵桶(血月)
+
+            //鱼-森林 ↓
+            fish.AddItem(ItemID.Bass, (0, 0, 25, 0)) //鲈鱼
+            .AddItem(ItemID.Salmon, (0, 0, 25, 0)) //三文鱼
+            //鱼-洞穴 ↓
+            .AddItem(ItemID.ArmoredCavefish, (0, 0, 25, 0)) //装甲洞穴鱼
+            .AddItem(ItemID.SpecularFish, (0, 0, 25, 0)) //镜面鱼
+            .AddItem(ItemID.Stinkfish, (0, 0, 25, 0)) //臭味鱼
+            .AddItem(ItemID.BombFish, (0, 0, 50, 0)) //炸弹鱼
+            //鱼-沙漠 ↓
+            .AddItem(ItemID.Oyster, (0, 0, 50, 0)) //牡蛎
+            .AddItem(ItemID.Flounder, (0, 0, 25, 0)) //偏口鱼
+            .AddItem(ItemID.RockLobster, (0, 0, 25, 0)) //岩石龙虾
+            //鱼-雪原 ↓
+            .AddItem(ItemID.AtlanticCod, (0, 0, 25, 0)) //大西洋鳕鱼
+            .AddItem(ItemID.FrostMinnow, (0, 0, 25, 0)) //寒霜鲦鱼
+            .AddItem(ItemID.FrostDaggerfish, (0, 0, 25, 0)) //寒霜飞鱼
+            //鱼-太空 ↓
+            .AddItem(ItemID.Damselfish, (0, 0, 25, 0)) //雀鲷
+            //鱼-海洋 ↓
+            .AddItem(ItemID.Trout, (0, 0, 25, 0)) //鳟鱼
+            .AddItem(ItemID.Tuna, (0, 0, 25, 0)) //金枪鱼
+            .AddItem(ItemID.RedSnapper, (0, 0, 25, 0)) //红鲷鱼
+            .AddItem(ItemID.Shrimp, (0, 0, 25, 0)) //虾
+            //鱼-丛林 ↓
+            .AddItem(ItemID.NeonTetra, (0, 0, 50, 0)) //霓虹脂鲤
+            .AddItem(ItemID.VariegatedLardfish, (0, 0, 50, 0)) //斑驳油鱼
+            .AddItem(ItemID.DoubleCod, (0, 0, 50, 0)) //双鳍鳕鱼
+            .AddItem(ItemID.Honeyfin, (0, 1, 50, 0)) //蜂蜜鱼
+            //鱼-猩红之地 ↓
+            .AddItem(ItemID.CrimsonTigerfish, (0, 0, 50, 0)) //猩红虎鱼
+            .AddItem(ItemID.Hemopiranha, (0, 0, 50, 0)) //血腥食人鱼
+            //鱼-腐化之地 ↓
+            .AddItem(ItemID.Ebonkoi, (0, 0, 50, 0)) //黑檀锦鲤
+            //鱼-熔岩 ↓
+            .AddItem(ItemID.Obsidifish, (0, 0, 75, 0)) //黑曜石鱼
+            .AddItem(ItemID.FlarefinKoi, (0, 0, 75, 0)) //闪鳍锦鲤
+            //鱼-神圣之地(肉后) ↓
+            .AddItem(ItemID.PrincessFish, (0, 1, 0, 0), Condition.Hardmode) //公主鱼
+            .AddItem(ItemID.Prismite, (0, 1, 0, 0), Condition.Hardmode) //七彩矿鱼
+            .AddItem(ItemID.ChaosFish, (0, 1, 0, 0), Condition.Hardmode) //混沌鱼
             //渔获-其他
-            .AddItem(ItemID.GoldenCarp, (0, 1, 0, 0)) //金鲤鱼
-            .AddItem(ItemID.OldShoe, (0, 0, 0, 2)) //旧鞋
-            .AddItem(ItemID.FishingSeaweed, (0, 0, 0, 2)) //海草
-            .AddItem(ItemID.TinCan, (0, 0, 0, 2)); //锡罐
+            .AddItem(ItemID.GoldenCarp, (0, 50, 0, 0)) //金鲤鱼
+            .AddItem(ItemID.OldShoe, (0, 0, 0, 1)) //旧鞋
+            .AddItem(ItemID.FishingSeaweed, (0, 0, 0, 1)) //海草
+            .AddItem(ItemID.TinCan, (0, 0, 0, 1)); //锡罐
 
             #endregion
 
@@ -264,7 +395,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [原版]
             //肉前
-            Crate.AddItem(ItemID.WoodenCrate, (0, 1, 0, 0)) //木匣
+            Crate.AddItem(ItemType<DreamSeaCrateBook>(), (1, 0, 0, 0)) //梦海宝匣大全
+            .AddItem(ItemID.WoodenCrate, (0, 1, 0, 0)) //木匣
             .AddItem(ItemID.IronCrate, (0, 2, 0, 0)) //铁匣
             .AddItem(ItemID.GoldenCrate, (0, 3, 0, 0)) //金匣
             .AddItem(ItemID.OasisCrate, (0, 3, 0, 0)) //绿洲匣
@@ -343,7 +475,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region 【渔夫奖励】
-            //渔夫商店补充 ↓
+            //主要奖励
             AnglerReward.AddItem(ItemID.AnglerHat, (0, 5, 0, 0)) //渔夫帽
             .AddItem(ItemID.AnglerVest, (0, 5, 0, 0)) //渔夫背心
             .AddItem(ItemID.AnglerPants, (0, 5, 0, 0)) //渔夫裤
@@ -358,20 +490,48 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.FuzzyCarrot, (0, 5, 0, 0)) //绒毛胡萝卜
             .AddItem(ItemID.FishMinecart, (0, 5, 0, 0)) //鲤鱼矿车
             .AddItem(ItemID.FishHook, (0, 5, 0, 0)) //鱼钩
-            .AddItem(ItemID.GoldenBugNet, (0, 10, 0, 0)) //金虫网
-            .AddItem(ItemID.GoldenFishingRod, (0, 15, 0, 0)) //金钓竿
-            .AddItem(ItemID.BottomlessBucket, (0, 10, 0, 0)) //无底水桶
-            .AddItem(ItemID.SuperAbsorbantSponge, (0, 10, 0, 0)) //超级吸收绵
-            .AddItem(ItemID.BottomlessHoneyBucket, (0, 10, 0, 0)) //无底蜂蜜桶
-            .AddItem(ItemID.HoneyAbsorbantSponge, (0, 10, 0, 0)) //蜂蜜吸收绵
-            .AddItem(ItemID.BottomlessLavaBucket, (0, 10, 0, 0)) //无底熔岩桶
-            .AddItem(ItemID.LavaAbsorbantSponge, (0, 10, 0, 0)) //熔岩吸收绵
-            .AddItem(ItemID.HotlineFishingHook, (0, 10, 0, 0), Condition.Hardmode) //熔线钓钩
-            .AddItem(ItemID.FinWings, (0, 15, 0, 0), Condition.Hardmode); //鳍翼
+            .AddItem(ItemID.GoldenBugNet, (0, 50, 0, 0)) //金虫网
+            .AddItem(ItemID.GoldenFishingRod, (0, 50, 0, 0)) //金钓竿
+            .AddItem(ItemID.BottomlessBucket, (0, 25, 0, 0)) //无底水桶
+            .AddItem(ItemID.SuperAbsorbantSponge, (0, 25, 0, 0)) //超级吸收绵
+            .AddItem(ItemID.BottomlessHoneyBucket, (0, 25, 0, 0)) //无底蜂蜜桶
+            .AddItem(ItemID.HoneyAbsorbantSponge, (0, 25, 0, 0)) //蜂蜜吸收绵
+            .AddItem(ItemID.BottomlessLavaBucket, (0, 25, 0, 0)) //无底熔岩桶
+            .AddItem(ItemID.LavaAbsorbantSponge, (0, 25, 0, 0)) //熔岩吸收绵
+            .AddItem(ItemID.HotlineFishingHook, (0, 15, 0, 0), Condition.Hardmode) //熔线钓钩
+            .AddItem(ItemID.FinWings, (0, 25, 0, 0), Condition.Hardmode) //鳍翼
+
+            //装饰性奖励
+            .AddItem(ItemID.SeashellHairpin, (0, 1, 0, 0)) //贝壳发夹
+            .AddItem(ItemID.MermaidAdornment, (0, 1, 0, 0)) //美人鱼饰品
+            .AddItem(ItemID.MermaidTail, (0, 1, 0, 0)) //美人鱼鱼尾裤
+            .AddItem(ItemID.FishCostumeMask, (0, 1, 0, 0)) //鱼装面具
+            .AddItem(ItemID.FishCostumeShirt, (0, 1, 0, 0)) //鱼装衣
+            .AddItem(ItemID.FishCostumeFinskirt, (0, 1, 0, 0)) //鱼装鳍裙
+            .AddItem(ItemID.BunnyfishTrophy, (0, 1, 0, 0)) //兔兔鱼纪念章
+            .AddItem(ItemID.GoldfishTrophy, (0, 1, 0, 0)) //金鱼纪念章
+            .AddItem(ItemID.SwordfishTrophy, (0, 1, 0, 0)) //剑鱼纪念章
+            .AddItem(ItemID.SharkteethTrophy, (0, 1, 0, 0)) //鲨牙纪念章
+            .AddItem(ItemID.TreasureMap, (0, 1, 0, 0)) //宝藏地图
+            .AddItem(ItemID.SeaweedPlanter, (0, 1, 0, 0)) //海草花盆
+            .AddItem(ItemID.CompassRose, (0, 1, 0, 0)) //罗盘针
+            .AddItem(ItemID.ShipsWheel, (0, 1, 0, 0)) //舵轮
+            .AddItem(ItemID.ShipInABottle, (0, 1, 0, 0)) //船舶瓶
+            .AddItem(ItemID.LifePreserver, (0, 1, 0, 0)) //救生圈
+            .AddItem(ItemID.WallAnchor, (0, 1, 0, 0)) //墙锚
+            .AddItem(ItemID.PillaginMePixels, (0, 1, 0, 0)) //海贼像素画
+            .AddItem(ItemID.NotSoLostInParadise, (0, 1, 0, 0)) //并未如此迷失在乐园
+            .AddItem(ItemID.Crustography, (0, 1, 0, 0)) //甲壳摄影
+            .AddItem(ItemID.WhatLurksBelow, (0, 1, 0, 0)) //下面潜伏着什么
+            .AddItem(ItemID.Fangs, (0, 1, 0, 0)) //獠牙
+            .AddItem(ItemID.CouchGag, (0, 1, 0, 0)) //沙发笑话
+            .AddItem(ItemID.SilentFish, (0, 1, 0, 0)) //沉默的鱼
+            .AddItem(ItemID.TheDuke, (0, 1, 0, 0)); //公爵
 
             #endregion
 
-            PlantCritter.Register();
+            Critter.Register();
+            Plant.Register();
             fish.Register();
             Crate.Register();
             AnglerReward.Register();

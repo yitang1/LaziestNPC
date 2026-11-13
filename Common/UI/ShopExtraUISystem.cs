@@ -130,9 +130,8 @@ namespace LaziestNPC.Common.UI
         private static float DialogTop = 130f; //原版对话框顶部
         private static float DialogHeight = 200f; //原版对话框高度
 
-        private static float UiVerticalGap = 10f; //竖条底边与对话框底边的间距，增大，UI向上，空隙变大；减小，UI向下，空隙变小。
         private static float UiXOffset = -150f; //竖条水平偏移，负值向左，正值向右
-        private static float UiYOffset = 144f; //竖条垂直偏移，负值向上，正值向下
+        private static float UiYOffset = -75f; //UI顶部到对话框底部的间距，负数向上，空隙变大；正数向下，空隙变小。
 
         private static int BaseLines = 3; //基准对话（3行）对应的非空行数
         private static float LineHeight = 30f; //每多一行，对话框底部下移的像素
@@ -195,7 +194,7 @@ namespace LaziestNPC.Common.UI
 
             //竖条位置 = 对话框右边缘/下边缘 + 偏移量
             float uiX = dialogRight - PanelWidth + UiXOffset;
-            float uiY = dialogBottom - totalHeight - UiVerticalGap + UiYOffset;
+            float uiY = dialogBottom + UiYOffset;
             if (uiY < DialogTop)
                 uiY = DialogTop;
 
@@ -255,7 +254,7 @@ namespace LaziestNPC.Common.UI
     public class ShopCategoryRow : UIElement
     {
         //可调参数：图标与文字布局
-        private static float IconSize = 32f; //图标尺寸
+        private static float IconSize = 34f; //图标尺寸
         private static float IconLeftPadding = 8f; //图标距离行左边缘的间距
         private static float IconTextGap = 16f; //图标和文字之间的间距
         private static float TextVerticalOffset = 4f; //文字垂直补偿，正值向下，负值向上

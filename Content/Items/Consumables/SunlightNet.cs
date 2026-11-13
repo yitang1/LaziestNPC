@@ -50,7 +50,7 @@ namespace LaziestNPC.Content.Items.Consumables
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
             //森林 ↓
-            //itemLoot.Add(ItemDropRule.Common(ItemID.LadyBug)); //瓢虫
+            itemLoot.Add(ItemDropRule.Common(ItemID.LadyBug)); //瓢虫
             itemLoot.Add(ItemDropRule.Common(ItemID.Bird)); //鸟
             itemLoot.Add(ItemDropRule.Common(ItemID.BlueJay)); //冠蓝鸦
             itemLoot.Add(ItemDropRule.Common(ItemID.Cardinal)); //红雀
@@ -74,7 +74,7 @@ namespace LaziestNPC.Content.Items.Consumables
             itemLoot.Add(ItemDropRule.Common(ItemID.Grubby)); //蛆虫
             itemLoot.Add(ItemDropRule.Common(ItemID.Sluggy)); //鼻涕虫
             itemLoot.Add(ItemDropRule.Common(ItemID.Buggy)); //蚜虫
-            //itemLoot.Add(ItemDropRule.Common(ItemID.Frog)); //青蛙
+            itemLoot.Add(ItemDropRule.Common(ItemID.Frog)); //青蛙
             itemLoot.Add(ItemDropRule.Common(ItemID.TurtleJungle)); //丛林龟
             itemLoot.Add(ItemDropRule.Common(ItemID.YellowCockatiel)); //黄玄凤鹦鹉
             itemLoot.Add(ItemDropRule.Common(ItemID.GrayCockatiel)); //灰玄凤鹦鹉

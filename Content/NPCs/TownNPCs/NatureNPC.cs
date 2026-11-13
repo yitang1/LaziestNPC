@@ -86,9 +86,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         private static readonly ShopCategory[] ShopCategoryList = new ShopCategory[]
         {
             new ShopCategory(
-                "PlantsCritter",
-                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.PlantsCritter",
-                "LaziestNPC/Assets/ShopIcons/NatureNPC/PlantsCritter", 4.5f),
+                "PlantCritter",
+                "Mods.LaziestNPC.NPCs.NatureNPC.ShopCategory.PlantCritter",
+                "LaziestNPC/Assets/ShopIcons/NatureNPC/PlantCritter", 4.5f),
 
             new ShopCategory(
                 "Fish",
@@ -128,13 +128,15 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
         public override void AddShops()
         {
-            var plcr = new NPCShop(Type, "PlantsCritter");
+            var PlantCritter = new NPCShop(Type, "PlantCritter");
             var fish = new NPCShop(Type, "Fish");
+            var Crate = new NPCShop(Type, "Crate");
+            var AnglerReward = new NPCShop(Type, "AnglerReward");
 
             #region 【动植物】
 
             #region [原版]
-            plcr.AddItem(ItemType<SunlightNet>(), (0, 25, 0, 0)) //阳光捕虫网
+            PlantCritter.AddItem(ItemType<SunlightNet>(), (0, 25, 0, 0)) //阳光捕虫网
             .AddItem(ItemID.HerbBag, (0, 0, 25, 0)) //草药袋
             .AddItem(ItemID.Mushroom, (0, 0, 1, 0)) //蘑菇
             .AddItem(ItemID.GlowingMushroom, (0, 0, 1, 50)) //发光蘑菇
@@ -175,7 +177,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [灾厄 Calamity Mod]
-            plcr.AddModItem("CalamityMod/ShroombleItem", (0, 0, 5, 0)) //茸宝
+            PlantCritter.AddModItem("CalamityMod/ShroombleItem", (0, 0, 5, 0)) //茸宝
             .AddModItem("CalamityMod/PiggyItem", (0, 0, 5, 0)) //小猪猪
             .AddModItem("CalamityMod/BabyGhostBellItem", (0, 0, 10, 0)) //小鬼铃水母
             .AddModItem("CalamityMod/BabyCannonballJellyfishItem", (0, 0, 10, 0)) //小炮弹水母
@@ -186,7 +188,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #endregion
 
             #region [瑟银 Thorium Mod]
-            plcr.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)) //海藻
+            PlantCritter.AddModItem("ThoriumMod/MarineKelp", (0, 0, 1, 0)) //海藻
             .AddModItem("ThoriumMod/OpalBunny", (0, 0, 5, 0)) //欧珀兔兔
             .AddModItem("ThoriumMod/AquamarineBunny", (0, 0, 5, 0)) //海蓝宝石兔兔
             .AddModItem("ThoriumMod/Crow", (0, 0, 5, 0)) //乌鸦
@@ -215,32 +217,6 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.PinkJellyfish, (0, 0, 75, 0)) //粉水母
             .AddItem(ItemID.Oyster, (0, 0, 20, 0)) //牡蛎
             .AddItem(ItemID.ChumBucket, (0, 1, 0, 0), BloodMoonHappened) //鱼饵桶(血月)
-            //渔夫商店补充 ↓
-            .AddItem(ItemID.AnglerHat, (0, 5, 0, 0)) //渔夫帽
-            .AddItem(ItemID.AnglerVest, (0, 5, 0, 0)) //渔夫背心
-            .AddItem(ItemID.AnglerPants, (0, 5, 0, 0)) //渔夫裤
-            .AddItem(ItemID.FishingBobber, (0, 1, 0, 0)) //钓鱼浮标
-            .AddItem(ItemID.HighTestFishingLine, (0, 5, 0, 0)) //优质钓鱼线
-            .AddItem(ItemID.AnglerEarring, (0, 5, 0, 0)) //渔夫耳环
-            .AddItem(ItemID.TackleBox, (0, 5, 0, 0)) //钓具箱
-            .AddItem(ItemID.FishermansGuide, (0, 5, 0, 0)) //渔民袖珍宝典
-            .AddItem(ItemID.WeatherRadio, (0, 5, 0, 0)) //天气收音机
-            .AddItem(ItemID.Sextant, (0, 5, 0, 0)) //六分仪
-
-            .AddItem(ItemID.FuzzyCarrot, (0, 5, 0, 0)) //绒毛胡萝卜
-            .AddItem(ItemID.FishMinecart, (0, 5, 0, 0)) //鲤鱼矿车
-            .AddItem(ItemID.FishHook, (0, 5, 0, 0)) //鱼钩
-            .AddItem(ItemID.GoldenBugNet, (0, 10, 0, 0)) //金虫网
-            .AddItem(ItemID.GoldenFishingRod, (0, 15, 0, 0)) //金钓竿
-            .AddItem(ItemID.BottomlessBucket, (0, 10, 0, 0)) //无底水桶
-            .AddItem(ItemID.SuperAbsorbantSponge, (0, 10, 0, 0)) //超级吸收绵
-            .AddItem(ItemID.BottomlessHoneyBucket, (0, 10, 0, 0)) //无底蜂蜜桶
-            .AddItem(ItemID.HoneyAbsorbantSponge, (0, 10, 0, 0)) //蜂蜜吸收绵
-            .AddItem(ItemID.BottomlessLavaBucket, (0, 10, 0, 0)) //无底熔岩桶
-            .AddItem(ItemID.LavaAbsorbantSponge, (0, 10, 0, 0)) //熔岩吸收绵
-            .AddItem(ItemID.HotlineFishingHook, (0, 10, 0, 0), Condition.Hardmode) //熔线钓钩
-            .AddItem(ItemID.FinWings, (0, 15, 0, 0), Condition.Hardmode) //鳍翼
- 
             //渔获-其他
             .AddItem(ItemID.GoldenCarp, (0, 1, 0, 0)) //金鲤鱼
             .AddItem(ItemID.OldShoe, (0, 0, 0, 2)) //旧鞋
@@ -284,8 +260,121 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            plcr.Register();
+            #region 【宝匣商店】
+
+            #region [原版]
+            //肉前
+            Crate.AddItem(ItemID.WoodenCrate, (0, 1, 0, 0)) //木匣
+            .AddItem(ItemID.IronCrate, (0, 2, 0, 0)) //铁匣
+            .AddItem(ItemID.GoldenCrate, (0, 3, 0, 0)) //金匣
+            .AddItem(ItemID.OasisCrate, (0, 3, 0, 0)) //绿洲匣
+            .AddItem(ItemID.FrozenCrate, (0, 3, 0, 0)) //冰冻匣
+            .AddItem(ItemID.JungleFishingCrate, (0, 3, 0, 0)) //丛林匣
+            .AddItem(ItemID.OceanCrate, (0, 3, 0, 0)) //海洋匣
+            .AddItem(ItemID.FloatingIslandFishingCrate, (0, 3, 0, 0)) //天空匣
+            .AddItem(ItemID.CrimsonFishingCrate, (0, 3, 0, 0)) //猩红匣
+            .AddItem(ItemID.CorruptFishingCrate, (0, 3, 0, 0)) //腐化匣
+            .AddItem(ItemID.HallowedFishingCrate, (0, 3, 0, 0)) //神圣匣
+            .AddItem(ItemID.LavaCrate, (0, 3, 0, 0)) //黑曜石匣
+            .AddItem(ItemID.DungeonFishingCrate, (0, 4, 0, 0), Condition.DownedSkeletron) //地牢匣
+            //肉后
+            .AddItem(ItemID.WoodenCrateHard, (0, 5, 0, 0), Condition.Hardmode) //珍珠木匣
+            .AddItem(ItemID.IronCrateHard, (0, 5, 0, 0), Condition.Hardmode) //秘银匣
+            .AddItem(ItemID.GoldenCrateHard, (0, 5, 0, 0), Condition.Hardmode) //钛金匣
+            .AddItem(ItemID.OasisCrateHard, (0, 5, 0, 0), Condition.Hardmode) //幻象匣
+            .AddItem(ItemID.FrozenCrateHard, (0, 5, 0, 0), Condition.Hardmode) //针叶木匣
+            .AddItem(ItemID.JungleFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode) //荆棘匣
+            .AddItem(ItemID.OceanCrateHard, (0, 5, 0, 0), Condition.Hardmode) //海边匣
+            .AddItem(ItemID.FloatingIslandFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode) //天蓝匣
+            .AddItem(ItemID.CrimsonFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode) //血匣
+            .AddItem(ItemID.CorruptFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode) //污损匣
+            .AddItem(ItemID.HallowedFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode) //天赐匣
+            .AddItem(ItemID.LavaCrateHard, (0, 5, 0, 0), Condition.Hardmode) //狱石匣
+            .AddItem(ItemID.DungeonFishingCrateHard, (0, 5, 0, 0), Condition.Hardmode); //围栏匣
+            
+            #endregion
+
+            #region [灾厄 Calamity Mod]
+            //肉前
+            Crate.AddModItem("CalamityMod/SulphurousCrate", (0, 3, 0, 0)) //硫海匣
+            .AddModItem("CalamityMod/MonolithCrate", (0, 3, 0, 0)) //星石匣
+            .AddModItem("CalamityMod/SlagCrate", (0, 3, 0, 0)) //焦炭匣
+            .AddModItem("CalamityMod/EutrophicCrate", (0, 3, 0, 0)) //富养匣
+            //肉后
+            .AddModItem("CalamityMod/HydrothermalCrate", (0, 5, 0, 0), Condition.Hardmode) //渊泉匣
+            .AddModItem("CalamityMod/AstralCrate", (0, 5, 0, 0), Condition.Hardmode) //星幻匣
+            .AddModItem("CalamityMod/BrimstoneCrate", (0, 5, 0, 0), Condition.Hardmode) //硫磺火匣
+            .AddModItem("CalamityMod/PrismCrate", (0, 5, 0, 0), Condition.Hardmode); //棱晶匣
+            
+            #endregion
+
+            #region [瑟银 Thorium Mod]
+            //肉前
+            Crate.AddModItem("ThoriumMod/AquaticDepthsCrate", (0, 3, 0, 0), Condition.DownedEowOrBoc) //渊海匣
+            .AddModItem("ThoriumMod/ScarletCrate", (0, 3, 0, 0)) //绯红匣
+            .AddModItem("ThoriumMod/StrangeCrate", (0, 3, 0, 0)) //奇特匣
+            //肉后
+            .AddModItem("ThoriumMod/AbyssalCrate", (0, 5, 0, 0), Condition.Hardmode) //深渊匣
+            .AddModItem("ThoriumMod/SinisterCrate", (0, 5, 0, 0), Condition.Hardmode) //不详匣
+            .AddModItem("ThoriumMod/WondrousCrate", (0, 5, 0, 0), Condition.Hardmode); //奇妙匣
+            
+            #endregion
+
+            #region [旅人归途 Homeward Journey]
+            //肉前
+            Crate.AddModItem("ContinentOfJourney/MazeCrate", (0, 3, 0, 0), Condition.DownedEowOrBoc) //迷宫匣
+            //肉后
+            .AddModItem("ContinentOfJourney/MistyCrate", (0, 5, 0, 0), Condition.Hardmode) //迷雾匣
+            .AddModItem("ContinentOfJourney/DistortedCrate", (0, 7, 0, 0), Condition.DownedPlantera) //扭曲匣
+            //暗影墙后
+            .AddModItem("ContinentOfJourney/QuakyCrate", (0, 10, 0, 0), DownedWallofShadow) //震颤匣
+            .AddModItem("ContinentOfJourney/SolarCrate", (0, 10, 0, 0), DownedWallofShadow) //太阳匣
+            .AddModItem("ContinentOfJourney/ForeverCrate", (0, 10, 0, 0), DownedWallofShadow) //永远匣
+            .AddModItem("ContinentOfJourney/LivingCrate", (0, 10, 0, 0), DownedWallofShadow) //脉搏匣
+            .AddModItem("ContinentOfJourney/CubistCrate", (0, 10, 0, 0), DownedWallofShadow) //立体匣
+            .AddModItem("ContinentOfJourney/ShinyCrate", (0, 15, 0, 0), DownedSunSlimeGod) //闪亮匣
+            .AddModItem("ContinentOfJourney/CountdownCrate", (0, 15, 0, 0), DownedTheOverwatcher) //计时匣
+            .AddModItem("ContinentOfJourney/MembraneCrate", (0, 15, 0, 0), DownedTheLifebringer) //薄膜匣
+            .AddModItem("ContinentOfJourney/CubeCrate", (0, 15, 0, 0), DownedTheMaterealizer) //方块匣
+            .AddModItem("ContinentOfJourney/ShadowCrate", (0, 20, 0, 0), DownedTheThree); //影子匣
+            
+            #endregion
+
+            #endregion
+
+            #region 【渔夫奖励】
+            //渔夫商店补充 ↓
+            AnglerReward.AddItem(ItemID.AnglerHat, (0, 5, 0, 0)) //渔夫帽
+            .AddItem(ItemID.AnglerVest, (0, 5, 0, 0)) //渔夫背心
+            .AddItem(ItemID.AnglerPants, (0, 5, 0, 0)) //渔夫裤
+            .AddItem(ItemID.FishingBobber, (0, 1, 0, 0)) //钓鱼浮标
+            .AddItem(ItemID.HighTestFishingLine, (0, 5, 0, 0)) //优质钓鱼线
+            .AddItem(ItemID.AnglerEarring, (0, 5, 0, 0)) //渔夫耳环
+            .AddItem(ItemID.TackleBox, (0, 5, 0, 0)) //钓具箱
+            .AddItem(ItemID.FishermansGuide, (0, 5, 0, 0)) //渔民袖珍宝典
+            .AddItem(ItemID.WeatherRadio, (0, 5, 0, 0)) //天气收音机
+            .AddItem(ItemID.Sextant, (0, 5, 0, 0)) //六分仪
+
+            .AddItem(ItemID.FuzzyCarrot, (0, 5, 0, 0)) //绒毛胡萝卜
+            .AddItem(ItemID.FishMinecart, (0, 5, 0, 0)) //鲤鱼矿车
+            .AddItem(ItemID.FishHook, (0, 5, 0, 0)) //鱼钩
+            .AddItem(ItemID.GoldenBugNet, (0, 10, 0, 0)) //金虫网
+            .AddItem(ItemID.GoldenFishingRod, (0, 15, 0, 0)) //金钓竿
+            .AddItem(ItemID.BottomlessBucket, (0, 10, 0, 0)) //无底水桶
+            .AddItem(ItemID.SuperAbsorbantSponge, (0, 10, 0, 0)) //超级吸收绵
+            .AddItem(ItemID.BottomlessHoneyBucket, (0, 10, 0, 0)) //无底蜂蜜桶
+            .AddItem(ItemID.HoneyAbsorbantSponge, (0, 10, 0, 0)) //蜂蜜吸收绵
+            .AddItem(ItemID.BottomlessLavaBucket, (0, 10, 0, 0)) //无底熔岩桶
+            .AddItem(ItemID.LavaAbsorbantSponge, (0, 10, 0, 0)) //熔岩吸收绵
+            .AddItem(ItemID.HotlineFishingHook, (0, 10, 0, 0), Condition.Hardmode) //熔线钓钩
+            .AddItem(ItemID.FinWings, (0, 15, 0, 0), Condition.Hardmode); //鳍翼
+
+            #endregion
+
+            PlantCritter.Register();
             fish.Register();
+            Crate.Register();
+            AnglerReward.Register();
         }
     }
 }

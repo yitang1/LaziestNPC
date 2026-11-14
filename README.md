@@ -54,7 +54,9 @@ Win+R 输入shell:Personal
 - **LuiAFK Reborn (LuiAFK懒人)**
 - **LuiAFK Reborn DLC (LuiAFK懒人DLC)**
 - **AlchemistNPC Lite (炼金术士NPC)**
-- **......**  
+- **Homeward Journey (旅人归途)**
+
+  **...更多Mod正在兼容中 (Coming Soon)**  
 
 </details>
 ——————————————————————————————  

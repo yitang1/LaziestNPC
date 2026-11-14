@@ -106,8 +106,12 @@ PotionNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 原版药水
-	button2: 模组药水
+	ShopCategory: {
+		RestorePotion: 恢复药水
+		BuffPotion: 增益药水
+		OtherPotion: 其他药水
+		FoodShop: 食物商店
+	}
 }
 
 MaterialNPC: {
@@ -196,10 +200,10 @@ NatureNPC: {
 	}
 
 	ShopCategory: {
-		Critter: 小动物
-		Plant: 植物类
-		Fish: 渔获物品
-		Crate: 宝匣商店
+		CritterShop: 小动物
+		PlantShop: 植物类
+		FishShop: 渔获物品
+		CrateShop: 宝匣商店
 		AnglerReward: 渔夫奖励
 	}
 }

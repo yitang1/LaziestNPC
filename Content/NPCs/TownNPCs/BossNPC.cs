@@ -167,32 +167,32 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             new ShopCategory(
                 "PreBag",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.PreBag",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/PreBag", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/PreBag", 2.5f),
 
             new ShopCategory(
                 "HardBag",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.HardBag",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/HardBag", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/HardBag", 2.5f),
 
             new ShopCategory(
                 "PostMoonBag",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.PostMoonBag",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/PostMoonBag", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/PostMoonBag", 2.5f),
 
             new ShopCategory(
                 "PreSum",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.PreSum",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/PreSum", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/PreSum", 2.5f),
 
             new ShopCategory(
                 "HardSum",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.HardSum",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/HardSum", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/HardSum", 2.5f),
 
             new ShopCategory(
                 "PostMoonSum",
                 "Mods.LaziestNPC.NPCs.BossNPC.ShopCategory.PostMoonSum",
-                "LaziestNPC/Assets/ShopIcons/BossNPC/PostMoonSum", 1f),
+                "LaziestNPC/Assets/ShopIcons/BossNPC/PostMoonSum", 2.5f),
         };
 
         public override IReadOnlyList<ShopCategory> ShopCategories => ShopCategoryList;
@@ -223,6 +223,23 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             var HardSum = new NPCShop(Type, "HardSum");
             var PostMoonSum = new NPCShop(Type, "PostMoonSum");
 
+            AddPreBagShop(PreBag);
+            AddHardBagShop(HardBag);
+            AddPostMoonBagShop(PostMoonBag);
+            AddPreSumShop(PreSum);
+            AddHardSumShop(HardSum);
+            AddPostMoonSumShop(PostMoonSum);
+
+            PreBag.Register();
+            HardBag.Register();
+            PostMoonBag.Register();
+            PreSum.Register();
+            HardSum.Register();
+            PostMoonSum.Register();
+        }
+
+        public void AddPreBagShop(NPCShop PreBag)
+        {
             #region 【宝藏袋(肉前)】
 
             #region [原版]
@@ -282,6 +299,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+        }
+
+        public void AddHardBagShop(NPCShop HardBag)
+        {
             #region 【宝藏袋(肉后)】
 
             #region [原版]
@@ -331,9 +352,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ThoriumMod/FallenBeholderTreasureBag", (0, 40, 0, 0), DownedFallenBeholder) //堕落注视者
             .AddModItem("ThoriumMod/LichTreasureBag", (0, 45, 0, 0), DownedLich) //巫妖
             .AddModItem("ThoriumMod/ForgottenOneTreasureBag", (0, 65, 0, 0), DownedForgottenOne) //遗忘之主
-            .AddModItem("ThoriumMod/ThePrimordialsTreasureBag", (0, 80, 0, 0), DownedThePrimordials) //始生灾灵
+            .AddModItem("ThoriumMod/ThePrimordialsTreasureBag", (0, 80, 0, 0), DownedThePrimordials); //始生灾灵
             //迷你
-            .AddModItem("ThoriumMod/DarkMageTreasureBag", (0, 15, 0, 0), Condition.DownedOldOnesArmyT1) //黑暗魔法师
+            HardBag.AddModItem("ThoriumMod/DarkMageTreasureBag", (0, 15, 0, 0), Condition.DownedOldOnesArmyT1) //黑暗魔法师
             .AddModItem("ThoriumMod/FlyingDutchmanTreasureBag", (0, 40, 0, 0), Condition.DownedPirates) //荷兰飞盗船
             .AddModItem("ThoriumMod/OgreTreasureBag", (0, 45, 0, 0), Condition.DownedOldOnesArmyT2) //食人魔
             .AddModItem("ThoriumMod/MartianSaucerTreasureBag", (0, 65, 0, 0), Condition.DownedMartians); //火星飞碟
@@ -351,6 +372,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+        }
+
+        public void AddPostMoonBagShop(NPCShop PostMoonBag)
+        {
             #region 【宝藏袋(月后)】
 
             #region [灾厄 Calamity Mod]
@@ -359,8 +384,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/ProvidenceBag", (0, 80, 0, 0), DownedProvidence) //亵渎天神
             .AddModItem("CalamityMod/StormWeaverBag", (0, 85, 0, 0), DownedStormWeaver) //风暴编织者
             .AddModItem("CalamityMod/CeaselessVoidBag", (0, 85, 0, 0), DownedVoid) //无尽虚空
-            .AddModItem("CalamityMod/SignusBag", (0, 85, 0, 0), DownedSignus) //西格纳斯
-            .AddModItem("CalamityMod/PolterghastBag", (0, 90, 0, 0), DownedPolterghast) //噬魂幽花
+            .AddModItem("CalamityMod/SignusBag", (0, 85, 0, 0), DownedSignus); //西格纳斯
+            PostMoonBag.AddModItem("CalamityMod/PolterghastBag", (0, 90, 0, 0), DownedPolterghast) //噬魂幽花
             .AddModItem("CalamityMod/OldDukeBag", (0, 95, 0, 0), DownedOldDuke) //硫海遗爵
             .AddModItem("CalamityMod/DevourerofGodsBag", (1, 0, 0, 0), DownedDOG) //神明吞噬者
             .AddModItem("CalamityMod/YharonBag", (2, 0, 0, 0), DownedYharon) //犽戎
@@ -379,9 +404,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #region [旅人归途 Homeward Journey]
             //月后
-            PostMoonBag.AddModItem("ContinentOfJourney/WallofShadowTreasureBag", (0, 75, 0, 0), DownedWallofShadow) //暗影墙
+            PostMoonBag.AddModItem("ContinentOfJourney/WallofShadowTreasureBag", (0, 75, 0, 0), DownedWallofShadow); //暗影墙
             //暗影墙后
-            .AddModItem("ContinentOfJourney/SlimeGodTreasureBag", (0, 80, 0, 0), DownedSunSlimeGod) //史莱姆之神
+            PostMoonBag.AddModItem("ContinentOfJourney/SlimeGodTreasureBag", (0, 80, 0, 0), DownedSunSlimeGod) //史莱姆之神
             .AddModItem("ContinentOfJourney/TheOverwatcherTreasureBag", (1, 0, 0, 0), DownedTheOverwatcher) //极视终表
             .AddModItem("ContinentOfJourney/TheLifebringerTreasureBag", (1, 0, 0, 0), DownedTheLifebringer) //万籁携生
             .AddModItem("ContinentOfJourney/TheMaterealizerTreasureBag", (1, 0, 0, 0), DownedTheMaterealizer) //化物天匠
@@ -394,14 +419,18 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+        }
+
+        public void AddPreSumShop(NPCShop PreSum)
+        {
             #region 【召唤物品(肉前)】
 
             #region [原版]
             //肉前 事件
             PreSum.AddItem(ItemID.BloodMoonStarter, (0, 1, 0, 0)) //血月
-            .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)) //哥布林入侵
+            .AddItem(ItemID.GoblinBattleStandard, (0, 1, 0, 0)); //哥布林入侵
             //肉前 Boss
-            .AddItem(ItemID.SlimeCrown, (0, 1, 0, 0)) //史莱姆王
+            PreSum.AddItem(ItemID.SlimeCrown, (0, 1, 0, 0)) //史莱姆王
             .AddItem(ItemID.SuspiciousLookingEye, (0, 1, 0, 0)) //克苏鲁之眼
             .AddItem(ItemID.BloodySpine, (0, 5, 0, 0)) //克苏鲁之脑
             .AddItem(ItemID.WormFood, (0, 5, 0, 0)) //世界吞噬怪
@@ -421,10 +450,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [灾厄 Calamity Mod]
             //肉前 事件
             PreSum.AddModItem("CalamityMod/TorrentialTear", (0, 1, 50, 0), Condition.DownedSkeletron) //雨
-            .AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu) //酸雨
+            .AddModItem("CalamityMod/CausticTear", (0, 1, 50, 0), Condition.DownedEyeOfCthulhu); //酸雨
 
             //肉前 Boss
-            .AddModItem("CalamityMod/DesertMedallion", (0, 1, 0, 0)) //荒漠灾虫
+            PreSum.AddModItem("CalamityMod/DesertMedallion", (0, 1, 0, 0)) //荒漠灾虫
             .AddModItem("CalamityMod/DecapoditaSprout", (0, 1, 0, 0)) //菌生蟹
             .AddModItem("CalamityMod/BloodyWormFood", (0, 5, 0, 0), PerOrHive) //血肉宿主
             .AddModItem("CalamityMod/Teratoma", (0, 5, 0, 0), PerOrHive) //腐巢意志
@@ -469,30 +498,33 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [旅人归途 Homeward Journey]
             //肉前 Boss
             PreSum.AddModItem("ContinentOfJourney/PurpleFlareGun", (0, 1, 0, 0)) //紫信号枪 (哥布林战车)
-            .AddModItem("ContinentOfJourney/MaliciousPacket", (0, 5, 0, 0), Condition.DownedEowOrBoc) //恶意捆绑包 (大熊星座)
+            .AddModItem("ContinentOfJourney/MaliciousPacket", (0, 5, 0, 0), Condition.DownedEowOrBoc); //恶意捆绑包 (大熊星座)
             //肉前 事件
             //星座奖牌            
-            .AddModItem("ContinentOfJourney/CapricornMedal", (0, 5, 0, 0), DownedBigDipper) //摩羯座奖牌
+            PreSum.AddModItem("ContinentOfJourney/CapricornMedal", (0, 5, 0, 0), DownedBigDipper) //摩羯座奖牌
             .AddModItem("ContinentOfJourney/GeminiMedal", (0, 5, 0, 0), DownedBigDipper) //双子座奖牌
             .AddModItem("ContinentOfJourney/LibraMedal", (0, 5, 0, 0), DownedBigDipper) //天秤座奖牌
             .AddModItem("ContinentOfJourney/ScorpioMedal", (0, 5, 0, 0), DownedBigDipper) //天蝎座奖牌
             .AddModItem("ContinentOfJourney/TaurusMedal", (0, 5, 0, 0), DownedBigDipper) //金牛座奖牌
-            .AddModItem("ContinentOfJourney/VirgoMedal", (0, 5, 0, 0), DownedBigDipper) //室女座奖牌
+            .AddModItem("ContinentOfJourney/VirgoMedal", (0, 5, 0, 0), DownedBigDipper); //室女座奖牌
             //天气水晶
-            .AddModItem("ContinentOfJourney/Crystal_Clear", (0, 1, 0, 0)) //天气水晶：晴朗
+            PreSum.AddModItem("ContinentOfJourney/Crystal_Clear", (0, 1, 0, 0)) //天气水晶：晴朗
             .AddModItem("ContinentOfJourney/Crystal_LowPressure", (0, 1, 0, 0)) //天气水晶：低压
             .AddModItem("ContinentOfJourney/Crystal_HighPressure", (0, 1, 0, 0)) //天气水晶：高压
             .AddModItem("ContinentOfJourney/Crystal_Cold", (0, 1, 0, 0)) //天气水晶：低温
             .AddModItem("ContinentOfJourney/Crystal_Hot", (0, 1, 0, 0)) //天气水晶：高温
             .AddModItem("ContinentOfJourney/Crystal_Harvest", (0, 1, 0, 0)) //天气水晶：丰收
             .AddModItem("ContinentOfJourney/Crystal_Typhoon", (0, 1, 0, 0)) //天气水晶：台风
-
             .AddModItem("ContinentOfJourney/Crystal_Nuclear", (0, 1, 0, 0)); //天气水晶：辐射
 
             #endregion
 
             #endregion
 
+        }
+
+        public void AddHardSumShop(NPCShop HardSum)
+        {
             #region 【召唤物品(肉后)】
 
             #region [原版]
@@ -501,9 +533,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.SnowGlobe, (0, 5, 0, 0), Condition.Hardmode) //雪人军团
             .AddItem(ItemID.SolarTablet, (0, 10, 0, 0), Condition.DownedMechBossAny) //日食
             .AddItem(ItemID.PumpkinMoonMedallion, (0, 15, 0, 0), Condition.DownedPlantera) //南瓜月
-            .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera) //霜月
+            .AddItem(ItemID.NaughtyPresent, (0, 15, 0, 0), Condition.DownedPlantera); //霜月
             //肉后 Boss
-            .AddItem(ItemID.QueenSlimeCrystal, (0, 10, 0, 0), Condition.Hardmode) //史莱姆皇后
+            HardSum.AddItem(ItemID.QueenSlimeCrystal, (0, 10, 0, 0), Condition.Hardmode) //史莱姆皇后
             .AddItem(ItemID.MechanicalWorm, (0, 15, 0, 0), Condition.Hardmode) //毁灭者
             .AddItem(ItemID.MechanicalEye, (0, 15, 0, 0), Condition.Hardmode) //双子魔眼
             .AddItem(ItemID.MechanicalSkull, (0, 15, 0, 0), Condition.Hardmode) //机械骷髅王
@@ -519,9 +551,9 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [灾厄 Calamity Mod]
             //肉后 事件
             HardSum.AddModItem("CalamityMod/AridArtifact", (0, 5, 0, 0), Condition.Hardmode) //沙尘暴
-            .AddModItem("CalamityMod/MartianDistressRemote", (0, 20, 0, 0), Condition.DownedGolem) //火星暴乱
+            .AddModItem("CalamityMod/MartianDistressRemote", (0, 20, 0, 0), Condition.DownedGolem); //火星暴乱
             //肉后 Boss
-            .AddModItem("CalamityMod/CryoKey", (0, 10, 0, 0), Condition.Hardmode) //极地之灵
+            HardSum.AddModItem("CalamityMod/CryoKey", (0, 10, 0, 0), Condition.Hardmode) //极地之灵
             .AddModItem("CalamityMod/Seafood", (0, 10, 0, 0), Condition.Hardmode) //渊海灾虫
             .AddModItem("CalamityMod/CharredIdol", (0, 10, 0, 0), Condition.Hardmode) //硫磺火元素
             .AddModItem("CalamityMod/EyeofDesolation", (0, 20, 0, 0), Condition.Hardmode) //灾厄之影
@@ -543,21 +575,21 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("Fargowiltas/CrimsonChest", (0, 6, 0, 0), Condition.Hardmode) //猩红宝箱怪
             .AddModItem("Fargowiltas/CorruptChest", (0, 6, 0, 0), Condition.Hardmode) //腐化宝箱怪
             .AddModItem("Fargowiltas/HallowChest", (0, 6, 0, 0), Condition.Hardmode) //神圣宝箱怪
-            .AddModItem("Fargowiltas/JungleChest", (0, 6, 0, 0), Condition.Hardmode) //丛林宝箱怪
-            .AddModItem("Fargowiltas/AthenianIdol", (0, 5, 0, 0), Condition.Hardmode) //蛇发女妖
+            .AddModItem("Fargowiltas/JungleChest", (0, 6, 0, 0), Condition.Hardmode); //丛林宝箱怪
+            HardSum.AddModItem("Fargowiltas/AthenianIdol", (0, 5, 0, 0), Condition.Hardmode) //蛇发女妖
             .AddModItem("Fargowiltas/RuneOrb", (0, 5, 0, 0), Condition.Hardmode) //符文巫师
             .AddModItem("Fargowiltas/ClownLicense", (0, 5, 0, 0), Condition.Hardmode) //小丑
             .AddModItem("Fargowiltas/CloudSnack", (0, 6, 0, 0), Condition.Hardmode) //飞龙
             .AddModItem("Fargowiltas/DilutedRainbowMatter", (0, 5, 0, 0), Condition.Hardmode) //彩虹史莱姆
             .AddModItem("Fargowiltas/CoreoftheFrostCore", (0, 6, 0, 0), Condition.Hardmode) //冰雪巨人
-            .AddModItem("Fargowiltas/ForbiddenForbiddenFragment", (0, 6, 0, 0), Condition.Hardmode) //沙尘精
-            .AddModItem("Fargowiltas/ShadowflameIcon", (0, 6, 0, 0), GoblinArmyHappened, Condition.Hardmode) //哥布林术士
+            .AddModItem("Fargowiltas/ForbiddenForbiddenFragment", (0, 6, 0, 0), Condition.Hardmode); //沙尘精
+            HardSum.AddModItem("Fargowiltas/ShadowflameIcon", (0, 6, 0, 0), GoblinArmyHappened, Condition.Hardmode) //哥布林术士
             .AddModItem("Fargowiltas/PirateFlag", (0, 6, 0, 0), Condition.Hardmode, Condition.DownedPirates) //海盗船长
             .AddModItem("Fargowiltas/HemoclawCrab", (0, 6, 0, 0), Condition.Hardmode) //血浆哥布林鲨鱼
             .AddModItem("Fargowiltas/BloodUrchin", (0, 6, 0, 0), Condition.Hardmode) //血鳗鱼
             .AddModItem("Fargowiltas/BloodSushiPlatter", (0, 10, 0, 0), Condition.Hardmode) //恐惧鹦鹉螺
-            .AddModItem("Fargowiltas/MothLamp", (0, 6, 0, 0), Condition.Hardmode) //蛾
-            .AddModItem("Fargowiltas/DemonicPlushie", (0, 8, 0, 0), Condition.DownedMechBossAny) //红魔鬼
+            .AddModItem("Fargowiltas/MothLamp", (0, 6, 0, 0), Condition.Hardmode); //蛾
+            HardSum.AddModItem("Fargowiltas/DemonicPlushie", (0, 8, 0, 0), Condition.DownedMechBossAny) //红魔鬼
             .AddModItem("Fargowiltas/Pincushion", (0, 10, 0, 0), Condition.DownedPlantera) //钉头
             .AddModItem("Fargowiltas/MothronEgg", (0, 10, 0, 0), Condition.DownedPlantera) //蛾怪
             .AddModItem("Fargowiltas/AmalgamatedSkull", (0, 10, 0, 0), Condition.DownedPlantera) //骷髅狙击手+骷髅特警+骷髅突击手
@@ -589,13 +621,13 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("ContinentOfJourney/Crystal_Knife", (0, 15, 0, 0), Condition.DownedSkeletronPrime) //天气水晶：刀子雨
             .AddModItem("ContinentOfJourney/Crystal_Donut", (0, 15, 0, 0), Condition.DownedMechBossAny) //天气水晶：甜甜圈季风
             .AddModItem("ContinentOfJourney/Crystal_Mist", (0, 20, 0, 0), PumpkinMoonHappened, SnowMoonHappened) //天气水晶：迷雾
-            .AddModItem("ContinentOfJourney/Crystal_Oxygen", (0, 25, 0, 0), DownedDiver) //天气水晶：纯氧
+            .AddModItem("ContinentOfJourney/Crystal_Oxygen", (0, 25, 0, 0), DownedDiver); //天气水晶：纯氧
             //肉后 稀有敌怪
-            .AddModItem("ContinentOfJourney/DivineKey", (0, 10, 0, 0), Condition.Hardmode) //圣洁钥匙 (沙漠宝箱怪)
+            HardSum.AddModItem("ContinentOfJourney/DivineKey", (0, 10, 0, 0), Condition.Hardmode) //圣洁钥匙 (沙漠宝箱怪)
             .AddModItem("ContinentOfJourney/PolarKey", (0, 10, 0, 0), Condition.Hardmode) //冰川钥匙 (极地宝箱怪)            
-            .AddModItem("ContinentOfJourney/LihzahrdKey", (0, 10, 0, 0), Condition.Hardmode) //蜥蜴钥匙 (神庙宝箱怪)
+            .AddModItem("ContinentOfJourney/LihzahrdKey", (0, 10, 0, 0), Condition.Hardmode); //蜥蜴钥匙 (神庙宝箱怪)
             //肉后 Boss
-            .AddModItem("ContinentOfJourney/CyanFlareGun", (0, 10, 0, 0), Condition.Hardmode) //青色信号枪 (天气预报)
+            HardSum.AddModItem("ContinentOfJourney/CyanFlareGun", (0, 10, 0, 0), Condition.Hardmode) //青色信号枪 (天气预报)
             .AddModItem("ContinentOfJourney/CannedSoulofFlight", (0, 15, 0, 0), Condition.DownedMechBossAny) //罐装飞翔之魂 (天竿鱼祭司)
             .AddModItem("ContinentOfJourney/UnstableGlobe", (0, 20, 0, 0), DownedDiver) //不稳定空间裂缝 (深潜者)
             .AddModItem("ContinentOfJourney/MetalSpine", (0, 25, 0, 0), Condition.DownedPlantera); //机械脊椎 (母脑)
@@ -604,6 +636,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
+        }
+
+        public void AddPostMoonSumShop(NPCShop PostMoonSum)
+        {
             #region 【召唤物品(月后)】
 
             #region [灾厄 Calamity Mod]
@@ -631,23 +667,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region [旅人归途 Homeward Journey]
             //月后 事件
             PostMoonSum.AddModItem("ContinentOfJourney/Crystal_Timenado", (0, 30, 0, 0), DownedWallofShadow) //天气水晶：时光隧道
-            .AddModItem("ContinentOfJourney/Crystal_Threebody", (0, 40, 0, 0), DownedSunSlimeGod) //天气水晶：三体
+            .AddModItem("ContinentOfJourney/Crystal_Threebody", (0, 40, 0, 0), DownedSunSlimeGod); //天气水晶：三体
             //月后 Boss
-            .AddModItem("ContinentOfJourney/UltimateTorch", (0, 30, 0, 0), Condition.DownedMoonLord) //究极火把 (暗影墙)
+            PostMoonSum.AddModItem("ContinentOfJourney/UltimateTorch", (0, 30, 0, 0), Condition.DownedMoonLord); //究极火把 (暗影墙)
             //暗影墙后
-            .AddModItem("ContinentOfJourney/SunlightCrown", (0, 40, 0, 0), DownedWallofShadow) //日冕 (史莱姆之神)
+            PostMoonSum.AddModItem("ContinentOfJourney/SunlightCrown", (0, 40, 0, 0), DownedWallofShadow) //日冕 (史莱姆之神)
             .AddModItem("ContinentOfJourney/HallowedAltar", (0, 50, 0, 0), DownedWallofShadow); //神圣祭坛
 
             #endregion
 
             #endregion
 
-            PreBag.Register();
-            HardBag.Register();
-            PostMoonBag.Register();
-            PreSum.Register();
-            HardSum.Register();
-            PostMoonSum.Register();
         }
     }
 }

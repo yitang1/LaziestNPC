@@ -56,7 +56,9 @@ Win+R 输入shell:Personal
 - **AlchemistNPC Lite (炼金术士NPC)**
 - **Homeward Journey (旅人归途)**
 
-  **...更多Mod正在兼容中 (Coming Soon)**  
+<br>
+  
+   **......更多Mod正在兼容中 (Coming Soon)**  
 
 </details>
 ——————————————————————————————  

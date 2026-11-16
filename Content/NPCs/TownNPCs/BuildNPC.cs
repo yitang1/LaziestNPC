@@ -9,6 +9,7 @@ using Terraria.Utilities;
 using LaziestNPC.Globals.GlobalItems;
 using static LaziestNPC.Common.ModConditions.AllModBossConditions;
 using LaziestNPC.Globals.Config;
+using LaziestNPC.Common.UI;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
@@ -64,45 +65,77 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             }
         }
 
+        private static readonly ShopCategory[] ShopCategoryList = new ShopCategory[]
+        {
+            new ShopCategory(
+                "VanillaBlock",
+                "Mods.LaziestNPC.NPCs.BuildNPC.ShopCategory.VanillaBlock",
+                "LaziestNPC/Assets/ShopIcons/BuildNPC/VanillaBlock", 2.5f),
+
+            new ShopCategory(
+                "ModBlock",
+                "Mods.LaziestNPC.NPCs.BuildNPC.ShopCategory.ModBlock",
+                "LaziestNPC/Assets/ShopIcons/BuildNPC/ModBlock", 2.5f),
+
+            new ShopCategory(
+                "UtilityBlock",
+                "Mods.LaziestNPC.NPCs.BuildNPC.ShopCategory.UtilityBlock",
+                "LaziestNPC/Assets/ShopIcons/BuildNPC/UtilityBlock", 2.5f),
+        };
+
+        public override IReadOnlyList<ShopCategory> ShopCategories => ShopCategoryList;
+
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.LaziestNPC.NPCs.BuildNPC.button1");
-            button2 = Language.GetTextValue("Mods.LaziestNPC.NPCs.BuildNPC.button2");
+            ShopCategory category = CurrentShopCategory;
+            button = category != null ? Language.GetTextValue(category.NameKey) : "";
+            button2 = null;
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
-            if (firstButton)
-            {
-                shopName = "NaturalBlocks";
-            }
-            else
-            {
-                shopName = "BuildingBlocks";
-            }
+            if (!firstButton)
+                return;
+
+            ShopCategory category = CurrentShopCategory;
+            if (category != null)
+                shopName = category.ShopName;
         }
 
         public override void AddShops()
         {
-            var naturalB = new NPCShop(Type, "NaturalBlocks");
-            var buildingB = new NPCShop(Type, "BuildingBlocks");
+            var VanillaBlock = new NPCShop(Type, "VanillaBlock");
+            var ModBlock = new NPCShop(Type, "ModBlock");
+            var UtilityBlock = new NPCShop(Type, "UtilityBlock");
 
-            //【尽量先只添加需要作为[合成配方]或[只能敌怪掉落]的物块，而不是把游戏中所有物块全添加进来，无他，唯累人尔】
+            //【尽量先只添加需要作为[合成配方]或[只能敌怪掉落]的物块，
+            // 而不是把游戏中所有物块全添加进来，无他，唯累人尔】
             //【能够被其他物品合成出来的，也暂时不添加】
 
-            #region 【天然物块】
+            AddVanillaBlockShop(VanillaBlock);
+            AddModBlockShop(ModBlock);
+            AddUtilityBlockShop(UtilityBlock);
 
+            VanillaBlock.Register();
+            ModBlock.Register();
+            UtilityBlock.Register();
+        }
+
+        public void AddVanillaBlockShop(NPCShop VanillaBlock)
+        {
             #region [原版物块]
+
+            #region 天然物块
             //土块和石块类
-            naturalB.AddItem(ItemID.DirtBlock, (0, 0, 0, 1)) //土块
+            VanillaBlock.AddItem(ItemID.DirtBlock, (0, 0, 0, 1)) //土块
             .AddItem(ItemID.StoneBlock, (0, 0, 0, 1)) //石块
             .AddItem(ItemID.CrimstoneBlock, (0, 0, 0, 2)) //猩红石
             .AddItem(ItemID.EbonstoneBlock, (0, 0, 0, 2)) //黑檀石
             .AddItem(ItemID.PearlstoneBlock, (0, 0, 0, 10), Condition.Hardmode) //珍珠石
             .AddItem(ItemID.Granite, (0, 0, 0, 5)) //花岗岩
-            .AddItem(ItemID.Marble, (0, 0, 0, 5)) //大理石
+            .AddItem(ItemID.Marble, (0, 0, 0, 5)); //大理石
             //沙块类
-            .AddItem(ItemID.SandBlock, (0, 0, 0, 1)) //沙块
+            VanillaBlock.AddItem(ItemID.SandBlock, (0, 0, 0, 1)) //沙块
             .AddItem(ItemID.CrimsandBlock, (0, 0, 0, 2)) //猩红沙
             .AddItem(ItemID.EbonsandBlock, (0, 0, 0, 2)) //黑檀沙
             .AddItem(ItemID.PearlsandBlock, (0, 0, 0, 10), Condition.Hardmode) //珍珠沙
@@ -115,111 +148,43 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.CorruptHardenedSand, (0, 0, 0, 2)) //腐化硬化沙
             .AddItem(ItemID.HallowHardenedSand, (0, 0, 0, 10), Condition.Hardmode) //神圣硬化沙
             .AddItem(ItemID.DesertFossil, (0, 0, 1, 0)) //沙漠化石
-            .AddItem(ItemID.AshBlock, (0, 0, 0, 2)) //灰烬块
+            .AddItem(ItemID.AshBlock, (0, 0, 0, 2)); //灰烬块
             //泥块类
-            .AddItem(ItemID.ClayBlock, (0, 0, 0, 1)) //黏土块
+            VanillaBlock.AddItem(ItemID.ClayBlock, (0, 0, 0, 1)) //黏土块
             .AddItem(ItemID.MudBlock, (0, 0, 0, 1)) //泥块
-            .AddItem(ItemID.SlushBlock, (0, 0, 0, 1)) //雪泥块
-            .AddItem(ItemID.SiltBlock, (0, 0, 0, 1)) //淤泥块(泥沙块)
+            .AddItem(ItemID.SlushBlock, (0, 0, 1, 0)) //雪泥块
+            .AddItem(ItemID.SiltBlock, (0, 0, 1, 0)); //淤泥块(泥沙块)
             //雪块类
-            .AddItem(ItemID.SnowBlock, (0, 0, 0, 1)) //雪块
+            VanillaBlock.AddItem(ItemID.SnowBlock, (0, 0, 0, 1)) //雪块
             .AddItem(ItemID.IceBlock, (0, 0, 0, 1)) //冰块
             .AddItem(ItemID.RedIceBlock, (0, 0, 0, 1)) //红冰块
             .AddItem(ItemID.PurpleIceBlock, (0, 0, 0, 1)) //紫冰块
-            .AddItem(ItemID.PinkIceBlock, (0, 0, 0, 10), Condition.Hardmode) //粉冰块
+            .AddItem(ItemID.PinkIceBlock, (0, 0, 0, 10), Condition.Hardmode); //粉冰块
             //栽培类
-            .AddItem(ItemID.Hay, (0, 0, 0, 1)) //干草
+            VanillaBlock.AddItem(ItemID.Hay, (0, 0, 0, 1)) //干草
             .AddItem(ItemID.Cactus, (0, 0, 0, 2)) //仙人掌
             .AddItem(ItemID.Pumpkin, (0, 0, 0, 5)) //南瓜
-            .AddItem(ItemID.BambooBlock, (0, 0, 0, 5)) //竹块
+            .AddItem(ItemID.BambooBlock, (0, 0, 0, 5)); //竹块
             //空岛类
-            .AddItem(ItemID.Cloud, (0, 0, 1, 0)) //云块
+            VanillaBlock.AddItem(ItemID.Cloud, (0, 0, 1, 0)) //云块
             .AddItem(ItemID.RainCloud, (0, 0, 1, 0)) //雨云块
-            .AddItem(ItemID.SunplateBlock, (0, 0, 1, 0)) //日盘块
+            .AddItem(ItemID.SunplateBlock, (0, 0, 1, 0)); //日盘块
             //蜂巢类
-            .AddItem(ItemID.Hive, (0, 0, 1, 0)) //蜂巢块
+            VanillaBlock.AddItem(ItemID.Hive, (0, 0, 1, 0)) //蜂巢块
             .AddItem(ItemID.HoneyBlock, (0, 0, 3, 0)) //蜂蜜块
             .AddItem(ItemID.CrispyHoneyBlock, (0, 0, 3, 0)); //松脆蜂蜜块
-            
-            #endregion
-
-            #region [模组物块]
-
-            #region 灾厄 Calamity Mod
-            naturalB.AddModItem("CalamityMod/EutrophicSand", (0, 0, 0, 10)) //富营养沙
-            .AddModItem("CalamityMod/Navystone", (0, 0, 0, 10)) //沉沦渊石
-            .AddModItem("CalamityMod/SulphurousSand", (0, 0, 0, 10)) //硫磺沙
-            .AddModItem("CalamityMod/BrimstoneSlag", (0, 0, 0, 20)) //硫磺火石砖
-            .AddModItem("CalamityMod/PlantyMush", (0, 0, 10, 0)) //植物混融块
-            .AddModItem("CalamityMod/AbyssGravel", (0, 0, 0, 20), Condition.DownedEowOrBoc) //深渊砾石
-            .AddModItem("CalamityMod/Voidstone", (0, 0, 1, 0), Condition.Hardmode) //虚空石
-            //星辉瘟疫
-            .AddModItem("CalamityMod/AstralDirt", (0, 0, 1, 0), Condition.Hardmode) //星幻土块
-            .AddModItem("CalamityMod/AstralStone", (0, 0, 1, 0), Condition.Hardmode) //星幻石块
-            .AddModItem("CalamityMod/AstralSnow", (0, 0, 1, 0), Condition.Hardmode) //星幻雪块
-            .AddModItem("CalamityMod/AstralIce", (0, 0, 1, 0), Condition.Hardmode) //星幻冰雪块
-            .AddModItem("CalamityMod/AstralSand", (0, 0, 1, 0), Condition.Hardmode) //星幻沙块
-            .AddModItem("CalamityMod/AstralSandstone", (0, 0, 1, 0), Condition.Hardmode) //星幻沙岩块
-            .AddModItem("CalamityMod/HardenedAstralSand", (0, 0, 1, 0), Condition.Hardmode) //硬化星幻沙块
-            .AddModItem("CalamityMod/AstralClay", (0, 0, 1, 0), Condition.Hardmode) //星幻粘土
-            .AddModItem("CalamityMod/NovaeSlag", (0, 0, 50, 0), Condition.Hardmode) //新星熔渣
-            .AddModItem("CalamityMod/CelestialRemains", (0, 1, 0, 0), Condition.Hardmode); //星界残骸
 
             #endregion
 
-            #region 瑟银 Thorium Mod
-            naturalB.AddModItem("ThoriumMod/BrackishClump", (0, 0, 5, 0)) //咸泥块
-            .AddModItem("ThoriumMod/MarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //海洋块
-            .AddModItem("ThoriumMod/LeakyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //渗漏海洋块
-            .AddModItem("ThoriumMod/MossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //多苔海洋块
-            .AddModItem("ThoriumMod/LeakyMossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc); //渗漏多苔海洋块
-
-            #endregion
-
-            #region 旅人归途 Homeward Journey
-            naturalB.AddModItem("ContinentOfJourney/FluorescentGrass", (0, 1, 50, 0), Condition.DownedPlantera); //荧光草
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            #region 【建筑物块】
-
-            #region [原版物块]
-
-            #region 战斗场地类物品
-            buildingB.AddItem(ItemID.Campfire, (0, 0, 5, 0)) //篝火
-            .AddItem(ItemID.SliceOfCake, (0, 3, 0, 0), Condition.NpcIsPresent(NPCID.PartyGirl)) //蛋糕块
-            .AddItem(ItemID.WaterBucket, (0, 0, 25, 0)) //水桶
-            .AddItem(ItemID.LavaBucket, (0, 0, 50, 0)) //熔岩桶
-            .AddItem(ItemID.HoneyBucket, (0, 0, 50, 0)) //蜂蜜桶
-            .AddItem(ItemID.HeartLantern, (0, 2, 0, 0)) //心形灯笼
-            .AddItem(ItemID.StarinaBottle, (0, 2, 0, 0)) //星星瓶
-            //蜡烛 ↓
-            .AddItem(ItemID.PeaceCandle, (0, 1, 50, 0)) //和平蜡烛
-            .AddItem(ItemID.WaterCandle, (0, 1, 50, 0), Condition.DownedSkeletron) //水蜡烛
-            //职业相关(利器站、弹药箱、水晶球等) ↓
-            .AddItem(ItemID.CatBast, (0, 3, 0, 0)) //巴斯特雕像
-            .AddItem(ItemID.WarTable, (0, 4, 0, 0), Condition.DownedOldOnesArmyAny) //战争桌
-            .AddItem(ItemID.SharpeningStation, (0, 3, 0, 0)) //利器站
-            .AddItem(ItemID.AmmoBox, (0, 3, 0, 0)) //弹药箱
-            .AddItem(ItemID.GardenGnome, (0, 3, 0, 0)) //花园侏儒
-            .AddItem(ItemID.BewitchingTable, (0, 5, 0, 0), Condition.DownedSkeletron) //施法桌
-            .AddItem(ItemID.AlchemyTable, (0, 5, 0, 0), Condition.DownedSkeletron) //炼药桌
-            .AddItem(ItemID.CrystalBall, (0, 10, 0, 0), Condition.Hardmode) //水晶球
-
-            #endregion
-
+            #region 建筑物块
             //照明物块
-            .AddItem(ItemID.WhiteTorch, (0, 0, 0, 20)) //白火把
+            VanillaBlock.AddItem(ItemID.WhiteTorch, (0, 0, 0, 20)) //白火把
             .AddItem(ItemID.UltrabrightTorch, (0, 0, 0, 50)) //超亮火把
             .AddItem(ItemID.GlassLantern, (0, 0, 0, 10)) //玻璃灯笼
             .AddItem(ItemID.GlassLamp, (0, 0, 0, 10)) //玻璃灯
-            .AddItem(ItemID.LampPost, (0, 0, 0, 10)) //路灯
+            .AddItem(ItemID.LampPost, (0, 0, 0, 10)); //路灯
             //木材类
-            .AddItem(ItemID.Wood, (0, 0, 0, 5)) //木材
+            VanillaBlock.AddItem(ItemID.Wood, (0, 0, 0, 5)) //木材
             .AddItem(ItemID.BorealWood, (0, 0, 0, 10)) //针叶木
             .AddItem(ItemID.RichMahogany, (0, 0, 0, 10)) //红木
             .AddItem(ItemID.Shadewood, (0, 0, 0, 10)) //暗影木
@@ -234,19 +199,116 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.Glass, (0, 0, 0, 5)) //玻璃
             .AddItem(ItemID.GrayBrick, (0, 0, 0, 5)) //灰砖
             .AddItem(ItemID.SandstoneBrick, (0, 0, 0, 5)) //沙岩砖
-            .AddItem(ItemID.ObsidianBrick, (0, 0, 0, 10)) //黑曜石砖
+            .AddItem(ItemID.ObsidianBrick, (0, 0, 0, 10)); //黑曜石砖
             //地牢砖(TODO：暂时设计成任何时期都能获得)
-            .AddItem(ItemID.BlueBrick, (0, 0, 0, 20)) //蓝砖
+            VanillaBlock.AddItem(ItemID.BlueBrick, (0, 0, 0, 20)) //蓝砖
             .AddItem(ItemID.GreenBrick, (0, 0, 0, 20)) //绿砖
             .AddItem(ItemID.PinkBrick, (0, 0, 0, 20)) //粉砖
             .AddItem(ItemID.RainbowBrick, (0, 0, 0, 50), Condition.Hardmode) //彩虹砖
             .AddItem(ItemID.LivingFireBlock, (0, 0, 1, 0), Condition.Hardmode) //活火块
             .AddItem(ItemID.LihzahrdBrick, (0, 0, 5, 0), Condition.DownedGolem) //丛林蜥蜴砖
-            .AddItem(ItemID.MartianConduitPlating, (0, 0, 5, 0), Condition.DownedMartians) //火星管道镀层
+            .AddItem(ItemID.MartianConduitPlating, (0, 0, 5, 0), Condition.DownedMartians); //火星管道镀层
 
-            .AddItem(ItemID.Gravestone, (0, 0, 5, 0)) //墓碑
+            VanillaBlock.AddItem(ItemID.Gravestone, (0, 0, 5, 0)); //墓碑
+
+            #endregion
+
+            #endregion
+
+        }
+
+        public void AddModBlockShop(NPCShop ModBlock)
+        {
+            #region [模组物块]
+
+            #region [灾厄 Calamity Mod]
+            //天然物块
+            //沉沦之海
+            ModBlock.AddModItem("CalamityMod/EutrophicSand", (0, 0, 0, 10)) //富营养沙
+            .AddModItem("CalamityMod/Navystone", (0, 0, 0, 10)); //沉沦渊石
+            //硫磺海和深渊
+            ModBlock.AddModItem("CalamityMod/SulphurousSand", (0, 0, 0, 10)) //硫磺沙
+            .AddModItem("CalamityMod/BrimstoneSlag", (0, 0, 0, 20)) //硫磺火石砖
+            .AddModItem("CalamityMod/PlantyMush", (0, 0, 10, 0)) //植物混融块
+            .AddModItem("CalamityMod/AbyssGravel", (0, 0, 0, 20), Condition.DownedEowOrBoc) //深渊砾石
+            .AddModItem("CalamityMod/Voidstone", (0, 0, 1, 0), Condition.Hardmode); //虚空石
+            //星辉瘟疫
+            ModBlock.AddModItem("CalamityMod/AstralDirt", (0, 0, 1, 0), Condition.Hardmode) //星幻土块
+            .AddModItem("CalamityMod/AstralStone", (0, 0, 1, 0), Condition.Hardmode) //星幻石块
+            .AddModItem("CalamityMod/AstralSnow", (0, 0, 1, 0), Condition.Hardmode) //星幻雪块
+            .AddModItem("CalamityMod/AstralIce", (0, 0, 1, 0), Condition.Hardmode) //星幻冰雪块
+            .AddModItem("CalamityMod/AstralSand", (0, 0, 1, 0), Condition.Hardmode) //星幻沙块
+            .AddModItem("CalamityMod/AstralSandstone", (0, 0, 1, 0), Condition.Hardmode) //星幻沙岩块
+            .AddModItem("CalamityMod/HardenedAstralSand", (0, 0, 1, 0), Condition.Hardmode) //硬化星幻沙块
+            .AddModItem("CalamityMod/AstralClay", (0, 0, 1, 0), Condition.Hardmode) //星幻粘土
+            .AddModItem("CalamityMod/NovaeSlag", (0, 0, 50, 0), Condition.Hardmode) //新星熔渣
+            .AddModItem("CalamityMod/CelestialRemains", (0, 1, 0, 0), Condition.Hardmode); //星界残骸
+
+            //建筑物块
+            ModBlock.AddModItem("CalamityMod/Acidwood", (0, 0, 0, 10)) //酸蚀木
+            .AddModItem("CalamityMod/ScorchedBone", (0, 0, 0, 10), Condition.DownedEowOrBoc) //焦灼脊骨
+            .AddModItem("CalamityMod/AstralMonolith", (0, 0, 0, 50), Condition.Hardmode); //星幻木材
+
+            #endregion
+
+            #region [瑟银 Thorium Mod]
+            //天然物块
+            ModBlock.AddModItem("ThoriumMod/BrackishClump", (0, 0, 5, 0)) //咸泥块
+            .AddModItem("ThoriumMod/MarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //海洋块
+            .AddModItem("ThoriumMod/LeakyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //渗漏海洋块
+            .AddModItem("ThoriumMod/MossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc) //多苔海洋块
+            .AddModItem("ThoriumMod/LeakyMossyMarineBlock", (0, 0, 0, 20), Condition.DownedEowOrBoc); //渗漏多苔海洋块
+
+            //建筑物块
+            ModBlock.AddModItem("ThoriumMod/Deadwood", (0, 0, 0, 10)) //枯木
+            .AddModItem("ThoriumMod/YewWood", (0, 0, 0, 10)) //紫衫木
+            .AddModItem("ThoriumMod/EvergreenBlock", (0, 0, 0, 10)); //常青木
+
+            #endregion
+
+            #region [旅人归途 Homeward Journey]
+            //天然物块
+            ModBlock.AddModItem("ContinentOfJourney/FluorescentGrass", (0, 1, 50, 0), Condition.DownedPlantera); //荧光草
+
+            //建筑物块
+
+            ModBlock.AddModItem("ContinentOfJourney/RemainsOfThePickaxeLord", (0, 0, 50, 0)) //镐神遗骸
+            .AddModItem("ContinentOfJourney/AnglerCore", (0, 1, 0, 0), BloodMoonHappened); //钓鱼佬核心
+
+            #endregion
+
+            #endregion
+
+        }
+
+        public void AddUtilityBlockShop(NPCShop UtilityBlock)
+        {
+            #region [功能物块]
+
+            #region [原版]
+            //战斗场地类物品
+            UtilityBlock.AddItem(ItemID.Campfire, (0, 0, 5, 0)) //篝火
+            .AddItem(ItemID.SliceOfCake, (0, 3, 0, 0), Condition.NpcIsPresent(NPCID.PartyGirl)) //蛋糕块
+            .AddItem(ItemID.WaterBucket, (0, 0, 25, 0)) //水桶
+            .AddItem(ItemID.LavaBucket, (0, 0, 50, 0)) //熔岩桶
+            .AddItem(ItemID.HoneyBucket, (0, 0, 50, 0)) //蜂蜜桶
+            .AddItem(ItemID.HeartLantern, (0, 2, 0, 0)) //心形灯笼
+            .AddItem(ItemID.StarinaBottle, (0, 2, 0, 0)); //星星瓶
+            //蜡烛 ↓
+            UtilityBlock.AddItem(ItemID.PeaceCandle, (0, 1, 50, 0)) //和平蜡烛
+            .AddItem(ItemID.WaterCandle, (0, 1, 50, 0), Condition.DownedSkeletron); //水蜡烛
+            //职业/功能相关(利器站、弹药箱、水晶球等) ↓
+            UtilityBlock.AddItem(ItemID.CatBast, (0, 3, 0, 0)) //巴斯特雕像
+            .AddItem(ItemID.WarTable, (0, 4, 0, 0), Condition.DownedOldOnesArmyAny) //战争桌
+            .AddItem(ItemID.SharpeningStation, (0, 3, 0, 0)) //利器站
+            .AddItem(ItemID.AmmoBox, (0, 3, 0, 0)) //弹药箱
+            .AddItem(ItemID.GardenGnome, (0, 3, 0, 0)) //花园侏儒
+            .AddItem(ItemID.BewitchingTable, (0, 5, 0, 0), Condition.DownedSkeletron) //施法桌
+            .AddItem(ItemID.AlchemyTable, (0, 5, 0, 0), Condition.DownedSkeletron) //炼药桌
+            .AddItem(ItemID.CrystalBall, (0, 10, 0, 0), Condition.Hardmode); //水晶球
+
             //制作站
-            .AddItem(ItemID.WorkBench, (0, 0, 5, 0)) //工作台
+            UtilityBlock.AddItem(ItemID.WorkBench, (0, 0, 5, 0)) //工作台
             .AddItem(ItemID.IronAnvil, (0, 0, 5, 0)) //铁砧
             .AddItem(ItemID.MythrilAnvil, (0, 5, 0, 0), Condition.Hardmode) //秘银砧
             .AddItem(ItemID.Furnace, (0, 0, 5, 0)) //熔炉
@@ -262,10 +324,10 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddItem(ItemID.HoneyDispenser, (0, 1, 0, 0)) //蜂蜜分配器
             .AddItem(ItemID.Sawmill, (0, 0, 10, 0)) //锯木机
             .AddItem(ItemID.Loom, (0, 0, 5, 0)) //织布机
-            .AddItem(ItemID.Keg, (0, 0, 5, 0)) //酒桶
-            .AddItem(ItemID.AlchemyTable, (0, 1, 0, 0), Condition.DownedSkeletron) //炼药桌
-            .AddItem(ItemID.BoneWelder, (0, 1, 0, 0), Condition.DownedSkeletron) //骨头焊机
-            .AddItem(ItemID.MeatGrinder, (0, 2, 0, 0), Condition.Hardmode) //绞肉机
+            .AddItem(ItemID.Keg, (0, 0, 5, 0)); //酒桶
+            UtilityBlock.AddItem(ItemID.AlchemyTable, (0, 1, 0, 0), Condition.DownedSkeletron) //炼药桌
+            .AddItem(ItemID.BoneWelder, (0, 1, 0, 0), Condition.DownedSkeletron); //骨头焊机
+            UtilityBlock.AddItem(ItemID.MeatGrinder, (0, 2, 0, 0), Condition.Hardmode) //绞肉机
             .AddItem(ItemID.FleshCloningVaat, (0, 2, 0, 0), Condition.DownedMechBossAny) //血肉克隆台
             .AddItem(ItemID.LesionStation, (0, 2, 0, 0), Condition.DownedMechBossAny) //病变站(腐变室)
             .AddItem(ItemID.LihzahrdFurnace, (0, 3, 0, 0), Condition.DownedPlantera) //丛林蜥蜴熔炉
@@ -273,22 +335,17 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region [模组物块]
-
-            #region 灾厄 Calamity Mod
-            buildingB.AddModItem("CalamityMod/Acidwood", (0, 0, 0, 10)) //酸蚀木
-            .AddModItem("CalamityMod/ScorchedBone", (0, 0, 0, 10), Condition.DownedEowOrBoc) //焦灼脊骨
-            .AddModItem("CalamityMod/AstralMonolith", (0, 0, 0, 50), Condition.Hardmode) //星幻木材
-            .AddModItem("CalamityMod/TranquilityCandle", (0, 2, 0, 0), Condition.Hardmode) //安宁蜡烛
-            .AddModItem("CalamityMod/ChaosCandle", (0, 2, 0, 0), Condition.Hardmode) //混沌蜡烛
-            .AddModItem("CalamityMod/CrimsonEffigy", (0, 5, 0, 0)) //猩红雕像
+            #region [灾厄 Calamity Mod]
+            UtilityBlock.AddModItem("CalamityMod/TranquilityCandle", (0, 2, 0, 0), Condition.Hardmode) //宁静蜡烛
+            .AddModItem("CalamityMod/ChaosCandle", (0, 2, 0, 0), Condition.Hardmode); //混乱蜡烛
+            UtilityBlock.AddModItem("CalamityMod/CrimsonEffigy", (0, 5, 0, 0)) //猩红雕像
             .AddModItem("CalamityMod/CorruptionEffigy", (0, 5, 0, 0)) //腐化雕像
             .AddModItem("CalamityMod/EffigyOfDecay", (0, 5, 0, 0)); //腐朽雕像
 
             #endregion
 
-            #region Fargo突变 Fargo's Mutant Mod
-            buildingB.AddModItem("Fargowiltas/Semistation", (0, 2, 0, 0)) //多功能增益站
+            #region [Fargo突变 Fargo's Mutant Mod]
+            UtilityBlock.AddModItem("Fargowiltas/Semistation", (0, 2, 0, 0)) //多功能增益站
             .AddModItem("Fargowiltas/Omnistation", (0, 5, 0, 0), Condition.Hardmode) //万能增益站
             .AddModItem("Fargowiltas/Omnistation2", (0, 5, 0, 0), Condition.Hardmode) //万能增益站(配方不同而贴图不同)
             .AddModItem("Fargowiltas/GoldenDippingVat", (0, 10, 0, 0), Condition.Hardmode) //金染缸
@@ -297,24 +354,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             #endregion
 
-            #region 瑟银 Thorium Mod
-            buildingB.AddModItem("ThoriumMod/Deadwood", (0, 0, 0, 10)) //枯木
-            .AddModItem("ThoriumMod/YewWood", (0, 0, 0, 10)) //紫衫木
-            .AddModItem("ThoriumMod/EvergreenBlock", (0, 0, 0, 10)); //常青木
             #endregion
 
-            #region 旅人归途 Homeward Journey
-            buildingB.AddModItem("ContinentOfJourney/RemainsOfThePickaxeLord", (0, 0, 50, 0)) //镐神遗骸
-            .AddModItem("ContinentOfJourney/AnglerCore", (0, 1, 0, 0), BloodMoonHappened); //钓鱼佬核心
-
-            #endregion
-
-            #endregion
-
-            #endregion
-
-            naturalB.Register();
-            buildingB.Register();
         }
     }
 }

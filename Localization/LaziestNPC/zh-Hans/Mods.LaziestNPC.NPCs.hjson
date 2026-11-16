@@ -138,8 +138,11 @@ MaterialNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 原版材料
-	button2: 模组材料
+	ShopCategory: {
+		PreMaterial: 肉前材料
+		HardMaterial: 肉后材料
+		PostMoonMaterial: 月后材料
+	}
 }
 
 BuildNPC: {
@@ -167,8 +170,11 @@ BuildNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 天然物块
-	button2: 建筑物块
+	ShopCategory: {
+		VanillaBlock: 原版物块
+		ModBlock: 模组物块
+		UtilityBlock: 功能物块
+	}
 }
 
 NatureNPC: {

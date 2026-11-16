@@ -10,7 +10,6 @@ namespace LaziestNPC.Globals.GlobalItems
     public static class ItemCondition
     {
         public static Condition CanBuyFishJadeFirst = new Condition("CanBuyFishJadeFirst", () => WorldCondition.FishJadeBuyCount < 1);
-        public static Condition CanBuyFishJadeSecond = new Condition("CanBuyFishJadeSecond", () => WorldCondition.FishJadeBuyCount < 2);
     }
 
     //通用摸彩袋类掉落条件

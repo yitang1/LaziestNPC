@@ -246,9 +246,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             //肉前
             PreBag.AddItem(ItemType<TheReturner>(), (0, 0, 0, 1)) //归乡者吊坠
             .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeFirst) //双鱼玉佩
-            .AddItem(ItemType<DoubleFishJade>(), (0, 0, 0, 1), CanBuyFishJadeSecond) //双鱼玉佩
-            .AddItem(ItemType<PlatinumGoblet>(), (1, 0, 0, 0)) //白金高脚杯
-            .AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
+            .AddItem(ItemType<PlatinumGoblet>(), (1, 0, 0, 0)); //白金高脚杯
+            PreBag.AddItem(ItemID.KingSlimeBossBag, (0, 5, 0, 0), Condition.DownedKingSlime) //史莱姆王
             .AddItem(ItemID.EyeOfCthulhuBossBag, (0, 10, 0, 0), Condition.DownedEyeOfCthulhu) //克苏鲁之眼
             .AddItem(ItemID.BrainOfCthulhuBossBag, (0, 15, 0, 0), DownedBrainOfCthulhu) //克苏鲁之脑
             .AddItem(ItemID.EaterOfWorldsBossBag, (0, 15, 0, 0), DownedEaterOfWorlds) //世界吞噬怪

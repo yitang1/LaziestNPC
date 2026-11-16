@@ -536,6 +536,74 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             #region 【食物商店】
 
             #region [原版]
+
+            #region 水果类
+            FoodShop.AddItem(ItemID.Apple, (0, 1, 0, 0)) //苹果
+            .AddItem(ItemID.Apricot, (0, 1, 0, 0)) //杏
+            .AddItem(ItemID.Banana, (0, 1, 0, 0)) //香蕉
+            .AddItem(ItemID.BlackCurrant, (0, 1, 0, 0)) //黑醋栗
+            .AddItem(ItemID.BloodOrange, (0, 1, 0, 0)) //血橙
+            .AddItem(ItemID.Cherry, (0, 1, 0, 0)) //樱桃
+            .AddItem(ItemID.Coconut, (0, 1, 0, 0)) //椰子
+            .AddItem(ItemID.Elderberry, (0, 1, 0, 0)); //接骨木果
+            FoodShop.AddItem(ItemID.Grapefruit, (0, 1, 0, 0)) //葡萄柚
+            .AddItem(ItemID.Lemon, (0, 1, 0, 0)) //柠檬
+            .AddItem(ItemID.Mango, (0, 1, 0, 0)) //芒果
+            .AddItem(ItemID.Peach, (0, 1, 0, 0)) //桃子
+            .AddItem(ItemID.Pineapple, (0, 1, 0, 0)) //菠萝
+            .AddItem(ItemID.Plum, (0, 1, 0, 0)) //李子
+            .AddItem(ItemID.Pomegranate, (0, 1, 0, 0)) //石榴
+            .AddItem(ItemID.Rambutan, (0, 1, 0, 0)) //红毛丹
+            .AddItem(ItemID.SpicyPepper, (0, 1, 0, 0)); //辣椒
+            FoodShop.AddItem(ItemID.Dragonfruit, (0, 2, 0, 0), Condition.Hardmode) //火龙果
+            .AddItem(ItemID.Starfruit, (0, 2, 0, 0), Condition.Hardmode) //杨桃
+            .AddItem(ItemID.Grapes, (0, 2, 0, 0), Condition.Hardmode); //葡萄
+
+            #endregion
+
+            #region 饮品与酒
+            FoodShop.AddItem(ItemID.Ale, (0, 1, 0, 0)) //麦芽酒
+            .AddItem(ItemID.CoffeeCup, (0, 1, 0, 0)) //咖啡
+            .AddItem(ItemID.CreamSoda, (0, 1, 0, 0)) //奶油苏打水
+            .AddItem(ItemID.Eggnog, (0, 1, 0, 0)) //蛋酒
+            .AddItem(ItemID.JojaCola, (0, 1, 0, 0)) //Joja可乐
+            .AddItem(ItemID.MilkCarton, (0, 1, 0, 0)) //盒装牛奶
+            .AddItem(ItemID.Sake, (0, 1, 0, 0)) //清酒
+            .AddItem(ItemID.Milkshake, (0, 2, 0, 0), Condition.Hardmode); //奶昔
+            #endregion
+
+            #region 餐品与熟食
+            FoodShop.AddItem(ItemID.Burger, (0, 1, 0, 0)) //汉堡
+            .AddItem(ItemID.PotatoChips, (0, 1, 0, 0)) //薯片
+            .AddItem(ItemID.ChickenNugget, (0, 1, 0, 0)) //鸡块
+            .AddItem(ItemID.Pizza, (0, 1, 0, 0)) //披萨
+            .AddItem(ItemID.Spaghetti, (0, 1, 0, 0)); //意大利面
+            FoodShop.AddItem(ItemID.FriedEgg, (0, 1, 0, 0)) //煎蛋
+            .AddItem(ItemID.Fries, (0, 1, 0, 0)) //炸薯条
+            .AddItem(ItemID.Hotdog, (0, 1, 0, 0)) //热狗
+            .AddItem(ItemID.Nachos, (0, 1, 0, 0)) //玉米片
+            .AddItem(ItemID.PadThai, (0, 1, 0, 0)) //泰式炒面
+            .AddItem(ItemID.Pho, (0, 1, 0, 0)) //越南河粉
+            .AddItem(ItemID.ShrimpPoBoy, (0, 1, 0, 0)) //鲜虾三明治
+            .AddItem(ItemID.Steak, (0, 1, 0, 0)); //牛排
+            FoodShop.AddItem(ItemID.Bacon, (0, 2, 0, 0), Condition.Hardmode) //培根
+            .AddItem(ItemID.BBQRibs, (0, 3, 0, 0), Condition.DownedPlantera); //烧烤肋排
+
+            #endregion
+
+            #region 甜点与零食
+            FoodShop.AddItem(ItemID.BananaSplit, (0, 1, 0, 0)) //香蕉船
+            .AddItem(ItemID.GingerbreadCookie, (0, 1, 0, 0)) //姜饼
+            .AddItem(ItemID.IceCream, (0, 1, 0, 0)) //冰淇淋
+            .AddItem(ItemID.Marshmallow, (0, 1, 0, 0)) //棉花糖
+            .AddItem(ItemID.SugarCookie, (0, 3, 0, 0)) //蜜糖饼干
+            .AddItem(ItemID.CandyApple, (0, 3, 0, 0)) //焦糖苹果
+            .AddItem(ItemID.ApplePie, (0, 2, 0, 0), Condition.Hardmode) //苹果派
+            .AddItem(ItemID.ChocolateChipCookie, (0, 2, 0, 0), Condition.Hardmode) //巧克力曲奇饼干
+            .AddItem(ItemID.GoldenDelight, (0, 99, 0, 0)); //金美味
+
+            #endregion
+
             #endregion
 
             #region [旅人归途 Homeward Journey]

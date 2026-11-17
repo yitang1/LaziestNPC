@@ -240,6 +240,12 @@ OreNPC: {
 		Princess_LovesNPC: 我喜欢 {NPCName}。
 	}
 
-	button1: 矿物商店
-	button2: 配饰商店
+	ShopCategory: {
+		PreOre: 矿物(肉前)
+		HardOre: 矿物(肉后)
+		PostMoonOre: 矿物(月后)
+		PreAcc: 配饰(肉前)
+		HardAcc: 配饰(肉后)
+		PostMoonAcc: 配饰(月后)
+	}
 }

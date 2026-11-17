@@ -556,6 +556,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/Seafood", (0, 10, 0, 0), Condition.Hardmode) //渊海灾虫
             .AddModItem("CalamityMod/CharredIdol", (0, 10, 0, 0), Condition.Hardmode) //硫磺火元素
             .AddModItem("CalamityMod/EyeofDesolation", (0, 20, 0, 0), Condition.Hardmode) //灾厄之影
+            .AddModItem("CalamityMod/NaiadsWarhorn", (0, 25, 0, 0), DownedLeviathan) //那伊阿得斯战号(阿娜希塔和利维坦)
             .AddModItem("CalamityMod/AstralChunk", (0, 25, 0, 0), Condition.Hardmode) //白金星舰
             .AddModItem("CalamityMod/Abombination", (0, 30, 0, 0), Condition.DownedGolem) //瘟疫使者歌莉娅
             .AddModItem("CalamityMod/DeathWhistle", (0, 30, 0, 0), Condition.DownedGolem) //毁灭魔像

@@ -11,9 +11,8 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Terraria.UI.Chat;
-using LaziestNPC.Content.NPCs.TownNPCs;
 using Terraria.GameContent.UI.Elements;
-using CalamityMod.Items.Accessories.Wings;
+using LaziestNPC.Content.NPCs.TownNPCs;
 
 namespace LaziestNPC.Common.UI
 {

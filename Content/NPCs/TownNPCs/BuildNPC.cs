@@ -245,7 +245,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
             .AddModItem("CalamityMod/CelestialRemains", (0, 1, 0, 0), Condition.Hardmode); //星界残骸
 
             //建筑物块
-            ModBlock.AddModItem("CalamityMod/Acidwood", (0, 0, 0, 10)) //酸蚀木
+            ModBlock.AddModItem("CalamityMod/Driftwood", (0, 0, 0, 10)) //漂流木
+            .AddModItem("CalamityMod/Acidwood", (0, 0, 0, 10)) //酸蚀木
             .AddModItem("CalamityMod/ScorchedBone", (0, 0, 0, 10), Condition.DownedEowOrBoc) //焦灼脊骨
             .AddModItem("CalamityMod/AstralMonolith", (0, 0, 0, 50), Condition.Hardmode); //星幻木材
 

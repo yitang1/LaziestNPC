@@ -98,7 +98,7 @@ ShatteringPotion: {
 		37.5%的几率持续4秒
 		37.5%的几率持续2秒
 		'''
-	VanillaText: 盔甲穿透提高50点
+	VanillaText: 盔甲穿透提高40点
 }
 
 TitanScalePotion: {

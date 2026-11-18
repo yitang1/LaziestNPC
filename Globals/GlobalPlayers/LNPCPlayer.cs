@@ -214,7 +214,7 @@ namespace LaziestNPC.Globals.GlobalPlayers
 
                 if (!ModLoader.HasMod("CalamityMod"))
                 {
-                    Player.GetArmorPenetration(DamageClass.Generic) += 50f;
+                    Player.GetArmorPenetration(DamageClass.Generic) += 40f;
                 }
             }
 

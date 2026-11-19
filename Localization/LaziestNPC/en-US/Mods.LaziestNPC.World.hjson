@@ -1,26 +1,26 @@
 Items: {
 	TheReturner: {
-		Title: 控制面板
-		Day: 早上
-		Noon: 中午
-		Night: 夜晚
-		Rain: 开始下雨
-		RainNo: 停止下雨
-		CancelEvents: 终止事件
-		Close: 关闭
-		SandstormOn: 沙尘暴已开始。
-		SandstormOff: 沙尘暴已停止。
-		RainOn: 开始下雨。
-		RainOff: 停止下雨。
-		DayOn: 时间已调整为早上。
-		NoonOn: 时间已调整为中午。
-		NightOn: 时间已调整为夜晚。
-		CancelEventsOn: 所有事件已终止，世界已恢复平静。
-		EventsNone: 当前没有需要终止的活跃事件。
+		Title: Control Panel
+		Day: Dawn
+		Noon: Noon
+		Night: Night
+		Rain: Start Rain
+		RainNo: Stop Rain
+		CancelEvents: Cancel Events
+		Close: Close
+		SandstormOn: The Sandstorm has begun.
+		SandstormOff: The Sandstorm has stopped.
+		RainOn: It begins to rain.
+		RainOff: The rain has stopped.
+		DayOn: Time set to dawn.
+		NoonOn: Time set to noon.
+		NightOn: Time set to night.
+		CancelEventsOn: All events have been terminated. Calm has returned to the world.
+		EventsNone: There are no active events to terminate.
 		Reborn:
 			'''
-			你拒绝了归乡之地的朝圣！即刻满血复活！
-			(由于未知原因，你刚刚意外触发了神惧之物——归乡者吊坠的隐藏力量。)
+			You have refused the pilgrimage to the Land of Homeward! Instantly revived at full health!
+			(For unknown reasons, you have accidentally triggered the hidden power of the God-Dreaded Item — the Homeward Pendant.)
 			'''
 	}
 }

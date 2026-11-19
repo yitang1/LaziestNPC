@@ -1,15 +1,15 @@
 RecipeGroup: {
-	AnyFood: 任意食物
-	CopperBarGroups: 铜锭或锡锭
-	IronBarGroups: 铁锭或铅锭
-	SilverBarGroups: 银锭或钨锭
-	PlatinumBarGroups: 铂金锭或金锭
-	CobaltBarGroups: 钴锭或钯金锭
-	MythrilBarGroups: 秘银锭或山铜锭
-	TitaniumBarGroups: 钛金锭或精金锭
-	CrimtaneBarGroups: 任意邪恶锭
-	PerEvilMaterials: 任意邪恶材料
-	PlatinumWatchGroups: 铂金表或金表
-	SilverWatchGroups: 银表或钨表
-	GemGroups: 任意宝石
+	AnyFood: Any Food
+	CopperBarGroups: Copper or Tin Bar
+	IronBarGroups: Iron or Lead Bar
+	SilverBarGroups: Silver or Tungsten Bar
+	PlatinumBarGroups: Platinum or Gold Bar
+	CobaltBarGroups: Cobalt or Palladium Bar
+	MythrilBarGroups: Mythril or Orichalcum Bar
+	TitaniumBarGroups: Titanium or Adamantite Bar
+	CrimtaneBarGroups: Any Evil Bar
+	PerEvilMaterials: Any Evil Material
+	PlatinumWatchGroups: Platinum or Gold Watch
+	SilverWatchGroups: Silver or Tungsten Watch
+	GemGroups: Any Gem
 }

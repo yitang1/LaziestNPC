@@ -98,10 +98,9 @@ namespace LaziestNPC.Globals.GlobalPlayers
                 Player.HealEffect(revivifyNum, true);
             }
 
-            if (HeartSacredRing && !HeartSacredRingLock)
+            if (HeartSacredRing && HeartSacredRingTimer <= 0)
             {
                 HeartSacredRingTimer = 300;
-                HeartSacredRingLock = true;
             }
         }
 
@@ -162,8 +161,6 @@ namespace LaziestNPC.Globals.GlobalPlayers
         {
             if (HeartSacredRingTimer > 0)
                 HeartSacredRingTimer--;
-            if (HeartSacredRingTimer <= 0)
-                HeartSacredRingLock = false;
         }
 
         public override void PostUpdateEquips()
@@ -365,7 +362,6 @@ namespace LaziestNPC.Globals.GlobalPlayers
         public int calamityRebornCooldown = 0;
 
         public int HeartSacredRingTimer = 0;
-        public bool HeartSacredRingLock = false;
         public bool HeartSacredRing = false;
     }
 }

@@ -31,7 +31,7 @@ namespace LaziestNPC.Content.Items.Accessories
             CreateRecipe()
                 .AddIngredient(ItemID.BandofRegeneration)
                 .AddIngredient(ItemID.PanicNecklace)
-                .AddIngredient(ItemID.AegisCrystal, 2)
+                .AddIngredient(ItemID.AegisCrystal, 5)
                 .AddTile(TileID.Anvils)
                 .Register();
         }

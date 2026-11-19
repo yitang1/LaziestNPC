@@ -13,3 +13,10 @@ RecipeGroup: {
 	SilverWatchGroups: Silver or Tungsten Watch
 	GemGroups: Any Gem
 }
+
+SpecialText: {
+	CallingSeaBottle: Transcendent Item
+	DreamSeaCrateBook: Transcendent Item
+	SunlightNet: Transcendent Item
+	PlatinumGoblet: Transcendent Item
+}

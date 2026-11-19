@@ -1,331 +1,330 @@
 BossNPC: {
-	DisplayName: 试炼官
-	Tooltip: “你好，试炼者。有什么关于战斗和冒险方面的需要吗？”
+	DisplayName: Trial Officer
+	Tooltip: Greetings, Trialist. Do you require anything for your battles and adventures?
 }
 
 PotionNPC: {
-	DisplayName: 酿灵师
-	Tooltip: “我新调了一瓶药，但不知道效果怎么样……要试试吗？”
+	DisplayName: Elixir Brewer
+	Tooltip: I just brewed a new potion, but I'm not sure how well it works... Would you like to try it?
 }
 
 MaterialNPC: {
-	DisplayName: 星海商人
-	Tooltip: “你好啊，在找什么素材？告诉我名字就行。”
+	DisplayName: Astral Trader
+	Tooltip: Hello there. Looking for any materials? Just give me the name.
 }
 
 BuildNPC: {
-	DisplayName: 机枢学者
-	Tooltip: “如果你哪天想盖一座真正宏伟的建筑，记得叫上我。”
+	DisplayName: Architect Scholar
+	Tooltip: If you ever want to build something truly magnificent, be sure to let me know.
 }
 
 NatureNPC: {
-	DisplayName: 采花匠
-	Tooltip: “如果你不开心，就来找我玩吧。”
+	DisplayName: Flower Picker
+	Tooltip: Heya! If you're ever feeling down, come play with me!
 }
 
 OreNPC: {
-	DisplayName: 收藏家
-	Tooltip: “看看我这里这些亮晶晶的东西，能让人心情变好。”
+	DisplayName: Trove Curator
+	Tooltip: Just look at all these shiny things. They're sure to lift your spirits.
 }
 
 BossNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 PotionNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 MaterialNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 BuildNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 NatureNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 OreNPCIcon: {
-	DisplayName: 模组配置图标
+	DisplayName: Mod Conifg Icon
 	Tooltip: ""
 }
 
 GalacticaSingularity: {
-	DisplayName: 星系异石
-	Tooltip: 广阔宇宙的结晶
+	DisplayName: Galactica Singularity
+	Tooltip: A shard of the cosmos
 }
 
 ThrownShimmerWater: {
-	DisplayName: 微光水瓶
+	DisplayName: Shimmer Water
 	Tooltip:
 		'''
-		投掷微光水瓶，能够穿过物块和液体
-		被水瓶击中的生物会进行微光转化
-		[L]“全新‘微光淋浴’服务，
-		无需排队，无需跑腿，
-		原地砸脸，即刻变形。”
+		Throw a bottle of Shimmer that passes through blocks and liquids
+		Creatures struck by the bottle will undergo Shimmer transmutation
+		[L]"Presenting the all-new 'Shimmer Shower' service:
+		No lines, no running around,
+		Just a direct hit to the face for instant transformation."
 		'''
 }
 
 HJTanks: {
-	DisplayName: 古老世界之罐
+	DisplayName: Tank of the Past World
 	Tooltip:
 		'''
-		在物品栏中右键以打开
-		随机获得一个古老灵魂之罐
-		(古老灵魂之罐：旅人归途Mod的物品)
-		[L]“实验的无数牺牲者已将他们的愤怒与力量借予你
-		——物理上的。”
+		Right click to open in your inventory
+		Grants a random Tank of the Past Soul
+		(Tank of the Past Soul: An item from the Homeward Journey Mod)
+		[L]"Countless victims of the experiment
+		have lent you their wrath and power.
+		—physically."
 		'''
 }
 
 HeartSacredRing: {
-	DisplayName: 红心圣戒
+	DisplayName: Heart Sacred Ring
 	Tooltip:
 		'''
-		增加1点生命再生速度
-		受伤时的一瞬间：
-		大幅提升至10点生命再生速度
-		之后，在5秒内会逐渐衰减至1点
-		5秒内不会连续触发
-		一次大概恢复20点血(一颗心)
+		Increases life regeneration by 1
+		Upon taking damage:
+		Greatly increases life regeneration to 10
+		This bonus will gradually decay back to 1 over 5 seconds
+		Cannot trigger again within 5 seconds
+		Restores approximately 20 health (one heart) per trigger
 		[ExtraText]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[L]“在[c/95E5DD:红心王国]的授勋仪式上，女王会将这枚戒指亲自赐予即将踏上战场的骑士。
-		心脏般跳动的红宝石，镶嵌着不屈与自由的金色双翼。
-		骑士们饱含热泪亲吻它，高呼凯旋的誓言，带着满身荣光冲向敌阵。
+		[L]"During the knighting ceremony of the [c/95E5DD:Red Heart Kingdom],
+		the Queen personally bestows this ring upon the knights about to march to war.
+		A ruby pulsing like a beating heart, set with golden wings of unyielding spirit and freedom.
+		With tears in their eyes, the knights kiss it, shouting vows of triumph,
+		and charge into enemy lines clad in glory.
 
-		四大王国的战火燃烧了太久。
-		其实女王心里很清楚，这份无上而光荣的祝福——
-		注定要伴随它的主人，永远留在那片被鲜血浸透的焦土之上。”
+		The war among the Four Kingdoms has raged for far too long.
+		In truth, the Queen knows all too well that this supreme and glorious blessing—
+		is destined to accompany its owner, forever resting in that scorched earth drenched in blood."
 		'''
 }
 
 CallingSeaBottle: {
-	DisplayName: 唤海瓶
+	DisplayName: Calling Sea Bottle
 	Tooltip:
 		'''
-		在物品栏中右键以打开
-		根据当前世界所处的时期
-		会获得原版所有的普通鱼
-		[c/FF3333:警告：大量的鱼会瞬间塞满你的物品栏]
+		Right click to open in your inventory
+		Grants all vanilla common fish depending on world progression
+		[c/FF3333:Warning: A massive amount of fish will instantly fill your inventory]
 		[ExtraText]
-		[c/808080:超凡之物]
+		[c/808080:Transcendent Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[L]“[c/C5EEFF:梦境之海]传说中的[c/FF467B:神灵]——[c/C5EEFF:织梦女神]在成神前，
-		曾经还是作为超凡者时，使用过的物品。
-		在毁天灭地的[c/E9FFD1:梦之潮汐]事件发生时，
-		她举瓶，将亿万梦海生物吸纳其中，平息了灾难。”
+		[L]"The legendary [c/FF467B:God] of the [c/C5EEFF:Dream Sea]—[c/C5EEFF:The Dreamweaver Goddess], used this item before she became a God,
+		back when she was still a Transcender.
+		When the world-shattering [c/E9FFD1:Dream Sea Tide] event occurred,
+		she raised this bottle and drew billions of Dream Sea creatures into it, quelling the disaster."
 		'''
 }
 
 DreamSeaCrateBook: {
-	DisplayName: 梦海宝匣大全
+	DisplayName: Dream Sea Crate Book
 	Tooltip:
 		'''
-		在物品栏中右键以打开
-		根据当前世界所处的时期
-		会获得原版所有的宝匣
-		[c/FF3333:警告：大量宝匣会瞬间塞满你的物品栏]
+		Right click to open in your inventory
+		Grants all vanilla crates depending on world progression
+		[c/FF3333:Warning: A massive amount of crates will instantly fill your inventory]
 		[ExtraText]
-		[c/808080:超凡之物]
+		[c/808080:Transcendent Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[L]“[c/C5EEFF:梦境之海]的一座海岛上居住的某位渔民，
-		其耗费了毕生精力整理的宝匣图鉴。
-		传闻这位渔民去世后，给自己的孩子们托了个梦，
-		梦中他自称受到了[c/C5EEFF:织梦女神]的祝福，
-		那本宝匣图鉴被赐予了超凡之力，
-		拥有了取之不尽用之不竭的财富，告诫需火速藏匿。
-		他的孩子们醒来后惊恐不已，慌忙上报当地政府。
-		值得注意的是，经过[c/95E5DD:披星殿堂]的考证和研究，
-		已确定此物不属于[c/FF467B:神惧之物]，也没有任何超凡之力的痕迹。
-		——只是一本并不齐全的、破旧的宝匣图鉴而已。”
+		[L]"On an island in the [c/C5EEFF:Dream Sea] lived a fisherman who spent his entire life compiling a Crate Catalog.
+		Legend has it that after this fisherman passed away, he visited his children in a dream,
+		claiming he had received the blessing of [c/C5EEFF:The Dreamweaver Goddess].
+		The compendium was granted transcendent power, possessing inexhaustible wealth, and he warned them to hide it immediately.
+		His children woke up in terror and hastily reported the matter to the local authorities.
+		It is worth noting that after investigation and research by the [c/95E5DD:Star Clad Sanctum],
+		it has been confirmed that this item is not a [c/FF467B:God-Dreaded Item], nor does it bear any trace of transcendent power.
+		—merely an incomplete, worn-out Crate Catalog."
 		'''
 }
 
 SunlightNet: {
-	DisplayName: 阳光捕虫网
+	DisplayName: Sunlight Bug Net
 	Tooltip:
 		'''
-		在物品栏中右键以打开
-		根据当前世界所处的时期
-		会获得原版所有的小动物
-		[c/FF3333:警告：大量小动物会瞬间塞满你的物品栏]
+		Right click to open in your inventory
+		Grants all vanilla critters depending on world progression
+		[c/FF3333:Warning: A massive amount of critters will instantly fill your inventory]
 		[ExtraText]
-		[c/808080:超凡之物]
+		[c/808080:Transcendent Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[L]“向日葵族的人在祛除污染时，专门使用的捕虫网。
-		尽管大王花族的人对此嗤之以鼻，
-		但事实证明，热情开朗的心态和沐浴阳光的身体，
-		的确能够抵御[c/C5EEFF:幻境花园]中，一部分恐怖的幻觉。
-		——即使[c/FF467B:神灵]不告而别，我们依然向阳而生，永不言弃。”
+		[L]"A bug net specifically used by the Sunflower Tribe when purifying pollution.
+		Although the Rafflesia Tribe scoffs at this,
+		evidence shows that a passionate, cheerful mindset and a sun-basked body
+		can indeed resist a portion of the terrifying illusion within the [c/C5EEFF:Mirage Garden].
+		—Even if the [c/FF467B:God] departed without a word, we will still grow towards the sun and never give up."
 		'''
 }
 
 PlatinumGoblet: {
-	DisplayName: 白金酒杯
+	DisplayName: Platinum Goblet
 	Tooltip:
 		'''
-		在物品栏中右键以打开
-		根据你击败过的原版Boss
-		会获得对应的Boss纪念章
+		Right click to open in your inventory
+		Grants vanilla boss trophies based on defeated bosses
 		[ExtraText]
-		[c/808080:超凡之物]
+		[c/808080:Transcendent Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[L]“未知金属铸就的遗物，雕刻着四个不知含义的几何符号。
+		[L]"A relic forged of unknown metal, engraved with four geometric symbols of unknown meaning.
 
-		有考古学家认为：
-		这四个符号分别对应着宇宙中四种最严苛的法则：秩序、突破、圆满与否定。
+		Some archaeologists believe:
+		These four symbols respectively correspond to the four most stringent laws of the universe:
+		Order, Breakthrough, Perfection, and Denial.
 
-		而发掘此物的当地土著认为：
-		‘那玩意儿装过的葡萄酒，喝起来总是比别的杯子要甜不少！’
+		However, the local natives who unearthed this item believe:
+		'The wine that thing held always tasted a lot sweeter than any other cup!'
 
-		值得注意的是，经过[c/95E5DD:披星殿堂]的考证和研究，尽管外观并不像是本世界产物，
-		但已确定此物不属于[c/FF467B:神惧之物]，也没有任何超凡之力的痕迹。”
+		It is worth noting that after investigation and research by the [c/95E5DD:Star Clad Sanctum],
+		its appearance does not seem to be native to this world,
+		but it has been confirmed that this item is not a [c/FF467B:God-Dreaded Item], nor does it bear any trace of transcendent power."
 		'''
 }
 
 MysticRedJelly: {
-	DisplayName: 神奇红色果冻
+	DisplayName: Mystic Red Jelly
 	Tooltip:
 		'''
-		召唤暴躁史莱姆
-		不消耗
-		[L]“[c/95E5DD:史莱姆王国]的果冻博物馆里，
-		有一顶红色礼帽，标签上写着：
-		‘最后一位自愿变成史莱姆的果冻。’
-		哼叽！”
+		Summons Surly Slime
+		Not consumable
+		[L]"In the Jelly Museum of the [c/95E5DD:Slime Kingdom],
+		there is a red top hat with a tag that reads:
+		'The last jelly to willingly become a slime.'
+		Hmph!"
 		'''
 }
 
 MysticYellowJelly: {
-	DisplayName: 神奇黄色果冻
+	DisplayName: Mystic Yellow Jelly
 	Tooltip:
 		'''
-		召唤神秘青蛙
-		不消耗
-		[L]“有一天，[c/95E5DD:蛙蛙王国]出现了一个
-		自称为叛徒的蛙。
-		随后，故事便开始了......”
+		Summons Mystic Frog
+		Not consumable
+		[L]"One day,
+		a frog claiming to be a traitor appeared in the [c/95E5DD:Froggy Kingdom].
+		And thus, the story began..."
 		'''
 }
 
 GentleSkull: {
-	DisplayName: 绅士遗骨
+	DisplayName: Gentle Skull
 	Tooltip:
 		'''
-		在夜晚使用
-		召唤骷髅王
-		不消耗
-		[L]“骷髅宴会守则之三：
-		任何时候都要保持体面，
-		哪怕是死后——尤其是死后！”
+		Must be used at night
+		Summons Skeletron
+		Not consumable
+		[L]"The Third Rule of the Skeleton Banquet:
+		One must remain dignified at all times,
+		even in death—especially in death!"
 		'''
 }
 
 NoRootFlower: {
-	DisplayName: 无根之花
+	DisplayName: NoRoot Flower
 	Tooltip:
 		'''
-		在丛林中使用
-		召唤世纪之花
-		不消耗
-		[L]“它的根须早已被时间斩断，
-		但它的呼唤仍能穿透泥层，
-		唤醒那位拒绝凋零的丛林女王。”
+		Must be used in the Jungle 
+		Summons Plantera
+		Not consumable
+		[L]"Its roots have long been severed by time,
+		but its call can still pierce through the mud,
+		awakening that Jungle Queen who refuses to wither."
 		'''
 }
 
 ForbiddenPaper: {
-	DisplayName: 禁忌羊皮纸
+	DisplayName: Forbidden Parchment
 	Tooltip:
 		'''
-		召唤拜月教邪教徒
-		不消耗
+		Summons Lunatic Cultist
+		Not consumable
 		[ExtraText]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[c/88E6FF:直视图案时，会隐约感受到一股滔天的恨意。]
-		[L]“[c/C5EEFF:克鲁苏先生]是我见过最友好、最值得尊敬的[c/FF467B:神灵]！
-		祂给予我们甘甜的[c/D90000:生命之源]，
-		赐予我们沉睡的[c/D90000:恐惧之力]，
-		甚至还点燃我们温暖的[c/D90000:灵魂之火]！
-		要是谁被祂注视了......哇——就等着享福吧~”
+		[c/88E6FF:When thy gaze falleth upon the pattern, a wrath most ancient and boundless shalt thou faintly sense.]
+		[L]"[c/C5EEFF:Mr. Clhuthu] is the friendliest and most honorable [c/FF467B:God] I have ever met!
+		HE grants us the sweet [c/D90000:Fountain of Life],
+		bestows upon us the slumbering [c/D90000:Power of Fear],
+		and even ignites our warm [c/D90000:Fire of Soul]!
+		If anyone ever catches HIS gaze... wow—just get ready to be blessed~"
 		'''
 }
 
 TheReturner: {
-	DisplayName: 归乡者吊坠
+	DisplayName: Homeward Pendant
 	Tooltip:
 		'''
-		右键开启面板，基础功能：
-		切换白天和黑夜
-		启用或禁用下雨和沙尘暴
-		终止游戏中的各种事件
+		Right click to open the panel. Basic functions:
+		Toggle day and night
+		Enable or disable rain and sandstorm
+		Cancel various events in the game
 		[ExtraText]
-		[c/FF467B:神惧之物]
+		[c/FF467B:God-Dreaded Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[c/88E6FF:内含模糊信息，依稀可见的字样有：]
-		[c/88E6FF:“...易阴阳、倒因果” “归乡之地...” “祂们...”]
-		[L]“此物疑似来自异界或更高维度，
-		拥有翻云雨、唤日月之伟力。
-		所以这东西…怎么会在这个地方？”
+		[c/88E6FF:Within doth lie information obscured; the faintly legible inscriptions read:]
+		[c/88E6FF:"...alter Yin and Yang, invert Causality..." "...the Land of Homeward..." "...THEM..."]
+		[L]"This item is suspected to originate from another realm or a higher dimension,
+		boasting the immense power to command the clouds and rain, and call the sun and moon.
+		So... how did this thing end up here?"
 		'''
 }
 
 DoubleFishJade: {
-	DisplayName: 双鱼玉佩
+	DisplayName: Double Fish Jade
 	Tooltip:
 		'''
-		与微光接触或重新制作后
-		基础售卖价值会提升至15金
-		扔进微光中会被一分为二
-		[c/FF3333:警告：适可而止]
+		Upon contact with Shimmer or being re-crafted
+		Its base sell value increases to 5 Gold
+		Throwing it into Shimmer will split it in two
 		[ExtraText]
-		[c/FF467B:神惧之物]
+		[c/FF467B:God-Dreaded Item]
 		'''
-	CommonTips: "[c/FBFBE0:长按Shift键以显示额外信息]"
+	CommonTips: "[c/FBFBE0:Hold SHIFT to display more info]"
 	ContentTexts:
 		'''
-		[c/88E6FF:镜中有影，影外生形，无妄无梦，无始无终...]
-		[L]“在很久很久以前，有一个非常贪心的[c/FF467B:玩家]，
-		他在阅读完[c/FF467B:双鱼玉佩]的物品信息后，灵机一动，开口道：
-		忽略NPC快乐度带来的售价浮动，理论上来算的话，
-		1个物品，扔8次，256个，38铂金；扔9次，512个，76铂金；
-		扔10次，1024个，153铂金；扔11次，2048个，307铂金...
-		于是他立马疯狂地将这个物品反反复复扔到微光里，
-		每次一堆复制品出来后，他都两眼冒金光，
-		然后大喊：嘿嘿嘿发财了发财了！钱啊~这全都是钱啊~哦耶~
-		然而，他话音刚落——
-		他的电脑就冒烟了。(后来花了一万多块钱才修好)
-		       ——节选自儿童读物《论指数幂的恐怖之处》”
+		[c/88E6FF:Within the mirror a shadow doth dwell; beyond the shadow, a form doth spring.]
+		[c/88E6FF:Devoid of falsehood, devoid of dreams; devoid of beginning, devoid of end...]
+		[L]"Long long ago, there was a very greedy [c/FF467B:Player].
+		After reading the item info of the [c/FF467B:Double Fish Jade], he had a bright idea and spoke:
+		'Ignoring the price fluctuations caused by NPC happiness, theoretically speaking,
+		1 item, thrown 9 times, 512 items, 25 Platinum; thrown 10 times, 1024 items, 50 Platinum;
+		thrown 11 times, 2048 items, 100 Platinum; thrown 12 times, 4096 items, 200 Platinum...'
+		So he immediately went crazy, repeatedly throwing the item into the Shimmer.
+		Every time a pile of duplicates appeared, his eyes gleamed with gold,
+		and he shouted: 'Hehehe, I'm rich, I'm rich! Money~ It's all money~ Oh yeah~'
+		However, just as his words fell—
+		his computer started smoking. (It later cost him a small fortune to fix it.)
+		            —Excerpt from the children's book 'On the Terror of Exponential Powers'"
 		'''
 }

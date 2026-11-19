@@ -13,3 +13,10 @@ RecipeGroup: {
 	SilverWatchGroups: 银表或钨表
 	GemGroups: 任意宝石
 }
+
+SpecialText: {
+	CallingSeaBottle: 超凡之物
+	DreamSeaCrateBook: 超凡之物
+	SunlightNet: 超凡之物
+	PlatinumGoblet: 超凡之物
+}

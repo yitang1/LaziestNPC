@@ -1,4 +1,4 @@
-displayName = Laziest NPC
+displayName = 普通的NPC - Normal NPC
 author = yitang
 version = 0.0.8
 modReferences = ShopExtender

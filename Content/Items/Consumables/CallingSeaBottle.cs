@@ -134,21 +134,25 @@ namespace LaziestNPC.Content.Items.Consumables
                 }
             }
 
-            if (plain.Contains("超凡之物"))
+            string specialText = Language.GetTextValue("Mods.LaziestNPC.Others.SpecialText.CallingSeaBottle");
+
+            if (!string.IsNullOrEmpty(specialText) && plain.Contains(specialText))
             {
-                int index = plain.IndexOf("超凡之物");
+                int index = plain.IndexOf(specialText);
                 string beforeText = plain.Substring(0, index);
+
                 Vector2 beforeSize = FontAssets.MouseText.Value.MeasureString(beforeText) * line.BaseScale;
-                Vector2 targetSize = FontAssets.MouseText.Value.MeasureString("超凡之物") * line.BaseScale;
+                Vector2 targetSize = FontAssets.MouseText.Value.MeasureString(specialText) * line.BaseScale;
 
                 float startX = line.X + beforeSize.X;
                 float y = line.Y;
                 float width = targetSize.X;
                 float height = targetSize.Y;
 
+                float strikeOffset = plain.Contains("超凡之物") ? 0.30f : 0.40f;
                 Main.spriteBatch.Draw(
                     TextureAssets.MagicPixel.Value,
-                    new Rectangle((int)startX, (int)(y + height * 0.3f), (int)width, 1),
+                    new Rectangle((int)startX, (int)(y + height * strikeOffset), (int)width, 1),
                     new Color(128, 128, 128));
             }
         }

@@ -1,104 +1,103 @@
 LNPCConfig: {
-	DisplayName: LaziestNPC 模组配置
+	DisplayName: Normal NPC Configs
 
 	Headers: {
-		LNPCs: "[i:GuideVoodooDoll] 模组NPC相关"
-		OtherNPCs: "[i:ClothierVoodooDoll] 其他NPC相关"
+		LNPCs: "[i:GuideVoodooDoll] Mod NPCs"
+		OtherNPCs: "[i:ClothierVoodooDoll] Other NPCs"
 	}
 
 	LNPCBossNPC: {
-		Label: "[i:LaziestNPC/BossNPCIcon] 生成NPC：试炼官"
+		Label: "[i:LaziestNPC/BossNPCIcon] Spawn NPC: Trial Officer"
 		Tooltip:
 			'''
-			启用后，试炼官会在满足条件时生成
-			此NPC售卖：原版和模组的Boss宝藏袋，Boss、敌怪和事件的召唤物品
+			When enabled, the Trial Officer will spawn when conditions are met.
+			This NPC sells: Vanilla and Mod Boss Treasure Bags, and Summon Items for Bosses, Enemies, and Events.
 
-			生成条件：世界中至少有[c/F2E635:6]名城镇NPC存在
+			Spawn Condition: At least [c/F2E635:6] town NPCs in the world.
 			'''
 	}
 
 	LNPCPotionNPC: {
-		Label: "[i:LaziestNPC/PotionNPCIcon] 生成NPC：酿灵师"
+		Label: "[i:LaziestNPC/PotionNPCIcon] Spawn NPC: Elixir Brewer"
 		Tooltip:
 			'''
-			启用后，酿灵师会在满足条件时生成
-			此NPC售卖：原版和模组的各种药水和食物
+			When enabled, the Elixir Brewer will spawn when conditions are met.
+			This NPC sells: Various Vanilla and Mod Potions and Food.
 
-			生成条件：世界中至少有[c/F2E635:5]名城镇NPC存在
+			Spawn Condition: At least [c/F2E635:5] town NPCs in the world.
 			'''
 	}
 
 	LNPCMaterialNPC: {
-		Label: "[i:LaziestNPC/MaterialNPCIcon] 生成NPC：星海商人"
+		Label: "[i:LaziestNPC/MaterialNPCIcon] Spawn NPC: Astral Trader"
 		Tooltip:
 			'''
-			启用后，星海商人会在满足条件时生成
-			此NPC售卖：原版和模组的各种材料
+			When enabled, the Astral Trader will spawn when conditions are met.
+			This NPC sells: Various Vanilla and Mod Materials.
 
-			生成条件：世界中至少有[c/F2E635:4]名城镇NPC存在
+			Spawn Condition: At least [c/F2E635:4] town NPCs in the world.
 			'''
 	}
 
 	LNPCBuildNPC: {
-		Label: "[i:LaziestNPC/BuildNPCIcon] 生成NPC：机枢学者"
+		Label: "[i:LaziestNPC/BuildNPCIcon] Spawn NPC: Architect Scholar"
 		Tooltip:
 			'''
-			启用后，机枢学者会在满足条件时生成
-			此NPC售卖：原版和模组的各种物块、制作站和功能性家具
+			When enabled, the Architect Scholar will spawn when conditions are met.
+			This NPC sells: Various Vanilla and Mod Blocks, Crafting Stations, and Functional Furniture.
 
-			生成条件：世界中至少有[c/F2E635:3]名城镇NPC存在
+			Spawn Condition: At least [c/F2E635:3] town NPCs in the world.
 			'''
 	}
 
 	LNPCNatureNPC: {
-		Label: "[i:LaziestNPC/NatureNPCIcon] 生成NPC：采花匠"
+		Label: "[i:LaziestNPC/NatureNPCIcon] Spawn NPC: Flower Picker"
 		Tooltip:
 			'''
-			启用后，采花匠会在满足条件时生成
-			此NPC售卖：原版和模组的动植物、渔获物品、宝匣和渔夫任务奖励
+			When enabled, the Flower Picker will spawn when conditions are met.
+			This NPC sells: Vanilla and Mod Critters, Fishing Catches, Crates, and Angler Quest Rewards.
 
-			生成条件：物品栏中有[i:2290][c/F2E635:鲈鱼]
+			Spawn Condition: A [i:2290][c/F2E635:Bass] in your inventory.
 			'''
 	}
 
 	LNPCOreNPC: {
-		Label: "[i:LaziestNPC/OreNPCIcon] 生成NPC：收藏家"
+		Label: "[i:LaziestNPC/OreNPCIcon] Spawn NPC: Trove Curator"
 		Tooltip:
 			'''
-			启用后，收藏家会在满足条件时生成
-			此NPC售卖：原版和模组的矿物和配饰
+			When enabled, the Trove Curator will spawn when conditions are met.
+			This NPC sells: Vanilla and Mod Ores and Accessories.
 
-			生成条件：物品栏中有[i:11][c/F2E635:铁矿]或[i:700][c/F2E635:铅矿]
+			Spawn Condition: [i:11][c/F2E635:Iron Ore] or [i:700][c/F2E635:Lead Ore] in your inventory.
 			'''
 	}
 
 	ShowPortrait: {
-		Label: "[i:PinWheel] NPC对话肖像图"
+		Label: "[i:PinWheel] NPC Dialogue Portraits"
 		Tooltip:
 			'''
-			启用后，
-			本Mod和原版的NPC对话界面
-			会显示对应NPC的肖像图和名字
+			When enabled,
+			the NPC dialogue interfaces of vanilla and this mod will display the corresponding NPC's portrait and name.
 			'''
 	}
 
 	MobHealth: {
-		Label: "[i:LifeCrystal] 提高所有敌对生物的血量"
+		Label: "[i:LifeCrystal] Increase Enemy HP"
 		Tooltip:
 			'''
-			全时期全局生效，数值是提高的倍率
-			最终血量：原本血量 乘以 此值
-			不包括小动物和城镇NPC
+			Applies globally at all times. The value is a multiplier.
+			Final HP: Base HP multiplied by this value.
+			Does not include critters and town NPCs.
 			'''
 	}
 
 	LNPCInvincible: {
-		Label: "[i:CombatBookVolumeTwo] 所有城镇NPC无敌"
-		Tooltip: 包括受缚NPC、躺着睡觉的渔夫和酒馆老板
+		Label: "[i:CombatBookVolumeTwo] Invincible All Town NPCs"
+		Tooltip: Includes bound NPCs, the sleeping Angler, and the Tavernkeep.
 	}
 
 	LNPCCritterInvincible: {
-		Label: "[i:Bunny] 所有小动物无敌"
-		Tooltip: 不包括七彩草蛉
+		Label: "[i:Bunny] Invincible All Critters"
+		Tooltip: Does not include the Prismatic Lacewing.
 	}
 }

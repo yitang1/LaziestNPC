@@ -54,63 +54,63 @@ BossNPC: {
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {
-		PreBag: 宝藏袋(肉前)
-		HardBag: 宝藏袋(肉后)
-		PostMoonBag: 宝藏袋(月后)
-		PreSum: 召唤物品(肉前)
-		HardSum: 召唤物品(肉后)
-		PostMoonSum: 召唤物品(月后)
+		PreBag: Treasure Bag(Pre-HM)
+		HardBag: Treasure Bag(HM)
+		PostMoonBag: Treasure Bag(Post-ML)
+		PreSum: Summoning Item(Pre-HM)
+		HardSum: Summoning Item(HM)
+		PostMoonSum: Summoning Item(Post-ML)
 	}
 }
 
 PotionNPC: {
-	DisplayName: 酿灵师
-	Name.PotionNPC: 小幽
-	PortraitName: 酿灵师 小幽
+	DisplayName: Elixir Brewer
+	Name.PotionNPC: Little Ghostie
+	PortraitName: Elixir Brewer Little Ghostie
 
 	Chat: {
-		Normal1: 您好，我能感觉到，您的灵魂非同寻常。我自小受到的教诲便是，这样的人值得敬重。若您有空，请看看小店有没有您中意的商品吧！
-		Normal2_Male: 大哥哥，我新调了一瓶药，但不知道效果怎么样……要试试吗？不是不是，请放心！绝对不会出现可怕的副作用什么的，我用的都是在这个世界刚采到的、随处可见的普通草药。
-		Normal2_Female: 大姐姐，我新调了一瓶药，但不知道效果怎么样……要试试吗？不是不是，请放心！绝对不会出现可怕的副作用什么的，我用的都是在这个世界刚采到的、随处可见的普通草药。
-		Normal3_Male: 如果大哥哥要去很远的地方冒险，能不能……提前跟我说一声？我只是想提早准备好充足的药水，等您平安回来。
-		Normal3_Female: 如果大姐姐要去很远的地方冒险，能不能……提前跟我说一声？我只是想提早准备好充足的药水，等您平安回来。
-		Normal4: 清晨的露水用来浇灌太阳花是最好的。不过我总是起得太早，斗篷会被枝叶的露水打湿。如果您需要一瓶能在白天驱散困意的药水，就来找我吧。
-		Normal5: 那些史莱姆掉落的凝胶，还有一些怪物身上的素材……您或许不会相信，它们虽然看着有些吓人，但都是些很好的药材，请千万别扔掉了。
-		Normal6: 您问我为什么穿着这身衣服？在我的故乡，一天之中几乎全被黑夜占据，而且温度低、湿气重，我们又是依河而居，所以穿着厚厚的短斗篷外出可以防止着凉，出行也方便。
-		Normal7: 我故乡里的人世世代代掌握着“孕育灵魂”的技艺，因此后来我的家乡被觊觎和入侵，发生了很惨烈的战争，而我因为运气好，被掩护和逃亡到了您所在的世界。
-		Normal8: 每次回忆起我的故乡时，悠长蜿蜒、令人心安的蕴灵河，就会首先出现在我脑海里。据说蕴灵河的尽头——蕴灵之源，那里有着横贯天穹的巨型瀑布，十分壮观，有机会希望能带您去看看呢！
-		Night0: 如果您夜晚要出门，请……小心那些会飞的眼球。虽然不致命，但看着好吓人。我其实试过在夜里出去采摘月光草，但刚看到有一对红彤彤的翅膀飞过来，我就吓得逃回屋里了……您、您可别笑话我。
-		Night1: 夜晚的萤火虫很漂亮，像会飞的星星。以前在故乡的家里，我经常会趴在窗边看着它们发呆……我很喜欢这种黑夜中的亮光，能让我联想到充满温暖和希望的事情。
-		HardMode0: 我能隐隐约约感觉到，您身体里的光比第一次见面时更亮了。在我的故乡，长辈说这叫灵魂的成长。您一定经历了很多战斗吧……
+		Normal1: Hello. I can feel it, your soul isn't quite like other people's. I was taught from a young age that people like that are worth respecting. If you have a moment, please have a look and see if there's anything in my shop you'd like!
+		Normal2_Male: Mister, I just brewed a new potion, but I'm not sure how well it works... would you try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
+		Normal2_Female: Miss, I just brewed a new potion, but I'm not sure how well it works... would you try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
+		Normal3_Male: Mister, if you're going off somewhere far away, could you... tell me in advance? I only want to have plenty of potions ready, for when you come back safe.
+		Normal3_Female: Miss, if you're going off somewhere far away, could you... tell me in advance? I only want to have plenty of potions ready, for when you come back safe.
+		Normal4: Morning dew is the best thing for watering Dayblooms. But I always get up too early, and the dew on the leaves soaks through my cloak. If you need a potion that keeps the sleepiness away during the day, please come and find me.
+		Normal5: The gel that slimes drop, and the materials you get from some monsters... you might not believe it, but even though they look a little frightening, they all make very good medicine. Please, whatever you do, don't throw them away.
+		Normal6: You're asking why I dress like this? Back home, the night takes up almost the whole day, and it's cold and damp, and we live right by the river. So going out in a thick short cloak keeps the chill off, and it's easier to move around in, too.
+		Normal7: The people of my homeland have passed down the craft of "birthing souls" for generation after generation. And because of that, my home was coveted, and then invaded. There was a terrible war. I was lucky. People shielded me, and I ran, all the way to your world.
+		Normal8: Whenever I think back on my homeland, the first thing that comes to mind is the Soulcradle River, long and winding, and somehow comforting. They say at the very end of that river, at the Soulcradle Source, there's a giant waterfall that stretches across the sky. It's meant to be magnificent. If I get the chance, I'd like to take you to see it!
+		Night0: If you're going out at night, please... be careful of those flying eyeballs. They aren't deadly, but they look so frightening. I did try going out at night once, to pick Moonglow, but the moment I saw a pair of red wings flying toward me, I ran straight back inside... please, please don't laugh at me.
+		Night1: The fireflies at night are beautiful, like flying stars. Back home, I used to lean over the windowsill and just watch them, spacing out... I love lights like that in the dark. They make me think of warm things, and hopeful things.
+		HardMode0: I can feel it, faintly, the light inside you is brighter than when we first met. Back home the elders called that the growth of a soul. You must have been through so many battles...
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {
-		RestorePotion: 恢复药水
-		BuffPotion: 增益药水
-		OtherPotion: 其他药水
-		FoodShop: 食物商店
+		RestorePotion: Recovery Potion
+		BuffPotion: Buff Potion
+		OtherPotion: Other Potions
+		FoodShop: Food Shop
 	}
 }
 
@@ -128,14 +128,14 @@ MaterialNPC: {
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {
@@ -160,14 +160,14 @@ BuildNPC: {
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {
@@ -195,14 +195,14 @@ NatureNPC: {
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {
@@ -230,14 +230,14 @@ OreNPC: {
 	}
 
 	TownNPCMood: {
-		Content: 我很满足。
-		NoHome: 我讨厌没有家。
-		FarFromHome: 我离家太远了。
-		LoveSpace: 我非常喜欢有这么大的空间。
-		DislikeCrowded: 我不喜欢这么拥挤。
-		HateCrowded: 我讨厌这么拥挤。
-		LikeNPC_Princess: 我喜欢 {NPCName}。
-		Princess_LovesNPC: 我喜欢 {NPCName}。
+		Content: I am content.
+		NoHome: I hate not having a home.
+		FarFromHome: I am too far from home.
+		LoveSpace: I love having so much space.
+		DislikeCrowded: I dislike how crowded I am.
+		HateCrowded: I hate how crowded I am.
+		LikeNPC_Princess: I like {NPCName}.
+		Princess_LovesNPC: I like {NPCName}.
 	}
 
 	ShopCategory: {

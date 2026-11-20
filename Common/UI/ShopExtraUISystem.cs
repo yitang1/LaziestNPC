@@ -125,6 +125,7 @@ namespace LaziestNPC.Common.UI
         //可调参数：对话框定位
         //原版对话框外框公式：左边界 = (Main.screenWidth - 800) / 2，宽度 = 800。
         //顶部 = 130，高度 = 200。与 PortraitUISystem.cs 中的 dialogTop = 130 完全一致。
+        //取自 1.4.4 的 Main.DrawNPCChat 布局，仅在该版本核实 ↓
         private static float DialogWidth = 800f; //原版对话框外框宽度
         private static float DialogTop = 130f; //原版对话框顶部
         private static float DialogHeight = 200f; //原版对话框高度
@@ -217,35 +218,12 @@ namespace LaziestNPC.Common.UI
             if (string.IsNullOrEmpty(text))
                 return 1;
 
-            //原版对话框文本区域的折行宽度，480是实测校准值，1到7行均与对话框实际高度一致
-            string[] wrappedLines = Utils.WordwrapString(text, FontAssets.MouseText.Value, 480, 10, out _);
+            text = Lang.SupportGlyphs(text); //与原版 PrepareCache 的第一步一致
 
-            int actualLines = 0;
-            string lastLine = null;
-            foreach (string line in wrappedLines)
-            {
-                if (!string.IsNullOrEmpty(line))
-                {
-                    actualLines++;
-                    lastLine = line;
-                }
-
-            }
-
-            //行尾标点超出一行的补丁
-            if (actualLines > 1 && lastLine != null && lastLine.Length > 1 && IsChinesePunctuation(lastLine[lastLine.Length - 1]))
-            {
-                float lastLineWidth = ChatManager.GetStringSize(FontAssets.MouseText.Value, lastLine, Vector2.One).X;
-                if (lastLineWidth > 450f) //如果最后一行塞得很满，原版会把结尾的标点挤到下一行
-                    actualLines++;
-            }
-            //Main.NewText($"lines={actualLines}, lastLine=[{lastLine}]");
-            return Math.Max(1, actualLines);
-        }
-        private static bool IsChinesePunctuation(char c)
-        {
-            return c == '。' || c == '，' || c == '、' || c == '！' || c == '？'
-                || c == '；' || c == '：' || c == '…' || c == '—';
+            //与原版完全相同的折行参数：宽460、最多10行、MouseText字体
+            var lines = Utils.WordwrapStringSmart(text, Color.White, FontAssets.MouseText.Value, 460, 10);
+            
+            return Math.Max(1, lines.Count);
         }
 
         private float CalcPanelWidth(IReadOnlyList<ShopCategory> categories)

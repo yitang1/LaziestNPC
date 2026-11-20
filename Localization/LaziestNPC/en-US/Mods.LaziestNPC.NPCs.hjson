@@ -1,56 +1,56 @@
 BossNPC: {
-	DisplayName: 试炼官
+	DisplayName: Trial Officer
 	Name.BossNPC: ""
-	PortraitName: 试炼官
+	PortraitName: Trial Officer
 
 	Chat: {
-		Normal1: 你好，试炼者。有什么关于战斗和冒险方面的需要吗？
-		Normal2: 我在这个世界游历了一圈，找到了几个很有意思的试炼目标。你有兴趣去挑战一下吗？
-		Normal3: 试炼者，更换新武器和装备后，别忘了去假人那里练习一下哦。
-		Normal4: 其实偶尔休息一下也不错。毕竟在我们那儿有句老话：休息也是战斗的一部分。
-		Normal5: 偷偷告诉你一个最重要的准则，遇到打不过的敌人——直接跑。我认为这种行为不但不丢人，反而是极其明智的决策。
-		Normal6: 许多人都在不停歇地战斗，为了胜利、荣誉、金钱、地位……我甚至还见过，有人只是怀揣最纯粹的理由——想知道自己能不能赢。其实，我也很好奇，亲爱的试炼者，你是在为何而战呢？
-		Normal7: 什么，你问我为什么明明叫试炼官，却是这样的形象？因为……我还兼具另一个职业，至于是什么，保密，只能告诉你和[c/FF467B:神灵]有关，其他，不能再多说了哦。
-		NoBoss: 我在这个世界游历了一圈，找到了几个很有意思的试炼目标。你有兴趣去挑战一下吗？
-		KingSlime00: 那种凝胶组成的软体生物，居然也能被冠以“王”之名？有点荒唐的感觉。不过，他的弹跳轨迹倒很适合用来练习预判。
-		EyeOfCthulhu00: 没想到这个世界也存在克苏鲁之眼这种怪物，不过，它俯冲前的停顿，其实很适合用来练习步伐预判，总之，试炼者，你做的不错。
-		BrainOfCthulhu00: 那只大脑子制造幻象和瞬移的把戏，在战场上叫作心理战。你没有自乱阵脚，看破了这种幻术，你的专注力和直觉值得赞赏。
-		EaterOfWorlds00: 对于那只散发邪恶气息的虫子——世界吞噬怪，在我看来，体型巨大往往也意味着破绽巨大，不过看得出来，你最后很好地利用了这一点。
-		QueenBee00: 在[c/C5EEFF:蜜蜂世界]，那个到处都是巨型蜂类的地方，蜂王的毒刺与冲撞早已不稀奇。在我看来，真正让人感到精神压迫的，是她挥动那对巨大虫翅时，那笼罩整个天空、震耳欲聋的嗡鸣。
-		Skeletron00: 看起来地牢那个骷髅头守护的是一扇地牢大门的尊严。支撑且束缚着他的，究竟是执念还是诅咒？
-		Deerclops00: 那头名为独眼巨鹿的野兽给我一种不属于这个世界的违和感。但与它对战的过程中，非常考验你的抗击打能力，以及敢于和这种庞然大物正面交锋的魄力。
-		WallOfFlesh00: 世界的墙壁出现了裂隙。对于一位真正的试炼者来说，那不是终点，只是战场扩建了而已。接下来的对手会更加难缠，不过，根据你之前表现出的潜力来看，我倒更愿意看到，它们对你而言，只是换了批更硬的沙袋罢了。
-		QueenSlime00: 假如让我来评价的话，史莱姆皇后本身的战力并不算顶尖那一列，但若是带着一大群小仆从上阵？那就很烦人了！不过最终你处理得很干净，给你一个大拇指哦。
-		TheDestroyer00: 毁灭者就像一条长长的钢铁蚯蚓。打得过它，说明你的穿透力已经合格了，不过，你有没有听过射弹穿透它整个躯体时的声音？那种金属与齿轮碎裂的清脆感，如果你觉得悦耳，那就说明……说明你天生是个好猎手~
-		TheTwins00: 双子魔眼，两只可怖的眼球，两种极致的节奏。我很高兴看到你能够同时应对了，这说明你已经成为了一位非常出色的试炼者！
-		SkeletronPrime00: 机械骷髅王就像是个钢铁与齿轮拼凑起来的死灵。老实说，它的旋转比地牢那位更让人眼花缭乱。
-		Plantera00: 那只大花苞是丛林里最古老的存在。或许她身上拥有值得追溯和研究的世界历史？好在她已被唤醒，我们有足够的时间去“问她”！
-		EmpressOfLight00: 神圣之地的女王——光之女皇，她挥洒的光芒密集得如同狂风骤雨，能在如此极端的速度与射弹压制下，跟上节奏并反击，你的动态视力和极限反应已经如同一位顶尖强者……老实说，令我很惊讶。
-		Golem00: 在我看来，石巨人那庞大的身躯，砸下来的每一拳对普通人来说都如同山崩地裂。能在这种绝对的压迫下找到破绽并站稳脚跟，你的胆识和心态已经超过了大多数成名的试炼者。
-		DukeFishron00: 猪龙鱼公爵，一条在风暴中发狂的大鱼，让我有了一种直面[c/C5EEFF:梦境之海]中那些掠食者的既视感。不过能在它的横冲直撞中活下来，看得出你的步伐与闪避的技术已经无可挑剔。
-		Cultist00: 能够走到现在这一步，我认为你已经算得上是试炼者中的佼佼者了。据说拜月教邪教徒的背后，不止是疯狂失控的信徒，还有更加超越认知和常理的存在。现在我有一种预感，你的试炼之旅，即将面临一个重大的转折点。
-		MoonLord00: 真是令人惊讶，你的战斗水平和力量居然达到了如此高度，就连那只来自月亮的恐怖存在也被你打败了。莫非，你是传说中的[c/FF467B:玩家]？不要误会，这个特殊的称呼，每个世界每个国家的普通人大部分都不知道，只有极少数和[c/FF467B:神灵]关系密切的人才会知晓这个名称。总之，有件事我可以确定，[c/FF467B:玩家]拥有着远超所有人的强大力量和无限潜力。至于“玩家”这个词语是什么意思……其实，我也不太清楚。
-		KingSlime0: 那种凝胶组成的软体生物，居然也能被冠以“王”之名？有点荒唐的感觉。不过，他的弹跳轨迹倒很适合用来练习预判。
-		KingSlime1: 史莱姆王有着不断聚合的特性，虽然某些生物学者会很喜爱研究，但我始终认为他并未真正死去，不然你看，这个世界上依旧存在着很多蹦蹦跳跳的史莱姆。
-		EyeOfCthulhu0: 没想到这个世界也存在克苏鲁之眼这种怪物，不过，它俯冲前的停顿，其实很适合用来练习步伐预判，总之，试炼者，你做的不错。
-		EyeOfCthulhu1: 那只大眼珠子……我在其他世界也见过类似的怪物，有些世界的人会管它叫“新手考官”，你怎么看。……嗯？躺着看是什么意思？
-		BrainOfCthulhu0: 那只大脑子制造幻象和瞬移的把戏，在战场上叫作心理战。你没有自乱阵脚，看破了这种幻术，你的专注力和直觉值得赞赏。
-		EaterOfWorlds0: 对于那只散发邪恶气息的虫子——世界吞噬怪，在我看来，体型巨大往往也意味着破绽巨大，不过看得出来，你最后很好地利用了这一点。
-		QueenBee0: 在[c/C5EEFF:蜜蜂世界]，那个到处都是巨型蜂类的地方，蜂王的毒刺与冲撞早已不稀奇。在我看来，真正让人感到精神压迫的，是她挥动那对巨大虫翅时，那笼罩整个天空、震耳欲聋的嗡鸣。
-		Skeletron0: 看起来地牢那个骷髅头守护的是一扇地牢大门的尊严。支撑且束缚着他的，究竟是执念还是诅咒？
-		Deerclops0: 那头名为独眼巨鹿的野兽给我一种不属于这个世界的违和感。但与它对战的过程中，非常考验你的抗击打能力，以及敢于和这种庞然大物正面交锋的魄力。
-		WallOfFlesh0: 世界的墙壁出现了裂隙。对于一位真正的试炼者来说，那不是终点，只是战场扩建了而已。接下来的对手会更加难缠，不过，根据你之前表现出的潜力来看，我倒更愿意看到，它们对你而言，只是换了批更硬的沙袋罢了。
-		QueenSlime0: 假如让我来评价的话，史莱姆皇后本身的战力并不算顶尖那一列，但若是带着一大群小仆从上阵？那就很烦人了！不过最终你处理得很干净，给你一个大拇指哦。
-		TheDestroyer0: 毁灭者就像一条长长的钢铁蚯蚓。打得过它，说明你的穿透力已经合格了，不过，你有没有听过射弹穿透它整个躯体时的声音？那种金属与齿轮碎裂的清脆感，如果你觉得悦耳，那就说明……说明你天生是个好猎手~
-		TheTwins0: 双子魔眼，两只可怖的眼球，两种极致的节奏。我很高兴看到你能够同时应对了，这说明你已经成为了一位非常出色的试炼者！
-		SkeletronPrime0: 机械骷髅王就像是个钢铁与齿轮拼凑起来的死灵。老实说，它的旋转比地牢那位更让人眼花缭乱。
-		Plantera0: 那只大花苞是丛林里最古老的存在。或许她身上拥有值得追溯和研究的世界历史？好在她已被唤醒，我们有足够的时间去“问她”！
-		EmpressOfLight0: 神圣之地的女王——光之女皇，她挥洒的光芒密集得如同狂风骤雨，能在如此极端的速度与射弹压制下，跟上节奏并反击，你的动态视力和极限反应已经如同一位顶尖强者……老实说，令我很惊讶。
-		Golem0: 在我看来，石巨人那庞大的身躯，砸下来的每一拳对普通人来说都如同山崩地裂。能在这种绝对的压迫下找到破绽并站稳脚跟，你的胆识和心态已经超过了大多数成名的试炼者。
-		DukeFishron0: 猪龙鱼公爵，一条在风暴中发狂的大鱼，让我有了一种直面[c/C5EEFF:梦境之海]中那些掠食者的既视感。不过能在它的横冲直撞中活下来，看得出你的步伐与闪避的技术已经无可挑剔。
-		Cultist0: 能够走到现在这一步，我认为你已经算得上是试炼者中的佼佼者了。据说拜月教邪教徒的背后，不止是疯狂失控的信徒，还有更加超越认知和常理的存在。现在我有一种预感，你的试炼之旅，即将面临一个重大的转折点。
-		MoonLord0: 真是令人惊讶，你的战斗水平和力量居然达到了如此高度，就连那只来自月亮的恐怖存在也被你打败了。莫非，你是传说中的[c/FF467B:玩家]？不要误会，这个特殊的称呼，每个世界每个国家的普通人大部分都不知道，只有极少数和[c/FF467B:神灵]关系密切的人才会知晓这个名称。总之，有件事我可以确定，[c/FF467B:玩家]拥有着远超所有人的强大力量和无限潜力。至于“玩家”这个词语是什么意思……其实，我也不太清楚。
-		Moonlord1: 你问我那只来自月亮的大乌贼算不算[c/FF467B:神灵]？根据祂生前的状态和死后对世界造成的影响来看，我觉得，祂充其量只能算是个伪神吧……
+		Normal1: Hello, Trialist. Anything you need for battle or adventure?
+		Normal2: I've been traveling this world for a while, and I've found a few rather interesting trial targets. Would you like to take them on?
+		Normal3: Trialist, once you've switched to new weapons and gear, don't forget to try them out on a target dummy.
+		Normal4: Taking a break now and then isn't a bad idea, you know. There's an old saying back home: rest is part of the fight.
+		Normal5: I'll let you in on the single most important rule: if you meet an enemy you cannot beat — just run. I don't consider that shameful in the slightest. In fact, I'd call it a remarkably sound decision.
+		Normal6: Many people fight without ever stopping — for victory, honor, money, status... I've even met someone whose reason was the purest of all: "Can I win, just this once?" And honestly, I'm curious too, my dear Trialist — what are you fighting for?
+		Normal7: What, you're asking why someone called a Trial Officer looks like this? Because... I have another profession as well. As for what it is — that's a secret. All I can tell you is that it has something to do with the [c/FF467B:God]. Anything beyond that, you'll have to guess.
+		NoBoss: I've been traveling this world for a while, and I've found a few rather interesting trial targets. Would you like to take them on?
+		KingSlime00: A soft lump of gel like that, and he still gets to call himself a king? Honestly, that's a little absurd. Still, his bouncing does make good practice for reading where a target will land.
+		EyeOfCthulhu00: I didn't expect a monster like the Eye of Cthulhu to exist in this world as well. Still, the pause before it dives is actually good practice for your footwork, since you have to read the dive before it starts. Anyway, well done, Trialist.
+		BrainOfCthulhu00: Illusions and teleporting tricks from a giant brain. On a battlefield, that's called psychological warfare. You didn't lose your footing, and you saw straight through the trick. Your focus and your intuition deserve credit.
+		EaterOfWorlds00: That worm reeking of evil — the Eater of Worlds. In my view, a body that big usually comes with a weakness just as big. And I could see you made full use of it in the end.
+		QueenBee00: In [c/C5EEFF:Bee World], that place where giant bees are everywhere, the Queen Bee's sting and her charges stopped being anything new long ago. In my view, what really bears down on your mind is the deafening drone that blankets the whole sky when she beats those enormous insect wings.
+		Skeletron00: It looks like that skull in the dungeon is guarding the dignity of a dungeon door. What sustains him and holds him bound, obsession or a curse?
+		Deerclops00: That beast called the Deerclops gives me a sense of something that doesn't belong to this world. But fighting it really tests how much punishment you can take, and the nerve to face something that size head-on.
+		WallOfFlesh00: A crack has opened in the wall of the world. To a true Trialist, that isn't an ending, the battlefield has simply been expanded. The opponents ahead will be much harder to deal with. Still, judging by the potential you've shown so far, I'd much rather see them turn out to be nothing more than a fresh batch of tougher punching bags to you.
+		QueenSlime00: If I'm to judge, Queen Slime's own fighting strength isn't in the top bracket. But send her in with a whole swarm of little minions, and she's a real pain! Still, you handled it cleanly in the end, so here's a thumbs up for you.
+		TheDestroyer00: The Destroyer is like one long steel earthworm. Beating it means your piercing power has passed the bar. But tell me, have you ever heard the sound of a projectile running straight through its whole body? That crisp shatter of metal and gears, if you find it pleasing to the ear, then that means... it means you were born a hunter~
+		TheTwins00: The Twins, two horrifying eyeballs, two rhythms pushed to their extremes. I'm glad to see you can take on both at once, which means you've become a truly outstanding Trialist!
+		SkeletronPrime00: Skeletron Prime is like a revenant pieced together from steel and gears. Honestly, its spinning is even more dizzying than the one in the dungeon.
+		Plantera00: That giant bulb is the oldest being in the jungle. Perhaps she carries world history within her, worth tracing back and examining? Good thing she's awake now. We have plenty of time to "ask her"!
+		EmpressOfLight00: The queen of the Hallowed — the Empress of Light. The light she scatters is as dense as a driving storm. To keep pace and strike back under that kind of speed and that barrage of projectiles, your dynamic vision and your split-second reflexes are already those of a first-rate fighter... Honestly, I'm astonished.
+		Golem00: In my view, with a body that huge, every punch the Golem brings down would feel to an ordinary person like the ground splitting apart. To find the weakness under that kind of absolute pressure and keep your footing, your nerve and your composure already outstrip most of the Trialists whose names are known.
+		DukeFishron00: Duke Fishron, a big fish gone mad in the middle of a storm. It gives me that same feeling as standing face to face with the predators of the [c/C5EEFF:Dream Sea]. Still, surviving its wild charges tells me your footwork and your dodging are already beyond reproach.
+		Cultist00: To have come this far, I'd say you already stand out as one of the finest among Trialists. They say that behind the Lunatic Cultist there is more than a mob of fanatics who have lost all control, that something far beyond comprehension and reason stands behind them. And now I have a feeling that your trial is about to reach a major turning point.
+		MoonLord00: I'm so astonished. Your skill in battle and your strength have climbed to such a height that even that horrifying thing from the moon has fallen to you. Could it be that you are the [c/FF467B:Player] of legend? Don't misunderstand. The ordinary people of every world and every nation mostly don't know this particular title at all. Only the very few who are close to the [c/FF467B:God] ever learn it. In any case, there is one thing I can be sure of: The [c/FF467B:Player] holds a strength far beyond everyone else's, and limitless potential. As for what the word "player" actually means... honestly, I don't know either.
+		KingSlime0: A soft lump of gel like that, and he still gets to call himself a king? Honestly, that's a little absurd. Still, his bouncing does make good practice for reading where a target will land.
+		KingSlime1: The King Slime has a habit of constantly pulling itself back together. Some biologists would love to research that, but I've always held that he never really died. Otherwise, just look. This world is still full of slimes hopping about.
+		EyeOfCthulhu0: I didn't expect a monster like the Eye of Cthulhu to exist in this world as well. Still, the pause before it dives is actually good practice for your footwork, since you have to read the dive before it starts. Anyway, well done, Trialist.
+		EyeOfCthulhu1: That big eyeball... I've seen monsters like it in other worlds too. In some of them people call it "the rookie examiner". Where do you stand on that? ...Hmm? What do you mean, lying down?
+		BrainOfCthulhu0: Illusions and teleporting tricks from a giant brain. On a battlefield, that's called psychological warfare. You didn't lose your footing, and you saw straight through the trick. Your focus and your intuition deserve credit.
+		EaterOfWorlds0: That worm reeking of evil — the Eater of Worlds. In my view, a body that big usually comes with a weakness just as big. And I could see you made full use of it in the end.
+		QueenBee0: In [c/C5EEFF:Bee World], that place where giant bees are everywhere, the Queen Bee's sting and her charges stopped being anything new long ago. In my view, what really bears down on your mind is the deafening drone that blankets the whole sky when she beats those enormous insect wings.
+		Skeletron0: It looks like that skull in the dungeon is guarding the dignity of a dungeon door. What sustains him and holds him bound, obsession or a curse?
+		Deerclops0: That beast called the Deerclops gives me a sense of something that doesn't belong to this world. But fighting it really tests how much punishment you can take, and the nerve to face something that size head-on.
+		WallOfFlesh0: A crack has opened in the wall of the world. To a true Trialist, that isn't an ending, the battlefield has simply been expanded. The opponents ahead will be much harder to deal with. Still, judging by the potential you've shown so far, I'd much rather see them turn out to be nothing more than a fresh batch of tougher punching bags to you.
+		QueenSlime0: If I'm to judge, Queen Slime's own fighting strength isn't in the top bracket. But send her in with a whole swarm of little minions, and she's a real pain! Still, you handled it cleanly in the end, so here's a thumbs up for you.
+		TheDestroyer0: The Destroyer is like one long steel earthworm. Beating it means your piercing power has passed the bar. But tell me, have you ever heard the sound of a projectile running straight through its whole body? That crisp shatter of metal and gears, if you find it pleasing to the ear, then that means... it means you were born a hunter~
+		TheTwins0: The Twins, two horrifying eyeballs, two rhythms pushed to their extremes. I'm glad to see you can take on both at once, which means you've become a truly outstanding Trialist!
+		SkeletronPrime0: Skeletron Prime is like a revenant pieced together from steel and gears. Honestly, its spinning is even more dizzying than the one in the dungeon.
+		Plantera0: That giant bulb is the oldest being in the jungle. Perhaps she carries world history within her, worth tracing back and examining? Good thing she's awake now. We have plenty of time to "ask her"!
+		EmpressOfLight0: The queen of the Hallowed — the Empress of Light. The light she scatters is as dense as a driving storm. To keep pace and strike back under that kind of speed and that barrage of projectiles, your dynamic vision and your split-second reflexes are already those of a first-rate fighter... Honestly, I'm astonished.
+		Golem0: In my view, with a body that huge, every punch the Golem brings down would feel to an ordinary person like the ground splitting apart. To find the weakness under that kind of absolute pressure and keep your footing, your nerve and your composure already outstrip most of the Trialists whose names are known.
+		DukeFishron0: Duke Fishron, a big fish gone mad in the middle of a storm. It gives me that same feeling as standing face to face with the predators of the [c/C5EEFF:Dream Sea]. Still, surviving its wild charges tells me your footwork and your dodging are already beyond reproach.
+		Cultist0: To have come this far, I'd say you already stand out as one of the finest among Trialists. They say that behind the Lunatic Cultist there is more than a mob of fanatics who have lost all control, that something far beyond comprehension and reason stands behind them. And now I have a feeling that your trial is about to reach a major turning point.
+		MoonLord0: I'm so astonished. Your skill in battle and your strength have climbed to such a height that even that horrifying thing from the moon has fallen to you. Could it be that you are the [c/FF467B:Player] of legend? Don't misunderstand. The ordinary people of every world and every nation mostly don't know this particular title at all. Only the very few who are close to the [c/FF467B:God] ever learn it. In any case, there is one thing I can be sure of: The [c/FF467B:Player] holds a strength far beyond everyone else's, and limitless potential. As for what the word "player" actually means... honestly, I don't know either.
+		MoonLord1: You're asking whether that big squid from the moon counts as a [c/FF467B:God]? Going by the state He was in while alive, and by the mark His death left on the world, I'd say at best He was a false god...
 	}
 
 	TownNPCMood: {

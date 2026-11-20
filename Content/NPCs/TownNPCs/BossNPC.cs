@@ -151,8 +151,8 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 
                 if (NPC.downedMoonlord)
                 {
-                    chat.Add(this.GetLocalizedValue("Chat.Moonlord0"), 0.1); //月亮领主(特殊)
-                    chat.Add(this.GetLocalizedValue("Chat.Moonlord1")); //月亮领主
+                    chat.Add(this.GetLocalizedValue("Chat.MoonLord0"), 0.1); //月亮领主(特殊)
+                    chat.Add(this.GetLocalizedValue("Chat.MoonLord1")); //月亮领主
 
                 }
                 

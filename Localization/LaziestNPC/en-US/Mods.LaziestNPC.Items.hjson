@@ -1,6 +1,6 @@
 BossNPC: {
 	DisplayName: Trial Officer
-	Tooltip: Greetings, Trialist. Do you require anything for your battles and adventures?
+	Tooltip: Hello, Trialist. Anything you need for battle or adventure?
 }
 
 PotionNPC: {
@@ -198,7 +198,7 @@ PlatinumGoblet: {
 		These four symbols respectively correspond to the four most stringent laws of the universe:
 		Order, Breakthrough, Perfection, and Denial.
 
-		However, the local natives who unearthed this item believe:
+		However, the local bumpkins who unearthed this item believe:
 		'The wine that thing held always tasted a lot sweeter than any other cup!'
 
 		It is worth noting that after investigation and research by the [c/95E5DD:Star Clad Sanctum],

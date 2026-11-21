@@ -11,10 +11,12 @@
 
 ——————————————————————————————  
 ### 下载与安装
-- **点击这里👉** [LaziestNPC.tmod是Mod文件](https://github.com/yitang1/LaziestNPC/releases)  
+- **直接去创意工坊发布页订阅，自动安装👉** [普通的NPC - Normal NPC](https://steamcommunity.com/sharedfiles/filedetails/?id=3843599832)
+
+- **在这里手动下载👉** [LaziestNPC.tmod是Mod文件](https://github.com/yitang1/LaziestNPC/releases)  
 
 <details>
-<summary><b>📥【安装方法】(必看)</b></summary>
+<summary><b>📥【手动安装方法】(必看)</b></summary>
 
 - **前置：一个叫[Shop Extender](https://steamcommunity.com/sharedfiles/filedetails/?id=3012051615)的商店翻页Mod，先安装这个。**  
 或者直接在Steam后台运行时，Win + R 键，然后粘贴下面的指令并回车：  

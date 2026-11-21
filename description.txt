@@ -12,7 +12,7 @@
 [i:3458]模组内的NPC可以被捕捉。
 
 [Mod Overview]
-[i:3458]Adds six NPC who sell a wide variety of Vanilla and Mod items.
+[i:3458]Adds six NPCs who sell a wide variety of Vanilla and Mod items.
    [i:3459]Trial Officer  Spawn Condition: at least [c/F2E635:6] town NPCs in the world.
    [i:3459]Elixir Brewer  Spawn Condition: at least [c/F2E635:5] town NPCs in the world.
    [i:3459]Astral Trader  Spawn Condition: at least [c/F2E635:4] town NPCs in the world.

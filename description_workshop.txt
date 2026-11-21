@@ -1,1 +1,37 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[h2] 普通的NPC - Normal NPC [/h2]
+
+如其名，只是个普通的NPC模组，类似其他NPC模组：
+[list]
+    [*][b] 添加六名NPC以售卖原版和模组中各种各样的物品。 [/b]
+    [*][b] 添加了原版和模组内大量物品的合成配方。 [/b]
+    [*][b] 添加了一些提高游戏体验的新物品。 [/b]
+    [*] 以及其他功能……
+[/list]
+
+As the name suggests, it is just an normal NPC mod, similar to other NPC mods:
+[*][b] Adds six NPCs that sell a wide variety of Vanilla and Mod items.  [/b]
+[*][b] Adds crafting recipes for a large number of Vanilla and Mod items.  [/b]
+[*][b] Adds several new items that improve the game experience.  [/b]
+[*] And other functions...
+
+[hr][/hr]
+
+[b] 适配和兼容的Mod：/ Supported and Compatible Mods: [/b]
+[list]
+    [*] Calamity Mod (灾厄)
+    [*] Catalyst Mod (灾劫)
+    [*] Fargo's Mutant Mod (Fargo突变)
+    [*] Fargo's Souls Mod (Fargo魂石)
+    [*] Thorium Mod (瑟银)
+    [*] LuiAFK Reborn (LuiAFK懒人)
+    [*] LuiAFK Reborn DLC (LuiAFK懒人DLC)
+    [*] AlchemistNPC Lite (炼金术士NPC)
+    [*] Homeward Journey (旅人归途)
+    [*] ……
+[/list]
+
+[hr][/hr]
+
+注：即便已可以正常游玩，但直到目前为止，仍然没有制作完成，也没有达到我理想中的完成度，所以，[b] 本Mod仍在制作中 [/b]。
+
+Note: Even though it is already playable, it is still not finished, and has not yet reached the level of completeness I want. So [b] this mod is still a work in progress [/b].

@@ -77,7 +77,11 @@ BossNPC: {
 PotionNPC: {
 	DisplayName: Elixir Brewer
 	Name.PotionNPC: Little Ghostie
-	PortraitName: Elixir Brewer Little Ghostie
+	PortraitName:
+		'''
+		Elixir Brewer
+		Little Ghostie
+		'''
 
 	Chat: {
 		Normal1: Hello. I can feel it, your soul isn't quite like other people's. I was taught from a young age that people like that are worth respecting. If you have a moment, please have a look and see if there's anything in my shop you'd like!
@@ -148,7 +152,11 @@ MaterialNPC: {
 BuildNPC: {
 	DisplayName: Architect Scholar
 	Name.BuildNPC: QiaoQiao
-	PortraitName: Architect Scholar QiaoQiao
+	PortraitName:
+		'''
+		Architect Scholar
+		     QiaoQiao
+		'''
 
 	Chat: {
 		Normal1: Dirt blocks might not be worth anything to you, since it's everywhere around here. But in some worlds, a world of nothing but minerals, for instance, that little patch of dirt is worth a king's ransom! After all... things are precious exactly because they're rare.
@@ -180,7 +188,11 @@ BuildNPC: {
 NatureNPC: {
 	DisplayName: Flower Picker
 	Name.NatureNPC: Little Sunny
-	PortraitName: Flower Picker Little Sunny
+	PortraitName:
+		'''
+		Flower Picker
+		Little Sunny
+		'''
 
 	Chat: {
 		Normal1: Heya! If you're ever feeling down, come play with me. I've got flowers, and grass, and fish, and a whole garden's worth of stories~

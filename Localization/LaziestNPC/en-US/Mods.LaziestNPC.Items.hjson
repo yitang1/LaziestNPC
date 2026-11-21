@@ -10,7 +10,7 @@ PotionNPC: {
 
 MaterialNPC: {
 	DisplayName: Astral Trader
-	Tooltip: Hello there. Looking for any materials? Just give me the name.
+	Tooltip: Hello there. Looking for some materials? Just tell me the name.
 }
 
 BuildNPC: {

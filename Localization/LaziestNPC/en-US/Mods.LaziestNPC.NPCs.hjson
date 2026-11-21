@@ -81,8 +81,8 @@ PotionNPC: {
 
 	Chat: {
 		Normal1: Hello. I can feel it, your soul isn't quite like other people's. I was taught from a young age that people like that are worth respecting. If you have a moment, please have a look and see if there's anything in my shop you'd like!
-		Normal2_Male: Mister, I just brewed a new potion, but I'm not sure how well it works... would you try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
-		Normal2_Female: Miss, I just brewed a new potion, but I'm not sure how well it works... would you try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
+		Normal2_Male: Mister, I just brewed a new potion, but I'm not sure how well it works... Would you like to try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
+		Normal2_Female: Miss, I just brewed a new potion, but I'm not sure how well it works... Would you like to try it? No, no, please don't worry! It won't have any horrible side effects or anything, I promise. I only used ordinary herbs, the kind you can find anywhere, picked right here in this world.
 		Normal3_Male: Mister, if you're going off somewhere far away, could you... tell me in advance? I only want to have plenty of potions ready, for when you come back safe.
 		Normal3_Female: Miss, if you're going off somewhere far away, could you... tell me in advance? I only want to have plenty of potions ready, for when you come back safe.
 		Normal4: Morning dew is the best thing for watering Dayblooms. But I always get up too early, and the dew on the leaves soaks through my cloak. If you need a potion that keeps the sleepiness away during the day, please come and find me.
@@ -115,16 +115,16 @@ PotionNPC: {
 }
 
 MaterialNPC: {
-	DisplayName: 星海商人
+	DisplayName: Astral Trader
 	Name.MaterialNPC: ""
-	PortraitName: 星海商人
+	PortraitName: Astral Trader
 
 	Chat: {
-		Normal1: 如果累了，就抬头看看星空吧。虽然它们看起来都差不多，但这并不妨碍我们借着星空放空大脑，天马行空地胡思乱想一阵，不是吗？
-		Normal2: 你好啊，在找什么素材？告诉我名字就行。就算现在没有，下次航行我也一定会替你留意。
-		Normal3: 如果有一天你离开这个世界，去别的地方旅行和冒险，记得报我的名字。沿途有些港口会给老主顾打折，怎么，你不信？哼~在航海圈子里，我可是很有名的。
-		Normal4: 船长？我？算是吧。不过我更喜欢别人叫我星海商人。船长听起来太正经、太有架子了，不适合我这种目标是星辰大海的人~
-		Normal5: 你可能在其他地方听说过我的事迹，说我是什么横渡星海，穿梭于各个世界的人？哈哈，我可以负责任地告诉你，那都是谣言，我只是个普普通通的航海商而已呀。
+		Normal1: If you're tired, look up at the stars. They all look pretty much the same, but that doesn't stop us from letting our minds go blank and drift off wherever they like for a while, does it?
+		Normal2: Hello there. Looking for some materials? Just tell me the name. Even if I don't have it now, I'll keep an eye out for it on my next voyage.
+		Normal3: If you ever leave this world to travel and adventure somewhere else, remember to drop my name. Some of the ports along the way give discounts to regular customers. What, you don't believe me? Hmph~ In sailing circles, I'm quite famous.
+		Normal4: Captain? Me? I suppose. But I'd rather people just called me the Astral Trader. Captain sounds too proper, a bit too puffed up. It doesn't suit someone whose sights are set on the sea of stars~
+		Normal5: You may have heard stories about me elsewhere, saying I'm someone who crosses the sea of stars and travels from world to world? Haha. I can assure you, those are all rumors. I'm just a perfectly ordinary trader, that's all.
 	}
 
 	TownNPCMood: {
@@ -139,16 +139,16 @@ MaterialNPC: {
 	}
 
 	ShopCategory: {
-		PreMaterial: 肉前材料
-		HardMaterial: 肉后材料
-		PostMoonMaterial: 月后材料
+		PreMaterial: Pre-HM Material
+		HardMaterial: HM Material
+		PostMoonMaterial: Post-ML Material
 	}
 }
 
 BuildNPC: {
-	DisplayName: 机枢学者
-	Name.BuildNPC: 巧巧
-	PortraitName: 机枢学者 巧巧
+	DisplayName: Architect Scholar
+	Name.BuildNPC: QiaoQiao
+	PortraitName: Architect Scholar QiaoQiao
 
 	Chat: {
 		Normal1: 土块可能对你来说一点也不值钱，毕竟这里到处都是。但在某些世界，例如只有矿物的世界，那一小块土，可是价值连城！毕竟……物以稀为贵嘛。

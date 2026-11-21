@@ -6,11 +6,28 @@
    [i:3459]机枢学者 生成条件：世界中至少有[c/F2E635:3]名城镇NPC存在
    [i:3459]采花匠 生成条件：物品栏中有[i:2290][c/F2E635:鲈鱼](星海商人会卖)
    [i:3459]收藏家 生成条件：物品栏中有[i:11][i:700][c/F2E635:铁矿或铅矿]
-[i:3458]添加了原版和模组内大量物品的合成配方。[c/FF3333: (Comming Soon)]
+[i:3458]添加了原版和模组内大量物品的合成配方。[c/FF3333: (Coming Soon)]
 [i:3458]添加了一些提高游戏体验的新物品。
 [i:3458]对个别模组进行了补充性的汉化。
 [i:3458]模组内的NPC可以被捕捉。
+
+[Mod Overview]
+[i:3458]Adds six NPC who sell a wide variety of Vanilla and Mod items.
+   [i:3459]Trial Officer  Spawn Condition: at least [c/F2E635:6] town NPCs in the world.
+   [i:3459]Elixir Brewer  Spawn Condition: at least [c/F2E635:5] town NPCs in the world.
+   [i:3459]Astral Trader  Spawn Condition: at least [c/F2E635:4] town NPCs in the world.
+   [i:3459]Architect Scholar  Spawn Condition: at least [c/F2E635:3] town NPCs in the world.
+   [i:3459]Flower Picker  Spawn Condition: a [i:2290][c/F2E635:Bass] in your inventory (the Astral Trader sells it).
+   [i:3459]Trove Curator  Spawn Condition: [i:11][i:700][c/F2E635:Iron Ore or Lead Ore] in your inventory.
+[i:3458]Adds crafting recipes for a large number of Vanilla and Mod items. 
+   [c/FF3333:(Coming Soon)]
+[i:3458]Adds several new items that improve the game experience.
+[i:3458]Adds supplementary Chinese (Simplified) localization for a few other mods.
+[i:3458]The NPCs in this mod can be captured.
+
+
 [i:3458]适配和兼容的Mod：
+[i:3458]Supported and compatible Mods:
    [i:3457]Calamity Mod (灾厄)
    [i:3457]Catalyst Mod (灾劫)
    [i:3457]Fargo's Mutant Mod (Fargo突变)
@@ -23,6 +40,7 @@
    [i:3457]……
 
 	(以上Mod可以多开也可以单开，甚至只加载本Mod一个也没问题，商店内容会自动适配)
+	(The mods above can be enabled all at once or one at a time. Even loading this mod on its own works fine. Shop contents adapt automatically.)
 
-模组目前的发布页 (更新内容和发布资源)
+Mod release page (changelogs and releases)
 https://github.com/yitang1/LaziestNPC

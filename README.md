@@ -1,5 +1,5 @@
 
-## Mod：Laziest NPC
+## Mod：普通的NPC - Normal NPC
  
 此为Steam上[**tModLoader**](https://store.steampowered.com/app/1281930/tModLoader/)的一个以NPC为核心的辅助类模组（Mod）。
 > [!TIP]

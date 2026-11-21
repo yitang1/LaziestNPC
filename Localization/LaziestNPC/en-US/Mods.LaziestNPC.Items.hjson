@@ -15,7 +15,7 @@ MaterialNPC: {
 
 BuildNPC: {
 	DisplayName: Architect Scholar
-	Tooltip: If you ever want to build something truly magnificent, be sure to let me know.
+	Tooltip: If you ever want to build something truly grand, remember to call me in.
 }
 
 NatureNPC: {

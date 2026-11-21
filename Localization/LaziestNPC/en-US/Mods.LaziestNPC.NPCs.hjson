@@ -151,12 +151,12 @@ BuildNPC: {
 	PortraitName: Architect Scholar QiaoQiao
 
 	Chat: {
-		Normal1: 土块可能对你来说一点也不值钱，毕竟这里到处都是。但在某些世界，例如只有矿物的世界，那一小块土，可是价值连城！毕竟……物以稀为贵嘛。
-		Normal2: 你问我为什么背着个锤子？因为锤子能砸碎旧墙，也能把新砖敲实。比扳手实在多了！当然，我睡觉的时候会把它放下的……
-		Normal3: 如果你打算建房子，一定要记住一条铁律：坚实的地基比屋顶重要，遮风挡雨的屋顶比墙壁重要，不过嘛——牢固的墙壁绝对是比地基还重要的！嗯……所以，这几样其实都缺一不可啦~
-		Normal4: 如果你哪天想盖一座真正宏伟的建筑，记得叫上我。我会带上我的锤子和量尺，以最精密的计算、严苛的“敲击测试”，保证让你的房子比国王的城堡还要坚固！
-		Normal5: 我的故乡，嗯……其实，我之所以远走他乡，就是感觉自己出生的国家“不太正常”，社会和科技的发展趋势有点令人不安。况且我也根本不喜欢那些会上锈和出故障的机械齿轮，还是水泥石砖比较有安全感……
-		Normal6: 呐，你说……一座城市全都是由发条、机械、齿轮构建而成……究竟为什么会走向这种发展方向呢？我到现在都没想通，难道是因为我以前历史课总爱打瞌睡，错过了什么关键历史转折点？
+		Normal1: Dirt blocks might not be worth anything to you, since it's everywhere around here. But in some worlds, a world of nothing but minerals, for instance, that little patch of dirt is worth a king's ransom! After all... things are precious exactly because they're rare.
+		Normal2: Why do I carry a hammer around? Because a hammer can smash old walls and seat new bricks. Much more dependable than a wrench! Of course, I do set it down when I sleep...
+		Normal3: If you're planning to build a house, you have to remember one iron rule: a solid foundation matters more than the roof, and a roof that keeps out wind and rain matters more than the walls. But then — sturdy walls absolutely matter more than the foundation! Um... so really, not one of them can be left out~
+		Normal4: If you ever want to build something truly grand, remember to call me in. I'll bring my hammer and my measuring tape, and with the most precise calculations and a strict "knock test", I guarantee your house will come out sturdier than a king's castle!
+		Normal5: My homeland, um... the truth is, the reason I left was that I felt the country I was born in was, well, "not quite right". The way its society and technology were heading was a little unsettling. And I never liked those gears that rust and break down anyway. Cement and stone bricks just feel safer...
+		Normal6: So, tell me... a whole city built out of clockwork and machinery and gears... why would it ever go in that direction? I still haven't worked it out. Could it be that I always dozed off in history class, and missed some crucial turning point?
 	}
 
 	TownNPCMood: {

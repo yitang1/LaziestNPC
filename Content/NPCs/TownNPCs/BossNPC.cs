@@ -161,7 +161,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
                 return chat.Get();
             }
         }
-
+        //NPC的商店类别，全部基于TownLNPC里的ShopCategories
         private static readonly ShopCategory[] ShopCategoryList = new ShopCategory[]
         {
             new ShopCategory(
@@ -211,7 +211,7 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
 
             ShopCategory category = CurrentShopCategory;
             if (category != null)
-                shopName = category.ShopName;
+                shopName = category.ShopName; //注册键，shopName为一个字符串，对应下面的商店
         }
 
         public override void AddShops()

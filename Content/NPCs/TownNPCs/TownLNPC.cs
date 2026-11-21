@@ -6,14 +6,37 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using LaziestNPC.Common.UI;
+using LaziestNPC.Globals.GlobalPlayers;
+using LaziestNPC.Common.Helpers;
 
 namespace LaziestNPC.Content.NPCs.TownNPCs
 {
     public abstract class TownLNPC : ModNPC
     {
-        //当前选中的UI行的索引(其实就是int，定位列表里的元素)
-        public int CurrentShopCategoryIndex = 0;
+        private TownLNPCPlayer LTPlayer => Main.LocalPlayer.LaziestTownLNPC();
+        //当前选中的UI行索引(是序号)
+        public int CurrentShopCategoryIndex
+        {
+            get
+            {
+                if (Main.dedServ)
+                    return 0;
+
+                //ShopCategoryIndex字典里有对应NPC的数字，就让CurrentShopCategoryIndex返回此数字
+                return LTPlayer.ShopCategoryIndex.TryGetValue(Name, out int index) ? index : 0;
+            }
+            set
+            {
+                if (!Main.dedServ)
+                {
+                    //点击哪一行，ShopCategoryIndex被赋值为一个数字
+                    LTPlayer.ShopCategoryIndex[Name] = value;
+                }
+            }
+        }
+
         //这是一个有序的虚列表，存在里面的元素，第0个、第1个、第2个等等都是固定的。
+        //在每个NPC类里用ShopCategoryList“重写”
         public virtual IReadOnlyList<ShopCategory> ShopCategories => Array.Empty<ShopCategory>();
 
         //子类：定义自己的ShopCategory商店类别
@@ -21,17 +44,20 @@ namespace LaziestNPC.Content.NPCs.TownNPCs
         {
             get
             {
+                //NPC的所有商店类别，放到一个临时列表里
                 IReadOnlyList<ShopCategory> list = ShopCategories;
+                //没类别就null
                 if (list == null || list.Count == 0)
                     return null;
 
-                int index = CurrentShopCategoryIndex;
+                int index = CurrentShopCategoryIndex; //取出玩家记住的序号
+                //把越界的序号拉回合法范围
                 if (index < 0)
                     index = 0;
                 if (index >= list.Count)
                     index = list.Count - 1;
 
-                return list[index];
+                return list[index]; //根据索引返回元组对象new ShopCategory(xxxx...
             }
         }
 

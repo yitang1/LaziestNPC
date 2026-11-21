@@ -26,8 +26,7 @@
 [i:3458]The NPCs in this mod can be captured.
 
 
-[i:3458]适配和兼容的Mod：
-[i:3458]Supported and compatible Mods:
+[i:3458]适配和兼容的Mod：/ Supported and compatible Mods:
    [i:3457]Calamity Mod (灾厄)
    [i:3457]Catalyst Mod (灾劫)
    [i:3457]Fargo's Mutant Mod (Fargo突变)
@@ -40,7 +39,7 @@
    [i:3457]……
 
 	(以上Mod可以多开也可以单开，甚至只加载本Mod一个也没问题，商店内容会自动适配)
-	(The mods above can be enabled all at once or one at a time. Even loading this mod on its own works fine. Shop contents adapt automatically.)
+	(The mods above can be enabled all at once or one at a time. Even loading this mod on its own works fine. Shop contents adapt automatically)
 
 Mod release page (changelogs and releases)
 https://github.com/yitang1/LaziestNPC
